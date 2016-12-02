@@ -232,51 +232,13 @@ namespace UIH.Mcsf.Filming.DataModel
 
 
         private readonly ObservableCollection<Segment> _segments = new ObservableCollection<Segment>();
+        private SelectableList<Page> _pages;
+        private SelectableList<ImageCell> _cells;
 
         public void NewPage()
         {
             AppendSegment();
             BuildPageLink();
-        }
-
-        private void BuildPageLink()
-        {
-            throw new NotImplementedException();
-        }
-
-        private void AppendSegment()
-        {
-            var segment = _segments.LastOrDefault();
-            var layout = segment == null ? DataModel.Layout.CreateDefaultLayout() : segment.Pages.LastOrDefault().Layout;
-            _segments.Add(new Segment(layout, new List<ImageCell>()));
-        }
-
-        #endregion [--Implement From IImageLoader--]
-    }
-
-    internal class SegmentSystem
-    {
-        public SelectableList<Page> _pages { get; private set; }
-        public SelectableList<ImageCell> Cells { get; private set; }
-        public event EventHandler Changed = delegate { };
-        //todo: 展示到Board
-
-        //todo-Working-on: 合并SegmentSystem到Card
-        public void AppendPage()
-        {
-            AppendSegment();
-
-            BuildPageLink();
-        }
-
-        private void AppendSegment()
-        {
-        }
-
-        private void BuildCellLink()
-        {
-            Cells = new SelectableList<ImageCell>(_pages.SelectMany(p => p.Cells));
-            Changed(this, new EventArgs());
         }
 
         private void BuildPageLink()
@@ -294,6 +256,21 @@ namespace UIH.Mcsf.Filming.DataModel
 
             BuildCellLink();
         }
+
+        private void BuildCellLink()
+        {
+            _cells = new SelectableList<ImageCell>(_pages.SelectMany(p => p.Cells));
+            NotifyBoardChanged();
+        }
+
+        private void AppendSegment()
+        {
+            var segment = _segments.LastOrDefault();
+            var layout = segment == null ? DataModel.Layout.CreateDefaultLayout() : segment.Pages.LastOrDefault().Layout;
+            _segments.Add(new Segment(layout, new List<ImageCell>()));
+        }
+
+        #endregion [--Implement From IImageLoader--]
     }
 
     #region EventArgs
