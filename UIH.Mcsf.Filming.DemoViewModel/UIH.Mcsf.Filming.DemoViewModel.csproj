@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E5C855D2-26C4-4D2D-B049-3A90A1788966}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UIH.Mcsf.Filming.DemoViewModel</RootNamespace>
+    <AssemblyName>UIH.Mcsf.Filming.DemoViewModel</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\..\UIH\bin_debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UIH.Mcsf.Viewer.Interface" />
+  </ItemGroup>
+  <ItemGroup>
+    <CodeAnalysisDependentAssemblyPaths Condition=" '$(VS100COMNTOOLS)' != '' " Include="$(VS100COMNTOOLS)..\IDE\PrivateAssemblies">
+      <Visible>False</Visible>
+    </CodeAnalysisDependentAssemblyPaths>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CardViewModel.cs" />
+    <Compile Include="ControlPanelViewModel.cs" />
+    <Compile Include="ImageLoadPanelViewModel.cs" />
+    <Compile Include="InfoPanelViewModel.cs" />
+    <Compile Include="PageViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\UIH.Mcsf.Filming.DataModel\UIH.Mcsf.Filming.DataModel.csproj">
+      <Project>{DA1D05EA-2679-49E9-8DBA-0A1EE9E50405}</Project>
+      <Name>UIH.Mcsf.Filming.DataModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UIH.Mcsf.Filming.Interface\UIH.Mcsf.Filming.Interface.csproj">
+      <Project>{548EEFF3-EA2A-4ABA-BD93-224E6D00FF74}</Project>
+      <Name>UIH.Mcsf.Filming.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UIH.Mcsf.Filming.Widgets\UIH.Mcsf.Filming.Widgets.csproj">
+      <Project>{34E04ECD-27C3-48E1-92AD-2D8B78954951}</Project>
+      <Name>UIH.Mcsf.Filming.Widgets</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UIH.Mcsf.Filming.Wrapper\UIH.Mcsf.Filming.Wrapper.csproj">
+      <Project>{CF274C52-06FE-4D3A-BEC9-89190424B34D}</Project>
+      <Name>UIH.Mcsf.Filming.Wrapper</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

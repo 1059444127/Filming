@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="McsfDcmFilmSessionObject" Collapsed="true">
+    <Position X="7.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>hDEBCsEECYwAgAIAQakFOGAACRQgUABQBJAEkUILgQA=</HashCode>
+      <FileName>include\mcsf_dcm_film_session_object.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PrinterConfig" Collapsed="true">
+    <Position X="7.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAAAQAAMAEACAAgAAAAAAAJAAAAAAAAAAEA=</HashCode>
+      <FileName>include\mcsf_dcm_printer_config.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="McsfDcmPrintObject">
+    <Position X="0.5" Y="0.5" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>iKsaRCsCzIutTbhjALMAwIJtS+BHTMWIgKQitIKZAAo=</HashCode>
+      <FileName>include\mcsf_dcm_print_object_base.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="McsfDcmPrintObjectInstance">
+    <Position X="4.5" Y="3.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAECBBQABAACBhAACAGCABAAAYAACAAAIAAkgBACAEQ=</HashCode>
+      <FileName>include\mcsf_dcm_print_object_instance.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="McsfFilmingLibaryFactory" Collapsed="true">
+    <Position X="9" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAAAAAAAAAAAAAACAAAAAQAgAAAAAAAA=</HashCode>
+      <FileName>include\mcsf_filming_libary_factory.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IFilmingLibary">
+    <Position X="4.75" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAABAIAAAAAAAAAAAAAAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>include\mcsf_filming_libary_interface.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="LAYOUT_TYPE_ENUM" Collapsed="true">
+    <Position X="7.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAAgAAAAAAgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>include\mcsf_filming_config.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="BORDER_DENSITY_ENUM" Collapsed="true">
+    <Position X="7.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>include\mcsf_filming_config.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="PRINT_PRIORITY_ENUM" Collapsed="true">
+    <Position X="9" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>include\mcsf_filming_config.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="EMPTY_IMAGE_DENSITY_ENUM" Collapsed="true">
+    <Position X="9" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>include\mcsf_filming_config.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Microsoft YaHei" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,22 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.MergedDictionaries>
+        <!--new Common Control Theme=============begin============-->
+        <ResourceDictionary Source="/UIH.Mcsf.CommonControlTheme;component/CommonControl/Public.xaml"/>
+        <ResourceDictionary Source="/UIH.Mcsf.CommonControlTheme;component/CommonControl/Common.xaml"/>
+        <ResourceDictionary Source="/UIH.Mcsf.CommonControlTheme;component/CommonControl/Style_ToolbarArea.xaml"/>
+        <ResourceDictionary Source="/UIH.Mcsf.CommonControlTheme;component/CommonControl/ProgressBarUIHStyleDefault.xaml"/>
+        <ResourceDictionary Source="/UIH.Mcsf.CommonControlTheme;component/CommonControl/PublicStyle.xaml"/>
+        <ResourceDictionary Source="/UIH.Mcsf.CommonControlTheme;component/Image/ImageSource.xaml"/>
+        <ResourceDictionary Source="/UIH.Mcsf.CommonControlTheme;component/CommonControl/ScrollBarSmallWindow.xaml"/>
+
+        <!--new Common Control Theme=============end============-->
+
+        <!--follow is the old common control style-->
+        <!--<ResourceDictionary Source="/UIH.Mcsf.CommonControlTheme;component/Themes/BackgroundUIHStyleDefault.xaml"/>
+        <ResourceDictionary Source="/UIH.Mcsf.CommonControlTheme;component/Themes/SeparatorDefault.xaml"/>
+        <ResourceDictionary Source="/UIH.Mcsf.CommonControlTheme;component/Themes/ProgressBarUIHStyleDefault.xaml"/>
+        <ResourceDictionary Source="/UIH.Mcsf.CommonControlTheme;component/Themes/ToolBarCommonControlUIHStyle.xaml"/>-->
+       
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

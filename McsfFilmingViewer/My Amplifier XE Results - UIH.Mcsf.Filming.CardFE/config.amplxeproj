@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+ <rdmgr>
+  <timestamp type="u64_t">1372849716</timestamp>
+  <hostname>sw-wh.united-imaging.com</hostname>
+  <os>windows</os>
+  <product>Intel® VTune™ Amplifier XE 2011 Update 7</product>
+  <buildNumber type="s32_t">206420</buildNumber>
+ </rdmgr>
+ <All_Configurations-All_Platforms>
+  <target_settings>
+   <result_pattern>r@@@{at}</result_pattern>
+   <selected_workload>workload.process</selected_workload>
+   <inherited_state type="bool">false</inherited_state>
+   <result_dir>D:\MAIN\Features\McsfFilming\McsfFilmingViewer\My Amplifier XE Results - UIH.Mcsf.Filming.CardFE</result_dir>
+   <workloads>
+    <workload>
+     <application type="pointer" type_id="dasID_cctrl2::ApplicationWorkload" ptr_type="dasID_cctrl2::IWorkload">
+      <workload>
+       <launch_app.app_to_launch>D:\UIH\bin\UIH.Mcsf.Core.ContainerBase.exe</launch_app.app_to_launch>
+       <launch_app.working_folder>D:\UIH\bin</launch_app.working_folder>
+       <launch_app.app_parameters>filming/config/filming_card_fe.xml FilmingCard@FE@&#13;
+</launch_app.app_parameters>
+       <result_directory.path>D:\MAIN\Features\McsfFilming\McsfFilmingViewer\My Amplifier XE Results - UIH.Mcsf.Filming.CardFE\r@@@{at}</result_directory.path>
+       <search_directories>
+        <item>
+         <value>sym=D:/MAIN/Features/McsfFilming</value>
+        </item>
+        <item>
+         <value>sym=D:/UIH/bin</value>
+        </item>
+       </search_directories>
+       <context>
+        <contextValue>
+         <id>allowMultipleRuns</id>
+         <value type="bool">false</value>
+        </contextValue>
+        <contextValue>
+         <id>analyzeSystemWide</id>
+         <value type="bool">false</value>
+        </contextValue>
+        <contextValue>
+         <id>cpuMask</id>
+         <value></value>
+        </contextValue>
+        <contextValue>
+         <id>dataLimit</id>
+         <value type="s32_t">100</value>
+        </contextValue>
+        <contextValue>
+         <id>followChild</id>
+         <value type="bool">true</value>
+        </contextValue>
+        <contextValue>
+         <id>followChildStrategy</id>
+         <value></value>
+        </contextValue>
+        <contextValue>
+         <id>goodFastFrameThreshold</id>
+         <value type="double">100</value>
+        </contextValue>
+        <contextValue>
+         <id>mrteMode</id>
+         <value>managed</value>
+        </contextValue>
+        <contextValue>
+         <id>slowGoodFrameThreshold</id>
+         <value type="double">40</value>
+        </contextValue>
+        <contextValue>
+         <id>targetDurationType</id>
+         <value>short</value>
+        </contextValue>
+       </context>
+      </workload>
+     </application>
+     <process type="pointer" type_id="dasID_cctrl2::AttachWorkload" ptr_type="dasID_cctrl2::IWorkload">
+      <workload>
+       <result_directory.path>D:\MAIN\Features\McsfFilming\McsfFilmingViewer\My Amplifier XE Results - UIH.Mcsf.Filming.CardFE\r@@@{at}</result_directory.path>
+       <attach.process_name></attach.process_name>
+       <attach.pid>7436</attach.pid>
+       <search_directories>
+        <item>
+         <value>sym=D:/MAIN/Features/McsfFilming</value>
+        </item>
+        <item>
+         <value>sym=D:/UIH/bin</value>
+        </item>
+       </search_directories>
+      </workload>
+     </process>
+     <system type="pointer" type_id="dasID_cctrl2::SystemWideWorkload" ptr_type="dasID_cctrl2::IWorkload">
+      <workload>
+       <result_directory.path>D:\MAIN\Features\McsfFilming\McsfFilmingViewer\My Amplifier XE Results - UIH.Mcsf.Filming.CardFE\r@@@{at}</result_directory.path>
+      </workload>
+     </system>
+    </workload>
+   </workloads>
+  </target_settings>
+  <searchDirs>
+   <searchCategory>
+    <category type="u8_t">1</category>
+   </searchCategory>
+   <searchCategory>
+    <category type="u8_t">2</category>
+   </searchCategory>
+   <searchCategory>
+    <category type="u8_t">3</category>
+   </searchCategory>
+   <searchCategory>
+    <category type="u8_t">4</category>
+   </searchCategory>
+  </searchDirs>
+  <analysis_type_settings>
+   <selected_analysis_type_path>C:\Program Files (x86)\Intel\VTune Amplifier XE 2011\config\analysis_type\hotspots.cfg</selected_analysis_type_path>
+  </analysis_type_settings>
+ </All_Configurations-All_Platforms>
+</root>

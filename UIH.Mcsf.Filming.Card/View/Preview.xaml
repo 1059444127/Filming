@@ -1,0 +1,21 @@
+﻿<UserControl x:Class="UIH.Mcsf.Filming.Card.View.Preview"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:View="clr-namespace:UIH.Mcsf.Filming.Card.View" mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <StackPanel>
+        <Label>Preview</Label>
+        <StackPanel Orientation="Horizontal">
+            <Grid Name="filmRegion" />
+            <View:FilmGrid 
+                DisplayMode="{Binding Path=SelectedDisplayMode, Mode=OneWay}" 
+                BoardEnd="{Binding BoardEnd}" BoardCursor="{Binding BoardCursor}"
+                FocusedFilmCursor="{Binding PageCursor}"/>
+            <View:CardInfoPanel />
+            <ScrollBar Maximum="{Binding BoardEnd}" Value="{Binding BoardCursor}"/>
+        </StackPanel>
+        
+    </StackPanel>
+</UserControl>

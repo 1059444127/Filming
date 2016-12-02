@@ -1,0 +1,278 @@
+﻿<UserControl x:Class="UIH.Mcsf.Filming.Views.LayoutCtrl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:converter="clr-namespace:UIH.Mcsf.Filming.Converters"
+             xmlns:Filming="clr-namespace:UIH.Mcsf.Filming"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    
+    <Grid Name ="filmingbuttonGird1" Row="1" Margin="7,0,0,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="0"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Separator Grid.Row="0" Height="2"  Margin="0,0,0,0" />
+        <Grid Name="displayGrid" Grid.Row="1" Margin="7,14,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition ></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <!--<Grid Name="layoutTitleMG" HorizontalAlignment="Left"   Grid.Row="0" Margin="0,0,0,0">
+                <Label  Width="100"   Content="视窗布局"></Label>
+            </Grid>-->
+            <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50"></ColumnDefinition>
+                <ColumnDefinition Width="50"></ColumnDefinition>                
+                <ColumnDefinition Width="50"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="102"></ColumnDefinition>
+                <ColumnDefinition Width="0"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            
+            <Button ToolTip="{DynamicResource UID_Filming_NewFilm}"  HorizontalAlignment="Center"  Grid.Column="0"
+                        Name="addFilmPageButton"   AutomationProperties.AutomationId="ID_BTN_FILMING_ADDFILMPAGE"  Click="OnAddFilmPage" 
+                                    IsEnabled="{Binding Path=IsEnableNewFilmPage}" Style="{DynamicResource Style_Button_Common_CSW_Default}" Focusable="False" Margin="0,0,0,0">
+                <Image  Source="{DynamicResource Filming_new_film}" />
+            </Button>
+
+            <Button ToolTip="{DynamicResource UID_Filming_SaveLayout}"   HorizontalAlignment="Center"  Grid.Column="1"
+                        Name="btnSaveFilmLayout"   AutomationProperties.AutomationId="ID_BTN_FILMING_SaveFilmPageLayout"  Click="OnSaveCurViewportLayout" 
+                                    IsEnabled="{Binding Path=IsEnableSaveFilmLayout}" Style="{DynamicResource Style_Button_Common_CSW_Default}" Focusable="False" Margin="0,0,0,0">
+                <Image  Source="{DynamicResource Filming_save_layout}" />
+            </Button>
+
+            <Button ToolTip="{DynamicResource UID_Filming_CustomViewPortLayout}"  HorizontalAlignment="Center"  Grid.Column="2"
+                        Name="filmCustomViewportLayout"   AutomationProperties.AutomationId="ID_BTN_FILMING_CUSTOMVIEWPORTLAYOUT"  Click="OnCustomerLayoutClick" 
+                                    IsEnabled="{Binding Path=IsEnableChangeToMultiViewportLayout}" Style="{DynamicResource Style_Button_Common_CSW_Default}" Focusable="False" Margin="0,0,0,0">
+                <Image  Source="{DynamicResource comstom_viewport}" />
+            </Button>
+
+            <Label Content="{DynamicResource UID_Filming_DisplayMode}" Height="35" HorizontalAlignment="Left" Grid.Column="3" Margin="0,0,9,0" FontSize="14" VerticalContentAlignment="Center" Padding="0" MinWidth="70"></Label>
+            <ComboBox Name="displayMode"  AutomationProperties.AutomationId="ID_CMB_FILMING_DISPLAYMODE" Grid.Row="1"  Grid.Column="4" Width="85" HorizontalAlignment="Left" Margin="0,0,0,0" 
+							     ItemsSource="{Binding FilmCardDisplayModeCollection}" SelectedItem="{Binding SelectedFilmCardDisplayMode}" Style="{DynamicResource Style_ComboBox_Common_CSW_Default}"  Height="35" Focusable="False">
+
+            </ComboBox>
+            </Grid>
+        </Grid>
+        <Grid Name="viewportLayoutGrid" Grid.Row="2"  Margin="18,27,0,0" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="35"></RowDefinition>               
+            </Grid.RowDefinitions>
+            
+            <Grid Grid.Row="0" Margin="0,0,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="4"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="18"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="18"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <StackPanel Name="viewportLayoutPanel"  Orientation="Horizontal"   Grid.Column="0">
+                    <Button             Name="viewportLayoutButton0"
+                                        Width="35"
+                                        Height="35"
+                                        Focusable ="False"
+                                        AutomationProperties.AutomationId="ID_BTN_FILMING_VIEWPORTLAYOUT1"
+                                        Style="{DynamicResource Style_Button_Common_CSW_Left}"
+                                        Click="OnViewportLayoutButtonClick"
+                                        Tag="0"
+                                        IsEnabled="{Binding Path=IsEnableChangeToMultiViewportLayout}"
+                                        HorizontalAlignment="Left"
+                                        VerticalAlignment="Top"
+                                        Margin="0,0,0,0"
+                                        d:LayoutOverrides="HorizontalAlignment">
+                        <Image  Source="{DynamicResource Filming_IrregularLayout1}" />
+                    </Button>
+                    <Button
+                                        Name="viewportLayoutButton1"
+                                        Width="35"
+                                        Height="35"
+                                        Tag="1"
+                                        AutomationProperties.AutomationId="ID_BTN_FILMING_VIEWPORTLAYOUT2"
+                                        Style="{DynamicResource Style_Button_Common_CSW_Center}"
+                                        Click="OnViewportLayoutButtonClick"
+                                        Focusable="False"                                        
+                                        IsEnabled="{Binding Path=IsEnableChangeToMultiViewportLayout}"
+                                        HorizontalAlignment="Left"
+                                        VerticalAlignment="Top"
+                                        Margin="0,0,0,0">
+                        <Image
+                                            Source="{DynamicResource Filming_IrregularLayout2}" />
+                    </Button>
+                    <Button
+                                        Name="viewportLayoutButton2"
+                                        Width="35"
+                                        Height="35"
+                                        Tag="2"
+                                        AutomationProperties.AutomationId="ID_BTN_FILMING_VIEWPORTLAYOUT3"
+                                        Style="{DynamicResource Style_Button_Common_CSW_Center}"
+                                        Click="OnViewportLayoutButtonClick"
+                                        Focusable="False"                                        
+                                        IsEnabled="{Binding Path=IsEnableChangeToMultiViewportLayout}"
+                                        HorizontalAlignment="Left"
+                                        VerticalAlignment="Top"
+                                        Margin="0,0,0,0">
+                        <Image
+                                            Source="{DynamicResource Filming_IrregularLayout3}" />
+                    </Button>
+                    <Button
+                                        Name="viewportLayoutButton3"
+                                        Width="35"
+                                        Height="35"
+                                        Tag="3"
+                                        AutomationProperties.AutomationId="ID_BTN_FILMING_VIEWPORTLAYOUT4"
+                                        Style="{DynamicResource Style_Button_Common_CSW_Center}"
+                                        Click="OnViewportLayoutButtonClick"
+                                        Focusable="False"                                        
+                                        IsEnabled="{Binding Path=IsEnableChangeToMultiViewportLayout}"
+                                        HorizontalAlignment="Left"
+                                        VerticalAlignment="Top"
+                                        Margin="0,0,0,0">
+                        <Image
+                                            Source="{DynamicResource Filming_IrregularLayout4}" />
+                    </Button>
+                    <Button
+                                        Name="viewportLayoutButton4"
+                                        Width="35"
+                                        Height="35"
+                                        Tag="4"
+                                        AutomationProperties.AutomationId="ID_BTN_FILMING_VIEWPORTLAYOUT5"
+                                        Style="{DynamicResource Style_Button_Common_CSW_Center}"
+                                        Click="OnViewportLayoutButtonClick"
+                                        Focusable="False"                                        
+                                        IsEnabled="{Binding Path=IsEnableChangeToMultiViewportLayout}"
+                                        HorizontalAlignment="Left"
+                                        VerticalAlignment="Top"
+                                        Margin="0,0,0,0">
+                        <Image
+                                            Source="{DynamicResource Filming_IrregularLayout5}" />
+                    </Button>
+                    <Button
+                                        Name="viewportLayoutButton5"
+                                        Width="35"
+                                        Height="35"
+                                        Tag="5"
+                                        AutomationProperties.AutomationId="ID_BTN_FILMING_VIEWPORTLAYOUT6"
+                                        Style="{DynamicResource Style_Button_Common_CSW_Center}"
+                                        Click="OnViewportLayoutButtonClick"
+                                        Focusable="False"
+                                        
+                                        IsEnabled="{Binding Path=IsEnableChangeToMultiViewportLayout}"
+                                        HorizontalAlignment="Left"
+                                        VerticalAlignment="Top"
+                                        Margin="0,0,0,0">
+                        <Image
+                                            Source="{DynamicResource Filming_IrregularLayout6}" />
+                    </Button>
+                    <Button
+                                        Name="viewportLayoutButton6"
+                                        Width="35"
+                                        Height="35"
+                                        Tag="6"
+                                        AutomationProperties.AutomationId="ID_BTN_FILMING_VIEWPORTLAYOUT7"
+                                        Style="{DynamicResource Style_Button_Common_CSW_Right}"
+                                        Click="OnViewportLayoutButtonClick"
+                                        Focusable="False"                                        
+                                        IsEnabled="{Binding Path=IsEnableChangeToMultiViewportLayout}"
+                                        HorizontalAlignment="Left"
+                                        VerticalAlignment="Top"
+                                        Margin="0,0,0,0">
+                        <Image
+                                            Source="{DynamicResource Filming_IrregularLayout7}" />
+                    </Button>
+                </StackPanel>
+               
+                <Button  Name="filmCustomViewport"  Grid.Column="4" AutomationProperties.AutomationId="ID_BTN_FILMING_CUSTOMVIEWPORT" Height="35" Width="35" HorizontalAlignment="Left" Margin="4,0,0,0" Style="{DynamicResource Style_Button_Common_CSW_Default}" Focusable="False"
+                                          Click="OnCustomeViewportClick" ToolTip="{DynamicResource UID_Filming_CustomViewport}"  IsEnabled="{Binding Path=IsEnableChangeToMultiViewportLayout}">
+                    <Button.Content>
+                        <Image Source="{DynamicResource Filming_CustomizeCellLayout_Bold}" Margin="0,0,0,0"  Stretch="Uniform"/>
+                    </Button.Content>
+                </Button>
+
+                <Grid Margin="10,0,0,0" Column="6">
+                    <Button x:Name="btnRealSize" Visibility="Collapsed"   Click="OnBtnRealSizeClick"  AutomationProperties.AutomationId="ID_BTN_FILMING_ENHANCEMENT" Width="35" Height="35"  Style="{DynamicResource Style_Button_Common_CSW_Default}" HorizontalAlignment="Left" ToolTip="{DynamicResource UID_Filming_TrueSize_Scale}">
+                        <Image Source="{DynamicResource DR_Review_TrueSize}"/>
+                    </Button>
+                </Grid>
+            </Grid>
+        </Grid>
+        <Grid Name="cellLayoutGrid" Grid.Row="3" Margin="0,10,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="5"></RowDefinition>
+                <RowDefinition Height="4"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            
+            <Grid Name ="preSetCellLayoutButtonGrid" Grid.Row="2" Margin="18,0,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="4"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="18"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <StackPanel Orientation="Horizontal" Grid.Column="0">
+                    <Button
+                                        Name="cellLayoutButton1"
+                                        AutomationProperties.AutomationId="ID_BTN_FILMING_CELLLAYOUT1"
+                                        Height="35"
+                                        Width="35"
+                                        Click="OnCellLayout3X2Click"
+                                        Style="{DynamicResource Style_Button_Common_CSW_Left}"
+                                        Focusable="False"
+                                        IsEnabled="{Binding Path=IsEnableChangeCellLayout}"                                        
+                                        Margin="0,0,0,0">
+                        <Image Source="{DynamicResource layout1x1}" Margin="0,0,0,0" />
+                    </Button>
+                    <Button
+                                        Name="cellLayoutButton2"
+                                        AutomationProperties.AutomationId="ID_BTN_FILMING_CELLLAYOUT2"
+                                        Height="35"
+                                        Width="35"
+                                        Click="OnCellLayout4X3Click"
+                                        Style="{DynamicResource Style_Button_Common_CSW_Center}"
+                                        Focusable="False"
+                                        IsEnabled="{Binding Path=IsEnableChangeCellLayout}"                                        
+                                        Margin="0">
+                        <Image
+                                            Source="{DynamicResource layout2x1}" />
+                    </Button>
+                    <Button
+                                        Name="cellLayoutButton3"
+                                        AutomationProperties.AutomationId="ID_BTN_FILMING_CELLLAYOUT3"
+                                        Height="35"
+                                        Width="35"
+                                        Click="OnCellLayout5X4Click"
+                                        Style="{DynamicResource Style_Button_Common_CSW_Center}"
+                                        Focusable="False"
+                                        IsEnabled="{Binding Path=IsEnableChangeCellLayout}"                                        
+                                        Margin="0"
+                                        d:LayoutOverrides="VerticalMargin">
+                        <Image
+                                            Source="{DynamicResource layout2x2}" />
+                    </Button>
+                   
+                </StackPanel>                
+
+                <Button x:Name="btnFilmingcLayoutOut"  Grid.Column="4" Width="35" Height="35" Style="{DynamicResource Style_Button_Common_CSW_Default}" 
+                        AutomationProperties.AutomationId="ID_BTN_FILMING_CUSTOMCELLLAYOUT"                     
+                        IsEnabled="{Binding Path=IsEnableChangeCellLayout}" ToolTip="{DynamicResource UID_Filming_CustomCellLayout}"
+                                             HorizontalAlignment="Left" Margin="0" Click="OnCustomCellLayoutClick" >
+                    <Button.Content>
+                        <Image Source="{DynamicResource Filming_CustomizeCellLayout}" Margin="0,0,0,0"  Stretch="Uniform"/>
+                    </Button.Content>
+                </Button>
+                
+            </Grid>
+        </Grid>
+        <Filming:FilmingPageControl Visibility="Hidden" Grid.Row="4" x:Name="SavedFilmPageControl" Height="230" Width="200"/>
+    </Grid>
+</UserControl>

@@ -1,0 +1,69 @@
+﻿<UserControl x:Class="UIH.Mcsf.Filming.MultiFormatLayoutWindow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="360" d:DesignWidth="368" Width="368" Height="360"  AutomationProperties.AutomationId="ID_EX_FILMING_MULTIFORMATLAYOUT_WINDOW"
+       >
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>                
+                <ResourceDictionary Source="/UIH.Mcsf.CommonControlTheme;component/CommonControl/Public.xaml"/>
+                <ResourceDictionary Source="/UIH.Mcsf.CommonControlTheme;component/Image/ImageSource.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <!--<Style TargetType="RadioButtonn">
+                <Setter Property="Style"  Value="Style_RadioButton_Common_CSW_Default"></Setter>
+            </Style>-->
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <StackPanel Margin="0,30,0,0">
+
+        <RadioButton HorizontalAlignment="Left" Margin="160,0,0,24" Name="radio2" AutomationProperties.AutomationId="ID_RDO_FILMING_MULTIFORMATLAYOUT_WINDOW2" Style="{DynamicResource Style_RadioButton_Common_CSW_Default}">
+            <RadioButton.Content>
+                <Image Source="{DynamicResource layout1x2}" Stretch="None" Margin="0,-6,0,0"/>
+            </RadioButton.Content>
+        </RadioButton>
+
+        <RadioButton HorizontalAlignment="Left" Margin="160,0,0,24"  Name="radio1"  AutomationProperties.AutomationId="ID_RDO_FILMING_MULTIFORMATLAYOUT_WINDOW1" Style="{DynamicResource Style_RadioButton_Common_CSW_Default}">
+            <RadioButton.Content>
+                <Image Source="{DynamicResource layout2x1}" Stretch="None" Margin="0,-6,0,0"/>
+            </RadioButton.Content>
+        </RadioButton>
+
+        <RadioButton HorizontalAlignment="Left" Margin="160,0,0,24" Name="radio3" AutomationProperties.AutomationId="ID_RDO_FILMING_MULTIFORMATLAYOUT_WINDOW3" Style="{DynamicResource Style_RadioButton_Common_CSW_Default}">
+            <RadioButton.Content>
+                <Image Source="{DynamicResource layout2x2}" Stretch="None" Margin="0,-6,0,0"/>
+            </RadioButton.Content>
+        </RadioButton>
+
+        <RadioButton HorizontalAlignment="Left" Margin="160,0,0,24" Name="radio4" AutomationProperties.AutomationId="ID_RDO_FILMING_MULTIFORMATLAYOUT_WINDOW4" Style="{DynamicResource Style_RadioButton_Common_CSW_Default}">
+            <RadioButton.Content>
+                <Image Source="{DynamicResource layout2x3}" Stretch="None" Margin="0,-6,0,0"/>
+            </RadioButton.Content>
+        </RadioButton>
+
+        <!--<RadioButton HorizontalAlignment="Left" Margin="160,0,0,24" Name="radio5"  AutomationProperties.AutomationId="ID_RDO_FILMING_MULTIFORMATLAYOUT_WINDOW5" Style="{DynamicResource Style_RadioButton_Common_CSW_Default}">
+            <RadioButton.Content>
+                <Image Source="{DynamicResource layout3x2}" Stretch="None" Margin="0,-6,0,0"/>
+            </RadioButton.Content>
+        </RadioButton>-->
+
+        <RadioButton HorizontalAlignment="Left" Margin="160,0,0,0" Name="radio6" AutomationProperties.AutomationId="ID_RDO_FILMING_MULTIFORMATLAYOUT_WINDOW6" Style="{DynamicResource Style_RadioButton_Common_CSW_Default}">
+            <RadioButton.Content>
+                <Image Source="{DynamicResource layout3x3}" Stretch="None" Margin="0,-6,0,0"/>
+            </RadioButton.Content>
+        </RadioButton>
+        
+        <Grid Width="340" HorizontalAlignment="Center" Margin="0,25,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="120"></ColumnDefinition>
+                <ColumnDefinition Width="100"></ColumnDefinition>
+                <ColumnDefinition Width="120"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" HorizontalAlignment="Right"  AutomationProperties.AutomationId="ID_BTN_FILMING_MULTIFORMATLAYOUT_WINDOW2OK" Width="100" Height="30" Content="{DynamicResource UID_Filming_OK}" Click="OnOKButtonClick" Style="{DynamicResource Style_Button_Common_CSW_Default}"></Button>
+            <Button Grid.Column="2" HorizontalAlignment="Left"  AutomationProperties.AutomationId="ID_BTN_FILMING_MULTIFORMATLAYOUT_WINDOW2CANCEL" Width="100" Height="30" Content="{DynamicResource UID_Filming_Cancel}" Click="OnCancelButtonClick"  Style="{DynamicResource Style_Button_Common_CSW_Default}"></Button>
+        </Grid>
+    </StackPanel>
+</UserControl>

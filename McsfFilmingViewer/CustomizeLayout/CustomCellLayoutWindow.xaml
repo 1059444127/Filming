@@ -1,0 +1,258 @@
+﻿<UserControl x:Class="UIH.Mcsf.Filming.CustomCellLayoutWindow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:Filming="clr-namespace:UIH.Mcsf.Filming" mc:Ignorable="d" 
+             xmlns:Views="clr-namespace:UIH.Mcsf.Filming.Views;assembly=UIH.Mcsf.Filming.Views"
+             d:DesignHeight="480" d:DesignWidth="300"  
+              Width="350" Height="474" AutomationProperties.AutomationId="ID_EX_FILMING_CUSTOMCELLLAYOUT_WINDOW">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/UIH.Mcsf.CommonControlTheme;component/CommonControl/Public.xaml"/>
+                <ResourceDictionary Source="/UIH.Mcsf.CommonControlTheme;component/CommonControl/Common.xaml"/>
+                <ResourceDictionary Source="/UIH.Mcsf.CommonControlTheme;component/CommonControl/PublicStyle.xaml"/>
+                <ResourceDictionary Source="/UIH.Mcsf.CommonControlTheme;component/Image/ImageSource.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_WINDOW"  >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="24"></RowDefinition>
+            <RowDefinition Height="321"></RowDefinition>
+            <RowDefinition Height="17"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="27"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="1" 
+              Filming:GridHelper.ShowBorder="True"
+              Width="321"
+              HorizontalAlignment="Center"
+              Name="customCellLayoutGrid" 
+              MouseLeftButtonDown="CustomCellLayoutGridMouseLeftButtonDown" 
+              MouseLeftButtonUp="CustomCellLayoutGridMouseLeftButtonUp" 
+              MouseMove="CustomCellLayoutGridMouseMove" 
+              MouseLeave="CustomCellLayoutGridMouseLeave"
+              Background="#ffcecece">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Row="0" Grid.Column="0" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID00" ></Grid>
+            <Grid Grid.Row="0" Grid.Column="1" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID01"></Grid>
+            <Grid Grid.Row="0" Grid.Column="2" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID02"></Grid>
+            <Grid Grid.Row="0" Grid.Column="3" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID03"></Grid>
+            <Grid Grid.Row="0" Grid.Column="4" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID04"></Grid>
+            <Grid Grid.Row="0" Grid.Column="5" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID05"></Grid>
+            <Grid Grid.Row="0" Grid.Column="6" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID06"></Grid>
+            <Grid Grid.Row="0" Grid.Column="7" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID07"></Grid>
+            <Grid Grid.Row="0" Grid.Column="8" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID08"></Grid>
+            <Grid Grid.Row="0" Grid.Column="9" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID09"></Grid>
+
+            <Grid Grid.Row="1" Grid.Column="0" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID10"></Grid>
+            <Grid Grid.Row="1" Grid.Column="1" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID11"></Grid>
+            <Grid Grid.Row="1" Grid.Column="2" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID12"></Grid>
+            <Grid Grid.Row="1" Grid.Column="3" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID13"></Grid>
+            <Grid Grid.Row="1" Grid.Column="4" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID14"></Grid>
+            <Grid Grid.Row="1" Grid.Column="5" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID15"></Grid>
+            <Grid Grid.Row="1" Grid.Column="6" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID16"></Grid>
+            <Grid Grid.Row="1" Grid.Column="7" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID17"></Grid>
+            <Grid Grid.Row="1" Grid.Column="8" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID18"></Grid>
+            <Grid Grid.Row="1" Grid.Column="9" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID19"></Grid>
+
+            <Grid Grid.Row="2" Grid.Column="0" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID20"></Grid>
+            <Grid Grid.Row="2" Grid.Column="1" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID21"></Grid>
+            <Grid Grid.Row="2" Grid.Column="2" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID22"></Grid>
+            <Grid Grid.Row="2" Grid.Column="3" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID23"></Grid>
+            <Grid Grid.Row="2" Grid.Column="4" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID24"></Grid>
+            <Grid Grid.Row="2" Grid.Column="5" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID25"></Grid>
+            <Grid Grid.Row="2" Grid.Column="6" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID26"></Grid>
+            <Grid Grid.Row="2" Grid.Column="7" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID27"></Grid>
+            <Grid Grid.Row="2" Grid.Column="8" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID28"></Grid>
+            <Grid Grid.Row="2" Grid.Column="9" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID29"></Grid>
+
+            <Grid Grid.Row="3" Grid.Column="0" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID30"></Grid>
+            <Grid Grid.Row="3" Grid.Column="1" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID31"></Grid>
+            <Grid Grid.Row="3" Grid.Column="2" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID32"></Grid>
+            <Grid Grid.Row="3" Grid.Column="3" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID33"></Grid>
+            <Grid Grid.Row="3" Grid.Column="4" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID34"></Grid>
+            <Grid Grid.Row="3" Grid.Column="5" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID35"></Grid>
+            <Grid Grid.Row="3" Grid.Column="6" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID36"></Grid>
+            <Grid Grid.Row="3" Grid.Column="7" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID37"></Grid>
+            <Grid Grid.Row="3" Grid.Column="8" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID38"></Grid>
+            <Grid Grid.Row="3" Grid.Column="9" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID39"></Grid>
+
+            <Grid Grid.Row="4" Grid.Column="0" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID40"></Grid>
+            <Grid Grid.Row="4" Grid.Column="1" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID41"></Grid>
+            <Grid Grid.Row="4" Grid.Column="2" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID42"></Grid>
+            <Grid Grid.Row="4" Grid.Column="3" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID43"></Grid>
+            <Grid Grid.Row="4" Grid.Column="4" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID44"></Grid>
+            <Grid Grid.Row="4" Grid.Column="5" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID45"></Grid>
+            <Grid Grid.Row="4" Grid.Column="6" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID46"></Grid>
+            <Grid Grid.Row="4" Grid.Column="7" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID47"></Grid>
+            <Grid Grid.Row="4" Grid.Column="8" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID48"></Grid>
+            <Grid Grid.Row="4" Grid.Column="9" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID49"></Grid>
+
+            <Grid Grid.Row="5" Grid.Column="0" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID50"></Grid>
+            <Grid Grid.Row="5" Grid.Column="1" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID51"></Grid>
+            <Grid Grid.Row="5" Grid.Column="2" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID52"></Grid>
+            <Grid Grid.Row="5" Grid.Column="3" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID53"></Grid>
+            <Grid Grid.Row="5" Grid.Column="4" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID54"></Grid>
+            <Grid Grid.Row="5" Grid.Column="5" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID55"></Grid>
+            <Grid Grid.Row="5" Grid.Column="6" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID56"></Grid>
+            <Grid Grid.Row="5" Grid.Column="7" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID57"></Grid>
+            <Grid Grid.Row="5" Grid.Column="8" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID58"></Grid>
+            <Grid Grid.Row="5" Grid.Column="9" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID59"></Grid>
+
+            <Grid Grid.Row="6" Grid.Column="0" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID60"></Grid>
+            <Grid Grid.Row="6" Grid.Column="1" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID61"></Grid>
+            <Grid Grid.Row="6" Grid.Column="2" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID62"></Grid>
+            <Grid Grid.Row="6" Grid.Column="3" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID63"></Grid>
+            <Grid Grid.Row="6" Grid.Column="4" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID64"></Grid>
+            <Grid Grid.Row="6" Grid.Column="5" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID65"></Grid>
+            <Grid Grid.Row="6" Grid.Column="6" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID66"></Grid>
+            <Grid Grid.Row="6" Grid.Column="7" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID67"></Grid>
+            <Grid Grid.Row="6" Grid.Column="8" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID68"></Grid>
+            <Grid Grid.Row="6" Grid.Column="9" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID69"></Grid>
+
+            <Grid Grid.Row="7" Grid.Column="0" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID70"></Grid>
+            <Grid Grid.Row="7" Grid.Column="1" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID71"></Grid>
+            <Grid Grid.Row="7" Grid.Column="2" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID72"></Grid>
+            <Grid Grid.Row="7" Grid.Column="3" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID73"></Grid>
+            <Grid Grid.Row="7" Grid.Column="4" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID74"></Grid>
+            <Grid Grid.Row="7" Grid.Column="5" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID75"></Grid>
+            <Grid Grid.Row="7" Grid.Column="6" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID76"></Grid>
+            <Grid Grid.Row="7" Grid.Column="7" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID77"></Grid>
+            <Grid Grid.Row="7" Grid.Column="8" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID78"></Grid>
+            <Grid Grid.Row="7" Grid.Column="9" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID79"></Grid>
+
+            <Grid Grid.Row="8" Grid.Column="0" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID80"></Grid>
+            <Grid Grid.Row="8" Grid.Column="1" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID81"></Grid>
+            <Grid Grid.Row="8" Grid.Column="2" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID82"></Grid>
+            <Grid Grid.Row="8" Grid.Column="3" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID83"></Grid>
+            <Grid Grid.Row="8" Grid.Column="4" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID84"></Grid>
+            <Grid Grid.Row="8" Grid.Column="5" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID85"></Grid>
+            <Grid Grid.Row="8" Grid.Column="6" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID86"></Grid>
+            <Grid Grid.Row="8" Grid.Column="7" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID87"></Grid>
+            <Grid Grid.Row="8" Grid.Column="8" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID88"></Grid>
+            <Grid Grid.Row="8" Grid.Column="9" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID89"></Grid>
+
+            <Grid Grid.Row="9" Grid.Column="0" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID90"></Grid>
+            <Grid Grid.Row="9" Grid.Column="1" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID91"></Grid>
+            <Grid Grid.Row="9" Grid.Column="2" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID92"></Grid>
+            <Grid Grid.Row="9" Grid.Column="3" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID93"></Grid>
+            <Grid Grid.Row="9" Grid.Column="4" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID94"></Grid>
+            <Grid Grid.Row="9" Grid.Column="5" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID95"></Grid>
+            <Grid Grid.Row="9" Grid.Column="6" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID96"></Grid>
+            <Grid Grid.Row="9" Grid.Column="7" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID97"></Grid>
+            <Grid Grid.Row="9" Grid.Column="8" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID98"></Grid>
+            <Grid Grid.Row="9" Grid.Column="9" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMCELLLAYOUT_GRID99"></Grid>
+        </Grid>
+        <Grid Grid.Row="3" Margin="7,0,7,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+                <Button Name="ProtocolConfigureButton" Grid.Column="2" Click="ProtocolConfigureButton_OnClicked" ToolTip="{DynamicResource UID_Filming_Protocol}" AutomationProperties.AutomationId="ID_BTN_FILMING_CUSTOMCELLLAYOUT_PROTOCOLS" Style="{DynamicResource Style_Button_Common_CSW_Default}">
+                    <Button.Content>
+                        <Image Source="{DynamicResource BindingLayout}" Margin="0,0,0,0"  Stretch="Uniform"/>
+                    </Button.Content>
+                </Button>
+                <Grid Grid.Column="1"  HorizontalAlignment="Right" Margin="0,0,28,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50"></ColumnDefinition>
+                    <ColumnDefinition Width="80"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+
+                    <Label HorizontalAlignment="Right" Grid.Column="0"   Content="{DynamicResource UID_Filming_Rows}" AutomationProperties.AutomationId="ID_LBL_FILMING_CUSTOMCELLLAYOUT_ROWS" VerticalAlignment="Center" Style="{DynamicResource Style_Label_Common_CSW_Default}" />
+
+
+                    <TextBox Grid.Column="1" HorizontalAlignment="Right" HorizontalContentAlignment="Center"  Name="rowNumberLabel" PreviewMouseDown =" TextBoxPreviewMouseDown" KeyDown ="TextBoxKeyDown"  TextChanged =" TextBoxTextChanged" TabIndex =" 1"  GotFocus ="TextBoxGotFocus" LostFocus ="TextBoxLostFocus" AutomationProperties.AutomationId="ID_LBL_FILMING_CUSTOMCELLLAYOUT_ROWNUMBER" VerticalAlignment="Center" Height ="30" Width="70" Style="{DynamicResource Style_TextBox_Common_CSW_Default}">
+                    </TextBox>
+               
+
+            </Grid>
+            <Grid Grid.Column="0" HorizontalAlignment="Left">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="60"></ColumnDefinition>
+                    <ColumnDefinition Width="80"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+
+                    <Label Grid.Column="0" HorizontalAlignment="Right"   Content="{DynamicResource UID_Filming_Columns}" AutomationProperties.AutomationId="ID_LBL_FILMING_CUSTOMCELLLAYOUT_COLUMNS"  VerticalAlignment="Center" Style="{DynamicResource Style_Label_Common_CSW_Default}" />
+                
+               
+                        <TextBox Grid.Column="1" HorizontalAlignment="Right" HorizontalContentAlignment="Center" Name="columnNumberLabel"  PreviewMouseDown =" TextBoxPreviewMouseDown" KeyDown ="TextBoxKeyDown" TextChanged =" TextBoxTextChanged" GotFocus ="TextBoxGotFocus" LostFocus ="TextBoxLostFocus"  TabIndex =" 0"  AutomationProperties.AutomationId="ID_LBL_FILMING_CUSTOMCELLLAYOUT_COLUMNNUMBER" VerticalAlignment="Center" Height ="30" Width="70" Style="{DynamicResource Style_TextBox_Common_CSW_Default}">
+                    </TextBox>
+              
+
+            </Grid>
+
+        </Grid>
+        <Grid Grid.Row="5" Margin="7,0,7,0" VerticalAlignment="Top" Height="Auto">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition ></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column ="0">
+                <Button Name="applySettingButton" Margin="0,0,10,0"  TabIndex ="2" HorizontalAlignment="Left"  ToolTipService.ShowOnDisabled ="True"  AutomationProperties.AutomationId="ID_BTN_FILMING_CUSTOMCELLLAYOUT_APPLY" Content="{DynamicResource UID_Filming_Apply}"  Click="ApplySettingButtonClick"  Style="{DynamicResource Style_Button_Common_CSW_Default}" Width="80"  Height="30" >
+                </Button>
+            </Grid>
+            <Grid Grid.Column="1">
+                <Grid Name="applySettingGrid" Margin="0">
+                    <Button Panel.ZIndex =" 10" Margin="0" Name="preSettingButton"  TabIndex =" 3" HorizontalAlignment="Left"  ToolTipService.ShowOnDisabled ="True"  AutomationProperties.AutomationId="ID_BTN_FILMING_CUSTOMCELLLAYOUT_PRESET"   Click="OnCurrentPresetClick"  Style="{DynamicResource Style_Button_Common_CSW_Left}" Width="120"  Height="30" >
+                    </Button>
+                    <ComboBox  Panel.ZIndex =" 5" Margin ="0" SelectedIndex="0"   HorizontalAlignment="Left" ToolTip="{DynamicResource UID_Filming_ComboBox_ApplytoLayoutToolTip}"
+                                           Name="cmbPresetLayout" AutomationProperties.AutomationId="ID_CMB_FILMING_PRESETLAYOUT" 
+                                           Style="{DynamicResource Style_ComboBox_Common_CSW_Layout}" 
+                                           ItemContainerStyle="{DynamicResource Style_ComboBox_Common_ToolBar_Item}" Width="140" Height ="30"
+                                           Tag="{Binding ElementName=presetLayoutButton}"
+                                           Focusable="False"
+                                           Filming:ToolPanelComboBoxHelper.BoundToRadioButtonProperty="True" 
+                                           SelectionChanged="OnSelectionChanged"
+                                          >                      
+                    </ComboBox>
+                </Grid>
+            </Grid>
+             <Grid Grid.Column="2">
+                <Button Name="cancelSettingButton" TabIndex =" 4" HorizontalAlignment="Right" AutomationProperties.AutomationId="ID_BTN_FILMING_CUSTOMCELLLAYOUT_CANCEL" Content="{DynamicResource UID_Filming_Cancel}" Width="80" Height="30" Click="CancelSettingButtonClick" Style="{DynamicResource Style_Button_Common_CSW_Default}"></Button>
+            </Grid>
+        </Grid>
+    </Grid>
+        <!--<Views:ProtocolBindingLayoutControl Grid.Column="1" Width="0">
+            
+        </Views:ProtocolBindingLayoutControl>-->
+    </Grid>
+    
+</UserControl>

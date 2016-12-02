@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="Mcsf::FilmingPrintJob" Collapsed="true">
+    <Position X="16.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>V+dN5IT9vC79m/t9sZR2xMv4q33ve8rO5G2+3l/1/tc=</HashCode>
+      <FileName>E:\UIH\MAIN\Features\McsfFilming\McsfFilmingContainee\include\FilmingJob.pb.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Mcsf::FilmingPrintJob_ImageBox" Collapsed="true">
+    <Position X="13.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>oDA2QASUgEIOGKNJAZAiCAIIAh0FAAIlRUhkDBZARAE=</HashCode>
+      <FileName>E:\UIH\MAIN\Features\McsfFilming\McsfFilmingContainee\include\FilmingJob.pb.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Mcsf::FilmingPrintJob_FilmBox" Collapsed="true">
+    <Position X="18.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAADQAAKAKBMEiNJA/ECACIJAw8BIAKaZQAgTFZAUAQ=</HashCode>
+      <FileName>E:\UIH\MAIN\Features\McsfFilming\McsfFilmingContainee\include\FilmingJob.pb.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Mcsf::FilmingPrintJobQueue" Collapsed="true">
+    <Position X="15" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAADAAAAAAAMUCJIAYAAAAIIAAUFAAIAREAgBBJAQAA=</HashCode>
+      <FileName>E:\UIH\MAIN\Features\McsfFilming\McsfFilmingContainee\include\FilmingJob.pb.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Mcsf::FilmingJobStatus" Collapsed="true">
+    <Position X="15" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BBBEEEAAAAgMESJYI4AMIAMIABUBEAIEwAAwBBJAQKA=</HashCode>
+      <FileName>E:\UIH\MAIN\Features\McsfFilming\McsfFilmingContainee\include\FilmingJob.pb.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Mcsf::FilmingHistoryJobQueryCondition" Collapsed="true">
+    <Position X="13.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABEAACgBCANErZYAZAOgEO4AF2BAgIAwAI8RBJAQIA=</HashCode>
+      <FileName>E:\UIH\MAIN\Features\McsfFilming\McsfFilmingContainee\include\FilmingJob.pb.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="McsfFilmingAutoJobCreater">
+    <Position X="0.5" Y="0.5" Width="5.75" />
+    <TypeIdentifier>
+      <HashCode>AgEEAAiAUAwAzAAIIAiAACAACCCNRAAAAAMCEIAgAIA=</HashCode>
+      <FileName>E:\UIH\MAIN\Features\McsfFilming\include\mcsf_filming_auto_job_creater.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="McsfPrinterParametersConfig">
+    <Position X="6.5" Y="2.75" Width="6.25" />
+    <TypeIdentifier>
+      <HashCode>AAEAAQAAABCAAAAsEAAAAAAAABAAAAEAAAACCJAAAAA=</HashCode>
+      <FileName>include\mcsf_filming_auto_printer_parameters_config.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="Mcsf::StaticDescriptorInitializer_FilmingJob_2eproto" Collapsed="true">
+    <Position X="13.25" Y="2.75" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>E:\UIH\MAIN\Features\McsfFilming\McsfFilmingContainee\src\FilmingJob.pb.cc</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="McsfDicomPacsNodeEntry">
+    <Position X="6.5" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAGAAAAAAAAAgAAABAIAAAA=</HashCode>
+      <FileName>include\mcsf_filming_auto_printer_parameters_config.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Enum Name="Mcsf::FilmingPrintJob_Orientation" Collapsed="true">
+    <Position X="13.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAEA=</HashCode>
+      <FileName>E:\UIH\MAIN\Features\McsfFilming\McsfFilmingContainee\include\FilmingJob.pb.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Mcsf::FilmingPrintJob_Polarity" Collapsed="true">
+    <Position X="15" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAACAAAAAAAAAAAAACAAAAAAAAAAAAA=</HashCode>
+      <FileName>E:\UIH\MAIN\Features\McsfFilming\McsfFilmingContainee\include\FilmingJob.pb.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Mcsf::FilmingPrintJob_BorderDensity" Collapsed="true">
+    <Position X="16.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAEAAA=</HashCode>
+      <FileName>E:\UIH\MAIN\Features\McsfFilming\McsfFilmingContainee\include\FilmingJob.pb.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Mcsf::FilmingPrintJob_EmptyImageDensity" Collapsed="true">
+    <Position X="18.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>E:\UIH\MAIN\Features\McsfFilming\McsfFilmingContainee\include\FilmingJob.pb.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Mcsf::FilmingPrintJob_PrintPriority" Collapsed="true">
+    <Position X="16.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAAAAAAIAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>E:\UIH\MAIN\Features\McsfFilming\McsfFilmingContainee\include\FilmingJob.pb.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Mcsf::FilmingPrintJob_PrintTiming" Collapsed="true">
+    <Position X="18.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAgAAAAAAAA=</HashCode>
+      <FileName>E:\UIH\MAIN\Features\McsfFilming\McsfFilmingContainee\include\FilmingJob.pb.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Mcsf::JobStatus" Collapsed="true">
+    <Position X="13.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAIBAAAAAACAAAAAAAQAAAAAAAAACAAAAAAAA=</HashCode>
+      <FileName>E:\UIH\MAIN\Features\McsfFilming\McsfFilmingContainee\include\FilmingJob.pb.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="LAYOUT_TYPE_ENUM" Collapsed="true">
+    <Position X="15" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAAgAAAAAAgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>E:\UIH\MAIN\Features\McsfFilming\include\mcsf_filming_auto_config.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="BORDER_DENSITY_ENUM" Collapsed="true">
+    <Position X="13.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>E:\UIH\MAIN\Features\McsfFilming\include\mcsf_filming_auto_config.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="PRINT_PRIORITY_ENUM" Collapsed="true">
+    <Position X="16.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>E:\UIH\MAIN\Features\McsfFilming\include\mcsf_filming_auto_config.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="EMPTY_IMAGE_DENSITY_ENUM" Collapsed="true">
+    <Position X="15" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>E:\UIH\MAIN\Features\McsfFilming\include\mcsf_filming_auto_config.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Microsoft YaHei" Size="9" />
+</ClassDiagram>

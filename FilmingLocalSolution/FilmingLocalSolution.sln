@@ -1,0 +1,144 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{84C86C81-317C-424D-B610-35C50D3003D6}"
+	ProjectSection(SolutionItems) = preProject
+		FilmingLocalSolution.vsmdi = FilmingLocalSolution.vsmdi
+		Local.testsettings = Local.testsettings
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIH.Mcsf.Filming.DataModel", "..\UIH.Mcsf.Filming.DataModel\UIH.Mcsf.Filming.DataModel.csproj", "{DA1D05EA-2679-49E9-8DBA-0A1EE9E50405}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIH.Mcsf.Filming.DataModel.UT", "..\UIH.Mcsf.Filming.DataModel.UT\UIH.Mcsf.Filming.DataModel.UT.csproj", "{948D331F-2FB6-4520-95C5-948B3102C20E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIH.Mcsf.Filming.Wrapper", "..\UIH.Mcsf.Filming.Wrapper\UIH.Mcsf.Filming.Wrapper.csproj", "{CF274C52-06FE-4D3A-BEC9-89190424B34D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIH.Mcsf.Filming.TestApplication", "..\UIH.Mcsf.Filming.TestApplication\UIH.Mcsf.Filming.TestApplication.csproj", "{6A65B119-83BF-4AB3-B28D-3610AFABF3B4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Reference Projects", "Reference Projects", "{6ACCF59C-E3E9-4455-99DE-5F3D234D9209}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIH.Mcsf.Filming.Configure", "..\UIH.Mcsf.Filming.Configure\UIH.Mcsf.Filming.Configure.csproj", "{6E737007-9A79-49CA-A966-4E6DD5E40EB4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIH.Mcsf.Filming.Interface", "..\UIH.Mcsf.Filming.Interface\UIH.Mcsf.Filming.Interface.csproj", "{548EEFF3-EA2A-4ABA-BD93-224E6D00FF74}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIH.Mcsf.Filming.Utility", "..\UIH.Mcsf.Filming.Utility\UIH.Mcsf.Filming.Utility.csproj", "{B66564F2-AB17-4828-9C1B-DA1667445C3A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIH.Mcsf.Filming.Widgets", "..\UIH.Mcsf.Filming.Widgets\UIH.Mcsf.Filming.Widgets.csproj", "{34E04ECD-27C3-48E1-92AD-2D8B78954951}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIH.Mcsf.Filming.DemoViewModel", "..\UIH.Mcsf.Filming.DemoViewModel\UIH.Mcsf.Filming.DemoViewModel.csproj", "{E5C855D2-26C4-4D2D-B049-3A90A1788966}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MEFViewer", "MEFViewer", "{17180305-BD0D-4656-A6A2-7D6170CF928A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MEFViewer", "..\MEFViewer\MEFViewer.csproj", "{F1BDE4BB-5DE5-4090-98E5-776952F4950E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIH.Mcsf.Filming.DemoView", "..\UIH.Mcsf.Filming.DemoView\UIH.Mcsf.Filming.DemoView.csproj", "{3C2ECBDF-787A-4372-AD7C-BDDB5292753F}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 12
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://tfs:8080/tfs/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = ..\\UIH.Mcsf.Filming.DataModel\\UIH.Mcsf.Filming.DataModel.csproj
+		SccProjectName1 = ../UIH.Mcsf.Filming.DataModel
+		SccLocalPath1 = ..\\UIH.Mcsf.Filming.DataModel
+		SccProjectUniqueName2 = ..\\UIH.Mcsf.Filming.DataModel.UT\\UIH.Mcsf.Filming.DataModel.UT.csproj
+		SccProjectName2 = ../UIH.Mcsf.Filming.DataModel.UT
+		SccLocalPath2 = ..\\UIH.Mcsf.Filming.DataModel.UT
+		SccProjectUniqueName3 = ..\\UIH.Mcsf.Filming.Wrapper\\UIH.Mcsf.Filming.Wrapper.csproj
+		SccProjectName3 = ../UIH.Mcsf.Filming.Wrapper
+		SccLocalPath3 = ..\\UIH.Mcsf.Filming.Wrapper
+		SccProjectUniqueName4 = ..\\UIH.Mcsf.Filming.TestApplication\\UIH.Mcsf.Filming.TestApplication.csproj
+		SccProjectName4 = ../UIH.Mcsf.Filming.TestApplication
+		SccLocalPath4 = ..\\UIH.Mcsf.Filming.TestApplication
+		SccProjectUniqueName5 = ..\\UIH.Mcsf.Filming.Configure\\UIH.Mcsf.Filming.Configure.csproj
+		SccProjectTopLevelParentUniqueName5 = FilmingLocalSolution.sln
+		SccProjectName5 = ../UIH.Mcsf.Filming.Configure
+		SccLocalPath5 = ..\\UIH.Mcsf.Filming.Configure
+		SccProjectUniqueName6 = ..\\UIH.Mcsf.Filming.Interface\\UIH.Mcsf.Filming.Interface.csproj
+		SccProjectTopLevelParentUniqueName6 = FilmingLocalSolution.sln
+		SccProjectName6 = ../UIH.Mcsf.Filming.Interface
+		SccLocalPath6 = ..\\UIH.Mcsf.Filming.Interface
+		SccProjectUniqueName7 = ..\\UIH.Mcsf.Filming.Utility\\UIH.Mcsf.Filming.Utility.csproj
+		SccProjectTopLevelParentUniqueName7 = FilmingLocalSolution.sln
+		SccProjectName7 = ../UIH.Mcsf.Filming.Utility
+		SccLocalPath7 = ..\\UIH.Mcsf.Filming.Utility
+		SccProjectUniqueName8 = ..\\UIH.Mcsf.Filming.Widgets\\UIH.Mcsf.Filming.Widgets.csproj
+		SccProjectTopLevelParentUniqueName8 = FilmingLocalSolution.sln
+		SccProjectName8 = ../UIH.Mcsf.Filming.Widgets
+		SccLocalPath8 = ..\\UIH.Mcsf.Filming.Widgets
+		SccProjectUniqueName9 = ..\\UIH.Mcsf.Filming.DemoViewModel\\UIH.Mcsf.Filming.DemoViewModel.csproj
+		SccProjectName9 = ../UIH.Mcsf.Filming.DemoViewModel
+		SccLocalPath9 = ..\\UIH.Mcsf.Filming.DemoViewModel
+		SccProjectUniqueName10 = ..\\MEFViewer\\MEFViewer.csproj
+		SccProjectTopLevelParentUniqueName10 = FilmingLocalSolution.sln
+		SccProjectName10 = ../MEFViewer
+		SccLocalPath10 = ..\\MEFViewer
+		SccProjectUniqueName11 = ..\\UIH.Mcsf.Filming.DemoView\\UIH.Mcsf.Filming.DemoView.csproj
+		SccProjectName11 = ../UIH.Mcsf.Filming.DemoView
+		SccLocalPath11 = ..\\UIH.Mcsf.Filming.DemoView
+	EndGlobalSection
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = FilmingLocalSolution.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DA1D05EA-2679-49E9-8DBA-0A1EE9E50405}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA1D05EA-2679-49E9-8DBA-0A1EE9E50405}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA1D05EA-2679-49E9-8DBA-0A1EE9E50405}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA1D05EA-2679-49E9-8DBA-0A1EE9E50405}.Release|Any CPU.Build.0 = Release|Any CPU
+		{948D331F-2FB6-4520-95C5-948B3102C20E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{948D331F-2FB6-4520-95C5-948B3102C20E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{948D331F-2FB6-4520-95C5-948B3102C20E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{948D331F-2FB6-4520-95C5-948B3102C20E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF274C52-06FE-4D3A-BEC9-89190424B34D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF274C52-06FE-4D3A-BEC9-89190424B34D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF274C52-06FE-4D3A-BEC9-89190424B34D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF274C52-06FE-4D3A-BEC9-89190424B34D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A65B119-83BF-4AB3-B28D-3610AFABF3B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A65B119-83BF-4AB3-B28D-3610AFABF3B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A65B119-83BF-4AB3-B28D-3610AFABF3B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A65B119-83BF-4AB3-B28D-3610AFABF3B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E737007-9A79-49CA-A966-4E6DD5E40EB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E737007-9A79-49CA-A966-4E6DD5E40EB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E737007-9A79-49CA-A966-4E6DD5E40EB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E737007-9A79-49CA-A966-4E6DD5E40EB4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{548EEFF3-EA2A-4ABA-BD93-224E6D00FF74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{548EEFF3-EA2A-4ABA-BD93-224E6D00FF74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{548EEFF3-EA2A-4ABA-BD93-224E6D00FF74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{548EEFF3-EA2A-4ABA-BD93-224E6D00FF74}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B66564F2-AB17-4828-9C1B-DA1667445C3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B66564F2-AB17-4828-9C1B-DA1667445C3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B66564F2-AB17-4828-9C1B-DA1667445C3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B66564F2-AB17-4828-9C1B-DA1667445C3A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34E04ECD-27C3-48E1-92AD-2D8B78954951}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34E04ECD-27C3-48E1-92AD-2D8B78954951}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34E04ECD-27C3-48E1-92AD-2D8B78954951}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34E04ECD-27C3-48E1-92AD-2D8B78954951}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5C855D2-26C4-4D2D-B049-3A90A1788966}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5C855D2-26C4-4D2D-B049-3A90A1788966}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5C855D2-26C4-4D2D-B049-3A90A1788966}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5C855D2-26C4-4D2D-B049-3A90A1788966}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1BDE4BB-5DE5-4090-98E5-776952F4950E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1BDE4BB-5DE5-4090-98E5-776952F4950E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1BDE4BB-5DE5-4090-98E5-776952F4950E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C2ECBDF-787A-4372-AD7C-BDDB5292753F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C2ECBDF-787A-4372-AD7C-BDDB5292753F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C2ECBDF-787A-4372-AD7C-BDDB5292753F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C2ECBDF-787A-4372-AD7C-BDDB5292753F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6E737007-9A79-49CA-A966-4E6DD5E40EB4} = {6ACCF59C-E3E9-4455-99DE-5F3D234D9209}
+		{548EEFF3-EA2A-4ABA-BD93-224E6D00FF74} = {6ACCF59C-E3E9-4455-99DE-5F3D234D9209}
+		{B66564F2-AB17-4828-9C1B-DA1667445C3A} = {6ACCF59C-E3E9-4455-99DE-5F3D234D9209}
+		{34E04ECD-27C3-48E1-92AD-2D8B78954951} = {6ACCF59C-E3E9-4455-99DE-5F3D234D9209}
+		{F1BDE4BB-5DE5-4090-98E5-776952F4950E} = {17180305-BD0D-4656-A6A2-7D6170CF928A}
+	EndGlobalSection
+EndGlobal

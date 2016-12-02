@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="UIH.Mcsf.Filming.Card.View.ArrangePanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:ViewModel="clr-namespace:UIH.Mcsf.Filming.Card.ViewModel"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <!--<UserControl.DataContext>
+        <ViewModel:ViewModel />
+    </UserControl.DataContext>-->
+    <StackPanel>
+        <Label>ArrangePanel</Label>
+        <StackPanel Orientation="Horizontal">
+            <Button>Add Film</Button>
+            <ComboBox ItemsSource="{Binding Path=DisplayModes, Mode=OneWay}"
+                      SelectedItem="{Binding SelectedDisplayMode}" />
+        </StackPanel></StackPanel>
+</UserControl>

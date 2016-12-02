@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3C2ECBDF-787A-4372-AD7C-BDDB5292753F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UIH.Mcsf.Filming.DemoView</RootNamespace>
+    <AssemblyName>UIH.Mcsf.Filming.DemoView</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\..\UIH\bin_debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="UIAutomationTypes" />
+    <Reference Include="UIH.Mcsf.Viewer.Control" />
+    <Reference Include="UIH.Mcsf.Viewer.Interface" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BoardControl.xaml.cs">
+      <DependentUpon>BoardControl.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CardControl.xaml.cs">
+      <DependentUpon>CardControl.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ControlPanel.xaml.cs">
+      <DependentUpon>ControlPanel.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ImageLoadPanel.xaml.cs">
+      <DependentUpon>ImageLoadPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="InfoPanel.xaml.cs">
+      <DependentUpon>InfoPanel.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PageControl.xaml.cs">
+      <DependentUpon>PageControl.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TitleBar.xaml.cs">
+      <DependentUpon>TitleBar.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="BoardControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="CardControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="ControlPanel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="ImageLoadPanel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="InfoPanel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="PageControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\UIH.Mcsf.Filming.Configure\UIH.Mcsf.Filming.Configure.csproj">
+      <Project>{6E737007-9A79-49CA-A966-4E6DD5E40EB4}</Project>
+      <Name>UIH.Mcsf.Filming.Configure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UIH.Mcsf.Filming.DataModel\UIH.Mcsf.Filming.DataModel.csproj">
+      <Project>{DA1D05EA-2679-49E9-8DBA-0A1EE9E50405}</Project>
+      <Name>UIH.Mcsf.Filming.DataModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UIH.Mcsf.Filming.DemoViewModel\UIH.Mcsf.Filming.DemoViewModel.csproj">
+      <Project>{E5C855D2-26C4-4D2D-B049-3A90A1788966}</Project>
+      <Name>UIH.Mcsf.Filming.DemoViewModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UIH.Mcsf.Filming.Interface\UIH.Mcsf.Filming.Interface.csproj">
+      <Project>{548EEFF3-EA2A-4ABA-BD93-224E6D00FF74}</Project>
+      <Name>UIH.Mcsf.Filming.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UIH.Mcsf.Filming.Widgets\UIH.Mcsf.Filming.Widgets.csproj">
+      <Project>{34E04ECD-27C3-48E1-92AD-2D8B78954951}</Project>
+      <Name>UIH.Mcsf.Filming.Widgets</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UIH.Mcsf.Filming.Wrapper\UIH.Mcsf.Filming.Wrapper.csproj">
+      <Project>{CF274C52-06FE-4D3A-BEC9-89190424B34D}</Project>
+      <Name>UIH.Mcsf.Filming.Wrapper</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="TitleBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

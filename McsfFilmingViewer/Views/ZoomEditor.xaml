@@ -1,0 +1,18 @@
+﻿<UserControl x:Class="UIH.Mcsf.Filming.Views.ZoomEditor"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             xmlns:Filming="clr-namespace:UIH.Mcsf.Filming"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" 
+             d:DesignHeight="25" d:DesignWidth="300">
+    <StackPanel Orientation="Horizontal">
+        <Label>Zoom</Label>
+        <TextBox Name="scaleTextBox" Text="1" GotFocus="scaleTextBox_GotFocus" KeyDown="scaleTextBox_KeyDown">
+            <i:Interaction.Behaviors>
+                <Filming:NumericTextBoxBehavior MaxValue="15" MinValue="0.10" />
+            </i:Interaction.Behaviors>
+        </TextBox>
+    </StackPanel>
+</UserControl>

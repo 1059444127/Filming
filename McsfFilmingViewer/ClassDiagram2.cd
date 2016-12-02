@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Mcsf.FilmingJob" Collapsed="true">
+    <Position X="11.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAEAAAUEAAAANAAAEAAAAAAAAEQSAAAAAAACAAAAA=</HashCode>
+      <FileName>FilmingJob.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Mcsf.FilmingPrintJob" Collapsed="true">
+    <Position X="14.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>9WLVIKMztUHAwYAdgCH+BBHHHBRDiVMwwKCsDUDAqYE=</HashCode>
+      <FileName>FilmingJob.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Mcsf.FilmingPrintJobQueue" Collapsed="true">
+    <Position X="9.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>VGIAAAAgAEAAAAAEAAAgAAEgAAAFAAIwAAAADAAAgAA=</HashCode>
+      <FileName>FilmingJob.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Mcsf.FilmingJobStatus" Collapsed="true">
+    <Position X="13" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>VGIEAAAAAlAAQAAQAAAiAAEAAgABAgIwCAAADABIgJA=</HashCode>
+      <FileName>FilmingJob.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Mcsf.FilmingHistoryJobQueryCondition" Collapsed="true">
+    <Position X="9.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>VWAMAAIgBUACQAAAAAAyAAGAEAADAAIwACAkDADAgIA=</HashCode>
+      <FileName>FilmingJob.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UIH.Mcsf.Viewer.FilmingWindow" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <NestedTypes>
+      <Delegate Name="UIH.Mcsf.Viewer.FilmingWindow.MethodInvoker" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>FilmingWindow.xaml.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAED0GYEwCERiggFBQKABKYyIBuDQYQ0BphNX4ERjg=</HashCode>
+      <FileName>FilmingWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UIH.Mcsf.Viewer.SaveImagesCallBackHandler" Collapsed="true">
+    <Position X="5.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>FilmingWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UIH.Mcsf.Filming.PeerNode" Collapsed="true">
+    <Position X="5.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAIAAAAAgAAABAAAAAAggAAAAAAAAAAAAAA=</HashCode>
+      <FileName>mcsf_filming_config_parser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UIH.Mcsf.Filming.Printer" Collapsed="true">
+    <Position X="4" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAASAQQAAAAABgABAAABEAAAAAAAAAAAEAABAABAg=</HashCode>
+      <FileName>mcsf_filming_config_parser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UIH.Mcsf.Filming.FilmingViewerCmdHandler" Collapsed="true">
+    <Position X="5.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACEAAAAAAAAAAAAQAAAAAAAAAAACAACEAAEAAEAAAAA=</HashCode>
+      <FileName>mcsf_filming_viewer_command_handler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UIH.Mcsf.Filming.FilmingViewerContainee" Collapsed="true">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAQAAAAAAAAAAAAAAAAAICAECIAABAAAAAQ=</HashCode>
+      <FileName>mcsf_filming_viewer_containee_fe.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UIH.Mcsf.Filming.Logger" Collapsed="true">
+    <Position X="4" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AggAAABAAmAAAAAAAAAAAAAAIAAIAAAAQAgEACAAABA=</HashCode>
+      <FileName>mcsf_filming_viewer_logger.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="Mcsf.JobStatus" Collapsed="true">
+    <Position X="13" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAIBAAAAAACAAAAAAAQAAAAAAAAACAAAAAAAA=</HashCode>
+      <FileName>FilmingJob.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="UIH.Mcsf.Filming.CommandID" Collapsed="true">
+    <Position X="0.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAADIAiAgABACBEEIAAAAAAAQQAQAEAAEExAAA=</HashCode>
+      <FileName>mcsf_filming_viewer_containee_fe.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="UIH.Mcsf.Filming.CommandType" Collapsed="true">
+    <Position X="2.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>mcsf_filming_viewer_containee_fe.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Microsoft YaHei" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,143 @@
+﻿<UserControl x:Class="UIH.Mcsf.Filming.InterleavedDeleteWindow"
+   x:Name="interleavedDeleteWindow"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:extTool="clr-namespace:Microsoft.Windows.Controls;assembly=WPFToolkit.Extended"
+    xmlns:validation_rules="clr-namespace:UIH.Mcsf.Filming.ValidationRules"
+             xmlns:Filming="clr-namespace:UIH.Mcsf.Filming" mc:Ignorable="d"
+	Width="430" Height="166" AutomationProperties.AutomationId="ID_EX_FILMING_INTERLEAVEDDELETE_WINDOW">
+    <ContentControl.Resources>
+        <ResourceDictionary  >
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="./Themes/ButtonSpinnerDictionary.xaml" />
+                <ResourceDictionary Source="/UIH.Mcsf.CommonControlTheme;component/CommonControl/Public.xaml"/>
+                <ResourceDictionary Source="/UIH.Mcsf.CommonControlTheme;component/CommonControl/Common.xaml" />
+                <ResourceDictionary Source="/UIH.Mcsf.CommonControlTheme;component/CommonControl/TimePicker.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </ContentControl.Resources>
+    <UserControl.DataContext>
+        <Filming:InterleavedDeleteViewModel
+            x:Name="ViewModel" />
+    </UserControl.DataContext>
+    <Grid x:Name ="InterleavedDeleteGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="23"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row ="1">
+            <StackPanel
+                HorizontalAlignment="Left"
+                Orientation="Horizontal">
+                <Label
+                    Grid.Column="0"
+                    Content="{DynamicResource UID_Filming_Every}"
+                    HorizontalAlignment="Right"
+                    HorizontalContentAlignment="Right"
+                    VerticalAlignment="Center"
+                    VerticalContentAlignment="Center"
+                    Margin="0,0,10,0"
+                    Width="88"
+                    Height="30"
+                    FontFamily="{DynamicResource UID_Filming_Font_Family}"
+                    Style="{DynamicResource Style_Label_Common_CSW_Default}" />
+                <extTool:DecimalUpDown
+					PreviewMouseDown="EverySpinButton_PreviewMouseDown"
+                    DataObject.Pasting="firstImageSpinButton_Pasting"
+                    PreviewKeyDown="firstImageSpinButton_PreviewKeyDown"
+                    PreviewTextInput="firstImageSpinButton_PreviewTextInput"                    
+                    Style="{DynamicResource Style_DecimalUpDown_Common_CSW_Default}"
+                    Grid.Column="1"
+                    x:Name="EveryTextBox"
+                    AutomationProperties.AutomationId="ID_EX_FILMING_INTERLEAVEDDELETE_EVERY"
+                    IsEditable="True"
+                    Height="30"
+                    Width="83"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+					Focusable="True"
+                    DefaultValue="2"
+                    Minimum="1">
+                    <!--Maximum="{Binding Path=MaxEvery, Mode=OneWay}">-->
+                    <extTool:DecimalUpDown.Value>
+                        <Binding
+                            Path="Every"
+                            Mode="TwoWay"
+                            UpdateSourceTrigger="PropertyChanged"
+                            NotifyOnValidationError="False"
+                            ValidatesOnExceptions="False">
+                            <Binding.ValidationRules>
+                                <validation_rules:CustomExceptionValidationRule
+                                    ValidatesOnTargetUpdated="True"
+                                    ValidationStep="RawProposedValue" />
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </extTool:DecimalUpDown.Value>
+                </extTool:DecimalUpDown>
+            </StackPanel>
+
+            <StackPanel
+                HorizontalAlignment="Left"
+                Orientation="Horizontal"
+                Margin="200, 0, 10, 0"
+                >
+                <Label
+                    Content="{DynamicResource UID_Filming_LeftImages}"
+                    HorizontalAlignment="Right"
+                    HorizontalContentAlignment="Right"
+                    VerticalAlignment="Center"
+                    VerticalContentAlignment="Center"
+                    Margin="0, 0, 10, 0"
+                    Height="30"
+                    FontFamily="{DynamicResource UID_Filming_Font_Family}"
+                    Style="{DynamicResource Style_Label_Common_CSW_Default}" />
+
+                <Label
+                    Grid.Column="1"
+                    Width="70"
+                    Height="30"
+                    x:Name="ImageNumbersLabel"
+                    AutomationProperties.AutomationId="ID_LBL_FILMING_INTERLEAVEDDELETE_IMAGENUMBERS"
+                    Content="{Binding Path=ImageNumbers}"
+                    HorizontalAlignment="Left"
+                    HorizontalContentAlignment="Left"
+                    VerticalAlignment="Center"
+                    VerticalContentAlignment="Center"/>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="3">
+            <StackPanel
+            HorizontalAlignment="Center"
+            Orientation="Horizontal">
+                <Button
+                Content="{DynamicResource UID_Filming_OK}"
+                AutomationProperties.AutomationId="ID_BTN_FILMING_INTERLEAVED_DELETEOK"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center"
+                Height="30"
+                Width="102"
+                Margin="0, 0, 102, 0"
+                Click="OkClick"
+                FontFamily="{DynamicResource UID_Filming_Font_Family}"
+                Style="{DynamicResource Style_Button_Common_CSW_Default}" 
+				Focusable = "True"
+				IsDefault= "True"/>
+                <Button
+                Content="{DynamicResource UID_Filming_Cancel}"
+                AutomationProperties.AutomationId="ID_BTN_FILMING_INTERLEAVED_DELETECANCEL"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Center"
+                Height="30"
+                Width="102"
+                Click="CancelClick"
+                FontFamily="{DynamicResource UID_Filming_Font_Family}"
+                Style="{DynamicResource Style_Button_Common_CSW_Default}" />
+            </StackPanel>
+        </Grid>
+    </Grid>
+</UserControl>

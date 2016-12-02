@@ -1,0 +1,77 @@
+﻿<UserControl x:Class="UIH.Mcsf.Filming.Views.ProtocolBindingLayoutControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+             mc:Ignorable="d" 
+             d:DesignHeight="374" d:DesignWidth="300"
+             Width="338" Height="474"
+             >
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/UIH.Mcsf.CommonControlTheme;component/CommonControl/Public.xaml"/>
+                <ResourceDictionary Source="/UIH.Mcsf.CommonControlTheme;component/Image/ImageSource.xaml"/>
+                <ResourceDictionary Source="/UIH.Mcsf.CommonControlTheme;component/CommonControl/PublicDataGridStyle.xaml"/>
+                <!--<ResourceDictionary Source="/UIH.Mcsf.CommonControlTheme;component/CommonControl/PRSecondary.xaml"/>-->
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <DockPanel x:Name="MainDockPanel" Margin="0,5,0,0" >
+    	<DockPanel x:Name="OperationDockPanel" Height="35" DockPanel.Dock="Top" >
+            <Button x:Name="ResetButton" DockPanel.Dock="Right" Margin="7,0,0,0" HorizontalAlignment="Right" Command="{Binding ResetProtocolLayoutCommand}" Style="{DynamicResource Style_Button_Common_CSW_Default}">
+                <Button.Content>
+                    <Image Source="{DynamicResource reset_dr}" Margin="0,0,0,0"  Stretch="Uniform"/>
+                </Button.Content>
+            </Button>
+            <Border CornerRadius="3" Height="30" >
+                <DockPanel x:Name="SearchDockPanel" Background="#D6D6D6">
+                    <!--<Button x:Name="SearchButton"  DockPanel.Dock="Right" Command="{Binding SearchCommand}" CommandParameter="{Binding ElementName=SearchTextBox, Path=Text}"                                 
+                            Background="#D6D6D6"
+                            BorderBrush="{x:Null}"
+                            FocusVisualStyle="{x:Null}"
+                            BorderThickness="0"> 
+                        <Button.Content>-->
+                    <Image x:Name="searchImage" Source="{DynamicResource search}" DockPanel.Dock="Right" Height="20" Width="20" Margin="0,0,5,0"  Stretch="Uniform" />
+                        <!--</Button.Content>
+                    </Button>-->
+                    <TextBox x:Name="SearchTextBox" Background="#D6D6D6" BorderThickness="0" VerticalAlignment="Center" TextWrapping="Wrap" AcceptsReturn="False">
+                        <!--<TextBox.InputBindings>
+                            <KeyBinding Key="Enter" Command="{Binding SearchCommand}" CommandParameter="{Binding Path=Text, RelativeSource={RelativeSource AncestorType={x:Type TextBox}}}"></KeyBinding>
+                        </TextBox.InputBindings>-->
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="TextChanged">
+                                <i:InvokeCommandAction Command="{Binding SearchCommand}"
+                                                       CommandParameter="{Binding Text, ElementName=SearchTextBox}" />
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                    </TextBox>
+    		    </DockPanel>
+            </Border>
+        </DockPanel>
+    	<Grid x:Name="ConfirmGrid" DockPanel.Dock="Bottom" Height="75" Margin="0" VerticalAlignment="Bottom" >
+            <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="60" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Button x:Name="ConfirmButton" AutomationProperties.AutomationId="ID_BTN_FILMING_CELLPROTOCOLSCONFIRM" Grid.Column="0"   Content="{DynamicResource UID_Filming_Save}" IsEnabled="{Binding IsProtocolChanged}" Width="60" VerticalAlignment="Center" HorizontalAlignment="Right" d:LayoutOverrides="HorizontalMargin" Style="{DynamicResource Style_Button_Common_CSW_Default}" Click="ConfirmButton_Click" />
+            <Button x:Name="CancelButton" Grid.Column="2"  Content="{DynamicResource UID_Filming_Cancel}" Width="60"  HorizontalAlignment="Left" VerticalAlignment="Center" Click="CancelButton_OnClick" Style="{DynamicResource Style_Button_Common_CSW_Default}"/>
+    	</Grid>
+        <DataGrid Name="ProtocolDataGrid" AutomationProperties.AutomationId="ID_BTN_FILMING_CELLPROTOCOLSDATAGRID" SelectionUnit="FullRow" PreviewMouseMove="OnProtocolDataGridPreviewMouseMove" PreviewMouseLeftButtonDown="OnProtocolDataGridPreviewMouseLeftButtonDown" Background="#D6D6D6" ItemsSource="{Binding Protocols}" IsReadOnly="True" AutoGenerateColumns="False" Style="{DynamicResource Style_DataGrid_Common_CSW_Default}">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="SelectionChanged">
+                    <i:InvokeCommandAction Command="{Binding SelectionChangedCommand}"
+                                                   CommandParameter="{Binding SelectedItems, ElementName=ProtocolDataGrid}" />
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+            <DataGrid.Columns >
+                <DataGridTextColumn x:Name="NameUpperColumn" Width="*" Binding="{Binding NameUpper}" Header="{DynamicResource UID_Filming_Protocol_Name}"></DataGridTextColumn>
+                <DataGridTextColumn x:Name="NameColumn" Width="*" Binding="{Binding Name}" Header="{DynamicResource UID_Filming_Protocol_Name}" Visibility="Hidden"></DataGridTextColumn>
+                <DataGridTextColumn x:Name="LayoutColumn" Width="100" Binding="{Binding Layout}" Header="{DynamicResource UID_Filming_Layout}"></DataGridTextColumn>
+            </DataGrid.Columns>
+          </DataGrid>
+    </DockPanel>
+</UserControl>

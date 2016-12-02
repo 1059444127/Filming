@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{56AC66D6-8C1B-4B9B-B190-B50731DACF1C}</ProjectGuid>
+    <SccProjectName>SAK</SccProjectName>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccProvider>SAK</SccProvider>
+    <RootNamespace>McsfFilmingContainee_UT</RootNamespace>
+    <ProjectName>McsfFilmingServiceContainee_UT</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>..\..\..\..\UIH\bin_$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <TargetName>$(ProjectName)</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>..\..\..\..\UIH\bin\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <TargetName>$(ProjectName)</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>.\include;..\include;..\..\..\..\UIH\include\external\;..\..\..\..\UIH\include\mcs\;..\..\..\..\UIH\include\external\dcmtk-3.6.0\include;..\..\..\..\UIH\include\external\lib-mysql;..\..\..\..\UIH\include\external\libodb;..\..\..\..\UIH\include\external\libodb-mysql;..\..\..\..\UIH\include\external\libodb-boost;..\..\..\..\UIH\include\external\boost;..\McsfFilmingDB\include;..\McsfFilming\include;..\McsfFilmingContainee\include;..\McsfFilmingContainee\src;..\McsfFilming\src;..\McsfFilmingDB\src;..\McsfFilmingUtility\include</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>ULIB;WIN32;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <DisableSpecificWarnings>4244; 4267; 4068; 4482; 4512; 4125</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>..\..\..\..\UIH\lib_$(configuration)\external;..\..\..\..\UIH\lib_$(configuration)\mcs;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>gtestd.lib;ACE64d.lib;libprotobuf64d.lib;McsfLogger.lib;McsfSystemEnvironmentConfig.lib;McsfViewerBL.lib;McsfDBWrapper.lib;McsfFileParser.lib;McsfFilmingDB.lib;McsfFilming.lib;McsfNetBase.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ImportLibrary>
+      </ImportLibrary>
+      <ProgramDatabaseFile>$(OutDir)$(TargetName).pdb</ProgramDatabaseFile>
+    </Link>
+    <PreBuildEvent>
+      <Command>attrib -R $(TargetPath)  
+attrib -R $(TargetDir)..\lib_$(Configuration)\mcs\$(TargetName).lib   
+attrib -R $(TargetDir)..\lib_$(Configuration)\mcs\$(TargetName).exp  
+attrib -R $(TargetDir)$(TargetName).pdb  </Command>
+    </PreBuildEvent>
+    <PostBuildEvent>
+      <Command>del $(TargetDir)$(TargetName).lib</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>.\include;..\include;..\..\..\..\UIH\include\external\;..\..\..\..\UIH\include\mcs\;..\..\..\..\UIH\include\external\dcmtk-3.6.0\include;..\..\..\..\UIH\include\external\lib-mysql;..\..\..\..\UIH\include\external\libodb;..\..\..\..\UIH\include\external\libodb-mysql;..\..\..\..\UIH\include\external\libodb-boost;..\..\..\..\UIH\include\external\boost;..\McsfFilmingDB\include;..\McsfFilming\include;..\McsfFilmingContainee\include;..\McsfFilmingContainee\src;..\McsfFilming\src;..\McsfFilmingDB\src;..\McsfFilmingUtility\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>ULIB;WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <DisableSpecificWarnings>4244; 4267; 4068; 4482; 4512; 4125; 4996</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>..\..\..\..\UIH\lib\external;..\..\..\..\UIH\lib\mcs;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>gtest.lib;ACE64.lib;libprotobuf64.lib;McsfLogger.lib;McsfSystemEnvironmentConfig.lib;McsfViewerBL.lib;McsfDBWrapper.lib;McsfFileParser.lib;McsfFilmingDB.lib;McsfFilming.lib;McsfNetBase.lib;McsfFilmingUtility.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ImportLibrary>
+      </ImportLibrary>
+      <ProgramDatabaseFile>$(OutDir)$(TargetName).pdb</ProgramDatabaseFile>
+    </Link>
+    <PreBuildEvent>
+      <Command>attrib -R $(TargetPath)  
+attrib -R $(TargetDir)..\lib_$(Configuration)\mcs\$(TargetName).lib   
+attrib -R $(TargetDir)..\lib_$(Configuration)\mcs\$(TargetName).exp  
+attrib -R $(TargetDir)$(TargetName).pdb  </Command>
+    </PreBuildEvent>
+    <PostBuildEvent>
+      <Command>del $(TargetDir)$(TargetName).lib</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="mcsf_filming_containee_test_case.cpp" />
+    <ClCompile Include="mcsf_filming_containee_ut.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="mcsf_filming_containee_test_case.h" />
+    <ClInclude Include="resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="McsfFilmingContainee_UT.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

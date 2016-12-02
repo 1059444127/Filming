@@ -1,0 +1,41 @@
+package Mcsf; 
+import "FilmingJob.proto";
+
+message FilmingPrinterList
+{
+	message Printer
+	{
+		optional string printer_ID = 1;
+		optional string printer_AE = 2;
+		optional string printer_IP = 3;
+		optional int32 printer_port = 4;
+		optional string description = 5;
+		optional string printer_type = 6;
+		repeated string border_density = 7;
+		optional bool is_disable_new_VRs = 8;
+		repeated string layout = 9;
+		repeated string EmptyImageDensity = 10;
+		repeated string film_destination = 11;
+		repeated string film_size = 12;
+		optional bool is_implicit_only = 13;
+		repeated string magnification_type = 14;
+		optional int32 max_density = 15;
+		optional int64 max_PDU = 16;
+		repeated string medium_type = 17;
+		optional int32 min_density = 18;
+		optional bool is_omit_SOP_class_UID_from_create_response = 19;
+		optional bool is_presentation_LUT_match_required = 20;
+		optional bool is_presentation_LUT_in_film_session = 21;
+		repeated string resolution_ID = 22;
+		repeated string smoothing_type = 23;
+		optional bool is_support_12_bit = 24;
+		optional bool is_support_decimate_crop = 25;
+		optional bool is_support_image_size = 26;
+		optional bool is_support_presentation_LUT = 27;
+		optional bool is_support_trim = 28;
+		optional string RootDir = 29;
+	}
+	
+	optional FilmingJobStatus status = 1;
+	repeated Printer printer = 2;
+}

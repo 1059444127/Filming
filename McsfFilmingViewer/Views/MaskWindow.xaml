@@ -1,0 +1,15 @@
+﻿<Window x:Class="UIH.Mcsf.Filming.Views.MaskWindow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:Filming="clr-namespace:UIH.Mcsf.Filming" mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300" WindowStyle="None" ResizeMode="NoResize" AllowsTransparency="True">
+    <Grid>
+        <Border Name ="_maskBorder" AutomationProperties.AutomationId="ID_BRD_FILMING_MASK" Background="Black" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+            <Filming:PreFilmingProgressControl x:Name="ring"/>
+            <!--<ProgressBar Style="{DynamicResource Style_ProgressBar_CSW_DataGrid_LoginIcon}"/>-->
+            <!--Style="{DynamicResource Style_ProgressBar_CSW_DataGrid_LoginIco}"-->
+        </Border>
+    </Grid>
+</Window>

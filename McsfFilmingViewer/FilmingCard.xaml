@@ -1,0 +1,140 @@
+﻿<UserControl x:Class="UIH.Mcsf.Filming.FilmingCard"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:Filming="clr-namespace:UIH.Mcsf.Filming" 
+             xmlns:converter="clr-namespace:UIH.Mcsf.Filming.Converters"
+             xmlns:controls="http://UIH/Mcsf/Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="1023" d:DesignWidth="1900" 
+             Name="filmingCard" AutomationProperties.AutomationId="ID_EX_FILMING_CARD" Focusable="True">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/UIH.Mcsf.CommonControlTheme;component/CommonControl/Public.xaml"/>
+                <ResourceDictionary Source="/UIH.Mcsf.CommonControlTheme;component/Image/ImageSource.xaml"/>
+                <ResourceDictionary
+                    Source="/UIH.Mcsf.CommonControlTheme;component/CommonControl/Style_ContextMenu_CSW_CC_Default.xaml"/>
+                <ResourceDictionary Source="/UIH.Mcsf.CommonControlTheme;component/CommonControl/ProgressBarUIHStyleDefault.xaml"/>
+                <ResourceDictionary Source="/UIH.Mcsf.Filming.CardFE;component/mcsf_filming_window_resource.xaml"/>
+                <ResourceDictionary
+                    Source="/UIH.Mcsf.CommonControlTheme;component/CommonControl/TimePicker.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <converter:LoadingConverter
+                x:Key="LoadingConverter"></converter:LoadingConverter>
+            <Style TargetType="Button">
+                <Setter Property="Focusable"  Value="False"></Setter>
+            </Style>
+            <Style TargetType="RadioButton">
+                <Setter Property="Focusable"  Value="False"></Setter>
+            </Style>
+           
+        </ResourceDictionary>
+    </UserControl.Resources>
+    
+    <AdornerDecorator>
+        <Grid Name="mainGrid" UseLayoutRounding="True" controls:WindowHostManager.UseWindowHost="True"  Background="#FFBEBFBF">
+            <Grid Name="filmingCardGrid" MouseLeftButtonDown="OnFilmCardGridMouseLeftButtonDown" MouseDown="OnFilmingCardGridMouseDown"  MouseLeftButtonUp="OnFilmCardGridMouseRightButtonUp">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="20"></ColumnDefinition>
+                    <ColumnDefinition Width="364"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid Name="filmRegionGrid" AutomationProperties.AutomationId="ID_GRD_FILMING_FILMREGION" Background="Black" Grid.Column="0" HorizontalAlignment="Stretch">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition ></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Row="0" Grid.Column ="0"   Name ="filmPageGrid"  
+                          MouseMove="FilmPageGridMouseMove"  PreviewDragOver="FilmPageGridPreviewDragOver" PreviewMouseDown="OnFilmPageGridPreviewMouseDown" MouseUp="OnFilmPageGridMouseUp" SizeChanged="OnFilmCardSizeChanged">
+                       
+                        <!--<Filming:FilmingPageControl x:Name="defaultFilmingPageControl" Visibility="Hidden"  AutomationProperties.AutomationId="ID_EX_FILMING_PAGECONTROL" />-->
+                    </Grid>
+                    <Grid Grid.Row ="0" Grid.Column ="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            <ColumnDefinition Width="65"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <TextBox Grid.Row="0" BorderThickness="0"  Foreground="White"  Background="Transparent"  TextAlignment="Center" IsReadOnly ="True"  FontSize="16" Text="{DynamicResource UID_Filming_Film_Current}"></TextBox>
+                        <TextBox Grid.Column="1" Grid.Row="0"  Name="pageCurrent" BorderThickness="0"  Foreground="White"  Background="Transparent"  TextAlignment="Center" IsReadOnly ="True"  FontSize="16" >1</TextBox>
+                        <TextBox Grid.Row="1" BorderThickness="0"  Foreground="White"  Background="Transparent"  TextAlignment="Center" IsReadOnly ="True"  FontSize="16" Text="{DynamicResource UID_Filming_Film_Count}"></TextBox>
+                        <TextBox Grid.Row="1" Grid.Column="1"  Name="filmingPageCount" BorderThickness="0"  Foreground="White"  Background="Transparent"  TextAlignment="Center" IsReadOnly ="True"  FontSize="16" >1</TextBox>
+                        <TextBox Grid.Row="2" BorderThickness="0"  Foreground="White"  Background="Transparent"  TextAlignment="Center" IsReadOnly ="True"  FontSize="16" Text="{DynamicResource UID_Filming_CellCountSelected}"></TextBox>
+                        <TextBox Grid.Row="2" Grid.Column="1"  Name="cellCountSelected" BorderThickness="0"  Foreground="White"  Background="Transparent"  TextAlignment="Center" IsReadOnly ="True"  FontSize="16" >0</TextBox>
+                        <TextBox Grid.Row="3" BorderThickness="0"  Foreground="#00FFFF"  Background="Transparent"  TextAlignment="Center" IsReadOnly ="True"  FontSize="16" Text="{DynamicResource UID_Filming_ImageCountRemain}"></TextBox>
+                        <TextBox Grid.Row="3" Grid.Column="1"  Name="imageCountRemain" BorderThickness="0"  Foreground="#00FFFF"  Background="Transparent"  TextAlignment="Center" IsReadOnly ="True"  FontSize="16" >0</TextBox>
+                        <TextBox Visibility="Collapsed" Grid.Row="2" BorderThickness="0"  Foreground="White"  Background="Transparent"  TextAlignment="Center" IsReadOnly ="True"  FontSize="16" Text="{DynamicResource UID_Filming_Image_Count}"></TextBox>
+                        <TextBox Visibility="Collapsed" Grid.Row="2" Grid.Column="1"  Name="imageCount" BorderThickness="0"  Foreground="White"  Background="Transparent"  TextAlignment="Center" IsReadOnly ="True"  FontSize="16" >0</TextBox>
+                    </Grid>
+                </Grid>
+                <Grid Grid.Column="1" Name ="scrollBarGird"  Background="Black" >
+                    <ScrollBar Name="filmCardScrollBar"  AutomationProperties.AutomationId="ID_SCB_FILMING_FILMCARD" Width="20" Style="{DynamicResource Style_ScrollBar_Common_CSW_Default}"
+                               ViewportSize="1" SmallChange="1" LargeChange="1" Minimum="0"
+                               ValueChanged="FilmCardScrollBarValueChanged"></ScrollBar>
+                </Grid>
+                <Grid Grid.Column="2" HorizontalAlignment="Right" Name="controlPanelGrid" Margin="0"  Background="#FFBEBFBF" Width="354" AutomationProperties.AutomationId="ID_GRD_FILMING_CONTROLPANEL">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="430"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="173"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="54"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <!-- 初始化缩略图,后台初始化grid.row=0 FilmingCard_StudtyTreeCtrl.xaml-->
+                    <!-- 初始化切换布局等工具栏,后台初始化grid.row=1 FilmingCard_LayoutCtrl.xaml-->
+                    <!-- 初始化编辑按钮等工具栏,后台初始化grid.row=2 FilmingCard_EditBtnCtrl.xaml-->
+
+                    <!-- 初始化Action工具栏,后台初始化grid.row=3 FilmingCard_ActionToolCtrl.xaml-->
+                    <!-- 初始化Action工具栏,后台初始化grid.row=4 FilmingCard_PrintSetCtrl.xaml-->
+                    <!-- 初始化打印保存等工具栏,后台初始化grid.row=5 FilmingCard_PrintAndSaveCtrl.xaml-->
+                    <Grid Grid.Row="6" Margin="3,5,0,0">
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock
+                                x:Name="txtLoading"
+                                FontFamily="{DynamicResource UID_Filming_Font_Family}"
+                                FontSize="14"
+                                Text="{Binding ElementName=imageLoadingprogressBar, Path=ToolTip, Converter={StaticResource LoadingConverter}, Mode=OneWay}"
+                                Visibility="{Binding ElementName=imageLoadingprogressBar, Path=Visibility, Mode=OneWay}">
+
+                            </TextBlock>
+                            <ProgressBar
+                                Height="6"
+                                HorizontalAlignment="Stretch"
+                                Margin="0,2,0,0"
+                                Name="imageLoadingprogressBar"
+                                AutomationProperties.AutomationId="ID_PGB_FILMING_IMAGELOADING"
+                                VerticalAlignment="Top"
+                                Style="{DynamicResource Style_ProgressBar_Common_CSW_Default}"
+                                SmallChange="1"
+                                ToolTip=""
+                                ToolTipOpening="OnImageLoadingprogressBarToolTipOpening"
+                                Visibility="Hidden"
+                                x:FieldModifier="private">
+                            </ProgressBar>
+                        </StackPanel>
+                    </Grid>
+                </Grid>
+            </Grid>
+            <Border Name ="_maskBorder" AutomationProperties.AutomationId="ID_BRD_FILMING_MASK" Background="#00EEEEEE" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Visibility ="Hidden" MouseLeftButtonUp="_maskBorder_OnMouseLeftButtonUp">
+                <!--<Filming:PreFilmingProgressControl Style="{DynamicResource Style_ProgressBar_CSW_DataGrid_LoginIcon}"/>-->
+                <!--<ProgressBar Style="{DynamicResource Style_ProgressBar_CSW_DataGrid_LoginIcon}"/>-->
+                <!--Style="{DynamicResource Style_ProgressBar_CSW_DataGrid_LoginIco}"-->
+            </Border>
+            <Grid Name="zoomWindowGrid" UseLayoutRounding="True" controls:WindowHostManager.UseWindowHost="False"  Background="Transparent" Visibility="Collapsed" HorizontalAlignment="Right" VerticalAlignment="Bottom">
+                
+            </Grid>
+        </Grid>
+    </AdornerDecorator>
+</UserControl>

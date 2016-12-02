@@ -1,0 +1,228 @@
+﻿<UserControl x:Class="UIH.Mcsf.Filming.CustomizeLayout.CustomViewportWindow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:filming="clr-namespace:UIH.Mcsf.Filming"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300"
+              Width="350" Height="474" AutomationProperties.AutomationId="ID_EX_FILMING_CUSTOMVIEWPORT_WINDOW">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/UIH.Mcsf.CommonControlTheme;component/CommonControl/Public.xaml"/>
+                <ResourceDictionary Source="/UIH.Mcsf.CommonControlTheme;component/CommonControl/Common.xaml"/>
+                <ResourceDictionary Source="/UIH.Mcsf.CommonControlTheme;component/CommonControl/PublicStyle.xaml"/>
+                <ResourceDictionary Source="/UIH.Mcsf.CommonControlTheme;component/Image/ImageSource.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPOT_WINDOW">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_WINDOW"  >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="24"></RowDefinition>
+                <RowDefinition Height="321"></RowDefinition>
+                <RowDefinition Height="17"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="27"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="1" 
+              filming:GridHelper.ShowBorder="True"
+              Width="321"
+              HorizontalAlignment="Center"
+              Name="customViewportGrid" 
+              MouseLeftButtonDown="CustomViewportGridMouseLeftButtonDown" 
+              MouseLeftButtonUp="CustomViewportGridMouseLeftButtonUp" 
+              MouseMove="CustomViewportGridMouseMove" 
+              MouseLeave="CustomViewportGridMouseLeave"
+              Background="#ffcecece">
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Row="0" Grid.Column="0" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID00"></Grid>
+                <Grid Grid.Row="0" Grid.Column="1" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID01"></Grid>
+                <Grid Grid.Row="0" Grid.Column="2" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID02"></Grid>
+                <Grid Grid.Row="0" Grid.Column="3" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID03"></Grid>
+                <Grid Grid.Row="0" Grid.Column="4" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID04"></Grid>
+                <Grid Grid.Row="0" Grid.Column="5" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID05"></Grid>
+                <Grid Grid.Row="0" Grid.Column="6" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID06"></Grid>
+                <Grid Grid.Row="0" Grid.Column="7" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID07"></Grid>
+                <Grid Grid.Row="0" Grid.Column="8" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID08"></Grid>
+                <Grid Grid.Row="0" Grid.Column="9" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID09"></Grid>
+
+                <Grid Grid.Row="1" Grid.Column="0" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID10"></Grid>
+                <Grid Grid.Row="1" Grid.Column="1" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID11"></Grid>
+                <Grid Grid.Row="1" Grid.Column="2" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID12"></Grid>
+                <Grid Grid.Row="1" Grid.Column="3" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID13"></Grid>
+                <Grid Grid.Row="1" Grid.Column="4" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID14"></Grid>
+                <Grid Grid.Row="1" Grid.Column="5" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID15"></Grid>
+                <Grid Grid.Row="1" Grid.Column="6" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID16"></Grid>
+                <Grid Grid.Row="1" Grid.Column="7" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID17"></Grid>
+                <Grid Grid.Row="1" Grid.Column="8" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID18"></Grid>
+                <Grid Grid.Row="1" Grid.Column="9" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID19"></Grid>
+
+                <Grid Grid.Row="2" Grid.Column="0" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID20"></Grid>
+                <Grid Grid.Row="2" Grid.Column="1" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID21"></Grid>
+                <Grid Grid.Row="2" Grid.Column="2" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID22"></Grid>
+                <Grid Grid.Row="2" Grid.Column="3" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID23"></Grid>
+                <Grid Grid.Row="2" Grid.Column="4" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID24"></Grid>
+                <Grid Grid.Row="2" Grid.Column="5" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID25"></Grid>
+                <Grid Grid.Row="2" Grid.Column="6" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID26"></Grid>
+                <Grid Grid.Row="2" Grid.Column="7" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID27"></Grid>
+                <Grid Grid.Row="2" Grid.Column="8" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID28"></Grid>
+                <Grid Grid.Row="2" Grid.Column="9" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID29"></Grid>
+
+                <Grid Grid.Row="3" Grid.Column="0" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID30"></Grid>
+                <Grid Grid.Row="3" Grid.Column="1" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID31"></Grid>
+                <Grid Grid.Row="3" Grid.Column="2" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID32"></Grid>
+                <Grid Grid.Row="3" Grid.Column="3" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID33"></Grid>
+                <Grid Grid.Row="3" Grid.Column="4" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID34"></Grid>
+                <Grid Grid.Row="3" Grid.Column="5" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID35"></Grid>
+                <Grid Grid.Row="3" Grid.Column="6" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID36"></Grid>
+                <Grid Grid.Row="3" Grid.Column="7" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID37"></Grid>
+                <Grid Grid.Row="3" Grid.Column="8" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID38"></Grid>
+                <Grid Grid.Row="3" Grid.Column="9" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID39"></Grid>
+
+                <Grid Grid.Row="4" Grid.Column="0" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID40"></Grid>
+                <Grid Grid.Row="4" Grid.Column="1" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID41"></Grid>
+                <Grid Grid.Row="4" Grid.Column="2" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID42"></Grid>
+                <Grid Grid.Row="4" Grid.Column="3" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID43"></Grid>
+                <Grid Grid.Row="4" Grid.Column="4" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID44"></Grid>
+                <Grid Grid.Row="4" Grid.Column="5" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID45"></Grid>
+                <Grid Grid.Row="4" Grid.Column="6" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID46"></Grid>
+                <Grid Grid.Row="4" Grid.Column="7" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID47"></Grid>
+                <Grid Grid.Row="4" Grid.Column="8" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID48"></Grid>
+                <Grid Grid.Row="4" Grid.Column="9" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID49"></Grid>
+
+                <Grid Grid.Row="5" Grid.Column="0" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID50"></Grid>
+                <Grid Grid.Row="5" Grid.Column="1" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID51"></Grid>
+                <Grid Grid.Row="5" Grid.Column="2" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID52"></Grid>
+                <Grid Grid.Row="5" Grid.Column="3" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID53"></Grid>
+                <Grid Grid.Row="5" Grid.Column="4" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID54"></Grid>
+                <Grid Grid.Row="5" Grid.Column="5" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID55"></Grid>
+                <Grid Grid.Row="5" Grid.Column="6" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID56"></Grid>
+                <Grid Grid.Row="5" Grid.Column="7" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID57"></Grid>
+                <Grid Grid.Row="5" Grid.Column="8" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID58"></Grid>
+                <Grid Grid.Row="5" Grid.Column="9" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID59"></Grid>
+
+                <Grid Grid.Row="6" Grid.Column="0" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID60"></Grid>
+                <Grid Grid.Row="6" Grid.Column="1" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID61"></Grid>
+                <Grid Grid.Row="6" Grid.Column="2" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID62"></Grid>
+                <Grid Grid.Row="6" Grid.Column="3" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID63"></Grid>
+                <Grid Grid.Row="6" Grid.Column="4" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID64"></Grid>
+                <Grid Grid.Row="6" Grid.Column="5" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID65"></Grid>
+                <Grid Grid.Row="6" Grid.Column="6" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID66"></Grid>
+                <Grid Grid.Row="6" Grid.Column="7" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID67"></Grid>
+                <Grid Grid.Row="6" Grid.Column="8" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID68"></Grid>
+                <Grid Grid.Row="6" Grid.Column="9" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID69"></Grid>
+
+                <Grid Grid.Row="7" Grid.Column="0" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID70"></Grid>
+                <Grid Grid.Row="7" Grid.Column="1" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID71"></Grid>
+                <Grid Grid.Row="7" Grid.Column="2" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID72"></Grid>
+                <Grid Grid.Row="7" Grid.Column="3" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID73"></Grid>
+                <Grid Grid.Row="7" Grid.Column="4" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID74"></Grid>
+                <Grid Grid.Row="7" Grid.Column="5" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID75"></Grid>
+                <Grid Grid.Row="7" Grid.Column="6" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID76"></Grid>
+                <Grid Grid.Row="7" Grid.Column="7" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID77"></Grid>
+                <Grid Grid.Row="7" Grid.Column="8" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID78"></Grid>
+                <Grid Grid.Row="7" Grid.Column="9" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID79"></Grid>
+
+                <Grid Grid.Row="8" Grid.Column="0" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID80"></Grid>
+                <Grid Grid.Row="8" Grid.Column="1" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID81"></Grid>
+                <Grid Grid.Row="8" Grid.Column="2" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID82"></Grid>
+                <Grid Grid.Row="8" Grid.Column="3" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID83"></Grid>
+                <Grid Grid.Row="8" Grid.Column="4" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID84"></Grid>
+                <Grid Grid.Row="8" Grid.Column="5" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID85"></Grid>
+                <Grid Grid.Row="8" Grid.Column="6" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID86"></Grid>
+                <Grid Grid.Row="8" Grid.Column="7" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID87"></Grid>
+                <Grid Grid.Row="8" Grid.Column="8" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID88"></Grid>
+                <Grid Grid.Row="8" Grid.Column="9" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID89"></Grid>
+
+                <Grid Grid.Row="9" Grid.Column="0" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID90"></Grid>
+                <Grid Grid.Row="9" Grid.Column="1" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID91"></Grid>
+                <Grid Grid.Row="9" Grid.Column="2" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID92"></Grid>
+                <Grid Grid.Row="9" Grid.Column="3" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID93"></Grid>
+                <Grid Grid.Row="9" Grid.Column="4" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID94"></Grid>
+                <Grid Grid.Row="9" Grid.Column="5" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID95"></Grid>
+                <Grid Grid.Row="9" Grid.Column="6" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID96"></Grid>
+                <Grid Grid.Row="9" Grid.Column="7" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID97"></Grid>
+                <Grid Grid.Row="9" Grid.Column="8" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID98"></Grid>
+                <Grid Grid.Row="9" Grid.Column="9" AutomationProperties.AutomationId="ID_GRD_FILMING_CUSTOMVIEWPORT_GRID99"></Grid>
+            </Grid>
+            <Grid Grid.Row="3" Margin="7,0,7,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Button Name="ProtocolConfigureButtonInViewport" Grid.Column="2" Click="ProtocolConfigureButton_OnClicked" ToolTip="{DynamicResource UID_Filming_Protocol}" AutomationProperties.AutomationId="ID_BTN_FILMING_CUSTOMVIEWPORT_PROTOCOLS" Style="{DynamicResource Style_Button_Common_CSW_Default}"
+                        Visibility="Hidden">
+                    <Button.Content>
+                        <Image Source="{DynamicResource BindingLayout}" Margin="0,0,0,0"  Stretch="Uniform"/>
+                    </Button.Content>
+                </Button>
+                <Grid Grid.Column="1"  HorizontalAlignment="Right" Margin="0,0,28,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50"></ColumnDefinition>
+                        <ColumnDefinition Width="80"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Label HorizontalAlignment="Right" Grid.Column="0"   Content="{DynamicResource UID_Filming_Rows}" AutomationProperties.AutomationId="ID_LBL_FILMING_CUSTOMVIEWPORT_ROWS" VerticalAlignment="Center" Style="{DynamicResource Style_Label_Common_CSW_Default}" />
+                    <TextBox Grid.Column="1" HorizontalAlignment="Right" HorizontalContentAlignment="Center"  Name="rowViewportNumberLabel" PreviewMouseDown =" TextBoxPreviewMouseDown" KeyDown ="TextBoxKeyDown"  TextChanged =" TextBoxTextChanged" TabIndex =" 1"  GotFocus ="TextBoxGotFocus" LostFocus ="TextBoxLostFocus" AutomationProperties.AutomationId="ID_LBL_FILMING_CUSTOMVIEWPORT_ROWNUMBER" VerticalAlignment="Center" Height ="30" Width="70" Style="{DynamicResource Style_TextBox_Common_CSW_Default}">
+                    </TextBox>
+
+                </Grid>
+                <Grid Grid.Column="0" HorizontalAlignment="Left">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="60"></ColumnDefinition>
+                        <ColumnDefinition Width="80"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0" HorizontalAlignment="Right"   Content="{DynamicResource UID_Filming_Columns}" AutomationProperties.AutomationId="ID_LBL_FILMING_CUSTOMVIEWPORT_COLUMNS"  VerticalAlignment="Center" Style="{DynamicResource Style_Label_Common_CSW_Default}" />
+                    <TextBox Grid.Column="1" HorizontalAlignment="Right" HorizontalContentAlignment="Center" Name="columnViewportNumberLabel"  PreviewMouseDown =" TextBoxPreviewMouseDown" KeyDown ="TextBoxKeyDown" TextChanged =" TextBoxTextChanged" GotFocus ="TextBoxGotFocus" LostFocus ="TextBoxLostFocus"  TabIndex =" 0"  AutomationProperties.AutomationId="ID_LBL_FILMING_CUSTOMVIEWPORT_COLUMNNUMBER" VerticalAlignment="Center" Height ="30" Width="70" Style="{DynamicResource Style_TextBox_Common_CSW_Default}">
+                    </TextBox>
+                </Grid>
+            </Grid>
+            <Grid Grid.Row="5" Margin="7,0,7,0" VerticalAlignment="Top" Height="Auto">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition ></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column ="0">
+                    <Button Name="applyViewportSettingButton" Margin="0,0,10,0"  TabIndex ="2" HorizontalAlignment="Left"  ToolTipService.ShowOnDisabled ="True"  AutomationProperties.AutomationId="ID_BTN_FILMING_CUSTOMVIEWPORT_APPLY" Content="{DynamicResource UID_Filming_Apply}"  Click="ApplySettingButtonClick"  Style="{DynamicResource Style_Button_Common_CSW_Default}" Width="80"  Height="30" >
+                    </Button>
+                </Grid>
+                <Grid Grid.Column="2">
+                    <Button Name="cancelViewportSettingButton" TabIndex =" 4" HorizontalAlignment="Right" AutomationProperties.AutomationId="ID_BTN_FILMING_CUSTOMVIEWPORT_CANCEL" Content="{DynamicResource UID_Filming_Cancel}" Width="80" Height="30" Click="CancelSettingButtonClick" Style="{DynamicResource Style_Button_Common_CSW_Default}"></Button>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>
+

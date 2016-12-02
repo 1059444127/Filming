@@ -1,0 +1,220 @@
+﻿<UserControl x:Class="UIH.Mcsf.Filming.Views.ActionToolPanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:Filming="clr-namespace:UIH.Mcsf.Filming" 
+             xmlns:uc="clr-namespace:UIH.Mcsf.CommonControlTheme;assembly=UIH.Mcsf.CommonControlTheme" mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid Name="commonToolGrid" Grid.Row="3" Margin="7,20,0,0">
+        <uc:UserControl_Toolbar_BG  Height="{Binding ActualHeight, ElementName=FilmingToolBar}" Width="{Binding ActualWidth, ElementName=FilmingToolBar}"
+                                                   HorizontalAlignment="Left" VerticalAlignment="Top" />
+        <WrapPanel Name="FilmingToolBar"  MaxWidth="356" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <RadioButton Name="pointerButton" GroupName="CommonTool" ToolTip="{DynamicResource UID_Filming_Pointer}"  Click="OnPointerButtonClick" Style="{DynamicResource Style_RadioButton_Common_ToolBar_RadioButton}" Focusable="False">
+                <Image Source="{DynamicResource pointer}"  Stretch="None"/>
+            </RadioButton>
+
+            <RadioButton ToolTip="{DynamicResource UID_Filming_Pan}" GroupName="CommonTool" 
+                        Name="panButton" AutomationProperties.AutomationId="ID_RDO_FILMING_PAN" Click="PanBtnClick" Style="{DynamicResource Style_RadioButton_Common_ToolBar_RadioButton}" Focusable="False">
+                <Image Source="{DynamicResource pan}" Stretch="None"/>
+            </RadioButton>
+
+            <RadioButton ToolTip="{DynamicResource UID_Filming_Zoom}" GroupName="CommonTool"
+                        Name="zoomButton" AutomationProperties.AutomationId="ID_RDO_FILMING_ZOOM" Click="ZoomBtnClick" Style="{DynamicResource Style_RadioButton_Common_ToolBar_RadioButton}" Focusable="False">
+                <Image Source="{DynamicResource zoom}" Stretch="None"/>
+            </RadioButton>
+
+            <Grid >
+                <Button  ToolTip="{DynamicResource UID_Filming_Fit_To_Window}" Name="fitToWindowButton" 
+                         AutomationProperties.AutomationId="ID_BTN_FILMING_FITTOWINDOW" 
+                         Click="OnFlipClick" Style="{DynamicResource Style_Button_BU_CC_CommboBoxInButton}" 
+                         Width="57"  Height="51" Focusable="False">
+                    <Image Stretch="None" VerticalAlignment="Center"/>
+                </Button>
+                <ComboBox Name="fitToWindow"  SelectedIndex="0" Style="{DynamicResource Style_ComboBox_Common_ToolBar_Default}"
+                                      AutomationProperties.AutomationId="ID_CMB_FILMING_FITTOWINDOW"  ItemContainerStyle="{DynamicResource Style_ComboBox_Common_ToolBar_Item}" 
+                                           Width="57"
+                                           Tag="{Binding ElementName=fitToWindowButton}"
+                                           Filming:ToolPanelComboBoxHelper.BoundToRadioButtonProperty="True" 
+                                           DropDownOpened="ComboBoxFitToWindow_DropDownOpened" Focusable="False">
+                    <ComboBox.Items>
+                        <ComboBoxItem Name="fitToWindowLong"  AutomationProperties.AutomationId="ID_CMB_FILMING_FITTOWINDOWLONG" Selected="FitToWindowLongSelected" ToolTip="{DynamicResource UID_Filming_Fit_To_Window}">
+                            <Image Source="{DynamicResource fit_window_white}" Tag="{DynamicResource fit_window}" Stretch="None" VerticalAlignment="Center"/>
+                        </ComboBoxItem>
+                        <ComboBoxItem Name="fitToWindowShort" AutomationProperties.AutomationId="ID_CMB_FILMING_FITTOWINDOWSHOTR"  Selected="FitToWindowShortSelected" ToolTip="{DynamicResource UID_Filming_FitToWindow_Short}">
+                            <Image Source="{DynamicResource fit_and_fill_window_white}" Tag="{DynamicResource fit_and_fill_window}" Stretch="None" VerticalAlignment="Center"/>
+                        </ComboBoxItem>
+                    </ComboBox.Items>
+                </ComboBox>
+            </Grid>
+
+            <!--<Button ToolTip="{DynamicResource UID_Filming_Fit_To_Window}"
+                        Name="fitToWindowButton" AutomationProperties.AutomationId="ID_BTN_FILMING_FITTOWINDOW" Click="OnImageFitToWindowBtnClick" Style="{DynamicResource Style_Button_BU_CC_CommboBoxInButton}" Focusable="False" Width="57"  Height="51">
+                <Image Source="{DynamicResource fit_window}"  Stretch="None" VerticalAlignment="Center"/>
+            </Button>-->
+
+            <Button ToolTip="{DynamicResource UID_Filming_Windowing}"
+                        Name="adjustWLButton" AutomationProperties.AutomationId="ID_BTN_FILMING_ADJUSTWL" Click="AdjustWlBtnClick" Style="{DynamicResource Style_Button_BU_CC_CommboBoxInButton}" Focusable="False" Width="57"  Height="51">
+                <Image Source="{DynamicResource reset_windowing}"  Stretch="None"/>
+            </Button>
+
+            <Button ToolTip="{DynamicResource UID_Filming_Delete_All_Graphics}"
+                        Name="deleteAllGraphicsButton" AutomationProperties.AutomationId="ID_BTN_FILMING_DELETEALLGRAPHICS" Click="DeleteAllGraphicsBtnClick" Style="{DynamicResource Style_Button_BU_CC_CommboBoxInButton}" Focusable="False" Width="57"  Height="51">
+                <Image Source="{DynamicResource delete_all_graphics}" Stretch="None"/>
+            </Button>
+
+            <!--For MG Modality-->
+            <RadioButton  ToolTip="{DynamicResource UID_Filming_FreeHand}"  GroupName="CommonTool" Visibility ="Collapsed"
+                        Name="freeHandButton" AutomationProperties.AutomationId="ID_RDO_FILMING_FREEHAND"  Click="btnRegionFreeHand_Click" Style="{DynamicResource Style_RadioButton_Common_ToolBar_RadioButton}" Focusable="False">
+                <Image Source="{DynamicResource freehand}"   Stretch="None"/>
+            </RadioButton>
+
+            <!--2222222222222222222222222222222222222222222222-->
+            <RadioButton  ToolTip="{DynamicResource UID_Filming_Pixel_Lens}"  GroupName="CommonTool" 
+                        Name="pixelLensButton" AutomationProperties.AutomationId="ID_RDO_FILMING_PIXELLENS"  Click="PixelLensBtnClick" Style="{DynamicResource Style_RadioButton_Common_ToolBar_RadioButton}" Focusable="False">
+                <Image Source="{DynamicResource pixel_lens}"   Stretch="None"/>
+            </RadioButton>
+
+            <!--RadioButton  ToolTip="{DynamicResource UID_Filming_Ellipse}"
+                        Name="ellipseButton" AutomationProperties.AutomationId="rdoFilmingEllipse"  Click="RegionEllipseBtnClick" Style="{DynamicResource Style_RadioButton_Common_ToolBar_RadioButton}" Focusable="True">
+                                <Image Source="{DynamicResource ellipse}" Stretch="None"/>
+                            </RadioButton-->
+
+
+            <Grid Name="grdFilmingRegionShape" Height="51" Width="57">
+                <RadioButton x:Name="rdoFilmingRegionShape" GroupName="CommonTool" AutomationProperties.AutomationId="ID_RDO_FILMING_REGIONSHAPE" Style="{DynamicResource Style_RadioButton_Common_ToolBar_RadioButton}" Focusable="False">
+                    <Image Stretch="None" VerticalAlignment="Center"/>
+                </RadioButton>
+                <ComboBox x:Name="cmbFilmingRegionShape" AutomationProperties.AutomationId="ID_CMB_FILMING_REGIONSHAPE" Style="{DynamicResource Style_ComboBox_Common_ToolBar_Default}" 
+                                    ItemContainerStyle="{DynamicResource Style_ComboBox_Common_ToolBar_Item}" 
+                                    Filming:ToolPanelComboBoxHelper.BoundToRadioButtonProperty="True" 
+                                    HorizontalAlignment="Stretch"
+                                    Tag="{Binding ElementName=rdoFilmingRegionShape}" DropDownOpened="ComboBoxRegion_DropDownOpened">
+                    <ComboBox.Items>
+                        <ComboBoxItem x:Name="rdoFilmingRegionCircle" ToolTip="{DynamicResource UID_Filming_Circle}" Selected="btnRegionCircle_Click">
+                            <Image Source="{DynamicResource circle_white}"  Stretch="None" VerticalAlignment="Center" Tag="{DynamicResource circle}" />
+                        </ComboBoxItem>
+                        <ComboBoxItem x:Name="rdoFilmingRegionEllipse" ToolTip="{DynamicResource UID_Filming_Ellipse}" Selected="btnRegionEllipse_Click">
+                            <Image Source="{DynamicResource ellipse_white}" Stretch="None" VerticalAlignment="Center" Tag="{DynamicResource ellipse}" />
+                        </ComboBoxItem>
+                        <ComboBoxItem x:Name="rdoFilmingRegionRectangle" ToolTip="{DynamicResource UID_Filming_Rectangle}" Selected="btnRegionRectangle_Click">
+                            <Image Source="{DynamicResource rectangle_white}" Stretch="None" VerticalAlignment="Center" Tag="{DynamicResource rectangle}" />
+                        </ComboBoxItem>
+                        <ComboBoxItem x:Name="rdoFilmingRegionFreeHand" ToolTip="{DynamicResource UID_Filming_FreeHand}" Selected="btnRegionFreeHand_Click">
+                            <Image Source="{DynamicResource freehand_white}"  Stretch="None" VerticalAlignment="Center" Tag="{DynamicResource freehand}" />
+                        </ComboBoxItem>
+                        <!--ForKey 505702 Hide polygeon & curve-->
+                        <ComboBoxItem x:Name="rdoFilmingRegionPolygon" ToolTip="{DynamicResource UID_Filming_Polygon}" Selected="btnRegionPolygon_Click">
+                            <Image Source="{DynamicResource polygon_white}"  Stretch="None" VerticalAlignment="Center" Tag="{DynamicResource polygon}" Visibility="Collapsed"/>
+                        </ComboBoxItem>
+                        <ComboBoxItem x:Name="rdoFilmingRegionSpline" ToolTip="{DynamicResource UID_Filming_Spline}" Selected="btnRegionSpline_Click">
+                            <Image Source="{DynamicResource curve_white}"  Stretch="None" VerticalAlignment="Center" Tag="{DynamicResource curve}" Visibility="Collapsed" />
+                        </ComboBoxItem>
+                    </ComboBox.Items>
+                </ComboBox>
+            </Grid>
+
+            <RadioButton  ToolTip="{DynamicResource UID_Filming_Line}" GroupName="CommonTool" 
+                        Name="lineButton" AutomationProperties.AutomationId="ID_RDO_FILMING_LINE" Click="LineBtnClick" Style="{DynamicResource Style_RadioButton_Common_ToolBar_RadioButton}" Focusable="False">
+                <Image Source="{DynamicResource line}" Stretch="None"/>
+            </RadioButton>
+
+            <RadioButton  Name="angleButton" GroupName="CommonTool" AutomationProperties.AutomationId="ID_RDO_FILMING_ANGLE" ToolTip="{DynamicResource UID_Filming_Angle}" Click="OnAngleClick" Style="{DynamicResource Style_RadioButton_Common_ToolBar_RadioButton}" Focusable="False">
+                <Image Source="{DynamicResource angle}"  Stretch="None"/>
+            </RadioButton>
+
+            <RadioButton ToolTip="{DynamicResource UID_Filming_Text}" GroupName="CommonTool" 
+                        Name="annotationTextButton" AutomationProperties.AutomationId="ID_RDO_FILMING_ANNOTATIONTEXT" Click="AnnotationTextBtnClick" Style="{DynamicResource Style_RadioButton_Common_ToolBar_RadioButton}" Focusable="False">
+                <Image Source="{DynamicResource text}"   Stretch="None"/>
+            </RadioButton>
+
+            <RadioButton  ToolTip="{DynamicResource UID_Filming_Arrow}" GroupName="CommonTool" AutomationProperties.AutomationId="ID_RDO_FILMING_ARROW"
+                               Name="arrowButton"    Click="OnArrowButtonClick" Style="{DynamicResource Style_RadioButton_Common_ToolBar_RadioButton}" Focusable="False">
+                <Image Source="{DynamicResource arrow}"  Stretch="None"/>
+            </RadioButton>
+
+            <!--<RadioButton  ToolTip="{DynamicResource UID_Filming_Rectangle}"
+                        Name="rectangleButton" Click="RegionRectangleBtnClick" Style="{DynamicResource Style_RadioButton_Common_ToolBar_RadioButton}" Focusable="False">
+                                <Image Source="{DynamicResource rectangle}"/>
+                            </RadioButton>-->
+
+            <!--3333333333333333333333333333333333333333333333333333333-->
+            <RadioButton ToolTip="{DynamicResource UID_Filming_ROI_Zoom}" GroupName="CommonTool" 
+                        Name="roiZoomButton" AutomationProperties.AutomationId="ID_RDO_FILMING_ROIZOOM"  Click="RoiZoomBtnClick" Style="{DynamicResource Style_RadioButton_Common_ToolBar_RadioButton}" Focusable="False">
+                <Image Source="{DynamicResource zoom_box}"  Stretch="None"/>
+            </RadioButton>
+
+            <RadioButton Name="magnifierButton" GroupName="CommonTool" AutomationProperties.AutomationId="ID_RDO_FILMING_MAGNIFIER" ToolTip="{DynamicResource UID_Filming_Magnifier}" Click="OnMagnifierClick" Style="{DynamicResource Style_RadioButton_Common_ToolBar_RadioButton}" Focusable="False">
+                <Image Source="{DynamicResource magnifier}"  Stretch="None"/>
+            </RadioButton>
+
+            <Button ToolTip="{DynamicResource UID_Filming_Inverse}"
+                                Name="inverseButton" AutomationProperties.AutomationId="ID_BTN_FILMING_INVERSE" Click="OnImageInverseBtnClick" Style="{DynamicResource Style_Button_BU_CC_CommboBoxInButton}" Focusable="False" Width="57" Height="51">
+                <Image Source="{DynamicResource inverse}"  Stretch="None"/>
+            </Button>
+
+            <!--<CheckBox ToolTip="{DynamicResource UID_Filming_ScaleRuler}"
+                        Name="imageRulerButton" AutomationProperties.AutomationId="ID_CHK_FILMING_SCALERULER"  Click="OnImageRulerBtnClick" Style="{DynamicResource Style_CheckBox_Common_CSW_ToolBarCheckBox}" Focusable="True">
+                                <Image Source="{DynamicResource scale_ruler}" Stretch="None" VerticalAlignment="Center"/>
+                            </CheckBox>-->
+
+            <!--<CheckBox ToolTip="{DynamicResource UID_Filming_ColorBar}"
+                        Name="colorBarButton" Click="OnColorBarBtnClick" Style="{DynamicResource Style_CheckBox_Common_CSW_ToolBarCheckBox}" Focusable="False">
+                                <Image Source="{DynamicResource colorbar}"/>
+                            </CheckBox>-->
+
+            <Grid Name="filmingFlipButton">
+                <Button  ToolTip="{DynamicResource UID_Filming_Flip}" Name="flipButton" AutomationProperties.AutomationId="ID_BTN_FILMING_FLIP" Click="OnFlipClick"  Style="{DynamicResource Style_Button_BU_CC_CommboBoxInButton}" Width="57"  Height="51" Focusable="False">
+                    <Image Stretch="None" VerticalAlignment="Center"/>
+                </Button>
+                <ComboBox Name="comboxFlip"  SelectedIndex="0" Style="{DynamicResource Style_ComboBox_Common_ToolBar_Default}"
+                                      AutomationProperties.AutomationId="ID_CMB_FILMING_FLIP"  ItemContainerStyle="{DynamicResource Style_ComboBox_Common_ToolBar_Item}" 
+                                           Width="57"
+                                           Tag="{Binding ElementName=flipButton}"
+                                           Filming:ToolPanelComboBoxHelper.BoundToRadioButtonProperty="True" 
+                                           DropDownOpened="ComboBoxFlip_DropDownOpened" >
+                    <ComboBox.Items>
+                        <ComboBoxItem Name="btnFlipHor"  AutomationProperties.AutomationId="ID_CMB_FILMING_FLIPHOR" Selected="FlipHorComboBoxSelected" ToolTip="{DynamicResource UID_Filming_Horizontal_Flip}">
+                            <Image Source="{DynamicResource flip_hor_white}" Tag="{DynamicResource flip_hor}" Stretch="None" VerticalAlignment="Center"/>
+                        </ComboBoxItem>
+                        <ComboBoxItem Name="btnFlipVer" AutomationProperties.AutomationId="ID_CMB_FILMING_FLIPVER"  Selected="FlipVerComboBoxSelected" ToolTip="{DynamicResource UID_Filming_Vertical_Flip}">
+                            <Image Source="{DynamicResource flip_ver_white}" Tag="{DynamicResource flip_ver}" Stretch="None" VerticalAlignment="Center"/>
+                        </ComboBoxItem>
+                    </ComboBox.Items>
+                </ComboBox>
+            </Grid>
+
+            <Grid Name="filmingRotateButton">
+                <Button ToolTip="{DynamicResource UID_Filming_Rotate}"  Name="rotateButton"  AutomationProperties.AutomationId="ID_BTN_FILMING_ROTATE"  Click="RotateBtnClick"  Style="{DynamicResource Style_Button_BU_CC_CommboBoxInButton}" Width="57"  Height="51" Focusable="False">
+                    <Image Stretch="None" VerticalAlignment="Center"/>
+                </Button>
+
+                <ComboBox  SelectedIndex="0"   HorizontalAlignment="Stretch"
+                                           Name="comBoxRotate" AutomationProperties.AutomationId="ID_CMB_FILMING_ROTATEWL" 
+                                           Style="{DynamicResource Style_ComboBox_Common_ToolBar_Default}" 
+                                           ItemContainerStyle="{DynamicResource Style_ComboBox_Common_ToolBar_Item}" Width="57"
+                                           Tag="{Binding ElementName=rotateButton}"
+                                           Filming:ToolPanelComboBoxHelper.BoundToRadioButtonProperty="True" 
+                                           DropDownOpened="ComboBoxRotate_DropDownOpened" >
+                    <ComboBox.Items>
+                        <!--<ComboBoxItem Name="btnCustomRotate" AutomationProperties.AutomationId="ID_CMB_FILMING_CUSTOMROTATE"  Selected="CustomRotateComboBoxSelected" ToolTip="{DynamicResource UID_Filming_CustomRotate}">
+                                            <Image Source="{DynamicResource rotate_custom_white}" Stretch="None" VerticalAlignment="Center" Tag="{DynamicResource rotate_custom}"/>
+                                        </ComboBoxItem>-->
+                        <ComboBoxItem Name="btnRotateClock" AutomationProperties.AutomationId="ID_CMB_FILMING_ROTATECLOCKWISE" Selected="RotateComboBoxSelected" ToolTip="{DynamicResource UID_Filming_ComboBox_Rotate_Clockwise}">
+                            <Image Source="{DynamicResource rotate_clockwise_white}" Stretch="None" VerticalAlignment="Center" Tag="{DynamicResource rotate_clockwise}"/>
+                        </ComboBoxItem>
+                        <ComboBoxItem Name="btnRotateAnticlock" AutomationProperties.AutomationId="ID_CMB_FILMING_ROTATEANTICLOCKWISE" Selected="RotateAnticlockComboBoxSelected" ToolTip="{DynamicResource UID_Filming_ComboBox_Rotate_AntiClockwise}">
+                            <Image Source="{DynamicResource rotate_anticlock_white}" Stretch="None" VerticalAlignment="Center" Tag="{DynamicResource rotate_anticlock}"/>
+                        </ComboBoxItem>
+                    </ComboBox.Items>
+                </ComboBox>
+            </Grid>
+
+            <Button ToolTip="{DynamicResource UID_Filming_CustomRotate}"
+                                Name="btnCustomRotate" AutomationProperties.AutomationId="ID_CMB_FILMING_CUSTOMROTATE"  Click="CustomRotateComboBoxSelected" Style="{DynamicResource Style_Button_BU_CC_CommboBoxInButton}" Focusable="False" Width="57" Height="51">
+                <Image Source="{DynamicResource rotate_custom}" Stretch="None" VerticalAlignment="Center" />
+            </Button>
+
+        </WrapPanel>
+    </Grid>
+</UserControl>

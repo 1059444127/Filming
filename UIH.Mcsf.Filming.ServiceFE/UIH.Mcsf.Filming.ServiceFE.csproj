@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{557AE249-A419-4685-B9B9-9EACF2BF55A1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UIH.Mcsf.Filming.ServiceFE</RootNamespace>
+    <AssemblyName>UIH.Mcsf.Filming.ServiceFE</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\..\UIH\bin_debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\..\UIH\bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Google.ProtocolBuffers">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\UIH\bin_debug\Google.ProtocolBuffers.dll</HintPath>
+    </Reference>
+    <Reference Include="UIH.Mcsf.MainFrame.ProcHosting">
+	  <Private>False</Private>
+      <HintPath>..\..\..\..\UIH\bin_debug\UIH.Mcsf.MainFrame.ProcHosting.dll</HintPath>
+	</Reference>	
+    <Reference Include="UIH.Mcsf.App.Common">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\UIH\bin_debug\UIH.Mcsf.App.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="UIH.Mcsf.AppControls.Viewer">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\UIH\bin_debug\UIH.Mcsf.AppControls.Viewer.dll</HintPath>
+    </Reference>
+    <Reference Include="UIH.Mcsf.Core.ContaineeBase">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\UIH\bin_debug\UIH.Mcsf.Core.ContaineeBase.dll</HintPath>
+    </Reference>
+    <Reference Include="UIH.Mcsf.Core.NetBase">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\UIH\bin_debug\UIH.Mcsf.Core.NetBase.dll</HintPath>
+    </Reference>
+    <Reference Include="UIH.Mcsf.Core.SystemResManagerProxy">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\UIH\bin_debug\UIH.Mcsf.Core.SystemResManagerProxy.dll</HintPath>
+    </Reference>
+    <Reference Include="UIH.Mcsf.Database.Wrapper">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\UIH\bin_debug\UIH.Mcsf.Database.Wrapper.dll</HintPath>
+    </Reference>
+    <Reference Include="UIH.Mcsf.DataHeader">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\UIH\bin_debug\UIH.Mcsf.DataHeader.dll</HintPath>
+    </Reference>
+    <Reference Include="UIH.Mcsf.DicomConvertor.Proxy">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\UIH\bin_debug\UIH.Mcsf.DicomConvertor.Proxy.dll</HintPath>
+    </Reference>
+    <Reference Include="UIH.Mcsf.MedDataLoader">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\UIH\bin_debug\UIH.Mcsf.MedDataLoader.dll</HintPath>
+    </Reference>
+    <Reference Include="UIH.Mcsf.MedStudyTree">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\UIH\bin_debug\UIH.Mcsf.MedStudyTree.dll</HintPath>
+    </Reference>
+    <Reference Include="UIH.Mcsf.Viewer.Control">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\UIH\bin_debug\UIH.Mcsf.Viewer.Control.dll</HintPath>
+    </Reference>
+    <Reference Include="UIH.Mcsf.Viewer.Interface">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\UIH\bin_debug\UIH.Mcsf.Viewer.Interface.dll</HintPath>
+    </Reference>
+    <Reference Include="UIH.Mcsf.Database.DicomUIDManager">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\UIH\bin_debug\UIH.Mcsf.Database.DicomUIDManager.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Google.ProtocolBuffers">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\UIH\bin\Google.ProtocolBuffers.dll</HintPath>
+    </Reference>
+    <Reference Include="UIH.Mcsf.MainFrame.ProcHosting">
+	  <Private>False</Private>
+      <HintPath>..\..\..\..\UIH\bin\UIH.Mcsf.MainFrame.ProcHosting.dll</HintPath>
+	</Reference>
+    <Reference Include="UIH.Mcsf.App.Common">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\UIH\bin\UIH.Mcsf.App.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="UIH.Mcsf.AppControls.Viewer">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\UIH\bin\UIH.Mcsf.AppControls.Viewer.dll</HintPath>
+    </Reference>
+    <Reference Include="UIH.Mcsf.Core.ContaineeBase">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\UIH\bin\UIH.Mcsf.Core.ContaineeBase.dll</HintPath>
+    </Reference>
+    <Reference Include="UIH.Mcsf.Core.NetBase">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\UIH\bin\UIH.Mcsf.Core.NetBase.dll</HintPath>
+    </Reference>
+    <Reference Include="UIH.Mcsf.Core.SystemResManagerProxy">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\UIH\bin\UIH.Mcsf.Core.SystemResManagerProxy.dll</HintPath>
+    </Reference>
+    <Reference Include="UIH.Mcsf.Database.Wrapper">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\UIH\bin\UIH.Mcsf.Database.Wrapper.dll</HintPath>
+    </Reference>
+    <Reference Include="UIH.Mcsf.DataHeader">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\UIH\bin\UIH.Mcsf.DataHeader.dll</HintPath>
+    </Reference>
+    <Reference Include="UIH.Mcsf.DicomConvertor.Proxy">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\UIH\bin\UIH.Mcsf.DicomConvertor.Proxy.dll</HintPath>
+    </Reference>
+    <Reference Include="UIH.Mcsf.MedDataLoader">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\UIH\bin\UIH.Mcsf.MedDataLoader.dll</HintPath>
+    </Reference>
+    <Reference Include="UIH.Mcsf.MedStudyTree">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\UIH\bin\UIH.Mcsf.MedStudyTree.dll</HintPath>
+    </Reference>
+    <Reference Include="UIH.Mcsf.Viewer.Control">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\UIH\bin\UIH.Mcsf.Viewer.Control.dll</HintPath>
+    </Reference>
+    <Reference Include="UIH.Mcsf.Viewer.Interface">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\UIH\bin\UIH.Mcsf.Viewer.Interface.dll</HintPath>
+    </Reference>
+    <Reference Include="UIH.Mcsf.Database.DicomUIDManager">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\UIH\bin\UIH.Mcsf.Database.DicomUIDManager.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataHandler.cs" />
+    <Compile Include="Containee.cs" />
+    <Compile Include="JobDispatcher.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="..\..\Version\AssemblyVersionInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\UIH.Mcsf.Filming.Models\UIH.Mcsf.Filming.Models.csproj">
+      <Project>{906EA914-AD99-46EE-BCB8-7FB9E415324E}</Project>
+      <Name>UIH.Mcsf.Filming.Models</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\UIH.Mcsf.Filming.Utility\UIH.Mcsf.Filming.Utility.csproj">
+      <Project>{B66564F2-AB17-4828-9C1B-DA1667445C3A}</Project>
+      <Name>UIH.Mcsf.Filming.Utility</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\UIH.Mcsf.Filming.Views\UIH.Mcsf.Filming.Views.csproj">
+      <Project>{6CF8BCF2-5F8B-4989-94A8-98E9D8530BB3}</Project>
+      <Name>UIH.Mcsf.Filming.Views</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\UIH.Mcsf.Filming.Widgets\UIH.Mcsf.Filming.Widgets.csproj">
+      <Project>{34E04ECD-27C3-48E1-92AD-2D8B78954951}</Project>
+      <Name>UIH.Mcsf.Filming.Widgets</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>attrib $(TargetPath) -R 
+attrib $(TargetDir)$(TargetName).pdb -R</PreBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

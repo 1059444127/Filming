@@ -1,0 +1,268 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B66564F2-AB17-4828-9C1B-DA1667445C3A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UIH.Mcsf.Filming</RootNamespace>
+    <AssemblyName>UIH.Mcsf.Filming.Utility</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\..\..\UIH\bin_debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\McsfArchivingAuto.exe.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <OutputPath>..\..\..\..\UIH\bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\McsfArchivingAuto.exe.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\McsfArchivingAuto.exe.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\McsfArchivingAuto.exe.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+  </PropertyGroup>
+  <ItemGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIH.Mcsf.Core.SystemEnvironmentConfig">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\UIH\bin_debug\UIH.Mcsf.Core.SystemEnvironmentConfig.dll</HintPath>
+    </Reference>
+    <Reference Include="UIH.Mcsf.Log.Logger">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\UIH\bin_debug\UIH.Mcsf.Log.Logger.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.ProtocolBuffers">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\UIH\bin_debug\Google.ProtocolBuffers.dll</HintPath>
+    </Reference>
+    <Reference Include="UIH.Mcsf.Core.NetBase">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\UIH\bin_debug\UIH.Mcsf.Core.NetBase.dll</HintPath>
+    </Reference>
+    <Reference Include="UIH.Mcsf.Utility">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\UIH\bin_debug\UIH.Mcsf.Utility.dll</HintPath>
+    </Reference>
+    <Reference Include="UIH.Mcsf.AppControls.Viewer">
+      <HintPath>..\..\..\..\UIH\bin_debug\UIH.Mcsf.AppControls.Viewer.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UIH.Mcsf.Core.ContaineeBase">
+      <HintPath>..\..\..\..\UIH\bin_debug\UIH.Mcsf.Core.ContaineeBase.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UIH.Mcsf.MainFrame.ProcHosting">
+      <HintPath>..\..\..\..\UIH\bin_debug\UIH.Mcsf.MainFrame.ProcHosting.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UIH.Mcsf.MHC">
+      <HintPath>..\..\..\..\UIH\bin_debug\UIH.Mcsf.MHC.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UIH.Mcsf.NLS">
+      <HintPath>..\..\..\..\UIH\bin_debug\UIH.Mcsf.NLS.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UIH.Mcsf.Database.Proxy">
+      <HintPath>..\..\..\..\UIH\bin_debug\UIH.Mcsf.Database.Proxy.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UIH.Mcsf.Database.Wrapper">
+      <HintPath>..\..\..\..\UIH\bin_debug\UIH.Mcsf.Database.Wrapper.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UIH.Mcsf.Core.File.Parser">
+      <HintPath>..\..\..\..\UIH\bin_debug\UIH.Mcsf.Core.File.Parser.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UIH.Mcsf.Viewer.Interface">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\UIH\bin_debug\UIH.Mcsf.Viewer.Interface.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UIH.Mcsf.License">
+      <HintPath>..\..\..\..\UIH\bin_debug\UIH.Mcsf.License.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIH.Mcsf.Core.SystemEnvironmentConfig">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\UIH\bin\UIH.Mcsf.Core.SystemEnvironmentConfig.dll</HintPath>
+    </Reference>
+    <Reference Include="UIH.Mcsf.Log.Logger">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\UIH\bin\UIH.Mcsf.Log.Logger.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.ProtocolBuffers">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\UIH\bin\Google.ProtocolBuffers.dll</HintPath>
+    </Reference>
+    <Reference Include="UIH.Mcsf.Core.NetBase">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\UIH\bin\UIH.Mcsf.Core.NetBase.dll</HintPath>
+    </Reference>
+    <Reference Include="UIH.Mcsf.Utility">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\UIH\bin\UIH.Mcsf.Utility.dll</HintPath>
+    </Reference>
+    <Reference Include="UIH.Mcsf.AppControls.Viewer">
+      <HintPath>..\..\..\..\UIH\bin\UIH.Mcsf.AppControls.Viewer.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UIH.Mcsf.Core.ContaineeBase">
+      <HintPath>..\..\..\..\UIH\bin\UIH.Mcsf.Core.ContaineeBase.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UIH.Mcsf.MainFrame.ProcHosting">
+      <HintPath>..\..\..\..\UIH\bin\UIH.Mcsf.MainFrame.ProcHosting.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UIH.Mcsf.MHC">
+      <HintPath>..\..\..\..\UIH\bin\UIH.Mcsf.MHC.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UIH.Mcsf.NLS">
+      <HintPath>..\..\..\..\UIH\bin\UIH.Mcsf.NLS.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UIH.Mcsf.Database.Proxy">
+      <HintPath>..\..\..\..\UIH\bin\UIH.Mcsf.Database.Proxy.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UIH.Mcsf.Database.Wrapper">
+      <HintPath>..\..\..\..\UIH\bin\UIH.Mcsf.Database.Wrapper.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UIH.Mcsf.Core.File.Parser">
+      <HintPath>..\..\..\..\UIH\bin\UIH.Mcsf.Core.File.Parser.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UIH.Mcsf.Viewer.Interface">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\UIH\bin\UIH.Mcsf.Viewer.Interface.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UIH.Mcsf.License">
+      <HintPath>..\..\..\..\UIH\bin\UIH.Mcsf.License.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ContaineeExtension.cs" />
+    <Compile Include="FilmingLicense.cs" />
+    <Compile Include="FilmingUtility.cs" />
+    <Compile Include="ImgTextItem.cs" />
+    <Compile Include="JobCreator.cs" />
+    <Compile Include="Logger.cs" />
+    <Compile Include="MiscellaneousConfigureReader.cs" />
+    <Compile Include="Nls.cs" />
+    <Compile Include="OffScreenRenderXmlHelper.cs" />
+    <Compile Include="Patient.cs" />
+    <Compile Include="PeerNode.cs" />
+    <Compile Include="Printers.cs" />
+    <Compile Include="PrintSetting.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="..\..\Version\AssemblyVersionInfo.cs" />
+    <Compile Include="FilmingWindowLevel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="PresentationFramework" />
+    <Reference Include="ReachFramework" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Printing" />
+    <Reference Include="System.Xaml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>attrib $(TargetPath) -R
+attrib $(TargetDir)$(TargetName).pdb -R</PreBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

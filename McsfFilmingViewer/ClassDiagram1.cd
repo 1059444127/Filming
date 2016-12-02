@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="UIH.Mcsf.Filming.ImageManager.DataHeaderBatchJob" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="11.75" Y="2.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAA=</HashCode>
+      <FileName>ImageManager\DataHeaderBatchJob.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="UIH.Mcsf.Filming.ImageManager.DataHeaderJobWorker" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="1.75" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAACAAAIAQAAAAAAAAAAAAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>ImageManager\DataHeaderJobWorker.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="UIH.Mcsf.Filming.ImageManager.DataHeaderCommandHandler" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="11.5" Y="1" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAA=</HashCode>
+      <FileName>ImageManager\ICommandHandler.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="UIH.Mcsf.Filming.ImageManager.ReviewSeriesCommandHandler" BaseTypeListCollapsed="true">
+    <Position X="12.25" Y="4.75" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAAAAEAAAAAAAAACAAAAAAAAAAAA=</HashCode>
+      <FileName>ImageManager\ICommandHandler.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="UIH.Mcsf.Filming.ImageManager.SwitchToFilmingCommandHandler" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.25" Y="3.25" Width="3.5" />
+    <NestedTypes>
+      <Enum Name="UIH.Mcsf.Filming.ImageManager.SwitchToFilmingCommandHandler.PaOperationId" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>ImageManager\ICommandHandler.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAABAADABAIAAAAAICAAAAQAACAAIECAAAgAABAAAAA=</HashCode>
+      <FileName>ImageManager\ICommandHandler.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="UIH.Mcsf.Filming.ImageManager.ImageJobManager">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EFAiAAECAAUIAgAJAEiAEARAAAAAQAQQAQAAAAQiAgA=</HashCode>
+      <FileName>ImageManager\ImageJobManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UIH.Mcsf.Filming.ImageManager.ImageJobModel" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAAAABAAAAAAIAAAAAAACAAAAACAAAAAA=</HashCode>
+      <FileName>ImageManager\ImageJobModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="UIH.Mcsf.Filming.ImageManager.ImageJobWorker" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4" Y="1.5" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>ImageManager\ImageJobWorker.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="UIH.Mcsf.Filming.ImageManager.IWorkFlow" Collapsed="true">
+    <Position X="10" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>ImageManager\IWorkFlow.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="UIH.Mcsf.Filming.ImageManager.IACommandHandler">
+    <Position X="0.75" Y="4" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAA=</HashCode>
+      <FileName>ImageManager\ICommandHandler.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Microsoft YaHei" Size="9" />
+</ClassDiagram>

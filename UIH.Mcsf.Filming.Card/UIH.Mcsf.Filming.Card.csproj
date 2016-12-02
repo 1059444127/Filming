@@ -1,0 +1,474 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EB591451-2282-43F6-A9C7-0CFC37819DB5}</ProjectGuid>
+    <OutputType>library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UIH.Mcsf.Filming.Card</RootNamespace>
+    <AssemblyName>UIH.Mcsf.Filming.Card</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\..\UIH\bin_debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\..\UIH\bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="Google.ProtocolBuffers">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\UIH\bin_debug\Google.ProtocolBuffers.dll</HintPath>
+    </Reference>
+    <Reference Include="UIH.Mcsf.Database.DicomUIDManager">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\UIH\bin_debug\UIH.Mcsf.Database.DicomUIDManager.dll</HintPath>
+    </Reference>
+    <Reference Include="UIH.Mcsf.Viewer.Action">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\UIH\bin_debug\UIH.Mcsf.Viewer.Action.dll</HintPath>
+    </Reference>
+    <Reference Include="UIH.Mcsf.Viewer.Command">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\UIH\bin_debug\UIH.Mcsf.Viewer.Command.dll</HintPath>
+    </Reference>
+    <Reference Include="UIH.Mcsf.Viewer.Control">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\UIH\bin_debug\UIH.Mcsf.Viewer.Control.dll</HintPath>
+    </Reference>
+    <Reference Include="UIH.Mcsf.Viewer.Graphics">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\UIH\bin_debug\UIH.Mcsf.Viewer.Graphics.dll</HintPath>
+    </Reference>
+    <Reference Include="UIH.Mcsf.Viewer.Interface">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\UIH\bin_debug\UIH.Mcsf.Viewer.Interface.dll</HintPath>
+    </Reference>
+    <Reference Include="UIH.Mcsf.Viewer.Utility">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\UIH\bin_debug\UIH.Mcsf.Viewer.Utility.dll</HintPath>
+    </Reference>
+    <Reference Include="UIH.Mcsf.Core.ContaineeBase">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\UIH\bin_debug\UIH.Mcsf.Core.ContaineeBase.dll</HintPath>
+    </Reference>
+    <Reference Include="UIH.Mcsf.Core.NetBase">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\UIH\bin_debug\UIH.Mcsf.Core.NetBase.dll</HintPath>
+    </Reference>
+    <Reference Include="UIH.Mcsf.Core.SystemEnvironmentConfig">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\UIH\bin_debug\UIH.Mcsf.Core.SystemEnvironmentConfig.dll</HintPath>
+    </Reference>
+    <Reference Include="UIH.Mcsf.Log.Logger">
+      <HintPath>..\..\..\..\UIH\bin_debug\UIH.Mcsf.Log.Logger.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UIH.Mcsf.Filming.Utility">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\UIH\bin_debug\UIH.Mcsf.Filming.Utility.dll</HintPath>
+    </Reference>
+    <Reference Include="UIH.Mcsf.Database.Wrapper">
+      <HintPath>..\..\..\..\UIH\bin_debug\UIH.Mcsf.Database.Wrapper.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UIH.Mcsf.MainFrame.InteractionInfo">
+      <HintPath>..\..\..\..\UIH\bin_debug\UIH.Mcsf.MainFrame.InteractionInfo.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UIH.Mcsf.CommonControlTheme">
+      <HintPath>..\..\..\..\UIH\bin_debug\UIH.Mcsf.CommonControlTheme.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UIH.Mcsf.App.Common">
+      <HintPath>..\..\..\..\UIH\bin_debug\UIH.Mcsf.App.Common.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UIH.Mcsf.App.Controls">
+      <HintPath>..\..\..\..\UIH\bin_debug\UIH.Mcsf.App.Controls.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UIH.Mcsf.AppControls.Viewer">
+      <HintPath>..\..\..\..\UIH\bin_debug\UIH.Mcsf.AppControls.Viewer.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UIH.Mcsf.Filming.Utility">
+      <HintPath>..\..\..\..\UIH\bin_debug\UIH.Mcsf.Filming.Utility.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UIH.Mcsf.MainFrame.ProcHosting">
+      <HintPath>..\..\..\..\UIH\bin_debug\UIH.Mcsf.MainFrame.ProcHosting.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\..\..\UIH\bin_debug\Newtonsoft.Json.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UIH.Mcsf.NLS">
+      <HintPath>..\..\..\..\..\UIH\bin_debug\UIH.Mcsf.NLS.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UIH.Mcsf.MHC">
+      <HintPath>..\..\..\..\..\UIH\bin_debug\UIH.Mcsf.MHC.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UIH.Mcsf.DataHeader">
+      <HintPath>..\..\..\..\..\UIH\bin_debug\UIH.Mcsf.DataHeader.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UIH.Mcsf.Service.Utility">
+      <HintPath>..\..\..\..\..\UIH\bin_debug\UIH.Mcsf.Service.Utility.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UIH.Mcsf.Controls">
+      <HintPath>..\..\..\..\..\UIH\bin_debug\UIH.Mcsf.Controls.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UIH.Mcsf.Utility">
+      <HintPath>..\..\..\..\..\UIH\bin_debug\UIH.Mcsf.Utility.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="WPFToolkit.Extended">
+      <HintPath>..\..\..\..\..\UIH\bin_debug\WPFToolkit.Extended.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Windows.Interactivity">
+      <HintPath>..\..\..\..\..\UIH\bin_debug\System.Windows.Interactivity.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UIH.Mcsf.MedStudyTree">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\UIH\bin_debug\UIH.Mcsf.MedStudyTree.dll</HintPath>
+    </Reference>
+    <Reference Include="UIH.Mcsf.MedDataLoader">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\UIH\bin_debug\UIH.Mcsf.MedDataLoader.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="Google.ProtocolBuffers">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\UIH\bin\Google.ProtocolBuffers.dll</HintPath>
+    </Reference>
+    <Reference Include="UIH.Mcsf.Database.DicomUIDManager">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\UIH\bin\UIH.Mcsf.Database.DicomUIDManager.dll</HintPath>
+    </Reference>
+    <Reference Include="UIH.Mcsf.Viewer.Action">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\UIH\bin\UIH.Mcsf.Viewer.Action.dll</HintPath>
+    </Reference>
+    <Reference Include="UIH.Mcsf.Viewer.Command">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\UIH\bin\UIH.Mcsf.Viewer.Command.dll</HintPath>
+    </Reference>
+    <Reference Include="UIH.Mcsf.Viewer.Control">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\UIH\bin\UIH.Mcsf.Viewer.Control.dll</HintPath>
+    </Reference>
+    <Reference Include="UIH.Mcsf.Viewer.Graphics">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\UIH\bin\UIH.Mcsf.Viewer.Graphics.dll</HintPath>
+    </Reference>
+    <Reference Include="UIH.Mcsf.Viewer.Interface">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\UIH\bin\UIH.Mcsf.Viewer.Interface.dll</HintPath>
+    </Reference>
+    <Reference Include="UIH.Mcsf.Viewer.Utility">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\UIH\bin\UIH.Mcsf.Viewer.Utility.dll</HintPath>
+    </Reference>
+    <Reference Include="UIH.Mcsf.Core.ContaineeBase">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\UIH\bin\UIH.Mcsf.Core.ContaineeBase.dll</HintPath>
+    </Reference>
+    <Reference Include="UIH.Mcsf.Core.NetBase">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\UIH\bin\UIH.Mcsf.Core.NetBase.dll</HintPath>
+    </Reference>
+    <Reference Include="UIH.Mcsf.Core.SystemEnvironmentConfig">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\UIH\bin\UIH.Mcsf.Core.SystemEnvironmentConfig.dll</HintPath>
+    </Reference>
+    <Reference Include="UIH.Mcsf.Log.Logger">
+      <HintPath>..\..\..\..\UIH\bin\UIH.Mcsf.Log.Logger.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UIH.Mcsf.Filming.Utility">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\UIH\bin\UIH.Mcsf.Filming.Utility.dll</HintPath>
+    </Reference>
+    <Reference Include="UIH.Mcsf.Database.Wrapper">
+      <HintPath>..\..\..\..\UIH\bin\UIH.Mcsf.Database.Wrapper.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UIH.Mcsf.MainFrame.InteractionInfo">
+      <HintPath>..\..\..\..\UIH\bin\UIH.Mcsf.MainFrame.InteractionInfo.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UIH.Mcsf.CommonControlTheme">
+      <HintPath>..\..\..\..\UIH\bin\UIH.Mcsf.CommonControlTheme.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UIH.Mcsf.App.Common">
+      <HintPath>..\..\..\..\UIH\bin\UIH.Mcsf.App.Common.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UIH.Mcsf.App.Controls">
+      <HintPath>..\..\..\..\UIH\bin\UIH.Mcsf.App.Controls.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UIH.Mcsf.AppControls.Viewer">
+      <HintPath>..\..\..\..\UIH\bin\UIH.Mcsf.AppControls.Viewer.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UIH.Mcsf.Filming.Utility">
+      <HintPath>..\..\..\..\UIH\bin\UIH.Mcsf.Filming.Utility.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UIH.Mcsf.MainFrame.ProcHosting">
+      <HintPath>..\..\..\..\UIH\bin\UIH.Mcsf.MainFrame.ProcHosting.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\..\..\UIH\bin\Newtonsoft.Json.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UIH.Mcsf.NLS">
+      <HintPath>..\..\..\..\..\UIH\bin\UIH.Mcsf.NLS.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UIH.Mcsf.MHC">
+      <HintPath>..\..\..\..\..\UIH\bin\UIH.Mcsf.MHC.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UIH.Mcsf.DataHeader">
+      <HintPath>..\..\..\..\..\UIH\bin\UIH.Mcsf.DataHeader.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UIH.Mcsf.Service.Utility">
+      <HintPath>..\..\..\..\..\UIH\bin\UIH.Mcsf.Service.Utility.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UIH.Mcsf.Controls">
+      <HintPath>..\..\..\..\..\UIH\bin\UIH.Mcsf.Controls.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UIH.Mcsf.Utility">
+      <HintPath>..\..\..\..\..\UIH\bin\UIH.Mcsf.Utility.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="WPFToolkit.Extended">
+      <HintPath>..\..\..\..\..\UIH\bin\WPFToolkit.Extended.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Windows.Interactivity">
+      <HintPath>..\..\..\..\..\UIH\bin\System.Windows.Interactivity.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UIH.Mcsf.MedStudyTree">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\UIH\bin\UIH.Mcsf.MedStudyTree.dll</HintPath>
+    </Reference>
+    <Reference Include="UIH.Mcsf.MedDataLoader">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\UIH\bin\UIH.Mcsf.MedDataLoader.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Model\CardModel.cs" />
+    <Compile Include="Model\CellModel.cs" />
+    <Compile Include="Model\FilmModel.cs" />
+    <Compile Include="Model\RegionModel.cs" />
+    <Compile Include="Model\ViewportModel.cs" />
+    <Compile Include="ViewModel\CardViewModel.cs" />
+    <Compile Include="View\ArrangePanel.xaml.cs">
+      <DependentUpon>ArrangePanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CardInfoPanel.xaml.cs">
+      <DependentUpon>CardInfoPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\FilmPlate.xaml.cs">
+      <DependentUpon>FilmPlate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ImageToolPanel.xaml.cs">
+      <DependentUpon>ImageToolPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\OutputPanel.xaml.cs">
+      <DependentUpon>OutputPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\FilmGrid.xaml.cs">
+      <DependentUpon>FilmGrid.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Preview.xaml.cs">
+      <DependentUpon>Preview.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\StudyTree.xaml.cs">
+      <DependentUpon>StudyTree.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\TitleBar.xaml.cs">
+      <DependentUpon>TitleBar.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Resource\FilmingWindowResource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ArrangePanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Card.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\CardInfoPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ControlPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Film.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="Adapter\DataHandler.cs" />
+    <Compile Include="Adapter\DbWrapper.cs" />
+    <Compile Include="Adapter\CommandHandler.cs" />
+    <Compile Include="Adapter\Containee.cs" />
+    <Compile Include="Model\ImageModel.cs" />
+    <Compile Include="ViewModel\FilmViewModel.cs" />
+    <Compile Include="ViewModel\ObservableObject.cs" />
+    <Compile Include="View\Card.xaml.cs">
+      <DependentUpon>Card.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ControlPanel.xaml.cs">
+      <DependentUpon>ControlPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Film.xaml.cs">
+      <DependentUpon>Film.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="View\FilmPlate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ImageToolPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\OutputPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\FilmGrid.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Preview.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\StudyTree.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\TitleBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\UIH.Mcsf.Filming.Widgets\UIH.Mcsf.Filming.Widgets.csproj">
+      <Project>{34E04ECD-27C3-48E1-92AD-2D8B78954951}</Project>
+      <Name>UIH.Mcsf.Filming.Widgets</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Command\" />
+    <Folder Include="Definition\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

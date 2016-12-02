@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="15" failures="1" disabled="0" errors="0" time="29.686" name="AllTests">
+  <testsuite name="FilmingDBTest" tests="15" failures="1" disabled="0" errors="0" time="29.683">
+    <testcase name="Init_FilmingDB_Instance" status="run" time="0" classname="FilmingDBTest" />
+    <testcase name="Test_InsertPrintJobToDB" status="run" time="0.673" classname="FilmingDBTest" />
+    <testcase name="InsertPrintImagesToDB_Boundary_Condition_Test" status="run" time="0.221" classname="FilmingDBTest" />
+    <testcase name="InsertPrintFilmToDB_Boundary_Condition_Test" status="run" time="0" classname="FilmingDBTest" />
+    <testcase name="InsertPrintJobToDB_Boundary_Condition_Test" status="run" time="0" classname="FilmingDBTest" />
+    <testcase name="Test_GetAllPrintJob" status="run" time="0.182" classname="FilmingDBTest" />
+    <testcase name="Test_GetPrintFilmJobByID" status="run" time="0.056" classname="FilmingDBTest" />
+    <testcase name="Test_GetHistoryPrintJob" status="run" time="0.07" classname="FilmingDBTest" />
+    <testcase name="Update_Print_Job_Status_In_DB_By_ID_Is_Not_valid" status="run" time="0.069" classname="FilmingDBTest" />
+    <testcase name="Update_Print_Job_Status_In_DB_By_ID_Is_Not_Existed" status="run" time="0.053" classname="FilmingDBTest" />
+    <testcase name="Update_Print_Job_Status_In_DB_By_ID_Is_Existed" status="run" time="0.055" classname="FilmingDBTest" />
+    <testcase name="Update_Print_Job_Status_In_DB_NOT_Existed" status="run" time="28.11" classname="FilmingDBTest">
+      <failure message="Value of: iResult&#x0A;  Actual: -1&#x0A;Expected: 0" type=""><![CDATA[mcsf_filming_db_test_case.cpp:259
+Value of: iResult
+  Actual: -1
+Expected: 0]]></failure>
+    </testcase>
+    <testcase name="Test_DeleteJobByID" status="run" time="0.107" classname="FilmingDBTest" />
+    <testcase name="Test_DeleteJobByID_No_Exists" status="run" time="0.068" classname="FilmingDBTest" />
+    <testcase name="PrinterJobObject_Abbtributes_Test" status="run" time="0.001" classname="FilmingDBTest" />
+  </testsuite>
+</testsuites>

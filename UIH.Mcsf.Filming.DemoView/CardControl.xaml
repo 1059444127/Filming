@@ -1,0 +1,16 @@
+﻿<UserControl x:Class="UIH.Mcsf.Filming.DemoView.CardControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:demoView="clr-namespace:UIH.Mcsf.Filming.DemoView" mc:Ignorable="d"
+             d:DesignHeight="300" d:DesignWidth="300">
+    <DockPanel LastChildFill="True">
+        <demoView:BoardControl x:Name="BoardControl" DockPanel.Dock="Left" Height="900" Width="750" />
+        <StackPanel DockPanel.Dock="Right">
+            <demoView:ImageLoadPanel DataContext="{Binding ImageLoadPanelViewModel}"/>
+            <demoView:ControlPanel DataContext="{Binding ControlPanelViewModel}" />
+        </StackPanel>
+        <demoView:InfoPanel DataContext="{Binding InfoPanelViewModel}" />
+    </DockPanel>
+</UserControl>

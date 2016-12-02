@@ -1,0 +1,205 @@
+﻿<UserControl x:Class="UIH.Mcsf.Filming.CustomViewportLayoutWindow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d" 
+             d:DesignHeight="612" d:DesignWidth="650" Width="612" Height="650" AutomationProperties.AutomationId="ID_EX_FILMING_CUSTOMVIEWPORTLAYOUT_WINDOW">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/UIH.Mcsf.CommonControlTheme;component/CommonControl/Public.xaml"/>
+                <ResourceDictionary Source="/UIH.Mcsf.CommonControlTheme;component/CommonControl/ScrollBarSmallWindow.xaml"/>
+                <ResourceDictionary Source="/UIH.Mcsf.CommonControlTheme;component/CommonControl/PublicListBox.xaml"/>
+                <ResourceDictionary Source="/UIH.Mcsf.CommonControlTheme;component/MainFrame/TabControlMI.xaml"/>
+                <ResourceDictionary
+                    Source="/UIH.Mcsf.CommonControlTheme;component/CommonControl/Style_ContextMenu_CSW_CC_Default.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <ItemsPanelTemplate x:Key="itemPanelListBox">
+                <WrapPanel IsItemsHost="True" HorizontalAlignment="Center" />
+            </ItemsPanelTemplate>
+            <Style x:Key="listBoxStyle"
+           TargetType="{x:Type ListBox}">
+                <Setter Property="Background"
+                Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
+                <Setter Property="BorderThickness"
+                Value="1"/>
+                <Setter Property="Foreground"
+                Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+                <Setter Property="ScrollViewer.HorizontalScrollBarVisibility"
+                Value="Auto"/>
+                <Setter Property="ScrollViewer.VerticalScrollBarVisibility" 
+                Value="Auto"/>
+                <Setter Property="ItemContainerStyle">
+                    <Setter.Value>
+                        <Style TargetType="ListBoxItem">
+                            <Setter Property="BorderThickness" Value="2"/>
+                            <Setter Property="Padding" Value="2" />
+                        </Style>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="ScrollViewer.CanContentScroll"
+                Value="true"/>
+                <Setter Property="ScrollViewer.PanningMode"
+                Value="Both"/>
+                <Setter Property="Stylus.IsFlicksEnabled"
+                Value="False"/>
+                <Setter Property="VerticalContentAlignment"
+                Value="Center"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type ListBox}">
+                            <Border Name="TemplateBorder"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            SnapsToDevicePixels="true"
+                            Padding="1,1,1,1" CornerRadius="5">
+                                <ScrollViewer Padding="{TemplateBinding Padding}"
+                                      Focusable="True" BorderBrush="#FF6E6E6E">
+                                    <ItemsPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                                </ScrollViewer>
+                                
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsEnabled" Value="False">
+                                    <Trigger.Setters>
+                                        <Setter TargetName="TemplateBorder" Property="Background" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
+                                    </Trigger.Setters>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <Style x:Key="Filming_LayoutLabelStyle" TargetType="{x:Type Label}">
+                <Setter Property="Foreground" Value="White"/>
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="BorderBrush" Value="#FF50E3C2"/>
+                <Setter Property="BorderThickness" Value="1"/>
+                <Setter Property="Width" Value="20"/>
+                <Setter Property="Height" Value="20"/>
+                <Setter Property="Padding" Value="0"/>
+                <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                <Setter Property="VerticalContentAlignment" Value="Center"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type Label}">
+                            <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}"  SnapsToDevicePixels="true">
+                                <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Margin="{TemplateBinding Padding}" />
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsEnabled" Value="false">
+                                    <Setter Property="Opacity" Value="0.4"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </ResourceDictionary>
+    </UserControl.Resources>
+     <Grid Margin =" 0,15,0,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="510"></RowDefinition>
+            <RowDefinition Height="0"></RowDefinition>
+            <RowDefinition Height="90"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TabControl x:Name="tabControl" Grid.Row="0"  Tag="0"  IsEnabled="True" SelectionChanged="TabItem_SelectionChanged" MouseDown="TabControl_OnMouseDown"
+                    Style="{DynamicResource Style_TabControl_Exam_MR_Default}"
+                    >
+            <TabItem x:Name="tabItemOrigin"  Height="36" Width="120" IsEnabled="True" IsSelected="True" Tag="0" Style="{DynamicResource Style_TabItem_Exam_MR_Default}" FocusVisualStyle="{x:Null}">
+                    <TabItem.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock HorizontalAlignment="Center" Text="出厂" />
+                        </DataTemplate>
+                    </TabItem.HeaderTemplate>
+                    <ListBox Grid.Row="0" Margin="0" Width ="600" Height="440" Padding ="1,1,1,1" Name="customViewportListBoxOrigin" HorizontalAlignment="Center"  ItemsSource="{Binding Path=CustomViewportItemCollectionOrigin}"
+                                    ItemsPanel="{StaticResource itemPanelListBox}" SelectedItem="{Binding Path=SelectedViewportItemOrigin}" AutomationProperties.AutomationId="ID_LST_FILMING_CUSTOMVIEWPORT_LISTBOX_ORIGIN"
+                                    ScrollViewer.CanContentScroll="True" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Visible"  SelectionChanged="customViewportListBox_SelectionChanged" Style ="{StaticResource listBoxStyle}">
+                        <ListBox.Resources>
+                            <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Cyan"/>
+                            <SolidColorBrush x:Key="{x:Static SystemColors.ControlBrushKey}" Color="Transparent"/>
+                        </ListBox.Resources> 
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition ></RowDefinition>
+                                        <RowDefinition ></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <Border Background="#FF9C9C9C " BorderBrush="#FF9C9C9C" BorderThickness="12" CornerRadius="0"  Name="listBoxItemBorder">
+                                        <StackPanel>
+                                            <Grid>
+                                                <Image Source="{Binding Path=CustomViewportThumbnailBitmapSource }" Margin="0" HorizontalAlignment="Center" Stretch="Fill" Height="147" Width="147"/>
+                                                <Label Name="indexLabel" Content="{Binding Path=IndexLabelContent}" Visibility ="{Binding Path=IndexLableVisibility}" Margin ="12,6,0,0" Style="{StaticResource Filming_LayoutLabelStyle}" HorizontalAlignment="Left" VerticalAlignment="Top" ></Label>
+                                            </Grid>
+                                            <TextBox Grid.Row="1" Text="{Binding Path=CustomViewportName}" IsReadOnly="True" MaxLength="20" ToolTip="{Binding Path=CustomViewportName}"  Height="20" Width="160" TextAlignment="Center"  Focusable="True" Style="{DynamicResource Style_TextBox_Common_CSW_Default}" />
+                                        </StackPanel>
+                                    </Border>
+                                </Grid>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                        <ListBox.Background>
+                            <SolidColorBrush Color ="#FF9C9C9C "/>
+                        </ListBox.Background>
+                     </ListBox>
+                </TabItem>
+            <TabItem x:Name="tabItemUser" Tag="1" Height="36" Width="120" IsEnabled="True"  Style="{DynamicResource Style_TabItem_Exam_MR_Default}" FocusVisualStyle="{x:Null}">
+                    <TabItem.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock HorizontalAlignment="Center" Text="自定义" />
+                        </DataTemplate>
+                    </TabItem.HeaderTemplate>
+                    <ListBox Grid.Row="0" Margin="0" Width ="600" Height="440" Padding ="1,1,1,1" Name="customViewportListBoxUser" HorizontalAlignment="Center"  ItemsSource="{Binding Path=CustomViewportItemCollectionUser}"
+                                    ItemsPanel="{StaticResource itemPanelListBox}"  AutomationProperties.AutomationId="ID_LST_FILMING_CUSTOMVIEWPORT_LISTBOX"  SelectedItem="{Binding  Path=SelectedViewportItemUser,Mode=TwoWay}"
+                                    ScrollViewer.CanContentScroll="True" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Visible"  SelectionChanged="customViewportListBox_SelectionChanged" Style ="{StaticResource listBoxStyle}">
+                        <ListBox.Resources>
+                            <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Cyan"/>
+                            <SolidColorBrush x:Key="{x:Static SystemColors.ControlBrushKey}" Color="Transparent"/>
+                        </ListBox.Resources>
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition ></RowDefinition>
+                                        <RowDefinition ></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <Border Background="#FF9C9C9C " BorderBrush="#FF9C9C9C" BorderThickness="12" CornerRadius="0"  Name="listBoxItemBorder">
+                                        <StackPanel>
+                                            <Image Source="{Binding Path=CustomViewportThumbnailBitmapSource }" Margin="0" HorizontalAlignment="Center" Stretch="Fill" Height="147" Width="147"/>
+                                        <TextBox Name="userTextBox"  LostFocus="OnTextBoxLostFocus" Text="{Binding Path=CustomViewportName}" 
+                                                 IsReadOnly="{Binding Path=NameIsReadOnly}" MaxLength="20" ToolTip="{Binding Path=CustomViewportName}"  
+                                                 Height="20" Width="160" TextAlignment="Center"  Focusable="True" Style="{DynamicResource Style_TextBox_Common_CSW_Default}"
+                                                 />
+                                        </StackPanel>
+                                    </Border>
+                                </Grid>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                        <ListBox.Background>
+                            <SolidColorBrush Color ="#FF9C9C9C "/>
+                        </ListBox.Background>
+                    </ListBox>
+                </TabItem>
+            </TabControl>
+        
+        <!--<Filming:FilmingPageControl Grid.Row="1" x:Name="previewFilmPageControl" Height="230" Width="200" ></Filming:FilmingPageControl>-->
+        <!--<filming:FilmingPageControl Grid.Row="1" x:Name="SavedFilmPageControl" Height="230" Width="200" />-->
+         <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <!--<ColumnDefinition></ColumnDefinition>-->
+            </Grid.ColumnDefinitions>
+            <!--<Button Grid.Column="0" Height="30" Width="102" Content="{DynamicResource UID_Filming_CustomViewPortLayout_Setting_Save}" AutomationProperties.AutomationId="ID_BTN_FILMING_CUSTOMVIEWPORT_SAVE"
+                    Name="saveCustomViewportLayoutButton" Click="OnSaveCustomViewportLayoutButtonClick" IsEnabled="{Binding Path=IsEnableSave}" Style="{DynamicResource Style_Button_Common_CSW_Default}"></Button>-->
+            <Button Grid.Column="0" Height="30" Width="102" Content="{DynamicResource UID_Filming_Custom_Confirm}" AutomationProperties.AutomationId="ID_BTN_FILMING_CUSTOMVIEWPORT_APPLY"
+                    Name="applyCustomViewportLayoutButton" Click="OnApplyCustomViewportLayoutButtonClick" IsEnabled="{Binding Path=IsEnableApply}" Style="{DynamicResource Style_Button_Common_CSW_Default}"></Button>
+            <Button Grid.Column="1" Height="30" Width="102" Content="{DynamicResource UID_Filming_Custom_Cancel}" AutomationProperties.AutomationId="ID_BTN_FILMING_CUSTOMVIEWPORT_DELETE"
+                    Name="cancleCustomViewportLayoutButton" Click="OnQuitButtonClick"  Style="{DynamicResource Style_Button_Common_CSW_Default}"></Button>
+            <!--<Button Grid.Column="3" Height="30" Width="80" Content="{DynamicResource UID_Filming_CustomViewPortLayout_Setting_Close}" AutomationProperties.AutomationId="btnFilmingCustomViewportClose"
+                    Name="closeCustomViewportLayoutButton" Click="OnQuitButtonClick" Style="{DynamicResource Style_Button_Common_CSW_Default}"></Button>-->
+        </Grid>
+    </Grid>
+</UserControl>

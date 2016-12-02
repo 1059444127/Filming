@@ -1,0 +1,14 @@
+<UserControl x:Class="MEFViewer.LayoutControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Button Grid.Column="0" Content="2x2" Command="{Binding Layout2X2Command}" HorizontalAlignment="Center"
+                VerticalAlignment="Center" />
+        <Button Grid.Column="1" Content="3x3" Command="{Binding Layout3X3Command}" HorizontalAlignment="Center"
+                VerticalAlignment="Center" />
+    </Grid>
+</UserControl>

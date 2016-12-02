@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="UIH.Mcsf.Filming.Card.View.Film"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             xmlns:vc="http://UIH/Mcsf/Viewer" xmlns:ViewModel="clr-namespace:UIH.Mcsf.Filming.Card.ViewModel"
+             xmlns:View="clr-namespace:UIH.Mcsf.Filming.Card.View" d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.DataContext>
+        <ViewModel:FilmViewModel />
+    </UserControl.DataContext>
+    <StackPanel>
+        <Label>Film</Label>
+        <StackPanel>
+            <!--<Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
+        </Grid.RowDefinitions>
+        <vc:MedViewerControl Name="_viewerControl" Grid.Row="0" />
+        <Button Grid.Row="1" Content="Load Image" Click="OnButtonClick" />-->
+            <View:TitleBar />
+            <vc:MedViewerControl />
+            <Rectangle Name="paginator" Fill="#00e9e9" Height="3" VerticalAlignment="Bottom"/>
+            <View:TitleBar />
+        </StackPanel>
+    </StackPanel>
+</UserControl>

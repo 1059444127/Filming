@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{34E04ECD-27C3-48E1-92AD-2D8B78954951}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UIH.Mcsf.Filming.Widgets</RootNamespace>
+    <AssemblyName>UIH.Mcsf.Filming.Widgets</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\..\UIH\bin_debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\..\UIH\bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <Reference Include="UIH.Mcsf.Core.SystemEnvironmentConfig">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\UIH\bin_debug\UIH.Mcsf.Core.SystemEnvironmentConfig.dll</HintPath>
+    </Reference>
+    <Reference Include="UIH.Mcsf.Database.DicomUIDManager">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\UIH\bin_debug\UIH.Mcsf.Database.DicomUIDManager.dll</HintPath>
+    </Reference>
+    <Reference Include="UIH.Mcsf.Database.Wrapper">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\UIH\bin_debug\UIH.Mcsf.Database.Wrapper.dll</HintPath>
+    </Reference>
+    <Reference Include="UIH.Mcsf.DataHeader">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\UIH\bin_debug\UIH.Mcsf.DataHeader.dll</HintPath>
+    </Reference>
+    <Reference Include="UIH.Mcsf.NLS">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\UIH\bin_debug\UIH.Mcsf.NLS.dll</HintPath>
+    </Reference>
+    <Reference Include="UIH.Mcsf.Viewer.Control">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\UIH\bin_debug\UIH.Mcsf.Viewer.Control.dll</HintPath>
+    </Reference>
+    <Reference Include="UIH.Mcsf.Viewer.Interface">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\UIH\bin_debug\UIH.Mcsf.Viewer.Interface.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Reference Include="UIH.Mcsf.Core.SystemEnvironmentConfig">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\UIH\bin\UIH.Mcsf.Core.SystemEnvironmentConfig.dll</HintPath>
+    </Reference>
+    <Reference Include="UIH.Mcsf.Database.DicomUIDManager">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\UIH\bin\UIH.Mcsf.Database.DicomUIDManager.dll</HintPath>
+    </Reference>
+    <Reference Include="UIH.Mcsf.Database.Wrapper">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\UIH\bin\UIH.Mcsf.Database.Wrapper.dll</HintPath>
+    </Reference>
+    <Reference Include="UIH.Mcsf.DataHeader">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\UIH\bin\UIH.Mcsf.DataHeader.dll</HintPath>
+    </Reference>
+    <Reference Include="UIH.Mcsf.NLS">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\UIH\bin\UIH.Mcsf.NLS.dll</HintPath>
+    </Reference>
+    <Reference Include="UIH.Mcsf.Viewer.Control">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\UIH\bin\UIH.Mcsf.Viewer.Control.dll</HintPath>
+    </Reference>
+    <Reference Include="UIH.Mcsf.Viewer.Interface">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\UIH\bin\UIH.Mcsf.Viewer.Interface.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CommandID.cs" />
+    <Compile Include="EventID.cs" />
+    <Compile Include="GlobalDefinition.cs" />
+    <Compile Include="Notifier.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RelayCommand.cs" />
+    <Compile Include="Widget.cs" />
+    <Compile Include="..\..\Version\AssemblyVersionInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\UIH.Mcsf.Filming.Utility\UIH.Mcsf.Filming.Utility.csproj">
+      <Project>{B66564F2-AB17-4828-9C1B-DA1667445C3A}</Project>
+      <Name>UIH.Mcsf.Filming.Utility</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>attrib $(TargetPath) -R 
+attrib $(TargetDir)$(TargetName).pdb -R</PreBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

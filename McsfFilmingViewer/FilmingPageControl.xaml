@@ -1,0 +1,251 @@
+<UserControl x:Class="UIH.Mcsf.Filming.FilmingPageControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:dd="clr-namespace:UIH.Mcsf.AppControls.Viewer;assembly=UIH.Mcsf.AppControls.Viewer"
+             xmlns:vc="http://UIH/Mcsf/Viewer" 
+             xmlns:Converters="clr-namespace:UIH.Mcsf.Filming.Converters" mc:Ignorable="d" 
+             d:DesignHeight="850" d:DesignWidth="700" AutomationProperties.AutomationId="ID_EX_FILMING_PAGECONTROL" IsVisibleChanged="OnIsVisibleChanged">
+    <UserControl.Resources>
+        <Converters:GenderContentConverter x:Key="genderContentConverter"/>
+        <Converters:AgeContentConverter x:Key="ageContentConverter"/>
+        <Converters:StringBooleanConverter x:Key="stringBooleanConverter"/>
+        <Style TargetType="TextBlock">
+            <Setter Property="TextOptions.TextFormattingMode" Value="Ideal"/>
+        </Style>
+    </UserControl.Resources>
+    <UserControl.LayoutTransform>
+        <ScaleTransform x:Name="_scale">
+        </ScaleTransform>
+    </UserControl.LayoutTransform>
+    <Border Name="filmPageBorder" AutomationProperties.AutomationId="ID_BRD_FILMING_PAGE" Background="#FF3E3E3E" FocusVisualStyle="{x:Null}">
+        <Grid Margin="1,1,1,1" Name="mainGrid" dd:TreeViewMultipleDragDropHelper.IsDropTarget="True" dd:TreeViewMultipleDragDropHelper.SupportDropType="DropAll"  dd:TreeViewMultipleDragDropHelper.IsMiniPATarget="True" dd:TreeViewMultipleDragDropHelper.SupportAcceptMultiStudy="True"  FocusVisualStyle="{x:Null}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid
+                Name="filmPageBarGrid"
+                Background="#FF3E3E3E" MouseLeftButtonDown="OnFilmingPageTitleBarLeftButtonDown" MouseRightButtonDown="OnFilmingPageTitleBarRightButtonDown">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width ="4*"></ColumnDefinition>
+                    <!--患者信息-->
+                    <ColumnDefinition Width="4*"></ColumnDefinition>
+                    <!--检查信息-->
+
+                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                    <!--LOG-->
+                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                    <!--页数-->
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"></RowDefinition>
+                    <RowDefinition Height="20"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <!--<RowDefinition Height="auto"></RowDefinition>-->
+                </Grid.RowDefinitions>
+
+                <Border
+                    HorizontalAlignment="Stretch"
+                    BorderThickness="0"
+                    Height="1"
+                    Background="#FF4D4D4D"
+                    Grid.ColumnSpan="5"
+                    VerticalAlignment="Top"></Border>
+
+                <Grid Grid.Column="0" Grid.Row="0"   Name="patientNameLabel">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width ="3*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" HorizontalAlignment="Left" Foreground="White" Background="{x:Null}" 
+                             AutomationProperties.AutomationId="ID_TXB_FILMING_PATIENT_NAME"  Text="{Binding PatientNameAndAgeAndSex}" ToolTip="{Binding PatientNameAndAgeAndSexToolTip}" TextTrimming="WordEllipsis"
+                             VerticalAlignment="Center"  FontFamily= "{DynamicResource UID_Filming_Font_Family}" FontSize="{Binding DisplayFont}" Margin="5,0,0,0" Padding="0" Visibility="{Binding PatientNameVisibility}" FontWeight="Bold"
+                             />
+                        <TextBlock Grid.Column="1" x:Name="DrugTextBlock" VerticalAlignment="Center"  TextTrimming="WordEllipsis" ></TextBlock>
+                    </Grid>
+                </Grid>
+
+                <Grid Grid.Column="0" Grid.Row="2">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width ="2*"></ColumnDefinition>
+                            <ColumnDefinition Width="auto"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <StackPanel  Grid.Column="0" Name="patientSexTextBlock" Orientation="Horizontal">
+                            <TextBlock   AutomationProperties.AutomationId="ID_TXB_FILMING_PATIENT_SEX"
+                                                 Background="{x:Null}" 
+                                                 VerticalAlignment="Center"
+                                                 TextTrimming="WordEllipsis" 
+                                                 Text="{Binding Path=PatientSexAndAge}" 
+                                                 ToolTip ="{Binding Path=PatientSexAndAge}"
+                                                 FontFamily= "{DynamicResource UID_Filming_Font_Family}" 
+                                                 FontSize="{Binding DisplayFont}" 
+                                                 Foreground="White"  
+                                                 Margin="5,0,0,0" 
+                                                 Padding="0"
+                                                 Visibility="{Binding PatientSexAndAgeVisibility}"/>
+                        </StackPanel>
+
+                        <TextBlock Grid.Column="1"
+                            Name="accessionNo" 
+                            AutomationProperties.AutomationId="ID_TXB_FILMING_PATIENT_ID"
+                            Text="{Binding Path=AccessionNo}" VerticalAlignment="Center"
+                            TextTrimming="WordEllipsis"
+                            Background="{x:Null}"
+                            ToolTip="{Binding Path=AccessionNo}"  Foreground="White" FontFamily= "{DynamicResource UID_Filming_Font_Family}" FontSize="{Binding DisplayFont}" Margin="5,0,0,0" Padding="0" Visibility="{Binding AccessionNoVisibility}"
+                         />
+                    </Grid>
+                </Grid>
+                <!--<Grid Grid.Column="0" Grid.Row="2">
+                    <TextBlock
+                        Name="patientAgeTextBlock"
+                        AutomationProperties.AutomationId="txtFilmingPatientAge"
+                        Background="{x:Null}"
+                        TextTrimming="CharacterEllipsis" Text="{Binding Path=PatientAge, Converter={StaticResource ageContentConverter}}" 
+                                        ToolTip ="{Binding Path=PatientAge, Converter={StaticResource ageContentConverter}}"
+                                   FontFamily="Arial" FontSize="{Binding DisplayFont}" Foreground="White" Margin="0" Padding="0" Visibility="{Binding AgeVisibility}" 
+                         />
+                </Grid>-->
+                <!--<Grid Grid.Column="0" Grid.Row="1">-->
+                <TextBlock Grid.Column="0" Grid.Row="1"
+                        Name="patientIDLabel" 
+                        AutomationProperties.AutomationId="ID_TXB_FILMING_PATIENT_ID"
+                        Text="{Binding PatientId}" VerticalAlignment="Center"
+                        TextTrimming="WordEllipsis"
+                        Background="{x:Null}"
+                        ToolTip="{Binding PatientId}"  Foreground="White" FontFamily= "{DynamicResource UID_Filming_Font_Family}" FontSize="{Binding DisplayFont}" Margin="5,0,0,0" Padding="0" Visibility="{Binding PatientIDVisibility}"
+                         >
+                </TextBlock>
+                <!--</Grid>-->
+
+                <!--<Grid Grid.Column="1" Grid.Row="1">
+                    <TextBlock
+                        Name="studyIDLabel"
+                        AutomationProperties.AutomationId="txtFilmingStudyID"
+                        Text="{Binding StudyId}"
+                        TextTrimming="CharacterEllipsis"
+                        Background="{x:Null}"
+                        ToolTip="{Binding StudyId}" Foreground="White" FontFamily="Arial" FontSize="{Binding DisplayFont}" Margin="0" Padding="0" Visibility="{Binding StudyIDVisibility}" 
+                         >
+                    </TextBlock>
+                </Grid>-->
+                <!--<Grid Grid.Column="1" Grid.Row="1">-->
+                <!--ToolTip="{Binding StudyDate}"-->
+                <TextBlock Grid.Column="1" Grid.Row="1"
+                        Name="AcquisitionDateTimeLabel" VerticalAlignment="Center"
+                        AutomationProperties.AutomationId="ID_TXB_FILMING_ACQUISITION_DATETIME"
+                        Text="{Binding StudyDate}"
+                        Background="{x:Null}"
+                        TextTrimming="WordEllipsis" 
+                        ToolTipService.ShowOnDisabled="False"
+                        ToolTip="{Binding StudyDate}"
+                        Foreground="White" FontFamily= "{DynamicResource UID_Filming_Font_Family}" FontSize="{Binding DisplayFont}" 
+                        Margin="4,0,0,0" Padding="0" Visibility="{Binding StudyDateVisibility}" 
+                        IsEnabled="{Binding ElementName=AcquisitionDateTimeLabel, Path=Text,Converter={StaticResource stringBooleanConverter}}"
+                               >
+                </TextBlock>
+                <!--</Grid>-->
+                <!--<Grid Grid.Column="1" Grid.Row="0">-->
+                <!--医院信息-->
+                <!--ToolTip="{Binding InstitutionAndOperatorName}"-->
+                <TextBlock Grid.Column="1" Grid.Row="0"
+                        Name="InstitutionNameLabel" VerticalAlignment="Center"
+                        AutomationProperties.AutomationId="ID_TXB_FILMING_INSTITUTION_NAME"
+                        Text="{Binding InstitutionAndOperatorName}"
+                        TextTrimming="WordEllipsis"
+                        Background="{x:Null}"
+                        ToolTipService.ShowOnDisabled="False"
+                        ToolTip="{Binding InstitutionAndOperatorName}"
+                        Foreground="White" FontFamily= "{DynamicResource UID_Filming_Font_Family}" FontSize="{Binding DisplayFont}" Margin="4,0,0,0" Padding="0"  Visibility="{Binding HospitalInfoAndOperatorNameVisibility}"
+                        IsEnabled="{Binding ElementName=InstitutionNameLabel,Path=Text,Converter={StaticResource stringBooleanConverter}}"
+                               >
+                </TextBlock>
+                <!--</Grid>-->
+
+                <!--制造商信息-->
+                <!--<Grid Grid.Column="3" Grid.Row="1" Grid.RowSpan="3">-->
+                <!--<TextBlock Grid.Column="1" Grid.Row="0" 
+                        Name="ManufacturerLabel"
+                        AutomationProperties.AutomationId="txtManufacturer"
+                        Text="{Binding Manufacturer}"
+                        TextTrimming="CharacterEllipsis"
+                        ToolTip="{Binding Manufacturer}"
+                        Foreground="White"
+                        FontFamily="Arial"
+                        FontSize="{Binding DisplayFont}"
+                        Margin="0"
+                        Padding="0"
+                        Background="{x:Null}"
+                        VerticalAlignment="Center"
+                         >
+                    </TextBlock>-->
+
+                <TextBox Name="txtComment" Grid.Column="1" Grid.Row="2" 
+                         Background="#00000000"
+                         Foreground="White"
+                         FontFamily= "{DynamicResource UID_Filming_Font_Family}"
+                         Padding="0" 
+                         BorderBrush="Transparent"
+                         Text="{Binding Comment,Mode=TwoWay}"
+                         FontSize="{Binding DisplayFont}" Margin="0" 
+                         Visibility="{Binding CommentVisibility}"
+                         GotFocus ="txtComment_GotFocus" 
+                         LostFocus ="txtComment_LostFocus"
+                         />
+
+
+                <!--</Grid> 公司Logo-->
+                <Image Name="UIHLogo" Grid.Column="2" Grid.Row="0" Grid.RowSpan="2" 
+                       Source="{DynamicResource Filming_Logo}" VerticalAlignment="Center" HorizontalAlignment="Right"
+                       Visibility="{Binding LogoVisibility}"
+                       />
+                <!--页码信息-->
+                <Grid Grid.Column="3" Grid.Row="0">
+                    <TextBlock
+                        Name="filmPageNumberTextBlock"
+                        AutomationProperties.AutomationId="ID_TXB_FILMING_PAGENUMBER"
+                        Text="{Binding PageNo, Mode=OneWayToSource}"
+                        FontFamily= "{DynamicResource UID_Filming_Font_Family}"
+                        FontSize="{Binding DisplayFont}"
+                        Foreground="White"
+                        Background="{x:Null}"
+                        FontWeight="Bold" HorizontalAlignment="Right"  Margin="0" Padding="0" 
+                        Visibility="{Binding PageNoVisibility}"
+                        />
+                </Grid>
+
+            </Grid>
+            <Grid x:Name="filmPageBarGridSimple" Background="#FF3E3E3E"  Grid.Row="1" Visibility="Collapsed" MouseLeftButtonDown="OnFilmingPageTitleBarLeftButtonDown" >
+                <Grid.RowDefinitions>
+                    <RowDefinition  Height="25"></RowDefinition>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0"
+                        Name="filmPageNumberTextBlockSimple" 
+                        AutomationProperties.AutomationId="ID_TXB_FILMING_Page_Number"
+                        Text="1/1" HorizontalAlignment="Right" VerticalAlignment="Center"
+                        TextTrimming="CharacterEllipsis"
+                        Background="{x:Null}"
+                        Foreground="White" FontWeight="Bold" FontFamily= "{DynamicResource UID_Filming_Font_Family}" FontSize="{Binding DisplayFont}" Margin="5,0,0,0" Padding="0,0,3,0" 
+                         >
+                </TextBlock>
+            </Grid>
+            <Grid Name="filmingViewerControlGrid" Grid.Row="2">
+                <Border Background="DarkGray" FocusVisualStyle="{x:Null}" BorderBrush="White" BorderThickness="0,1,0,1">
+                    <Grid>
+                        <vc:MedViewerControl Name="filmingViewerControl" 
+                               AutomationProperties.AutomationId="ID_EX_FILMING_VIEWER"
+                               Margin="1,0,2,0"
+                               FocusVisualStyle="{x:Null}">
+                        </vc:MedViewerControl>
+                        <Rectangle Name="_pageBreakFlag"  Fill="#00e9e9" Height="3" VerticalAlignment="Bottom" Visibility="Hidden"/>
+                    </Grid>
+                </Border>
+            </Grid>
+        </Grid>
+    </Border>
+</UserControl>
+          

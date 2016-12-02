@@ -1,0 +1,464 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+    <sys:String x:Key="UID_Filming_Gender_Male">男</sys:String>
+    <sys:String x:Key="UID_Filming_Gender_Female">女</sys:String>
+    <sys:String x:Key="UID_Filming_Gender_Other">其他</sys:String>
+    <sys:String x:Key="UID_Filming_Gender_Unknown">未知</sys:String>
+    <sys:String x:Key="UID_Filming_Ages_Year">岁</sys:String>
+    <sys:String x:Key="UID_Filming_Ages_Month">月</sys:String>
+    <sys:String x:Key="UID_Filming_Ages_Week">周</sys:String>
+    <sys:String x:Key="UID_Filming_Ages_Day">天</sys:String>
+    <sys:String x:Key="UID_Filming_Custom">自定义</sys:String>
+    <sys:String x:Key="UID_Filming_Default_Empty_Item">默认</sys:String>
+    
+    <sys:String x:Key="UID_Filming_LoadStudy">比较</sys:String>
+    <sys:String x:Key="UIH_Filming_CompareStudy">比较</sys:String>
+
+    <sys:String x:Key="UID_Filming_DisplayMode">显示模式</sys:String>
+    <sys:String x:Key="UID_Filming_ViewportLayout">视窗布局</sys:String>
+    <sys:String x:Key="UID_Filming_CellLayout">像格布局</sys:String>
+    
+    <sys:String x:Key="UID_Filming_ViewportLayout1x1">1x1视窗布局</sys:String>
+    <sys:String x:Key="UID_Filming_ViewportLayout1x2">2x1视窗布局</sys:String>
+    <sys:String x:Key="UID_Filming_ViewportLayout2x2">2x2视窗布局</sys:String>
+    <sys:String x:Key="UID_Filming_ViewportLayout4x4">4x4视窗布局</sys:String>
+    <sys:String x:Key="UID_Filming_ViewportLayout5x5">5x5视窗布局</sys:String>
+    <sys:String x:Key="UID_Filming_CustomViewPortLayout">布局模板</sys:String>
+    <sys:String x:Key="UID_Filming_Optional_ViewPortLayout">其它可选的视图布局</sys:String>
+
+    <sys:String x:Key="UID_Filming_CellLayout1x1">1x1像格布局</sys:String>
+    <sys:String x:Key="UID_Filming_CellLayout1x2">2x1像格布局</sys:String>
+    <sys:String x:Key="UID_Filming_CellLayout2x2">2x2像格布局</sys:String>
+    <sys:String x:Key="UID_Filming_CellLayout3x2">2x3像格布局</sys:String>
+    <sys:String x:Key="UID_Filming_CellLayout4x3">3x4像格布局</sys:String>
+    <sys:String x:Key="UID_Filming_CellLayout5x4">4x5像格布局</sys:String>
+    <sys:String x:Key="UID_Filming_Optional_CellLayout">其它可选的像格布局</sys:String>
+    <sys:String x:Key="UID_Filming_CustomCellLayout">自定义像格布局</sys:String>
+    <sys:String x:Key="UID_Filming_CustomViewport">自定义视窗布局</sys:String>
+    <sys:String x:Key="UID_Filming_PresetCellLayout">像格布局</sys:String>
+    <sys:String x:Key="UID_Filming_Layout">布局</sys:String>
+
+    <sys:String x:Key="UID_Filming_NewFilm">新建胶片</sys:String>
+    <sys:String x:Key="UID_Filming_SelectAllFilms">全选胶片</sys:String>
+    <sys:String x:Key="UID_Filming_SelectSeries">选择序列</sys:String>
+    <sys:String x:Key="UID_Filming_DeleteFilm">删除选中胶片</sys:String>
+    <sys:String x:Key="UID_Filming_DeleteAllFilms">删除所有胶片</sys:String>
+    <sys:String x:Key="UID_Filming_Enhancement">平滑锐化</sys:String>
+
+    <sys:String x:Key="UID_Filming_MultiFormat">多分格</sys:String>
+    <sys:String x:Key="UID_Filming_Reverse">反序</sys:String>
+    <sys:String x:Key="UID_Filming_InterleavedDelete">间隔删除</sys:String>
+    
+    <sys:String x:Key="UID_Filming_Redo">重复</sys:String>
+    <sys:String x:Key="UID_Filming_Undo">撤销</sys:String>
+    <sys:String x:Key="UID_Filming_Reset">重置</sys:String>
+
+    <sys:String x:Key="UID_Filming_Pointer">选择/翻页</sys:String>
+    <sys:String x:Key="UID_Filming_Magnifier">放大镜</sys:String>
+    <sys:String x:Key="UID_Filming_Windowing">重置窗宽窗位</sys:String>
+    <sys:String x:Key="UID_Filming_Pan">图像平移</sys:String>
+    <sys:String x:Key="UID_Filming_Flip">镜像</sys:String>
+    <sys:String x:Key="UID_Filming_Vertical_Flip">垂直镜像</sys:String>
+    <sys:String x:Key="UID_Filming_Horizontal_Flip">水平镜像</sys:String>
+    <sys:String x:Key="UID_Filming_Rotate">旋转</sys:String>
+    <sys:String x:Key="UID_Filming_ComboBox_Rotate_AntiClockwise">逆时针旋转 90°</sys:String>
+    <sys:String x:Key="UID_Filming_ComboBox_Rotate_Clockwise">顺时针旋转 90°</sys:String>
+    
+    <sys:String x:Key="UID_Filming_CustomRotate">自定义旋转</sys:String>
+    <sys:String x:Key="UID_Filming_Rotation">旋转角度</sys:String>
+    <sys:String x:Key="UID_Filming_ClockWise">顺时针</sys:String>
+    <sys:String x:Key="UID_Filming_CounterClockWise">逆时针</sys:String>
+    <sys:String x:Key="UID_Filming_Rotate2D">旋转</sys:String>
+
+    <sys:String x:Key="UID_Filming_Delete_All_Graphics">删除所有图元</sys:String>
+    <sys:String x:Key="UID_Filming_Pixel_Lens">像素</sys:String>
+
+    <sys:String x:Key="UID_Filming_Line">直线测距</sys:String>
+    <sys:String x:Key="UID_Filming_Angle">角度测量</sys:String>
+    <sys:String x:Key="UID_Filming_Ellipse">椭圆形</sys:String>
+    <sys:String x:Key="UID_Filming_Polygon">多边形</sys:String>
+    <sys:String x:Key="UID_Filming_Circle">圆形</sys:String>
+    <sys:String x:Key="UID_Filming_Spline">样条</sys:String>
+    <sys:String x:Key="UID_Filming_FreeHand">自由笔</sys:String>
+    <sys:String x:Key="UID_Filming_Text">文本注释</sys:String>
+    <sys:String x:Key="UID_Filming_Zoom">图像缩放</sys:String>
+    <sys:String x:Key="UID_Filming_ROI_Zoom">感兴趣区域放大显示</sys:String>
+    <sys:String x:Key="UID_Filming_Arrow">箭头标注</sys:String>
+    
+    <sys:String x:Key="UID_Filming_ShowCornerText">显示四角文字</sys:String>
+    <sys:String x:Key="UID_Filming_HideCornerText">隐藏四角文字</sys:String>
+    <sys:String x:Key="UID_Filming_Anonymity">匿名</sys:String>
+    <sys:String x:Key="UID_Filming_UnAnonymity">非匿名</sys:String>
+    <sys:String x:Key="UID_Filming_Rectangle">矩形</sys:String>
+    <sys:String x:Key="UID_Filming_ColorBar">调色板</sys:String>
+    <sys:String x:Key="UID_Filming_ScaleRuler">比例尺</sys:String>
+    <sys:String x:Key="UID_Filming_Fit_To_Window">适应窗口显示</sys:String>
+    <sys:String x:Key="UID_Filming_FitToWindow_Short">短边适应窗口显示</sys:String>
+    
+    <sys:String x:Key="UID_Filming_Inverse">反色</sys:String>
+    
+    <sys:String x:Key="UID_Filming_PrinterSetting">打印设置</sys:String>
+    <sys:String x:Key="UID_Filming_SaveElectronicFilm">保存电子胶片</sys:String>
+    <sys:String x:Key="UID_Filming_BeginPrint">开始打印</sys:String>
+    
+    <sys:String x:Key="UID_Filming_PatientID">患者编号:</sys:String>
+    <sys:String x:Key="UID_Filming_StudyID">检查编号:</sys:String>
+
+    <sys:String x:Key="UID_Filming_AcquisitionDateTime">检查日期&amp;时间:</sys:String>
+
+    <sys:String x:Key="UID_Filming_Repack">自动重组</sys:String>
+    <sys:String x:Key="UID_Filming_ShowHideColorBar">显示/隐藏伪彩条</sys:String>
+    <sys:String x:Key="UID_Filming_Cut">剪切</sys:String>
+    <sys:String x:Key="UID_Filming_Copy">复制</sys:String>
+    <sys:String x:Key="UID_Filming_Paste">粘贴</sys:String>
+    <sys:String x:Key="UID_Filming_PasteGraphics">粘贴图元</sys:String>
+    <sys:String x:Key="UID_Filming_Select">选择</sys:String>
+    <sys:String x:Key="UID_Filming_SelectSeriesForRightMouseClick">选择序列</sys:String>
+    <sys:String x:Key="UID_Filming_SelectSucceed">选择后续图像</sys:String>
+    <sys:String x:Key="UID_Filming_SelectFilmPage">选择胶片</sys:String>
+    <sys:String x:Key="UID_Filming_SelectAllFilmPage">全选胶片</sys:String>
+    <sys:String x:Key="UID_Filming_Delete">删除</sys:String>
+    <sys:String x:Key="UID_Filming_Delete_Image">选中图像</sys:String>
+    <sys:String x:Key="UID_Filming_Delete_ImageNotSelected">未选中图像</sys:String>
+    <sys:String x:Key="UID_Filming_Delete_Pagebreak">撤销分页</sys:String>
+    <sys:String x:Key="UID_Filming_DeleteFilmPage">选中胶片</sys:String>
+    <sys:String x:Key="UID_Filming_DeleteAll">全部胶片</sys:String>
+    <sys:String x:Key="UID_Filming_ContextMenu_LocalizedImageReferenceLine">定位像参考线</sys:String>
+    <sys:String x:Key="UID_Filming_ContextMenu_AddLocalizedImageReferenceLine">添加定位像参考线</sys:String>
+    <sys:String x:Key="UID_Filming_ContextMenu_DeleteLocalizedImageReferenceLine">删除定位像参考线</sys:String>
+    <sys:String x:Key="UID_Filming_ContextMenu_ManualLocalizedImageReferenceLine">手动添加定位像(T)</sys:String>
+    <sys:String x:Key="UID_Filming_ContextMenu_ManualReferenceLine">手动添加参考线组(R)</sys:String>
+    <sys:String x:Key="UID_Filming_ContextMenu_InsertDivideCell">插入多分格</sys:String>
+    <sys:String x:Key="UID_Filming_ContextMenu_UndoDivideCell">撤销多分格</sys:String>
+    <sys:String x:Key="UID_Filming_ContextMenu_PrintDisplayedSelectedFilm">打印单张选中胶片</sys:String>
+    <sys:String x:Key="UID_Filming_Delete_Images_Warning">请确认是否删除{0}张图像</sys:String>
+
+    <sys:String x:Key="UID_Filming_Insert">插入</sys:String>
+    <sys:String x:Key="UID_Filming_Insert_BlankCell">空图像</sys:String>
+    <sys:String x:Key="UID_Filming_ComboBox_Insert_BlankCell">插入空图像</sys:String>
+    <sys:String x:Key="UID_Filming_Insert_PageBreak">分页</sys:String>
+    <sys:String x:Key="UID_Filming_ComboBox_Insert_PageBreak">插入分页</sys:String>
+    <sys:String x:Key="UID_Filming_Insert_Parameter">参数图</sys:String>
+    <sys:String x:Key="UID_Filming_Insert_Reference_Image">参考线组</sys:String>
+
+    <sys:String x:Key="UID_Filming_Film_Selected_Series">打印</sys:String>
+    <sys:String x:Key="UID_Filming_Batch">序列间隔打印</sys:String>
+    <sys:String x:Key="UID_Filming_Compare_Windowing">窗宽窗位对比</sys:String>
+    <sys:String x:Key="UID_Filming_Compare_Series">序列对比</sys:String>
+
+    <sys:String x:Key="UID_MessageBox_Title_Info">提示</sys:String>
+    <sys:String x:Key="UID_MessageBox_Title_Warning">警告</sys:String>
+    <sys:String x:Key="UID_MessageBox_Series_NOT_Interleave_Print">您所选的序列不适合间隔打印操作</sys:String>
+    <sys:String x:Key="UID_MessageBox_Series_NOT_Compare">您所选的序列不支持序列对比操作</sys:String>
+    <sys:String x:Key="UID_MessageBox_Title_Error">错误</sys:String>
+    <sys:String x:Key="UID_MessageBox_Message_Info">确定执行此操作？</sys:String>
+    <sys:String x:Key="UID_Filming_Warning_Title">警告消息</sys:String>
+    <sys:String x:Key="UID_Filming_Warning_ViewportLossImages">禁止：不支持的视窗布局变换,模板的Cell数必须大于或等于当前视窗中图片个数！</sys:String>
+    <sys:String x:Key="UID_Filming_Warning_ExceedLimitOfRowOrColumn">禁止：超出了行或者列宽的数目限制！</sys:String>
+    <sys:String x:Key="UID_Filming_Warning_CorrectNumber">请输入一个合法的数字！</sys:String>
+    <sys:String x:Key="UID_Filming_Warning_InsertEmptyCellToUnStandardLayout">不能在不规则胶片中插入空图像！</sys:String>
+    <sys:String x:Key="UID_Filming_Warning_NoEmptyCellForPaste">没有空位用来黏贴图像！</sys:String>
+    <sys:String x:Key="UID_Filming_Warning_CellLossImages">禁止：不能改变图像布局，会导致丢失图像！</sys:String>
+    <sys:String x:Key="UID_Filming_Warning_HaveNoEmptyCell">没有空的位置！</sys:String>
+    <sys:String x:Key="UID_Filming_Warning_AddDifferentPatientToSameFilmCard">您可能将不同的检查图像混排在同一张胶片上，是否继续？</sys:String>
+    <sys:String x:Key="UID_Filming_Warning_LoadingImagesWhichMayBeSlowForCountExceedThreshold">图片太多，加载可能需要很长时间，要继续加载吗？</sys:String>
+    <sys:String x:Key="UID_Filming_Warning_InterleavedExceedTotalCount">间隔数超过所选图像总数，是否继续？</sys:String>
+    <sys:String x:Key="UID_Filming_Warning_NoEnoughMemory">内存/显存不足，请关闭其它应用或检查后重试！</sys:String>
+    <sys:String x:Key="UID_Filming_Warning_NewFilmPageForLoadSeries">当前胶片已有图像，将新建胶片排版序列对比图像！</sys:String>
+    <sys:String x:Key="UID_Filming_Warning_BigThanMaxNumber">输入的数值超过了最大值！请重新输入！</sys:String>
+    <sys:String x:Key="UID_Filming_Warning_NotCorrectNumber">请输入正确的数字（1~10整数）！</sys:String>
+    <sys:String x:Key="UID_Filming_Warning_ForbidMultiFormat">禁止对不同患者、不同检查进行多分格合并！</sys:String>
+    <sys:String x:Key="UID_Filming_Warning_CannotSaveConfigure">不能保存配置到文件，可能是权限问题!</sys:String>
+    <sys:String x:Key="UID_Filming_Warning_CannotDeleteConfigure">配置文件未保存完毕，暂不能删除，请稍后操作!</sys:String>
+    <sys:String x:Key="UID_Filming_Warning_HaveNotLocalizedImage">所选图像不存在定位像！</sys:String>
+    <sys:String x:Key="UID_Filming_Error_SaveEFilm_Fail">无法创建任务，详细情况请查阅日志</sys:String>
+    <sys:String x:Key="UID_Filming_Info_SaveEFilm_Fail">保存电子胶片失败,请再次尝试或者查阅日志</sys:String>
+    <sys:String x:Key="UID_Filming_Info_PrintAll_Fail">打印保存电子胶片失败，请再次尝试或者查阅日志</sys:String>
+    <sys:String x:Key="UID_Filming_Info_GetPacsNodeByAE_Fail">没有可用的打印机，打印胶片失败</sys:String>
+    <sys:String x:Key="UID_Filming_Warning_JustSaveIrregularLayout">仅支持保存不规则布局</sys:String>
+    <sys:String x:Key="UID_Filming_Warning_Multi_Format_Cell_Count_Is_Small">所选多分格布局窗口少了,不能容纳所有选中的窗格</sys:String>
+    <sys:String x:Key="UID_Filming_Warning_Multi_Format_Cell_Fail">多分格操作失败</sys:String>
+    <sys:String x:Key="UID_Filming_Warning_Form_Not_Complete">表格未填完</sys:String>
+    <sys:String x:Key="UID_Filming_Warning_Form_Paste_Position">请选择黏贴位置</sys:String>
+    <sys:String x:Key="UID_Filming_Info_Not_Config_Printer">未配置打印机</sys:String>
+
+    <sys:String x:Key="UID_Filming_FirstImage">起始位置</sys:String>
+    <sys:String x:Key="UID_Filming_LastImage">结束位置</sys:String>
+    <sys:String x:Key="UID_Filming_Every">每</sys:String>
+    <sys:String x:Key="UID_Filming_TotolImages">图像总数</sys:String>
+    <sys:String x:Key="UID_Filming_LoadingImages">加载图像(序号）：</sys:String>
+    <sys:String x:Key="UID_Filming_LeftImages">剩余图像数</sys:String>
+
+    <sys:String x:Key="UID_Filming_Series_Compare_Window_Title">序列对比</sys:String>
+    <sys:String x:Key="UID_Filming_Series_1">序列 1</sys:String>
+    <sys:String x:Key="UID_Filming_Series_2">序列 2</sys:String>
+    <sys:String x:Key="UID_Filming_Series_3">序列 3</sys:String>
+    <sys:String x:Key="UID_Filming_Images">幅图像</sys:String>
+    <sys:String x:Key="UID_Filming_Orientation">方向</sys:String>
+    <sys:String x:Key="UID_Filming_Vertical">纵向</sys:String>
+    <sys:String x:Key="UID_Filming_Horizontal">横向</sys:String>
+    <sys:String x:Key="UID_Filming_Rows">行</sys:String>
+    <sys:String x:Key="UID_Filming_Columns">列</sys:String>
+    <sys:String x:Key="UID_Filming_Film_Numbers">需胶片数</sys:String>
+    <sys:String x:Key="UID_Filming_Load_Film">确定</sys:String>
+
+    <sys:String x:Key="UID_Filming_Single_Series_Compare_Print_Setting_Window_Title">单序列对比打印设置窗口</sys:String>
+    <sys:String x:Key="UID_Filming_Single_Series_Compare_Print_Series_Info">序列信息</sys:String>
+    <sys:String x:Key="UID_Filming_Single_Series_Compare_Print_Winding_1">窗宽窗位 1</sys:String>
+    <sys:String x:Key="UID_Filming_Single_Series_Compare_Print_Winding_2">窗宽窗位 2</sys:String>
+    <sys:String x:Key="UID_Filming_Single_Series_Compare_Print_Width">窗宽</sys:String>
+    <sys:String x:Key="UID_Filming_Single_Series_Compare_Print_Level">窗位</sys:String>
+
+    <sys:String x:Key="UID_Filming_Single_Series_Compare_Print_Series_1">序列 1:</sys:String>
+    <sys:String x:Key="UID_Filming_Single_Series_Compare_Print_Series_2">序列 2:</sys:String>
+    <sys:String x:Key="UID_Filming_Single_Series_Compare_Print_Images">幅图像</sys:String>
+    <sys:String x:Key="UID_Filming_Single_Series_Compare_Print_Orientation">方向</sys:String>
+    <sys:String x:Key="UID_Filming_Single_Series_Compare_Print_Rows">行</sys:String>
+    <sys:String x:Key="UID_Filming_Single_Series_Compare_Print_Columns">列</sys:String>
+    <sys:String x:Key="UID_Filming_Single_Series_Compare_Print_Film_Numbers">需胶片数</sys:String>
+    <sys:String x:Key="UID_Filming_Single_Series_Compare_Print_Load_Film">确定</sys:String>
+    <sys:String x:Key="UID_Filming_Single_Series_Compare_Print_Cancel">取消</sys:String>
+
+    <!--PreSet Window Levels-->
+    <sys:String x:Key="UID_Filming_PreSet_CT_Windowing">CT预设窗宽窗位</sys:String>
+    <sys:String x:Key="UID_Filming_PreSet_PT_Windowing">PT预设窗宽窗位</sys:String>
+    <sys:String x:Key="UID_Filming_PreSet_Windowing_abdomen">腹部</sys:String>
+    <sys:String x:Key="UID_Filming_PreSet_Windowing_lung">肺窗</sys:String>
+    <sys:String x:Key="UID_Filming_PreSet_Windowing_mediastinum">纵膈</sys:String>
+    <sys:String x:Key="UID_Filming_PreSet_Windowing_bone">骨窗</sys:String>
+    <sys:String x:Key="UID_Filming_PreSet_Windowing_spine">脊柱</sys:String>
+    <sys:String x:Key="UID_Filming_PreSet_Windowing_liver">肝脏</sys:String>
+    <sys:String x:Key="UID_Filming_PreSet_Windowing_brain">脑</sys:String>
+    
+    <!--PreSet PET  Window Levels-->
+    <sys:String x:Key="UID_Filming_PreSet_Windowing_Default">默认</sys:String>
+    <sys:String x:Key="UID_Filming_PreSet_Windowing_Custom">自定义</sys:String>
+
+    <sys:String x:Key="UID_Filming_PreSet_Windowing_CustomWindowLevel">自定义</sys:String>
+    <sys:String x:Key="UID_Filming_PreSet_Windowing_Top">上限</sys:String>
+    <sys:String x:Key="UID_Filming_PreSet_Windowing_Bottom">下限</sys:String>
+    <sys:String x:Key="UID_Filming_PreSet_Windowing_WW">窗宽</sys:String>
+    <sys:String x:Key="UID_Filming_PreSet_Windowing_WC">窗位</sys:String>
+
+    <!-- Printer Setting -->
+    <sys:String x:Key="UID_Filming_PrinterSetting_Title">打印设置</sys:String>
+    <sys:String x:Key="UID_Filming_PrinterSetting_Printer">打印机</sys:String>
+    <sys:String x:Key="UID_Filming_PrinterSetting_FilmSize">胶片尺寸</sys:String>
+    <sys:String x:Key="UID_Filming_PrinterSetting_Orientation">胶片方向</sys:String>
+    <sys:String x:Key="UID_Filming_PrinterSetting_Annotation">四角信息</sys:String>
+    <sys:String x:Key="UID_Filming_PrinterSetting_Copies">打印份数</sys:String>
+    <sys:String x:Key="UID_Filming_PrinterSetting_MediumType">介质类型</sys:String>
+    <sys:String x:Key="UID_Filming_PrinterSetting_FilmDestination">胶片输出位置</sys:String>
+    <sys:String x:Key="UID_Filming_PrinterSetting_PrintAnd">选项</sys:String>
+    <sys:String x:Key="UID_Filming_PrinterSetting_ClearFilmSheet">清除排版显示</sys:String>
+    <sys:String x:Key="UID_Filming_PrinterSetting_SaveEFilm">保存电子胶片</sys:String>
+    <sys:String x:Key="UID_Filming_PrinterSetting_ColorPrint">彩色打印</sys:String>
+    <sys:String x:Key="UID_Filming_PrinterSetting_GrayPrint">灰色打印</sys:String>
+    <sys:String x:Key="UID_Filming_PrinterSetting_AutoShutDown">自动关闭</sys:String>
+    <sys:String x:Key="UID_Filming_PrinterSetting_Annotation_Display_Configuration">四角信息显示配置</sys:String>
+    <sys:String x:Key="UID_Filming_Portrait">纵向</sys:String>
+    <sys:String x:Key="UID_Filming_Landscape">横向</sys:String>
+    <sys:String x:Key="UID_Filming_PrinterSetting_Fail">打印设置失败</sys:String>
+
+    <!--SetSUVType-->
+    <sys:String x:Key="UID_Filming_SetSUVType">改变PET计量单位</sys:String>
+    <sys:String x:Key="UID_Filming_SetSUVbw">SUVbw</sys:String>
+    <sys:String x:Key="UID_Filming_SetSUVbsa">SUVbsa</sys:String>
+    <sys:String x:Key="UID_Filming_SetSUVlbm">SUVlbm</sys:String>
+    <sys:String x:Key="UID_Filming_SetSUVTypeConcentration">Bq/ml</sys:String>
+    <sys:String x:Key="UID_Filming_SetSUVPercent">%</sys:String>
+
+    <!--imagetext display-->
+    <sys:String x:Key="UID_Filming_AnnotationDisplaySetting">四角信息</sys:String>
+    <sys:String x:Key="UID_Filming_AnnotationDisplayType_All">全部</sys:String>
+    <sys:String x:Key="UID_Filming_AnnotationDisplayType_Partial">四角信息</sys:String>
+    <sys:String x:Key="UID_Filming_AnnotationDisplayType_Partial1">精简1</sys:String>
+    <sys:String x:Key="UID_Filming_AnnotationDisplayType_Partial2">精简2</sys:String>
+    <sys:String x:Key="UID_Filming_AnnotationDisplayType_Anonymity">匿名</sys:String>
+    <sys:String x:Key="UID_Filming_AnnotationDisplayType_None">隐藏</sys:String>
+    <sys:String x:Key="UID_Filming_Hide_Annotation">隐藏四角信息</sys:String>
+    <sys:String x:Key="UID_Filming_Show_Annotation">显示四角信息</sys:String>
+
+
+    <sys:String x:Key="UID_Filming_Apply">应用</sys:String>
+    <sys:String x:Key="UID_Filming_ApplyandSave">应用并保存</sys:String>    
+    <sys:String x:Key="UID_Filming_ApplyOnce">仅应用一次</sys:String>
+    
+    <sys:String x:Key="UID_Filming_OK">确定</sys:String>
+    <sys:String x:Key="UID_Filming_Cancel">取消</sys:String>
+    <sys:String x:Key="UID_Filming_Confirm">确认</sys:String>
+    <sys:String x:Key="UID_Filming_Save">保存</sys:String>
+
+    <!--Custom ViewPort Layout Setting-->
+    <sys:String x:Key="UID_Filming_CustomCellLayout_Setting_Title">自定义像格布局管理</sys:String>
+    <sys:String x:Key="UID_Filming_CustomViewport_Setting_Title">自定义视窗布局管理</sys:String>
+    <!-- Preset Layout-->
+    <sys:String x:Key="UID_Filming_ComboBox_ApplytoLayout">保存到预设</sys:String>
+    <sys:String x:Key="UID_Filming_ComboBox_ApplytoLayout1">保存到预设1</sys:String>
+    <sys:String x:Key="UID_Filming_ComboBox_ApplytoLayout2">保存到预设2</sys:String>
+    <sys:String x:Key="UID_Filming_ComboBox_ApplytoLayout3">保存到预设3</sys:String>
+    <sys:String x:Key="UID_Filming_ComboBox_ApplytoLayout4">保存到预设4</sys:String>
+    <sys:String x:Key="UID_Filming_ComboBox_ApplytoLayout5">保存到预设5</sys:String>
+    <sys:String x:Key="UID_Filming_ComboBox_ApplytoDefaultLayout">保存默认布局</sys:String>
+    
+
+    <sys:String x:Key="UID_Filming_ComboBox_ApplytoLayoutToolTip">保存到预设布局</sys:String>
+    <sys:String x:Key="UID_Filming_ComboBox_ApplytoLayout1ToolTip">保存到预设布局1</sys:String>
+    <sys:String x:Key="UID_Filming_ComboBox_ApplytoLayout2ToolTip">保存到预设布局2</sys:String>
+    <sys:String x:Key="UID_Filming_ComboBox_ApplytoLayout3ToolTip">保存到预设布局3</sys:String>
+    <sys:String x:Key="UID_Filming_ComboBox_ApplytoLayout4ToolTip">保存到预设布局4</sys:String>
+    <sys:String x:Key="UID_Filming_ComboBox_ApplytoLayout5ToolTip">保存到预设布局5</sys:String>
+    <sys:String x:Key="UID_Filming_ComboBox_ApplytoDefaultLayoutToolTip">保存默认布局</sys:String>
+
+    <sys:String x:Key="UID_Filming_Save_DefaultLayout_Succeed">保存默认布局成功！</sys:String>
+    <sys:String x:Key="UID_Filming_Save_DefaultLayout_Failed">保存默认布局失败！</sys:String>
+
+    <!--Filming Status on MainFrame StatusBar-->
+    <sys:String x:Key="UID_Filming_Remove_Empty_Films_Before_Print">[Filming]打印前删除空胶片</sys:String>
+    <sys:String x:Key="UID_Filming_Begin_To_Save_EFilm">开始保存电子胶片</sys:String>
+    <sys:String x:Key="UID_Filming_End_To_Save_EFilm">结束保存电子胶片</sys:String>
+    <sys:String x:Key="UID_Filming_Begin_To_Print">开始打印</sys:String>
+    <sys:String x:Key="UID_Filming_Job_Created">新建打印任务，详见任务管理窗口</sys:String>
+    <sys:String x:Key="UID_Filming_Job_Complete">一个打印任务完成，详见任务管理窗口</sys:String>
+    <sys:String x:Key="UID_Filming_Job_Fail">一个打印任务失败，具体情况请查看任务管理窗口和日志</sys:String>
+    <sys:String x:Key="UID_Filming_Job_Full">打印任务管理器已满，请删除一部分历史记录</sys:String>
+    <sys:String x:Key="UID_Filming_Job_Cannot_RePrint">该任务未保存电子胶片，无法重打印</sys:String>
+    <sys:String x:Key="UID_Filming_Job_Cannot_Be_Deleted">不能删除进行中或者不存在的打印任务</sys:String>
+    <sys:String x:Key="UID_Filming_Complete_To_Save_EFilm">电子胶片成功保存到本地({0})</sys:String>
+    <sys:String x:Key="UID_Filming_Fail_To_Save_EFilm">电子胶片保存失败（{0}）</sys:String>
+
+    <!--Filming Status on MainFrame StatusBar (Off Screen Filming Job)F1-->
+    <sys:String x:Key="UID_Filming_OffScreen_Begin_To_Save_EFilm">已经发送到离屏渲染队列保存</sys:String>
+    <sys:String x:Key="UID_Filming_OffScreen_Begin_To_Print">正在创建打印任务</sys:String>
+    <sys:String x:Key="UID_Filming_OffScreen_Job_Fail">数据不完整，创建打印或者保存电子胶片任务失败</sys:String>
+
+    <sys:String x:Key="UID_Filming_Receive_Image_From_Other_Module_Warning_Cannot_Load_Normal_Image">不能加载图片到Filming，当前Filming上正在浏览电子胶片, 请卸载电子胶片后再执行该操作。</sys:String>
+    <sys:String x:Key="UID_Filming_Receive_Image_From_Other_Module_Warning_Cannot_Load_EFilm">不能加载发送电子胶片到Filming，当前Filming上正在浏览正常图片</sys:String>
+    <sys:String x:Key="UID_Filming_Receive_Image_From_Other_Module_Warning_Cannot_Load_EFilm_Of_Different_Series">不能加载电子胶片到Filming，当前Filming上正在浏览不同的电子胶片</sys:String>
+    <sys:String x:Key="UID_Filming_Receive_Image_From_Other_Module_Warning_Cannot_Load_Multi_Series_Contains_EFilm">Filming不能加载含有电子胶片序列的多个序列</sys:String>
+    <sys:String x:Key="UID_Filming_Receive_Image_From_Other_Module_Fail">Filming接收图片失败</sys:String>
+    <sys:String x:Key="UID_Filming_Receive_Image_From_Other_Module_Nothing">Filming接收图片信息为空</sys:String>
+    <sys:String x:Key="UID_Filming_Receive_Image_From_Other_Module">Filming接收到图片信息</sys:String>
+
+    <sys:String x:Key="UID_Filming_Begin_To_Load_Images">Filming将加载（{0}）幅图片到胶片预览区域</sys:String>
+    <sys:String x:Key="UID_Filming_End_To_Load_Images">Filming完成加载（{0}）幅图片到胶片预览区域</sys:String>
+    <sys:String x:Key="UID_Filming_Warning_Load_Non_Images">Filming图像加载过程中,忽略一张非图像数据</sys:String>
+    <sys:String x:Key="UID_Filming_Warning_Unsupport_Images">Filming图像加载过程中,忽略（{0}）张非图像数据</sys:String>
+    <sys:String x:Key="UID_Filming_Request_Of_Loading_Series_From_Review">Filming收到来自review的一个加载序列的请求</sys:String>
+    <sys:String x:Key="UID_Filming_Request_Of_Loading_EFilm_Series_From_PA">"Filming收到来自PA的一个电子胶片加载请求"</sys:String>
+    <sys:String x:Key="UID_Filming_Time_Out_For_Receiving_Images">图片接收超时</sys:String>
+
+    <sys:String x:Key="UID_Filming_No_Enough_Disk_Space_To_Create_Electronic_Image_Series">磁盘空间不足,因此Filming不创建电子胶片序列</sys:String>
+
+    <sys:String x:Key="UID_Filming_Job_Global_Warning">打印警告</sys:String>
+    <sys:String x:Key="UID_Filming_Job_Exceed_Limit">打印任务总数已经达到上限:{0}个,请等待任务完成,或者检查是否有故障发生</sys:String>
+
+    <!--EFilm-->
+    
+    <sys:String x:Key="UID_Filming_Load_Different_Films_Need_To_Clear_Old_Films">查看不同类型的胶片或者不同序列的电子胶片需要清除显示区域内旧的胶片，确定清除已加载胶片？</sys:String>
+    <sys:String x:Key="UID_Filming_Cannot_Load_Films" xml:space="preserve">不能加载，原因可能如下：&#x0a;    1）不能同时加载电子胶片和普通胶片 &#x0a;    2）一次只能加载单个序列的电子胶片</sys:String>       
+
+   <!--<sys:String x:Key="UID_Filming_Load_Different_EFilms">查看不同序列的电子胶片之前需要清除显示区域内旧的电子胶片，确定清除旧的电子胶片？</sys:String>-->
+
+    <!--mini-PA-->
+    <sys:String x:Key="UID_Filming_Mini-PA_Title">比较</sys:String>
+    <sys:String x:Key="UID_Filming_Mini-PA_Update">更新</sys:String>
+    <sys:String x:Key="UID_Filming_Mini-PA_Load">加载</sys:String>
+    <sys:String x:Key="UID_Filming_Mini-PA_Exit">退出</sys:String>
+    <sys:String x:Key="UID_Filming_PatientName">姓名</sys:String>
+    <sys:String x:Key="UID_Filming_AccessionNO">访问号</sys:String>
+    <sys:String x:Key="UID_Filming_StudyDate">检查日期</sys:String>
+    <sys:String x:Key="UID_Filming_PatientSex">性别</sys:String>
+    <sys:String x:Key="UID_Filming_PatientStudyAge">年龄</sys:String>
+    <sys:String x:Key="UID_Filming_PatientBirthdayDate">生日</sys:String>
+    <sys:String x:Key="UID_Filming_StudyTime">检查时间</sys:String>
+    <sys:String x:Key="UID_Filming_StudyDescription">检查描述</sys:String>
+    <sys:String x:Key="UID_Filming_PhysicianName">医师姓名</sys:String>
+    <sys:String x:Key="UID_Filming_StudyInstanceUID">检查实例号</sys:String>
+    <sys:String x:Key="UID_Filming_SeriesNumber">序列号</sys:String>
+    <sys:String x:Key="UID_Filming_Modality">设备</sys:String>
+    <sys:String x:Key="UID_Filming_SeriesDescription">序列描述</sys:String>
+    <sys:String x:Key="UID_Filming_SeriesInstanceUID">序列实例号</sys:String>
+    <sys:String x:Key="UID_Filming_MiniPA_PatientID">患者编号</sys:String>
+    <sys:String x:Key="UID_Filming_MiniPA_StudyID">检查编号</sys:String>
+    <sys:String x:Key="UID_Filming_MiniPA_Only_Support_Load_Studies">目前Filming不支持选中检查和序列加载，只支持加载整个检查</sys:String>
+
+    <!--Custom ViewPort Layout Setting-->
+    <sys:String x:Key="UID_Filming_CustomViewPortLayout_Setting_Title">自定义视窗布局管理窗口</sys:String>
+    <sys:String x:Key="UID_Filming_CustomViewPortLayout_Setting_Save">保存</sys:String>
+    <sys:String x:Key="UID_Filming_CustomViewPortLayout_Setting_Apply">应用</sys:String>
+    <sys:String x:Key="UID_Filming_CustomViewPortLayout_Setting_Delete">删除</sys:String>
+    <sys:String x:Key="UID_Filming_CustomViewPortLayout_Setting_Close">退出</sys:String>
+    <sys:String x:Key="UID_Filming_CustomViewPortLayout_New">新建视图布局模板</sys:String>
+    <sys:String x:Key="UID_Filming_CustomViewPortLayout_New_Warning_Invalid_Name">视图模板名字无效！</sys:String>
+    <sys:String x:Key="UID_Filming_CustomViewPortLayout_New_Warning_With_Same_Name">视图模板名字已存在，要覆盖该模板吗？新模板名字为： </sys:String>
+    <sys:String x:Key="UID_Filming_CustomViewPortLayout_Save_Warning_Just_Support_Saving_Irreguar_Layout">仅支持保存不规则布局</sys:String>
+    <sys:String x:Key="UID_Filming_CustomViewPortLayout_Open_Warning_Just_Support_One_Film">没有胶片被选中或者多张胶片被选中，只有一张胶片被选中时才允许此操作</sys:String>    
+
+    <!--Multi Format-->
+    <sys:String x:Key="UID_Filming_MultiFormat_Title">多分格</sys:String>
+
+    <!--Inter leaved selection-->
+    <sys:String x:Key="UID_Filming_InterLeavedSelection_Title">序列间隔打印</sys:String>
+
+    <sys:String x:Key="UID_Filming_Save_EFilm_Failed">保存电子胶片失败！</sys:String>
+
+    <sys:String x:Key="UID_Filming_Info_Not_Support_Comman_Filming_For_XR_Images">目前通用打印不支持某些图像类型(CR/DX...)</sys:String>
+
+    <sys:String x:Key="UID_Filming_Not_Support_Save_EFilm_For_Mixed_Images">包含不同检查数据的胶片将不保存电子胶片</sys:String>
+
+    <sys:String x:Key="UID_Filming_Not_Support_Save_New_Series_For_Mixed_Images">胶片中含有多个检查的图像，无法生成专门序列！</sys:String>
+
+    <sys:String x:Key="UID_Filming_Auto_Delete_Empty_Film">空胶片将被自动删除！</sys:String>
+
+    <sys:String x:Key="UID_Filming_Warning_Mixed_Film_Print">存在同一张胶片包含不同检查的影像数据，是否确认打印？</sys:String>
+
+    <sys:String
+        x:Key="UID_Filming_Validation_Exception">请输入合法数据</sys:String>
+
+    <!--Film Limit-->
+    <sys:String x:Key="UID_Filming_Info_Film_Page_Count_Limit">胶片数目上限为{0}, 当前操作将终止</sys:String>
+
+    <!--Textblock Font Family -->
+    <FontFamily
+        x:Key="UID_Filming_Font_Family">Microsoft YaHei
+    </FontFamily>
+
+    <sys:String x:Key="UID_Filming_Loading_ProcessStep">正在加载</sys:String>
+    <sys:String x:Key="UID_Filming_Image_Count">图像数:</sys:String>
+    <sys:String x:Key="UID_Filming_Film_Current">当前:</sys:String>
+    <sys:String x:Key="UID_Filming_Film_Count">总数:</sys:String>
+    <sys:String x:Key="UID_Filming_ImageCountRemain">尾页:</sys:String>
+    <sys:String x:Key="UID_Filming_CellCountSelected">像格:</sys:String>
+    <sys:String x:Key="UID_Filming_Config">配置</sys:String>
+    <sys:String x:Key="UID_Filming_Warning_FailedInsertRefImage">未搜索到匹配的定位像!</sys:String>
+    <sys:String x:Key="UID_Filming_Warning_FailedReplaceRefImage">图像间不存在参考关系!</sys:String>
+    <sys:String x:Key="UID_Filming_Warning_FailedManualAddRefImage">该功能不支持多个序列!</sys:String>
+    <sys:String x:Key="UID_Filming_TrueSize_Scale">智能尺寸</sys:String>
+    <!--Protocol Binding Layout Configure -->
+    <!--<sys:String x:Key="UID_Filming_Save">Save</sys:String>-->
+    <!--<sys:String x:Key="UID_Filming_Reset">Reset</sys:String>-->
+    <!--<sys:String x:Key="UID_Filming_Cancel">Cancel</sys:String>-->
+    <sys:String x:Key="UID_Filming_Protocol">协议</sys:String>
+    <sys:String x:Key="UID_Filming_Protocol_Name">协议</sys:String>
+    <!--<sys:String x:Key="UID_Filming_Layout">Layout</sys:String>-->
+    <sys:String x:Key="UID_Filming_Protocol_SaveSuccess">保存成功</sys:String>
+    <sys:String x:Key="UID_Filming_Protocol_SaveFail">保存失败</sys:String>
+    <sys:String x:Key="UID_Filming_Protocol_CloseHint">本次修改未被保存，是否保存并退出?</sys:String>
+    <sys:String x:Key="UID_Filming_Print_CellEmptyHint">打印胶片布局未排满，确定发送打印?</sys:String>
+    <sys:String x:Key="UID_Filming_Print_CellPageNo">是否打印胶片号(与当前显示一致)?</sys:String>
+
+    <sys:String x:Key="UID_Filming_SaveLayout">保存布局模板</sys:String>
+    <sys:String x:Key="UID_Filming_ChangeNavTabPrint">切换到打印设置面板</sys:String>
+    <sys:String x:Key="UID_Filming_ChangeNavTabAction">切换到操作面板</sys:String>
+    <sys:String x:Key="UID_Filming_Custom_Delete">删除</sys:String>
+    <sys:String x:Key="UID_Filming_Custom_Rename">重命名</sys:String>
+    <sys:String x:Key="UID_Filming_Custom_Save_to_Preset">保存到预设</sys:String>
+    <sys:String x:Key="UID_Filming_Custom_Preset_Layout">预设布局</sys:String>
+    <sys:String x:Key="UID_Filming_Custom_Binding_Layout">绑定布局</sys:String>
+    <sys:String x:Key="UID_Filming_Custom_Confirm">确定</sys:String>
+    <sys:String x:Key="UID_Filming_Custom_Cancel">取消</sys:String>
+    <sys:String x:Key="UID_Filming_CombinePrint_Title">合并层厚打印</sys:String>
+    <sys:String x:Key="UID_Filming_CombinePrint">合并层厚打印</sys:String>
+</ResourceDictionary>
