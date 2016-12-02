@@ -10,15 +10,9 @@ namespace UIH.Mcsf.Filming.DemoViewModel
 
         public CardViewModel(ICard card)
         {
-            InitializeChildViewModel(card);
-
-            card.InitializeFromConfigure();
-        }
-
-        private void InitializeChildViewModel(ICard card)
-        {
             InfoPanelViewModel = new InfoPanelViewModel(card);
             ControlPanelViewModel = new ControlPanelViewModel(card);
+            card.InitializeFromConfigure();
             ImageLoadPanelViewModel = new ImageLoadPanelViewModel(card);
         }
 

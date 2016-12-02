@@ -44,6 +44,11 @@ namespace UIH.Mcsf.Filming.DataModel
 
     public class Card : ObjectWithAspects, IBoardProvider, ICard
     {
+        public Card()
+        {
+            _board = new Board(_displayMode);
+        }
+
         public int BoardCount
         {
             get { return _boardCount; }
@@ -72,23 +77,19 @@ namespace UIH.Mcsf.Filming.DataModel
             filmingConfigure.ParseConfigures();
             DisplayMode = filmingConfigure.ViewMode;
 
-            //var defaultLayoutConfigure = Environment.Instance.GetDefaultLayoutConfigure();
-            ////defaultLayoutConfigure.ParseConfigures();
-            //Layout = defaultLayoutConfigure.Layout;
+            var defaultLayoutConfigure = Environment.Instance.GetDefaultLayoutConfigure();
+            //defaultLayoutConfigure.ParseConfigures();
+            Layout = defaultLayoutConfigure.Layout;
         }
 
         #endregion [--Implement From ICard--]
-
-        private void SegmentSystemOnChanged(object sender, EventArgs eventArgs)
-        {
-        }
 
         //private void SelectableCellListOnChanged(object sender, EventArgs eventArgs)
         //{
         //    //viewModel changes
 
-        //    _selectablePageList = new SelectablePageList(_selectableCellList.BuildPages());
-        //    BoardCount = (int) Math.Ceiling((0.0 + _selectablePageList.Count())/_displayMode);
+        //    _pages = new SelectablePageList(_cells.BuildPages());
+        //    BoardCount = (int) Math.Ceiling((0.0 + _pages.Count())/_displayMode);
         //    if (_boardNo < BoardCount)
         //    {
         //        NotifyBoardChanged();
@@ -106,9 +107,9 @@ namespace UIH.Mcsf.Filming.DataModel
 
 
             var pageStartIndex = _boardNo*_displayMode;
-            var pageCount = Math.Min(_displayMode, _selectablePageList.Count - pageStartIndex);
-            //BoardChanged(this, new BoardEventArgs(_selectablePageList.GetRange(pageStartIndex, pageCount)));
-            _board.Pages = _selectablePageList.GetRange(pageStartIndex, pageCount);
+            var pageCount = Math.Min(_displayMode, _pages.Count - pageStartIndex);
+            //BoardChanged(this, new BoardEventArgs(_pages.GetRange(pageStartIndex, pageCount)));
+            _board.Pages = _pages.GetRange(pageStartIndex, pageCount);
 
             //_taskCancellationTokenSource = new CancellationTokenSource();
             //_task = Task.Factory.StartNew(PrepareNextBoard, _taskCancellationTokenSource.Token);
@@ -119,9 +120,9 @@ namespace UIH.Mcsf.Filming.DataModel
         {
             var pageNo = (_boardNo + 1)*_displayMode;
 
-            for (var i = 0; i < _displayMode && pageNo < _selectablePageList.Count; i++)
+            for (var i = 0; i < _displayMode && pageNo < _pages.Count; i++)
             {
-                _selectableCellList.GetCells(pageNo++).ToList().ForEach(cell => cell.Prepare());
+                _pages[pageNo].Cells.ForEach(cell => cell.Prepare());
                 //Console.WriteLine("Prepare For Page {0}", pageNo);
             }
         }
@@ -129,14 +130,14 @@ namespace UIH.Mcsf.Filming.DataModel
         #region [--Field--]
 
         private int _boardCount = 1;
-        //private List<ImageCell> _selectableCellList; 
+        //private List<ImageCell> _cells; 
         private int _boardNo;
         private int _displayMode = 1;
-        //private LayoutBase _layout;
-        //private SelectablePageList _selectablePageList;
+        private LayoutBase _layout;
+        //private SelectablePageList _pages;
         private readonly Board _board;
         //private IBasicLoader _dataLoader;
-        //private readonly SelectableCellList _selectableCellList;
+        //private readonly SelectableCellList _cells;
 
         #endregion  [--Field--]
 
@@ -168,9 +169,9 @@ namespace UIH.Mcsf.Filming.DataModel
             private get { return _layout; }
             set
             {
-                if (_layout.Equals(value)) return;
+                if (_layout != null && _layout.Equals(value)) return;
                 _layout = value;
-                _selectableCellList.Layout = value;
+                //_cells.Layout = value;
                 LayoutChanged(this, new LayoutEventArgs(value));
                 var defaultLayoutConfigure = Environment.Instance.GetDefaultLayoutConfigure();
                 defaultLayoutConfigure.Layout = value;
@@ -184,7 +185,7 @@ namespace UIH.Mcsf.Filming.DataModel
                 if (_displayMode == value) return;
                 BoardNo = _displayMode*_boardNo/value;
                 _displayMode = value;
-                BoardCount = (int) Math.Ceiling((0.0 + _selectablePageList.Count())/_displayMode);
+                BoardCount = (int) Math.Ceiling((0.0 + _pages.Count())/_displayMode);
                 DisplayModeChanged(this, new IntEventArgs {Int = value});
                 _board.DisplayMode = value;
                 NotifyBoardChanged();
@@ -204,11 +205,11 @@ namespace UIH.Mcsf.Filming.DataModel
             //var db = DBWrapperHelper.DBWrapper;
             //CellLink如何变更
             //var newCells = db.GetImageListBySeriesInstanceUID(seriesInstanceUid).Select(image=>CellFactory.Instance.CreateCell(image.SOPInstanceUID));
-            _selectableCellList.AddSeries(seriesUid, index);
-            //var emptyRangeEnd = _selectableCellList.FindIndex(index, c => c.IsEmpty);
-            //if (emptyRangeEnd != -1) _selectableCellList.RemoveRange(index, emptyRangeEnd - index + 1);
+            //_cells.AddSeries(seriesUid, index);
+            //var emptyRangeEnd = _cells.FindIndex(index, c => c.IsEmpty);
+            //if (emptyRangeEnd != -1) _cells.RemoveRange(index, emptyRangeEnd - index + 1);
 
-            //_selectableCellList.AddRange(DBWrapperHelper.DBWrapper.GetImageListBySeriesInstanceUID(seriesUid).Select(image => new ImageCell() { RawData = image }));
+            //_cells.AddRange(DBWrapperHelper.DBWrapper.GetImageListBySeriesInstanceUID(seriesUid).Select(image => new ImageCell() { RawData = image }));
         }
 
         public void PreLoad(string sopInstanceUid)
