@@ -260,6 +260,8 @@ namespace UIH.Mcsf.Filming.DataModel
         private void BuildCellLink()
         {
             _cells = new SelectableList<ImageCell>(_pages.SelectMany(p => p.Cells));
+
+            // TODO-Working-On: Update Card.NotifyBoardChanged()
             NotifyBoardChanged();
         }
 
