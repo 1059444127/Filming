@@ -5,7 +5,6 @@
     /// </summary>
     public partial class MainWindow
     {
-        // TODO-working-on: ViewModelLocater
         public MainWindow()
         {
             InitializeComponent();
