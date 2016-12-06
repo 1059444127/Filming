@@ -125,7 +125,7 @@ namespace UIH.Mcsf.Filming.DataModel
         }
     }
 
-    //Todo: 多分格Cell
+    //Todo-later: 多分格Cell
     //[CallTrace(true)]
     internal class Cell : ImageCell
     {

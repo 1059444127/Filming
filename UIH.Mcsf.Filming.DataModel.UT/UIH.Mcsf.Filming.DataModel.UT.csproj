@@ -56,7 +56,7 @@
     <Compile Include="CellBaseTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SelectableListTest.cs" />
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="CardTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\UIH.Mcsf.Filming.DataModel\UIH.Mcsf.Filming.DataModel.csproj">

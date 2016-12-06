@@ -3,7 +3,7 @@
 namespace UIH.Mcsf.Filming.DataModel.UT
 {
     [TestClass]
-    public class UnitTest1
+    public class CardTests
     {
         [TestMethod]
         public void
