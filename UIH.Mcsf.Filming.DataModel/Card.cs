@@ -73,6 +73,7 @@ namespace UIH.Mcsf.Filming.DataModel
 
         public void InitializeFromConfigure()
         {
+            // Todo-later: Violate SRP, Extract to private method
             var filmingConfigure = Environment.Instance.GetFilmingConfigure();
             filmingConfigure.ParseConfigures();
             DisplayMode = filmingConfigure.ViewMode;
@@ -262,7 +263,7 @@ namespace UIH.Mcsf.Filming.DataModel
         {
             _cells = new SelectableList<ImageCell>(_pages.SelectMany(p => p.Cells));
 
-            // TODO-Working-On: Update Card.NotifyBoardChanged()
+            // TODO-Later: Update Card.NotifyBoardChanged()
             NotifyBoardChanged();
         }
 
