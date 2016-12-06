@@ -3,14 +3,13 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:userControlTests="clr-namespace:UIH.Mcsf.Filming.UserControlTests"
         Title="MainWindow" 
-        DataContext="{Binding Source={x:Static userControlTests:ViewModelLocator.MainWindowViewModelStatic}}"
         >
         <Window.Resources>
             <ResourceDictionary>
                 <ResourceDictionary.MergedDictionaries>
-                    <ResourceDictionary />
+                    <ResourceDictionary Source="Skins/MainSkin.xaml"/>
                 </ResourceDictionary.MergedDictionaries>
             </ResourceDictionary>
         </Window.Resources>
-    <ContentControl />
+    <ContentControl DataContext="{Binding Source={x:Static userControlTests:ViewModelLocator.MainWindowViewModelStatic}}"/>
 </Window>
