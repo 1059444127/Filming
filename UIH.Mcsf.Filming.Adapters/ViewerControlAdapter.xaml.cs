@@ -23,15 +23,21 @@ namespace UIH.Mcsf.Filming.Adapters
         public Layout Layout
         {
             get { return (Layout)GetValue(LayoutProperty); }
-            set { SetValue(LayoutProperty, value); }
+            set
+            {
+                SetValue(LayoutProperty, value);
+                var simpleLayout = value as SimpleLayout;
+                if(simpleLayout != null) ViewerControl.LayoutManager.SetLayout(simpleLayout.Row, simpleLayout.Col);
+            }
         }
 
         // Using a DependencyProperty as the backing store for Layout.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty LayoutProperty =
-            DependencyProperty.Register("Layout", typeof(int), typeof(ViewerControlAdapter), new UIPropertyMetadata(0));
+            DependencyProperty.Register("Layout", typeof(Layout), typeof(ViewerControlAdapter));
 
-        
-        
+        #region Overrides of FrameworkElement
+
+        #endregion
 
         // TODO-New-Feature: Focus
 
