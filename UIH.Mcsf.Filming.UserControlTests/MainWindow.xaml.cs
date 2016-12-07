@@ -8,6 +8,7 @@
         public MainWindow()
         {
             InitializeComponent();
+            //TODO-Later: DataTemplate Binding view(ContentControl) and viewModel
         }
     }
 }

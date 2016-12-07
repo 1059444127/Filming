@@ -6,5 +6,5 @@
              xmlns:vc="clr-namespace:UIH.Mcsf.Viewer;assembly=UIH.Mcsf.Viewer.Control"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
-    <vc:MedViewerControl />
+    <vc:MedViewerControl x:Name="ViewerControl"/>
 </UserControl>

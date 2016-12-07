@@ -8,6 +8,8 @@
         public ViewerControlAdapter()
         {
             InitializeComponent();
+            ViewerControl.InitializeWithoutCommProxy(Configure.Environment.Instance.ApplicationPath);
+            ViewerControl.LayoutManager.SetLayout(2,2);
         }
 
         // TODO-New-Feature: Layout Dependency Property

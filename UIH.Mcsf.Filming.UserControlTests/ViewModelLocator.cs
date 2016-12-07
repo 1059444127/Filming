@@ -18,7 +18,6 @@ namespace UIH.Mcsf.Filming.UserControlTests
 
         #endregion
 
-        // TODO-working-on: ViewModelLocater
 
         public static Object MainWindowViewModelStatic = CreateViewModel();
     }
