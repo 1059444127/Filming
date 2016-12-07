@@ -10,7 +10,7 @@ namespace UIH.Mcsf.Filming.DataModel
         public static Layout CreateDefaultLayout()
         {
             var layout = Environment.Instance.GetDefaultLayoutConfigure().Layout;
-            return new SimpleLayout(layout.Columns, layout.Rows);
+            return CreateLayout(layout.Columns, layout.Rows);
         }
 
         public static Layout CreateLayout(int columns, int rows)

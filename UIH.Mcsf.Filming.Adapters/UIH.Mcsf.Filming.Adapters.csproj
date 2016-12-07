@@ -66,9 +66,9 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\UIH.Mcsf.Filming.Configure\UIH.Mcsf.Filming.Configure.csproj">
-      <Project>{6E737007-9A79-49CA-A966-4E6DD5E40EB4}</Project>
-      <Name>UIH.Mcsf.Filming.Configure</Name>
+    <ProjectReference Include="..\UIH.Mcsf.Filming.DataModel\UIH.Mcsf.Filming.DataModel.csproj">
+      <Project>{DA1D05EA-2679-49E9-8DBA-0A1EE9E50405}</Project>
+      <Name>UIH.Mcsf.Filming.DataModel</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
