@@ -12,6 +12,6 @@
                 </ResourceDictionary.MergedDictionaries>
             </ResourceDictionary>
         </Window.Resources>
-    <!--<ContentControl DataContext="{Binding Source={x:Static userControlTests:ViewModelLocator.MainWindowViewModelStatic}}"/>-->
-    <adapters:ViewerControlAdapter />
+    <ContentControl Content="{Binding Source={x:Static userControlTests:ViewModelLocator.MainWindowViewModelStatic}}"/>
+    <!--<adapters:ViewerControlAdapter />-->
 </Window>
