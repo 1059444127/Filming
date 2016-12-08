@@ -5,6 +5,7 @@ namespace UIH.Mcsf.Filming.UserControlTests
 {
     public class ViewModelLocator
     {
+        // TODO: ViewModelLocator Add MainWindowViewModel to get an entry of program control
         private static object CreateViewModel()
         {
             return _002_Create_PageControl_ViewModel();
@@ -12,7 +13,6 @@ namespace UIH.Mcsf.Filming.UserControlTests
 
         #region [--UserControl-ViewModel-Created--]
 
-        // TODO-working-on : Use PageControl To Test ViewerControlAdapter
         private static object _002_Create_PageControl_ViewModel()
         {
             return new PageControlViewModel();
