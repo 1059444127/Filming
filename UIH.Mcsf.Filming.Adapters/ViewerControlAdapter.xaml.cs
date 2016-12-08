@@ -14,8 +14,7 @@ namespace UIH.Mcsf.Filming.Adapters
             InitializeComponent();
             // TODO-later: ViewerControl Configure Path From Class Configure
             ViewerControl.InitializeWithoutCommProxy(@"D:/UIH/appdata/filming/config/");//Configure.Environment.Instance.ApplicationPath);
-            // TODO-later: ViewerControl Layout From ViewModel
-            ViewerControl.LayoutManager.SetLayout(2,2);
+            ViewerControl.CanSelectCellByLeftClick = false; //Disable inner mouse left button down events.
         }
 
 
@@ -26,8 +25,6 @@ namespace UIH.Mcsf.Filming.Adapters
             set
             {
                 SetValue(LayoutProperty, value);
-                //TODO: ViewerControlAdapter Set Layout for ViewerConrol
-                value.Setup(ViewerControl.LayoutManager);
             }
         }
 
@@ -70,6 +67,6 @@ namespace UIH.Mcsf.Filming.Adapters
 
         // TODO-New-Feature: ViewerControlAdatper.MultiFormatCell
 
-        // TODO-New-Feature: ViewerControlAdatper.Complete Cells when set layout
+        // TODO-New-Feature-Working-On: ViewerControlAdatper.Complete Cells when set layout
     }
 }
