@@ -40,6 +40,7 @@ namespace UIH.Mcsf.Filming.DemoView
             }
         }
 
+        // TODO: PageControl.OnTitleBarMouseDown : Replaced By Command
         private void OnTitleBarMouseDown(object sender, MouseButtonEventArgs e)
         {
             _pageModel.Click(new ClickStatus(

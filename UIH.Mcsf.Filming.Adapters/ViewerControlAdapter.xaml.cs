@@ -17,7 +17,6 @@ namespace UIH.Mcsf.Filming.Adapters
             ViewerControl.LayoutManager.SetLayout(2,2);
         }
 
-        // TODO-New-Feature-working-on: Layout Dependency Property
 
 
         public Layout Layout

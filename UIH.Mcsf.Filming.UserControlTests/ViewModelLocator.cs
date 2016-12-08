@@ -1,5 +1,5 @@
 ﻿using System;
-using UIH.Mcsf.Filming.DataModel;
+using UIH.Mcsf.Filming.ViewModel;
 
 namespace UIH.Mcsf.Filming.UserControlTests
 {
@@ -19,7 +19,7 @@ namespace UIH.Mcsf.Filming.UserControlTests
 
         #endregion
 
-
+        // TODO: Package-Uninstall MvvmLibs From UserControlTests Project
         public static Object MainWindowViewModelStatic = CreateViewModel();
     }
 }

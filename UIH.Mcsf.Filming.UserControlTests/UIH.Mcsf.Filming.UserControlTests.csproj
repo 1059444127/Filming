@@ -107,7 +107,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="ViewerControlAdapterViewModel.cs" />
     <Compile Include="ViewModelLocator.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -156,9 +155,17 @@
       <Project>{24E00A4C-AC9E-4DB0-90A1-3B68F0C7AC22}</Project>
       <Name>UIH.Mcsf.Filming.Adapters</Name>
     </ProjectReference>
-    <ProjectReference Include="..\UIH.Mcsf.Filming.DataModel\UIH.Mcsf.Filming.DataModel.csproj">
-      <Project>{DA1D05EA-2679-49E9-8DBA-0A1EE9E50405}</Project>
-      <Name>UIH.Mcsf.Filming.DataModel</Name>
+    <ProjectReference Include="..\UIH.Mcsf.Filming.Model\UIH.Mcsf.Filming.Model.csproj">
+      <Project>{CCC8D6AA-A1B5-422F-9789-B66FF2F1DBAB}</Project>
+      <Name>UIH.Mcsf.Filming.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UIH.Mcsf.Filming.ViewModel\UIH.Mcsf.Filming.ViewModel.csproj">
+      <Project>{97E2660E-022C-4923-8BAE-42DF2024FC7F}</Project>
+      <Name>UIH.Mcsf.Filming.ViewModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UIH.Mcsf.Filming.View\UIH.Mcsf.Filming.View.csproj">
+      <Project>{C17AFDE4-568D-4B67-9526-E08E70BD0160}</Project>
+      <Name>UIH.Mcsf.Filming.View</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

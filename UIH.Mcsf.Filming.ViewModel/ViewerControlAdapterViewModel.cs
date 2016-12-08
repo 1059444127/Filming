@@ -1,7 +1,7 @@
 ﻿using GalaSoft.MvvmLight;
 using UIH.Mcsf.Filming.DataModel;
 
-namespace UIH.Mcsf.Filming.UserControlTests
+namespace UIH.Mcsf.Filming.ViewModel
 {
     public class ViewerControlAdapterViewModel : ViewModelBase
     {
