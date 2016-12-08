@@ -2,6 +2,7 @@ using System;
 using System.Windows;
 using System.Windows.Input;
 using GalaSoft.MvvmLight.Command;
+using UIH.Mcsf.Filming.Interfaces;
 using UIH.Mcsf.Filming.ViewModel;
 
 namespace UIH.Mcsf.Filming.UserControlTests
@@ -20,12 +21,9 @@ namespace UIH.Mcsf.Filming.UserControlTests
             }
         }
 
-        private object CreateUserControlViewModel()
-        {
-            return _001CreateViewerControlAdapterViewModel();
-        }
-
         #endregion [--UserControlViewModel--]
+
+        #region [--UserControl Test--]
 
         #region [--StartTestCommand--]
 
@@ -36,14 +34,28 @@ namespace UIH.Mcsf.Filming.UserControlTests
             get { return _startTestCommand = _startTestCommand ?? new RelayCommand(StartTest); }
         }
 
-        private void StartTest()
-        {
-            _001ViewerControlAdapterTest();
-        }
-
         #endregion [--StartTestCommand--]    
 
-        #region [--UserControl Test--]
+        private object CreateUserControlViewModel()
+        {
+            return _002CreatePageControlViewModel();
+        }
+
+        private void StartTest()
+        {
+            _002CreatePageControlViewModel();
+        }
+
+        private object _002CreatePageControlViewModel()
+        {
+            return new PageControlViewModel();
+        }
+
+        private void _002PageControlTest()
+        {
+            var viewModel = _userControlViewModel as PageControlViewModel;
+            viewModel.Layout = Layout.CreateDefaultLayout();
+        }
 
         private object _001CreateViewerControlAdapterViewModel()
         {
@@ -53,9 +65,7 @@ namespace UIH.Mcsf.Filming.UserControlTests
         private void _001ViewerControlAdapterTest()
         {
             var viewModel = _userControlViewModel as ViewerControlAdapterViewModel;
-            // TODO£ºCreate available Layout
-            viewModel.Layout = null;
-
+            viewModel.Layout = Layout.CreateDefaultLayout();
             MessageBox.Show("Hello F5");
         }
 
