@@ -58,16 +58,18 @@ namespace UIH.Mcsf.Filming.Adapters
 
         #endregion
 
-        // TODO-New-Feature: Focus
+        // TODO-New-Feature: ViewerControlAdatper.Focus
 
-        // TODO-New-Feature: Selection
+        // TODO-New-Feature: ViewerControlAdatper.Selection
 
-        // TODO-New-Feature: Cells Dependecy Property
+        // TODO-New-Feature: ViewerControlAdatper.Cells Dependecy Property
 
-        // TODO-New-Feature: ViewPort Layout Dependency Property
+        // TODO-New-Feature: ViewerControlAdatper.ViewPort Layout Dependency Property
 
-        // TODO-New-Feature: regularLayout & irregularLayout
+        // TODO-New-Feature: ViewerControlAdatper.regularLayout & irregularLayout
 
-        // TODO-New-Feature: MultiFormatCell
+        // TODO-New-Feature: ViewerControlAdatper.MultiFormatCell
+
+        // TODO-New-Feature: ViewerControlAdatper.Complete Cells when set layout
     }
 }
