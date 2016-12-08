@@ -14,8 +14,7 @@ namespace UIH.Mcsf.Filming.UserControlTests
 
         private static object _001_Create_ViewerControlAdapter_ViewModel()
         {
-            var layout = Layout.CreateDefaultLayout();
-            return new ViewerControlAdapterViewModel(layout);
+            return new ViewerControlAdapterViewModel();
         }
 
         #endregion

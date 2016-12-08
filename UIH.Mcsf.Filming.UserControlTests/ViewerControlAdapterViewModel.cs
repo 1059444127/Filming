@@ -9,11 +9,6 @@ namespace UIH.Mcsf.Filming.UserControlTests
 
         private Layout _layout;
 
-        public ViewerControlAdapterViewModel(Layout layout)
-        {
-            _layout = layout;
-        }
-
         public Layout Layout
         {
             get { return _layout; }

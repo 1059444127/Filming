@@ -25,6 +25,7 @@ namespace UIH.Mcsf.Filming.DemoView
 
         public PageControl()
         {
+            // TODO-Working-on: PageControl 改用 ViewerControlAdapter (original: MedViewerControl)
             InitializeComponent();
             Initialize();
         }

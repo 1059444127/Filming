@@ -73,7 +73,7 @@ namespace UIH.Mcsf.Filming.DataModel
 
         public void InitializeFromConfigure()
         {
-            // Todo-later: Violate SRP, Extract to private method
+            // Todo-later: Card.InitializeFromConfigure() Violate SRP, Extract to private method
             var filmingConfigure = Environment.Instance.GetFilmingConfigure();
             filmingConfigure.ParseConfigures();
             DisplayMode = filmingConfigure.ViewMode;
