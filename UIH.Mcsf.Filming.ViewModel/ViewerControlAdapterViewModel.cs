@@ -6,7 +6,6 @@ namespace UIH.Mcsf.Filming.ViewModel
     public class ViewerControlAdapterViewModel : ViewModelBase
     {
         #region [--Layout--]
-        // TODO-working-on: ViewerControlAdapterViewModel.Layout 使用Model.Layout替代
         private Layout _layout;
 
         public Layout Layout

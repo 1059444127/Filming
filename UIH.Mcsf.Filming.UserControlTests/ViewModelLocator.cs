@@ -7,10 +7,16 @@ namespace UIH.Mcsf.Filming.UserControlTests
     {
         private static object CreateViewModel()
         {
-            return _001_Create_ViewerControlAdapter_ViewModel();
+            return _002_Create_PageControl_ViewModel();
         }
 
         #region [--UserControl-ViewModel-Created--]
+
+        // TODO-working-on : Use PageControl To Test ViewerControlAdapter
+        private static object _002_Create_PageControl_ViewModel()
+        {
+            return new PageControlViewModel();
+        }
 
         private static object _001_Create_ViewerControlAdapter_ViewModel()
         {
