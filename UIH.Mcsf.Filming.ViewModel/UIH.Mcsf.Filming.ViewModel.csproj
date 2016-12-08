@@ -68,9 +68,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\UIH.Mcsf.Filming.DataModel\UIH.Mcsf.Filming.DataModel.csproj">
-      <Project>{DA1D05EA-2679-49E9-8DBA-0A1EE9E50405}</Project>
-      <Name>UIH.Mcsf.Filming.DataModel</Name>
+    <ProjectReference Include="..\UIH.Mcsf.Filming.Interfaces\UIH.Mcsf.Filming.Interfaces.csproj">
+      <Project>{27718D47-A3D6-4EA7-8669-E61A94562912}</Project>
+      <Name>UIH.Mcsf.Filming.Interfaces</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -44,9 +44,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIH.Mcsf.Filming.View", "..
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIH.Mcsf.Filming.Model", "..\UIH.Mcsf.Filming.Model\UIH.Mcsf.Filming.Model.csproj", "{CCC8D6AA-A1B5-422F-9789-B66FF2F1DBAB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIH.Mcsf.Filming.Interfaces", "..\UIH.Mcsf.Filming.Interfaces\UIH.Mcsf.Filming.Interfaces.csproj", "{27718D47-A3D6-4EA7-8669-E61A94562912}"
+EndProject
 Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 17
+		SccNumberOfProjects = 18
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
 		SccTeamFoundationServer = http://tfs:8080/tfs/defaultcollection
 		SccLocalPath0 = .
@@ -103,6 +105,9 @@ Global
 		SccProjectUniqueName16 = ..\\UIH.Mcsf.Filming.Model\\UIH.Mcsf.Filming.Model.csproj
 		SccProjectName16 = ../UIH.Mcsf.Filming.Model
 		SccLocalPath16 = ..\\UIH.Mcsf.Filming.Model
+		SccProjectUniqueName17 = ..\\UIH.Mcsf.Filming.Interfaces\\UIH.Mcsf.Filming.Interfaces.csproj
+		SccProjectName17 = ../UIH.Mcsf.Filming.Interfaces
+		SccLocalPath17 = ..\\UIH.Mcsf.Filming.Interfaces
 	EndGlobalSection
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = FilmingLocalSolution.vsmdi
@@ -174,6 +179,10 @@ Global
 		{CCC8D6AA-A1B5-422F-9789-B66FF2F1DBAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CCC8D6AA-A1B5-422F-9789-B66FF2F1DBAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CCC8D6AA-A1B5-422F-9789-B66FF2F1DBAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27718D47-A3D6-4EA7-8669-E61A94562912}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27718D47-A3D6-4EA7-8669-E61A94562912}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27718D47-A3D6-4EA7-8669-E61A94562912}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27718D47-A3D6-4EA7-8669-E61A94562912}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

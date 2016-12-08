@@ -1,12 +1,12 @@
 ﻿using GalaSoft.MvvmLight;
-using UIH.Mcsf.Filming.DataModel;
+using UIH.Mcsf.Filming.Interfaces;
 
 namespace UIH.Mcsf.Filming.ViewModel
 {
     public class ViewerControlAdapterViewModel : ViewModelBase
     {
         #region [--Layout--]
-        // TODO: ViewerControlAdapterViewModel.Layout 使用Model.Layout替代
+        // TODO-working-on: ViewerControlAdapterViewModel.Layout 使用Model.Layout替代
         private Layout _layout;
 
         public Layout Layout

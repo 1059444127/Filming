@@ -1,5 +1,5 @@
 ﻿using System.Windows;
-using UIH.Mcsf.Filming.DataModel;
+using UIH.Mcsf.Filming.Interfaces;
 
 namespace UIH.Mcsf.Filming.Adapters
 {
@@ -25,8 +25,7 @@ namespace UIH.Mcsf.Filming.Adapters
             set
             {
                 SetValue(LayoutProperty, value);
-                var simpleLayout = value as SimpleLayout;
-                if(simpleLayout != null) ViewerControl.LayoutManager.SetLayout(simpleLayout.Row, simpleLayout.Col);
+                //TODO: ViewerControlAdapter Set Layout for ViewerConrol
             }
         }
 
