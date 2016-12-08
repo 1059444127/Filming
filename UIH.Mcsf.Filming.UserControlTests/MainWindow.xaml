@@ -12,6 +12,9 @@
                 </ResourceDictionary.MergedDictionaries>
             </ResourceDictionary>
         </Window.Resources>
+        <Window.InputBindings>
+            <KeyBinding Key="F5" Command="{Binding StartTestCommand}"></KeyBinding>
+        </Window.InputBindings>
     <ContentControl Content="{Binding UserControlViewModel}"/>
     <!--<adapters:ViewerControlAdapter />-->
 </Window>
