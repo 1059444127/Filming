@@ -19,7 +19,6 @@ namespace UIH.Mcsf.Filming.UserControlTests
 
         #endregion
 
-        // TODO: Package-Uninstall MvvmLibs From UserControlTests Project
         public static Object MainWindowViewModelStatic = CreateViewModel();
     }
 }
