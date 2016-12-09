@@ -63,7 +63,6 @@ namespace UIH.Mcsf.Filming.Adapters
             {
                 var controlCell = ViewerControl.Cells.ElementAt(i) as FilmingControlCell;
                 Debug.Assert(controlCell != null);
-                // TODO: FilmingControlCell.FillImage(ImageCell)
                 controlCell.FillImage(ImageCells[i]);
             }
 
