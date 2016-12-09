@@ -4,6 +4,9 @@ namespace UIH.Mcsf.Filming.Interfaces
 {
     public abstract class Layout
     {
+        // TODO-New-Feature: Layout.ViewPort Layout Dependency Property
+        // TODO-New-Feature: Layout.regularLayout & irregularLayout
+
         public abstract void Setup(LayoutManager layoutManager);
 
         public static Layout CreateDefaultLayout()

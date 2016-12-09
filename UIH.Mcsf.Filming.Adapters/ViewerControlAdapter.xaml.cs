@@ -78,17 +78,18 @@ namespace UIH.Mcsf.Filming.Adapters
 
         #endregion
 
-        // TODO-New-Feature: ViewerControlAdatper.Focus
+        // TODO-New-Feature: ViewerControlAdapter.OnDrop (Original: use VisualTreeHelper to Location)
+ 
+        // TODO-New-Feature: ViewerControlAdapter.MouseClick
 
-        // TODO-New-Feature: ViewerControlAdatper.Selection
+        // TODO-New-Feature: ViewerControlAdapter.KeyPressed( UP/DOWN/LEFT/RIGHT )
 
-        // TODO-New-Feature: ViewerControlAdatper.Cells Dependecy Property
+        // TODO-New-Feature: ViewerControlAdapter.ModifierKeyPressed ( Ctrl/Shift )
 
-        // TODO-New-Feature: ViewerControlAdatper.ViewPort Layout Dependency Property
+        // TODO-New-Feature: ViewerControlAdapter.Cells Dependecy Property
 
-        // TODO-New-Feature: ViewerControlAdatper.regularLayout & irregularLayout
 
-        // TODO-New-Feature: ViewerControlAdatper.MultiFormatCell
+
 
     }
 }
