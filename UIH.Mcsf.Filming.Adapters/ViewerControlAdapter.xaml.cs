@@ -1,6 +1,8 @@
-﻿using System.Diagnostics;
+﻿using System.Collections.Generic;
+using System.Reflection;
 using System.Windows;
 using UIH.Mcsf.Filming.Interfaces;
+using UIH.Mcsf.Filming.Model;
 using UIH.Mcsf.Viewer;
 
 namespace UIH.Mcsf.Filming.Adapters
@@ -43,17 +45,19 @@ namespace UIH.Mcsf.Filming.Adapters
             var property = e.Property;
             if (property == LayoutProperty)
             {
-                OnLayoutPropertyChanged(e);
+                Layout.Setup(ViewerControl.LayoutManager);
+                CompleteCells();
+                return;
+            }
+            if (property == ImageCellsProperty)
+            {
+                RefreshCells();
             }
         }
 
-        private void OnLayoutPropertyChanged(DependencyPropertyChangedEventArgs dependencyPropertyChangedEventArgs)
+        private void RefreshCells()
         {
-            var layout = dependencyPropertyChangedEventArgs.NewValue as Layout;
-            Debug.Assert(layout != null);
-            
-            layout.Setup(ViewerControl.LayoutManager);
-            CompleteCells();
+
         }
 
         private void CompleteCells()
@@ -65,6 +69,7 @@ namespace UIH.Mcsf.Filming.Adapters
             // cell count is less
             for (int i = 0; i < deltaCellCount; i++)
             {
+                //TODO: ViewerControl.AddCell(New FilmingControlCell);
                 ViewerControl.AddCell(new MedViewerControlCell());
             }
 
@@ -86,10 +91,21 @@ namespace UIH.Mcsf.Filming.Adapters
 
         // TODO-New-Feature: ViewerControlAdapter.ModifierKeyPressed ( Ctrl/Shift )
 
-        // TODO-New-Feature: ViewerControlAdapter.Cells Dependecy Property
+        // TODO-New-Feature-working-on: ViewerControlAdapter.Cells Dependecy Property
 
+        // TODO-Later: ViewerControl.ImageCells and Memory Leak
+        public IList<ImageCell> ImageCells
+        {
+            get { return (IList<ImageCell>)GetValue(ImageCellsProperty); }
+            set { SetValue(ImageCellsProperty, value); }
+        }
 
+        // Using a DependencyProperty as the backing store for ImageCells.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty ImageCellsProperty =
+            DependencyProperty.Register("ImageCells", typeof(IList<ImageCell>), typeof(ViewerControlAdapter));
 
+        
+        
 
     }
 }

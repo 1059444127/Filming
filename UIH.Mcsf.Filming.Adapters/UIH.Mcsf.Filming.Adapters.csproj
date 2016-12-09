@@ -70,6 +70,10 @@
       <Project>{27718D47-A3D6-4EA7-8669-E61A94562912}</Project>
       <Name>UIH.Mcsf.Filming.Interfaces</Name>
     </ProjectReference>
+    <ProjectReference Include="..\UIH.Mcsf.Filming.Model\UIH.Mcsf.Filming.Model.csproj">
+      <Project>{CCC8D6AA-A1B5-422F-9789-B66FF2F1DBAB}</Project>
+      <Name>UIH.Mcsf.Filming.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
