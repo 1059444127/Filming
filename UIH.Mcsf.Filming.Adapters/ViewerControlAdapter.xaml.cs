@@ -1,4 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
 using System.Windows;
 using UIH.Mcsf.Filming.Interfaces;
 
@@ -52,10 +55,17 @@ namespace UIH.Mcsf.Filming.Adapters
             }
         }
 
-        // TODO: Use ImageCell to control status of ControlCell
-        // TODO-working-on: Binding DP ImageCells in PageControl.xaml
+        // TODO-working-on: Use ImageCell to control status of ControlCell
         private void RefreshCells()
         {
+            var cellCount = Math.Min(ImageCells.Count, ViewerControl.CellCount);
+            for (int i = 0; i < cellCount; i++)
+            {
+                var controlCell = ViewerControl.Cells.ElementAt(i) as FilmingControlCell;
+                Debug.Assert(controlCell != null);
+                // TODO: FilmingControlCell.FillImage(ImageCell)
+                controlCell.FillImage(ImageCells[i]);
+            }
 
         }
 
