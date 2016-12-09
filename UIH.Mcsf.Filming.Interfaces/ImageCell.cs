@@ -1,4 +1,4 @@
-﻿namespace UIH.Mcsf.Filming.Model
+﻿namespace UIH.Mcsf.Filming.Interfaces
 {
     public class ImageCell
     {

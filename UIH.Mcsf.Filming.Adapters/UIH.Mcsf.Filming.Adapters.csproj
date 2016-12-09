@@ -54,6 +54,7 @@
     </CodeAnalysisDependentAssemblyPaths>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FilmingControlCell.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewerControlAdapter.xaml.cs">
       <DependentUpon>ViewerControlAdapter.xaml</DependentUpon>
@@ -69,10 +70,6 @@
     <ProjectReference Include="..\UIH.Mcsf.Filming.Interfaces\UIH.Mcsf.Filming.Interfaces.csproj">
       <Project>{27718D47-A3D6-4EA7-8669-E61A94562912}</Project>
       <Name>UIH.Mcsf.Filming.Interfaces</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\UIH.Mcsf.Filming.Model\UIH.Mcsf.Filming.Model.csproj">
-      <Project>{CCC8D6AA-A1B5-422F-9789-B66FF2F1DBAB}</Project>
-      <Name>UIH.Mcsf.Filming.Model</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

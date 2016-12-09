@@ -1,8 +1,6 @@
 ﻿using System.Collections.Generic;
-using System.Reflection;
 using System.Windows;
 using UIH.Mcsf.Filming.Interfaces;
-using UIH.Mcsf.Filming.Model;
 
 namespace UIH.Mcsf.Filming.Adapters
 {
@@ -55,7 +53,7 @@ namespace UIH.Mcsf.Filming.Adapters
         }
 
         // TODO: Use ImageCell to control status of ControlCell
-        // TODO: Binding DP ImageCells in PageControl.xaml
+        // TODO-working-on: Binding DP ImageCells in PageControl.xaml
         private void RefreshCells()
         {
 

@@ -45,6 +45,7 @@
     <Reference Include="UIH.Mcsf.Viewer.Control, Version=1.0.6155.7634, Culture=neutral, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ImageCell.cs" />
     <Compile Include="Layout.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SimpleLayout.cs" />

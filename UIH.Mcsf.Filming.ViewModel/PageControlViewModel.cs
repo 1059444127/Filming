@@ -1,5 +1,7 @@
-﻿using GalaSoft.MvvmLight;
+﻿using System.Collections.Generic;
+using GalaSoft.MvvmLight;
 using UIH.Mcsf.Filming.Interfaces;
+using UIH.Mcsf.Filming.Model;
 
 namespace UIH.Mcsf.Filming.ViewModel
 {
@@ -20,7 +22,24 @@ namespace UIH.Mcsf.Filming.ViewModel
             }
         }
 
-        #endregion [--Layout--]
-  
+        #region [--ImageCells--]
+
+        private IList<ImageCell> _imageCells;
+
+        public IList<ImageCell> ImageCells
+        {
+            get { return _imageCells; }
+            set
+            {
+                if (_imageCells == value) return;
+                _imageCells = value;
+                RaisePropertyChanged(() => ImageCells);
+            }
+        }
+
+        #endregion [--ImageCells--]
+
+        #endregion [--ImageCells--]
+ 
     }
 }
