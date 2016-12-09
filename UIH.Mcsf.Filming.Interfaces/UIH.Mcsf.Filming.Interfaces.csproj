@@ -43,6 +43,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="UIH.Mcsf.Viewer.Control, Version=1.0.6155.7634, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="UIH.Mcsf.Viewer.Interface, Version=1.0.6155.8209, Culture=neutral, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ImageCell.cs" />

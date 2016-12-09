@@ -6,10 +6,17 @@ namespace UIH.Mcsf.Filming.Adapters
     internal class FilmingControlCell : MedViewerControlCell
     {
         private ImageCell _imageCell;
-        //TODO: FilmingControlCell need DisplayData
+        public FilmingControlCell()
+        {
+            Image.AddPage(new DisplayData());
+        }
+
         public void FillImage(ImageCell imageCell)
         {
             _imageCell = imageCell;
+            // TODO: Debug to Test Performance of Image.ReplacePage
+            Image.ReplacePage(_imageCell.DisplayData, 0);
         }
+
     }
 }
