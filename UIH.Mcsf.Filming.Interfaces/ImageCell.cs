@@ -6,7 +6,7 @@ namespace UIH.Mcsf.Filming.Interfaces
     {
         public ImageCell()
         {
-            DisplayData = new DisplayData();
+            DisplayData = GlobalDefinitions.EmptyDisplayData;
         }
 
         public DisplayData DisplayData { get; private set; }
