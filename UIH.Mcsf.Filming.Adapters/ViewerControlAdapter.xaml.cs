@@ -3,7 +3,6 @@ using System.Reflection;
 using System.Windows;
 using UIH.Mcsf.Filming.Interfaces;
 using UIH.Mcsf.Filming.Model;
-using UIH.Mcsf.Viewer;
 
 namespace UIH.Mcsf.Filming.Adapters
 {
@@ -69,8 +68,7 @@ namespace UIH.Mcsf.Filming.Adapters
             // cell count is less
             for (int i = 0; i < deltaCellCount; i++)
             {
-                //TODO: ViewerControl.AddCell(New FilmingControlCell);
-                ViewerControl.AddCell(new MedViewerControlCell());
+                ViewerControl.AddCell(new FilmingControlCell());
             }
 
             // cell count is more
