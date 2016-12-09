@@ -43,7 +43,7 @@ namespace UIH.Mcsf.Filming.UserControlTests
 
         private void StartTest()
         {
-            _002CreatePageControlViewModel();
+            _002PageControlTest();
         }
 
         private object _002CreatePageControlViewModel()

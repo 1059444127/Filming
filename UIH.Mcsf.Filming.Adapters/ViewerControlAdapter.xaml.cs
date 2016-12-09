@@ -1,6 +1,7 @@
 ﻿using System.Diagnostics;
 using System.Windows;
 using UIH.Mcsf.Filming.Interfaces;
+using UIH.Mcsf.Viewer;
 
 namespace UIH.Mcsf.Filming.Adapters
 {
@@ -50,7 +51,29 @@ namespace UIH.Mcsf.Filming.Adapters
         {
             var layout = dependencyPropertyChangedEventArgs.NewValue as Layout;
             Debug.Assert(layout != null);
+            
             layout.Setup(ViewerControl.LayoutManager);
+            CompleteCells();
+        }
+
+        private void CompleteCells()
+        {
+            var capacity = ViewerControl.LayoutManager.RootCell.DisplayCapacity;
+            var currentCellCount = ViewerControl.CellCount;
+            var deltaCellCount = capacity - currentCellCount;
+
+            // cell count is less
+            for (int i = 0; i < deltaCellCount; i++)
+            {
+                ViewerControl.AddCell(new MedViewerControlCell());
+            }
+
+            // cell count is more
+            for (int i = capacity-deltaCellCount-1; i >= capacity ; i--)
+            {
+                ViewerControl.RemoveCell(i);
+            }
+
         }
 
         #endregion
@@ -67,6 +90,5 @@ namespace UIH.Mcsf.Filming.Adapters
 
         // TODO-New-Feature: ViewerControlAdatper.MultiFormatCell
 
-        // TODO-New-Feature-Working-On: ViewerControlAdatper.Complete Cells when set layout
     }
 }

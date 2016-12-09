@@ -11,7 +11,7 @@ namespace UIH.Mcsf.Filming.Interfaces
             var layout = Configure.Environment.Instance.GetDefaultLayoutConfigure().Layout;
             return CreateLayout(layout.Rows, layout.Columns);
         }
-
+        // TODO-Later: Layout.Equals HashCode For Dependency Property ViewerControlAdapter.Layout
         public static Layout CreateLayout(int row, int col)
         {
             return new SimpleLayout(row, col);
