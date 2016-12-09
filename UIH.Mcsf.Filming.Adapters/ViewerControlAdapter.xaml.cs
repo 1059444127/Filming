@@ -54,6 +54,8 @@ namespace UIH.Mcsf.Filming.Adapters
             }
         }
 
+        // TODO: Use ImageCell to control status of ControlCell
+        // TODO: Binding DP ImageCells in PageControl.xaml
         private void RefreshCells()
         {
 
