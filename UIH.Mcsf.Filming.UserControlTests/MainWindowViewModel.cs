@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using System.Windows;
 using System.Windows.Input;
 using GalaSoft.MvvmLight.Command;
@@ -55,6 +56,7 @@ namespace UIH.Mcsf.Filming.UserControlTests
         {
             var viewModel = _userControlViewModel as PageControlViewModel;
             viewModel.Layout = Layout.CreateDefaultLayout();
+            viewModel.ImageCells = Enumerable.Repeat(new ImageCell(), 16).ToList();
         }
 
         private object _001CreateViewerControlAdapterViewModel()
