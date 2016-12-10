@@ -44,8 +44,8 @@
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
     <Reference Include="System.Xaml" />
-    <Reference Include="UIH.Mcsf.Viewer.Control, Version=1.0.6155.7634, Culture=neutral, processorArchitecture=MSIL" />
-    <Reference Include="UIH.Mcsf.Viewer.Interface, Version=1.0.6155.8209, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="UIH.Mcsf.Viewer.Control, Version=1.0.6187.29981, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="UIH.Mcsf.Viewer.Interface, Version=1.0.6187.29972, Culture=neutral, processorArchitecture=MSIL" />
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
