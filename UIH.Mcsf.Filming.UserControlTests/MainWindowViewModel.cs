@@ -56,7 +56,8 @@ namespace UIH.Mcsf.Filming.UserControlTests
         {
             var viewModel = _userControlViewModel as PageControlViewModel;
             viewModel.Layout = Layout.CreateDefaultLayout();
-            viewModel.ImageCells = Enumerable.Repeat(new ImageCell(), 16).ToList();
+            var sopInstanceUid = @"1.2.156.112605.161340985965.20140523064111.4.15276.1";
+            viewModel.ImageCells = Enumerable.Repeat(new ImageCell(sopInstanceUid), 16).ToList();
         }
 
         private object _001CreateViewerControlAdapterViewModel()
