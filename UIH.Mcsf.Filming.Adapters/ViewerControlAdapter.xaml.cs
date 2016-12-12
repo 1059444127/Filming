@@ -92,6 +92,7 @@ namespace UIH.Mcsf.Filming.Adapters
 
             // cell count is more,  not move, for performance conside ( ViewerControl only have interface to remove a cell, then refresh )
 
+            // Register CellImpl.MouseDown Event
             for (int i = 0; i < deltaCellCount; i++)
             {
                 var cellImpl = cells[i].Control;
@@ -108,6 +109,8 @@ namespace UIH.Mcsf.Filming.Adapters
             Debug.Assert(cellImpl != null);
             var controlCell = cellImpl.DataSource as FilmingControlCell;
             Debug.Assert(controlCell != null);
+
+            // TODO-working-on: Override ControlCell.IsSelected to update selected status in ImageCell
             controlCell.IsSelected = true;
         }
 
