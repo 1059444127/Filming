@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Windows;
+using System.Windows.Input;
 using UIH.Mcsf.Filming.Interfaces;
+using UIH.Mcsf.Viewer;
 
 namespace UIH.Mcsf.Filming.Adapters
 {
@@ -47,19 +49,21 @@ namespace UIH.Mcsf.Filming.Adapters
             {
                 Layout.Setup(ViewerControl.LayoutManager);
                 CompleteCells();
-                RegisterEvent();
                 return;
             }
             if (property == ImageCellsProperty)
             {
-                RefreshCells();
+                FillCells();
             }
         }
 
+        private void RegisterEvent()
+        {
+            
+        }
+
         // TODO-working-on: Use ImageCell to control status of ControlCell
-        // TODO-working-on : Selected a cell
-        // TODO-working-on : Register cell click event
-        private void RefreshCells()
+        private void FillCells()
         {
             var cellCount = Math.Min(ImageCells.Count, ViewerControl.CellCount);
             for (int i = 0; i < cellCount; i++)
@@ -78,19 +82,33 @@ namespace UIH.Mcsf.Filming.Adapters
             var deltaCellCount = capacity - currentCellCount;
 
             // cell count is less
+            // TODO-later: New FilmingControlCell(), not smell good
+            var cells = new List<FilmingControlCell>();
             for (int i = 0; i < deltaCellCount; i++)
             {
-                // TODO-later: ControlCellFactory to manage control cell creation and destroy
-                ViewerControl.AddCell(new FilmingControlCell());
-
+                cells.Add(new FilmingControlCell());
             }
+            ViewerControl.AddCells(cells);
 
-            // cell count is more
-            for (int i = capacity-deltaCellCount-1; i >= capacity ; i--)
+            // cell count is more,  not move, for performance conside ( ViewerControl only have interface to remove a cell, then refresh )
+
+            for (int i = 0; i < deltaCellCount; i++)
             {
-                ViewerControl.RemoveCell(i);
+                var cellImpl = cells[i].Control;
+                Debug.Assert(cellImpl != null);
+                cellImpl.MouseDown -= CellImplOnMouseDown;
+                cellImpl.MouseDown += CellImplOnMouseDown;
             }
 
+        }
+
+        private void CellImplOnMouseDown(object sender, MouseButtonEventArgs mouseButtonEventArgs)
+        {
+            var cellImpl = sender as MedViewerControlCellImpl;
+            Debug.Assert(cellImpl != null);
+            var controlCell = cellImpl.DataSource as FilmingControlCell;
+            Debug.Assert(controlCell != null);
+            controlCell.IsSelected = true;
         }
 
         #endregion
