@@ -8,7 +8,7 @@ namespace UIH.Mcsf.Filming.Adapters
         private ImageCell _imageCell;
         public FilmingControlCell()
         {
-            Image.AddPage(GlobalDefinitions.EmptyDisplayData);
+            Image.AddPage(DisplayDataFactory.Instance.CreateDisplayData());
         }
 
         public void FillImage(ImageCell imageCell)

@@ -51,7 +51,7 @@
     <Reference Include="UIH.Mcsf.Viewer.Interface, Version=1.0.6187.29972, Culture=neutral, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GlobalDefinitions.cs" />
+    <Compile Include="DisplayDataFactory.cs" />
     <Compile Include="ImageCell.cs" />
     <Compile Include="Layout.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
