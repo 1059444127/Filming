@@ -9,12 +9,15 @@ namespace UIH.Mcsf.Filming.Interfaces
     {
         #region [--Singleton--]
 
-        public static DisplayDataFactory Instance = new DisplayDataFactory();
-        private DisplayData _emptyDisplayData;
+        public static readonly DisplayDataFactory Instance = new DisplayDataFactory();
+        private readonly DisplayData _emptyDisplayData = new DisplayData();
+        private readonly IBasicLoader _syncDataLoader = DataLoaderFactory.Instance().CreateSyncSopLoader(DBWrapperHelper.DBWrapper);
+        private readonly DataAccessor _dataAccessor;
 
         private DisplayDataFactory()
         {
-            _emptyDisplayData = new DisplayData();
+            // TODO-Later: create IViewerConfigure for dataAccessor
+            _dataAccessor = new DataAccessor();
         }
 
         #endregion [--Singleton--]
@@ -26,16 +29,11 @@ namespace UIH.Mcsf.Filming.Interfaces
 
         public DisplayData CreateDisplayData(string sopInstanceUid)
         {
-            // TODO: make dataloader(sync) static in ImageCell or in Factory
-            var dataLoader = DataLoaderFactory.Instance().CreateSyncSopLoader(DBWrapperHelper.DBWrapper);
-            // TODO: use ConcurrentDictionary manage sop
-            var sop = dataLoader.LoadSopByUid(sopInstanceUid);
-            // TODO: make dataAccessor static in ImageCell or in Factory
-            // TODO: create IViewerConfigure for dataAccessor
-            var dataAccessor = new DataAccessor();
+            // TODO-later: use ConcurrentDictionary manage sop
+            var sop = _syncDataLoader.LoadSopByUid(sopInstanceUid);
             var imageSop = sop as ImageSop;
             Debug.Assert(imageSop != null);
-            var displayData = dataAccessor.CreateImageData(sop.DicomSource, imageSop.GetNormalizedPixelData(), imageSop.PresentationState);
+            var displayData = _dataAccessor.CreateImageData(sop.DicomSource, imageSop.GetNormalizedPixelData(), imageSop.PresentationState);
             return displayData ?? DisplayDataFactory.Instance.CreateDisplayData();
         }
     }
