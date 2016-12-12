@@ -47,6 +47,7 @@ namespace UIH.Mcsf.Filming.Adapters
             {
                 Layout.Setup(ViewerControl.LayoutManager);
                 CompleteCells();
+                RegisterEvent();
                 return;
             }
             if (property == ImageCellsProperty)
@@ -56,6 +57,8 @@ namespace UIH.Mcsf.Filming.Adapters
         }
 
         // TODO-working-on: Use ImageCell to control status of ControlCell
+        // TODO-working-on : Selected a cell
+        // TODO-working-on : Register cell click event
         private void RefreshCells()
         {
             var cellCount = Math.Min(ImageCells.Count, ViewerControl.CellCount);
@@ -77,7 +80,9 @@ namespace UIH.Mcsf.Filming.Adapters
             // cell count is less
             for (int i = 0; i < deltaCellCount; i++)
             {
+                // TODO-later: ControlCellFactory to manage control cell creation and destroy
                 ViewerControl.AddCell(new FilmingControlCell());
+
             }
 
             // cell count is more
