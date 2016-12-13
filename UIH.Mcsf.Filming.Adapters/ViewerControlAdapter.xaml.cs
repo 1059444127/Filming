@@ -111,8 +111,11 @@ namespace UIH.Mcsf.Filming.Adapters
             Debug.Assert(controlCell != null);
 
             // TODO-working-on: Override ControlCell.IsSelected to update selected status in ImageCell
-            controlCell.IsSelected = true;
+            // TODO-intent: FilmingControlCell.OnClicked
+            controlCell.OnClicked(new ClickStatus(mouseButtonEventArgs.LeftButton == MouseButtonState.Pressed,
+                mouseButtonEventArgs.RightButton == MouseButtonState.Pressed));
         }
+
 
         #endregion
 
@@ -125,6 +128,8 @@ namespace UIH.Mcsf.Filming.Adapters
         // TODO-New-Feature: ViewerControlAdapter.ModifierKeyPressed ( Ctrl/Shift )
 
         // TODO-New-Feature-working-on: ViewerControlAdapter.Cells Dependecy Property
+
+        // TODO-New-Feature: ControlCell.Clone
 
         // TODO-Later: ViewerControl.ImageCells and Memory Leak
         public IList<ImageCell> ImageCells
