@@ -1,4 +1,5 @@
-﻿using System.Windows.Input;
+﻿using System;
+using System.Windows.Input;
 
 namespace UIH.Mcsf.Filming.Interfaces
 {
@@ -24,5 +25,15 @@ namespace UIH.Mcsf.Filming.Interfaces
         public bool IsRightMouseButtonClicked { get; private set; }
         public bool IsCtrlPressed { get; private set; }
         public bool IsShiftPressed { get; private set; }
+    }
+
+    public class ClickStatusEventArgs : EventArgs
+    {
+        public ClickStatusEventArgs(IClickStatus clickStatus)
+        {
+            ClickStatus = clickStatus;
+        }
+
+        public IClickStatus ClickStatus { get; private set; }
     }
 }

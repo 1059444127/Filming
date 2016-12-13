@@ -24,7 +24,7 @@ namespace UIH.Mcsf.Filming.Adapters
         {
             // TODO: FilmingControlCell.ImageCell.Clicked
             Debug.Assert(_imageCell != null);
-            _imageCell.Clicked(new ClickEventArgs(clickStatus));
+            _imageCell.OnClicked(clickStatus);
         }
     }
 }

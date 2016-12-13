@@ -56,6 +56,7 @@
     <Compile Include="DisplayDataFactory.cs" />
     <Compile Include="IClickStatus.cs" />
     <Compile Include="ImageCell.cs" />
+    <Compile Include="ISelect.cs" />
     <Compile Include="Layout.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SimpleLayout.cs" />
