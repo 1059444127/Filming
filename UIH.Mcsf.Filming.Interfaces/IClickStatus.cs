@@ -27,13 +27,4 @@ namespace UIH.Mcsf.Filming.Interfaces
         public bool IsShiftPressed { get; private set; }
     }
 
-    public class ClickStatusEventArgs : EventArgs
-    {
-        public ClickStatusEventArgs(IClickStatus clickStatus)
-        {
-            ClickStatus = clickStatus;
-        }
-
-        public IClickStatus ClickStatus { get; private set; }
-    }
 }

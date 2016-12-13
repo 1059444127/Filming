@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DisplayDataFactory.cs" />
+    <Compile Include="EventArgs.cs" />
     <Compile Include="IClickStatus.cs" />
     <Compile Include="ImageCell.cs" />
     <Compile Include="ISelect.cs" />
