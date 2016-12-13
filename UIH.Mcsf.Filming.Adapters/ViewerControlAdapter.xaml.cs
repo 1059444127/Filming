@@ -133,6 +133,8 @@ namespace UIH.Mcsf.Filming.Adapters
         // TODO-New-Feature-Working-on: FilmingControlCell.Focus
         // TODO-User-intent: Focus Status Stored in UI Layer
 
+        // TODO-New-Feature: Remove Page
+
         // TODO-Later: ViewerControl.ImageCells and Memory Leak
         public IList<ImageCell> ImageCells
         {

@@ -9,6 +9,7 @@ namespace UIH.Mcsf.Filming.Interfaces
     public class ImageCell : ISelect
     {
         private bool _isSelected;
+        private bool _isFocused;
 
         public ImageCell()
         {
@@ -23,7 +24,8 @@ namespace UIH.Mcsf.Filming.Interfaces
             DisplayData = DisplayDataFactory.Instance.CreateDisplayData(sopInstanceUid);
         }
 
-        public event EventHandler<BoolEventArgs> SelectStatusChanged = delegate { }; 
+        public event EventHandler<BoolEventArgs> SelectStatusChanged = delegate { };
+        public event EventHandler<BoolEventArgs> FocusStatusChanged = delegate { }; 
 
         #region Implementation of ISelect
 
@@ -38,7 +40,16 @@ namespace UIH.Mcsf.Filming.Interfaces
             }
         }
 
-        public bool IsFocused { get; set; }
+        public bool IsFocused
+        {
+            get { return _isFocused; }
+            set
+            {
+                if(_isFocused == value) return;
+                _isFocused = value;
+                FocusStatusChanged(this, new BoolEventArgs(value));
+            }
+        }
 
         public event EventHandler<ClickStatusEventArgs> Clicked = delegate {};
 

@@ -8,6 +8,7 @@ namespace UIH.Mcsf.Filming.Adapters
     internal class FilmingControlCell : MedViewerControlCell
     {
         private ImageCell _imageCell;
+        private bool _isFocused;
         public FilmingControlCell()
         {
             Image.AddPage(DisplayDataFactory.Instance.CreateDisplayData());
@@ -18,16 +19,48 @@ namespace UIH.Mcsf.Filming.Adapters
             set
             {
                 if (_imageCell == value) return;
-                _imageCell.SelectStatusChanged -= ImageCellOnSelectStatusChanged;
+                DetachImageCell();
                 _imageCell = value;
-                _imageCell.SelectStatusChanged -= ImageCellOnSelectStatusChanged;
-                _imageCell.SelectStatusChanged += ImageCellOnSelectStatusChanged;
+                AttachImageCell();
             }
+        }
+
+        private void AttachImageCell()
+        {
+            if (_imageCell == null) return;
+            RegisterImageCellEvent();
+            _imageCell.IsFocused = _isFocused;
+        }
+
+        private void DetachImageCell()
+        {
+            if (_imageCell == null) return;
+            UnRegisterImageCellEvent();
+            _imageCell.IsFocused = false;
+        }
+
+        private void RegisterImageCellEvent()
+        {
+            _imageCell.SelectStatusChanged -= ImageCellOnSelectStatusChanged;
+            _imageCell.SelectStatusChanged += ImageCellOnSelectStatusChanged;
+            _imageCell.FocusStatusChanged -= ImageCellOnFocusStatusChanged;
+            _imageCell.FocusStatusChanged += ImageCellOnFocusStatusChanged;
+        }
+
+        private void UnRegisterImageCellEvent()
+        {
+            _imageCell.SelectStatusChanged -= ImageCellOnSelectStatusChanged;
+            _imageCell.FocusStatusChanged -= ImageCellOnFocusStatusChanged;
         }
 
         private void ImageCellOnSelectStatusChanged(object sender, BoolEventArgs boolEventArgs)
         {
             IsSelected = boolEventArgs.Bool;
+        }
+
+        private void ImageCellOnFocusStatusChanged(object sender, BoolEventArgs boolEventArgs)
+        {
+            _isFocused = boolEventArgs.Bool;
         }
 
         public void FillImage(ImageCell imageCell)
@@ -42,5 +75,7 @@ namespace UIH.Mcsf.Filming.Adapters
             Debug.Assert(_imageCell != null);
             _imageCell.OnClicked(clickStatus);
         }
+
+        
     }
 }
