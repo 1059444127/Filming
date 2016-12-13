@@ -1,4 +1,5 @@
-﻿using UIH.Mcsf.Filming.Interfaces;
+﻿using System.Diagnostics;
+using UIH.Mcsf.Filming.Interfaces;
 using UIH.Mcsf.Viewer;
 
 namespace UIH.Mcsf.Filming.Adapters
@@ -19,5 +20,11 @@ namespace UIH.Mcsf.Filming.Adapters
             Refresh();
         }
 
+        public void OnClicked(IClickStatus clickStatus)
+        {
+            // TODO: FilmingControlCell.ImageCell.Clicked
+            Debug.Assert(_imageCell != null);
+            _imageCell.Clicked(new ClickEventArgs(clickStatus));
+        }
     }
 }
