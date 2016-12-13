@@ -110,8 +110,6 @@ namespace UIH.Mcsf.Filming.Adapters
             var controlCell = cellImpl.DataSource as FilmingControlCell;
             Debug.Assert(controlCell != null);
 
-            // TODO-working-on: Override ControlCell.IsSelected to update selected status in ImageCell
-            // TODO-intent: FilmingControlCell.OnClicked
             controlCell.OnClicked(new ClickStatus(mouseButtonEventArgs.LeftButton == MouseButtonState.Pressed,
                 mouseButtonEventArgs.RightButton == MouseButtonState.Pressed));
         }
@@ -130,6 +128,10 @@ namespace UIH.Mcsf.Filming.Adapters
         // TODO-New-Feature-working-on: ViewerControlAdapter.Cells Dependecy Property
 
         // TODO-New-Feature: ControlCell.Clone
+
+        
+        // TODO-New-Feature-Working-on: FilmingControlCell.Focus
+        // TODO-User-intent: Focus Status Stored in UI Layer
 
         // TODO-Later: ViewerControl.ImageCells and Memory Leak
         public IList<ImageCell> ImageCells
