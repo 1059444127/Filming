@@ -135,6 +135,8 @@ namespace UIH.Mcsf.Filming.Adapters
 
         // TODO-New-Feature: Remove Page
 
+        // TODO-New-Feature: Select with up/down/left/right in a viewport
+
         // TODO-Later: ViewerControl.ImageCells and Memory Leak
         public IList<ImageCell> ImageCells
         {
