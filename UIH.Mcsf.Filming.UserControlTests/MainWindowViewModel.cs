@@ -1,9 +1,11 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
 using System.Windows.Input;
 using GalaSoft.MvvmLight.Command;
 using UIH.Mcsf.Filming.Interfaces;
+using UIH.Mcsf.Filming.Model;
 using UIH.Mcsf.Filming.ViewModel;
 
 namespace UIH.Mcsf.Filming.UserControlTests
@@ -57,7 +59,15 @@ namespace UIH.Mcsf.Filming.UserControlTests
             var viewModel = _userControlViewModel as PageControlViewModel;
             viewModel.Layout = Layout.CreateDefaultLayout();
             var sopInstanceUid = @"1.2.156.112605.161340985965.20140523064111.4.15276.1";
-            viewModel.ImageCells = Enumerable.Repeat(new ImageCell(sopInstanceUid), 16).ToList();
+
+            var cells = new SelectableList<ImageCell>();
+            for (int i = 0; i < 16; i++)
+            {
+                cells.Add(new ImageCell(sopInstanceUid));
+            }
+
+            viewModel.ImageCells = cells;
+
         }
 
         private object _001CreateViewerControlAdapterViewModel()

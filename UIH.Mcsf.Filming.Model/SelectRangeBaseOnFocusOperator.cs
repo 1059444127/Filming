@@ -25,7 +25,7 @@ namespace UIH.Mcsf.Filming.Model
             var focusIndex = Elements.IndexOf(focus);
             var operationIndex = Elements.IndexOf(Element);
 
-            SelectRange(focusIndex, operationIndex, true);
+            SelectRange(focusIndex, operationIndex, focus.IsSelected);
         }
     }
 }

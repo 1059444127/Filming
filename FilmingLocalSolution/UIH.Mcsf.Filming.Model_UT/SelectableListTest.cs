@@ -120,6 +120,36 @@ namespace UIH.Mcsf.Filming.Model_UT
         }
 
         [TestMethod]
+        public void
+            When_Left_Click_on_an_element_With_CtrlShift_pressed_And_Focus_Is_Not_Selected_Then_UnSelect_from_focus_to_operation_element
+            ()
+        {
+            // Arrange
+            _selectableList.ToList().ForEach(e=>e.IsSelected=false);
+            _selectableList.ToList().ForEach(e=>e.IsFocused=false);
+            _selectableList[0].IsSelected = true;
+            _selectableList[2].IsSelected = true;
+            _selectableList[1].IsFocused = true;
+            _clickIndex = 6;
+            _clickElement = _selectableList[_clickIndex];
+            GetSelectableListStatus();
+
+            var clickStatus = Click(left: true, right: null, ctrl: true, shift: true);
+
+            // Act
+            _clickElement.Click(clickStatus);
+
+            // Assert
+            var actualSelectStatus = GetSelectStatus();
+            var actualFocusStatus = GetFocusStatus();
+
+            Console.WriteLine("[Before Clicked][SelectStatus]{0:x2}[FocusStatus]{1:x2}[Clicked Index]{2}", _originalSelectStatus, _originalFocusStatus, _clickIndex);
+            Console.WriteLine("[After Clicked][SelectStatus]{0:x2}[FocusStatus]{1:x2}", actualSelectStatus, actualFocusStatus);
+            Assert.AreEqual(1, actualSelectStatus);
+            Assert.AreEqual(2, actualFocusStatus); 
+        }
+
+        [TestMethod]
         public void When_Right_Click_on_an_element_Then_Select_it_But_Not_change_Focus() // Method_Scenario_Result
         {
             // Arrange
