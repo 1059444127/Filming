@@ -45,7 +45,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cell.cs" />
+    <Compile Include="DummySelectOperator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SelectableList.cs" />
+    <Compile Include="SelectOnlyOpertator.cs" />
+    <Compile Include="SelectOperator.cs" />
+    <Compile Include="SelectOperatorFactroy.cs" />
+    <Compile Include="SelectRangeBaseOnFocusOperator.cs" />
+    <Compile Include="SelectRangeOperator.cs" />
+    <Compile Include="TakeBackSelectOperator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\UIH.Mcsf.Filming.Interfaces\UIH.Mcsf.Filming.Interfaces.csproj">
+      <Project>{27718D47-A3D6-4EA7-8669-E61A94562912}</Project>
+      <Name>UIH.Mcsf.Filming.Interfaces</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
