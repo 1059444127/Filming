@@ -11,6 +11,10 @@
             //TODO-new-feature: Control Position of Title Bar of PageControl
 
             //TODO-new-feature: PageBreak Display
+
+            //TODO-new-feature-working-on: TitleBar Display PatientName
+
+            //TODO-new-feature: TitleBar Display PageNo
         }
     }
 }

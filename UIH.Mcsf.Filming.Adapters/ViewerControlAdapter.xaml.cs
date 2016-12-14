@@ -62,7 +62,6 @@ namespace UIH.Mcsf.Filming.Adapters
             
         }
 
-        // TODO-working-on: Use ImageCell to control status of ControlCell
         private void FillCells()
         {
             var cellCount = Math.Min(ImageCells.Count, ViewerControl.CellCount);
