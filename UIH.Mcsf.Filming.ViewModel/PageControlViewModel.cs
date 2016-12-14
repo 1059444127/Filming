@@ -33,13 +33,37 @@ namespace UIH.Mcsf.Filming.ViewModel
             {
                 if (_imageCells == value) return;
                 _imageCells = value;
+                RefreshTitle();
                 RaisePropertyChanged(() => ImageCells);
             }
         }
 
+
         #endregion [--ImageCells--]
 
         #endregion [--ImageCells--]
- 
+
+        #region [--PatientName--]
+
+        private string _patientName;
+
+        public string PatientName
+        {
+            get { return _patientName; }
+            set
+            {
+                if (_patientName == value) return;
+                _patientName = value;
+                RaisePropertyChanged(() => PatientName);
+            }
+        }
+
+        #endregion [--PatientName--]
+
+
+        private void RefreshTitle()
+        {
+            
+        }
     }
 }
