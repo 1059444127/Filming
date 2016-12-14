@@ -119,18 +119,13 @@ namespace UIH.Mcsf.Filming.Adapters
 
         // TODO-New-Feature: ViewerControlAdapter.OnDrop (Original: use VisualTreeHelper to Location)
  
-        // TODO-New-Feature: ViewerControlAdapter.MouseClick
 
-        // TODO-New-Feature: ViewerControlAdapter.KeyPressed( UP/DOWN/LEFT/RIGHT )
 
-        // TODO-New-Feature: ViewerControlAdapter.ModifierKeyPressed ( Ctrl/Shift )
 
-        // TODO-New-Feature-working-on: ViewerControlAdapter.Cells Dependecy Property
 
         // TODO-New-Feature: ControlCell.Clone
 
         
-        // TODO-New-Feature-Working-on: FilmingControlCell.Focus
         // TODO-User-intent: Focus Status Stored in UI Layer
 
         // TODO-New-Feature: Remove Page
