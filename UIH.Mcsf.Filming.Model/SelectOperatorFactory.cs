@@ -3,14 +3,15 @@ using UIH.Mcsf.Filming.Interfaces;
 
 namespace UIH.Mcsf.Filming.Model
 {
-    class SelectOperatorFactroy<T> where T : class, ISelect
+    internal class SelectOperatorFactory<T> where T : class, ISelect
     {
-        public static SelectOperator<T> CreateSelectOperator(T item, List<T> items,  IClickStatus clickStatus)
+        public static SelectOperator<T> CreateSelectOperator(T item, List<T> items, IClickStatus clickStatus)
         {
             // 1. only right mouse clicked
             if (clickStatus.IsRightMouseButtonClicked && !clickStatus.IsLeftMouseButtonClicked)
             {
-                if (clickStatus.IsCtrlPressed && !clickStatus.IsShiftPressed) return new DummySelectOperator<T>(item, items); // modifier key, only ctrl pressed
+                if (clickStatus.IsCtrlPressed && !clickStatus.IsShiftPressed)
+                    return new DummySelectOperator<T>(item, items); // modifier key, only ctrl pressed
                 if (item.IsSelected) return new DummySelectOperator<T>(item, items); // click on selected element
                 return new SelectOnlyOpertator<T>(item, items);
             }

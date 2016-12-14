@@ -5,7 +5,7 @@ using UIH.Mcsf.Filming.Interfaces;
 
 namespace UIH.Mcsf.Filming.Model
 {
-    internal class SelectableList<T> : IList<T> where T : class, ISelect
+    public class SelectableList<T> : IList<T> where T : class, ISelect
     {
         private readonly List<T> _elements = new List<T>();
 
@@ -17,7 +17,7 @@ namespace UIH.Mcsf.Filming.Model
             Debug.Assert(operationElement != null);
             var clickStatus = clickStatusEventArgs.ClickStatus;
 
-            var selectOperator = SelectOperatorFactroy<T>.CreateSelectOperator(operationElement, _elements, clickStatus);
+            var selectOperator = SelectOperatorFactory<T>.CreateSelectOperator(operationElement, _elements, clickStatus);
             selectOperator.Operate();
         }
 

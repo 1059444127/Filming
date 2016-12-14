@@ -8,7 +8,6 @@ namespace UIH.Mcsf.Filming.Model
     {
         public SelectOnlyOpertator(T item, List<T> items) : base(item, items)
         {
-            throw new NotImplementedException();
         }
 
         private void SelectOnly()
