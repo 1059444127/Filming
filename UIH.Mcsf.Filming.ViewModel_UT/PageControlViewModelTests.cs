@@ -30,7 +30,6 @@ namespace UIH.Mcsf.Filming.ViewModel_UT
             ()
         {
             // Arrange
-            // TODO: Remove dependency of MedDataManagement
             var cells = new[] {new ImageCell(), new ImageCell(), new ImageCell()};
 
             // Act

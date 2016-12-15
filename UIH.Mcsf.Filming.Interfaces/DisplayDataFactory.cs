@@ -11,13 +11,22 @@ namespace UIH.Mcsf.Filming.Interfaces
 
         public static readonly DisplayDataFactory Instance = new DisplayDataFactory();
         private readonly DisplayData _emptyDisplayData = new DisplayData();
-        private readonly IBasicLoader _syncDataLoader = DataLoaderFactory.Instance().CreateSyncSopLoader(DBWrapperHelper.DBWrapper);
-        private readonly DataAccessor _dataAccessor;
+        private IBasicLoader _syncDataLoader; 
+        private DataAccessor _dataAccessor;
 
         private DisplayDataFactory()
         {
             // TODO-Later: create IViewerConfigure for dataAccessor
-            _dataAccessor = new DataAccessor();
+        }
+
+        private DataAccessor DataAccessor
+        {
+            get { return _dataAccessor ?? (_dataAccessor = new DataAccessor()); }
+        }
+
+        private IBasicLoader SyncDataLoader
+        {
+            get { return _syncDataLoader ?? (_syncDataLoader = DataLoaderFactory.Instance().CreateSyncSopLoader(DBWrapperHelper.DBWrapper)); }
         }
 
         #endregion [--Singleton--]
@@ -30,10 +39,10 @@ namespace UIH.Mcsf.Filming.Interfaces
         public DisplayData CreateDisplayData(string sopInstanceUid)
         {
             // TODO-later: use ConcurrentDictionary manage sop
-            var sop = _syncDataLoader.LoadSopByUid(sopInstanceUid);
+            var sop = SyncDataLoader.LoadSopByUid(sopInstanceUid);
             var imageSop = sop as ImageSop;
             Debug.Assert(imageSop != null);
-            var displayData = _dataAccessor.CreateImageData(sop.DicomSource, imageSop.GetNormalizedPixelData(), imageSop.PresentationState);
+            var displayData = DataAccessor.CreateImageData(sop.DicomSource, imageSop.GetNormalizedPixelData(), imageSop.PresentationState);
             return displayData ?? DisplayDataFactory.Instance.CreateDisplayData();
         }
     }
