@@ -173,7 +173,6 @@ namespace UIH.Mcsf.Filming.ViewModel
 
         private void RefreshTitle()
         {
-            PatientName = sampleCellsampleCell.PatientName;
         }
     }
 }

@@ -1,16 +1,16 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using UIH.Mcsf.Filming.Interfaces;
+using UIH.Mcsf.Filming.ViewModel;
 
 namespace UIH.Mcsf.Filming.ViewModel_UT
 {
     [TestClass]
     public class PageControlViewModelTests
     {
-        // TODO-User-Intent: When StudyInstanceUID is mixed Then AccessionNumber is StarString
-        [TestMethod]
-        public void TestMethod1()
-        {
-        }
+        private const string ExpectedString = "ExpectedString";
+        private readonly PageControlViewModel _pageControlViewModel = new PageControlViewModel();
 
+        // TODO-User-Intent: When StudyInstanceUID is mixed Then AccessionNumber is StarString
         // TODO-User-Intent: When Cells have mixed PatientID Then PatientID is StarString
         // TODO-User-Intent: When Cells except Empty Cells have same PatientID Then PatientID is same with sampleCell
         // TODO-User-Intent: When Cells have mixed PatientName Then PatientName is Mixed
@@ -24,6 +24,21 @@ namespace UIH.Mcsf.Filming.ViewModel_UT
         // TODO-User-Intent: When Cells have mixed StudyDate Then StudyDate is StarString
         // TODO-User-Intent: When Cells except Empty Cells have same StudyDate Then StudyDate is same with sampleCell
         // TODO-User-Intent: When Cells have mixed AccessionNumber Then AccessionNumber is StarString
-        // TODO-User-Intent: When Cells except Empty Cells have same AccessionNumber Then AccessionNumber is same with sampleCell
+        // TODO-User-Intent-working-on: When Cells except Empty Cells have same AccessionNumber Then AccessionNumber is same with sampleCell
+        [TestMethod]
+        public void When_Cells_except_Empty_Cells_have_same_AccessionNumber_Then_AccessionNumber_is_same_with_sampleCell
+            ()
+        {
+            // Arrange
+            // TODO: Remove dependency of MedDataManagement
+            var cells = new[] {new ImageCell(), new ImageCell(), new ImageCell()};
+
+            // Act
+            _pageControlViewModel.ImageCells = cells;
+            var actual = _pageControlViewModel.AccessionNumber;
+
+            // Assert
+            Assert.AreEqual(ExpectedString, actual);
+        }
     }
 }
