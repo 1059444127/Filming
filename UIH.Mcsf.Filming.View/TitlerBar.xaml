@@ -5,12 +5,15 @@
     <UserControl.Resources>
         <converters:ElementIndexConverter x:Key="ElementIndexConverter"></converters:ElementIndexConverter>
     </UserControl.Resources>
-    <TextBlock HorizontalAlignment="Right">
-        <TextBlock.Text>
-            <MultiBinding Converter="{StaticResource ElementIndexConverter}">
-                <Binding Path="PageNO"></Binding>
-                <Binding Path="PageCount"></Binding>
-            </MultiBinding>
-        </TextBlock.Text>
+    <Grid>
+        <TextBlock Text="{Binding PatientName}" HorizontalAlignment="Left"></TextBlock>
+        <TextBlock HorizontalAlignment="Right">
+            <TextBlock.Text>
+                <MultiBinding Converter="{StaticResource ElementIndexConverter}">
+                    <Binding Path="PageNO"></Binding>
+                    <Binding Path="PageCount"></Binding>
+                </MultiBinding>
+            </TextBlock.Text>
         </TextBlock>
+    </Grid>
 </UserControl>
