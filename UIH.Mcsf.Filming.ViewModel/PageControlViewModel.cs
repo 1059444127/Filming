@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Windows;
+using System.Windows.Controls;
 using GalaSoft.MvvmLight;
 using UIH.Mcsf.Filming.Interfaces;
 
@@ -42,6 +44,41 @@ namespace UIH.Mcsf.Filming.ViewModel
 
 
         #endregion [--ImageCells--]
+
+        #region [--TitleBarVisibility--]
+
+        private Visibility _titleBarVisibility = Visibility.Visible;
+
+        public Visibility TitleBarVisibility
+        {
+            get { return _titleBarVisibility; }
+            set
+            {
+                if (_titleBarVisibility == value) return;
+                _titleBarVisibility = value;
+                RaisePropertyChanged(() => TitleBarVisibility);
+            }
+        }
+
+        #endregion [--TitleBarVisibility--]
+
+        #region [--TitleBarPosition--]
+
+        private Dock _titleBarPosition = Dock.Top;
+
+        public Dock TitleBarPosition
+        {
+            get { return _titleBarPosition; }
+            set
+            {
+                if (_titleBarPosition == value) return;
+                _titleBarPosition = value;
+                RaisePropertyChanged(() => TitleBarPosition);
+            }
+        }
+
+        #endregion [--TitleBarPosition--]
+
 
         #region [--Patient Info--]
 

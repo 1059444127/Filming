@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
 using GalaSoft.MvvmLight.Command;
 using UIH.Mcsf.Filming.Interfaces;
@@ -68,6 +69,8 @@ namespace UIH.Mcsf.Filming.UserControlTests
 
             viewModel.ImageCells = cells;
 
+            viewModel.TitleBarVisibility = Visibility.Visible;
+            viewModel.TitleBarPosition = Dock.Bottom;
         }
 
         private object _001CreateViewerControlAdapterViewModel()

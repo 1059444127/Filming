@@ -13,7 +13,7 @@
             <RowDefinition Height="Auto"></RowDefinition>
         </Grid.RowDefinitions>
         <DockPanel LastChildFill="True">
-            <view:TitlerBar />
+            <view:TitlerBar Visibility="{Binding TitleBarVisibility}" DockPanel.Dock="{Binding TitleBarPosition}" />
             <adapters:ViewerControlAdapter Layout="{Binding Layout}" ImageCells="{Binding ImageCells}"/>
         </DockPanel>
         <Rectangle Grid.Row="1" Fill="#00e9e9" Height="3"></Rectangle>
