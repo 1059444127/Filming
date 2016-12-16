@@ -41,6 +41,20 @@ namespace UIH.Mcsf.Filming.View
 
         //TODO: BoardControl.Dependency Property : Pages
 
+
+
+        public IList<PageModel> PageModels
+        {
+            get { return (IList<PageModel>)GetValue(PageModelsProperty); }
+            set { SetValue(PageModelsProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for PageModels.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty PageModelsProperty =
+            DependencyProperty.Register("PageModels", typeof(IList<PageModel>), typeof(BoardControl));
+
+        
+
         #region Overrides of FrameworkElement
 
         protected override void OnPropertyChanged(DependencyPropertyChangedEventArgs e)
@@ -48,10 +62,21 @@ namespace UIH.Mcsf.Filming.View
             if (e.Property == DisplayModeProperty)
             {
                 SetDisplayMode(DisplayMode);
+                return;
+            }
+            if (e.Property == PageModelsProperty)
+            {
+                FillPages();
             }
         }
 
         #endregion
+
+        // TODO: BoardControl.FillPages
+        private void FillPages()
+        {
+            throw new System.NotImplementedException();
+        }
 
         private void SetDisplayMode(int displayMode)
         {
