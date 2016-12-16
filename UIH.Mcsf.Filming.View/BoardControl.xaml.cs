@@ -1,5 +1,8 @@
-﻿using System.Windows;
+﻿using System.Collections.Generic;
+using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
+using UIH.Mcsf.Filming.Interfaces;
 
 namespace UIH.Mcsf.Filming.View
 {
@@ -11,7 +14,14 @@ namespace UIH.Mcsf.Filming.View
         public BoardControl()
         {
             InitializeComponent();
+
+            for (int i = 0; i < GlobalDefinitions.MaxDisplayMode; i++)
+            {
+                _pages.Add(new PageControl());
+            }
         }
+
+        private List<PageControl> _pages = new List<PageControl>(); 
 
         //TODO-working-on: BoardControl.Dependency Property : DisplayMode
 
@@ -59,6 +69,30 @@ namespace UIH.Mcsf.Filming.View
         }
 
         private void SetGrid(int row, int col)
+        {
+            CompleteGrid(row, col);
+
+            PlacePagesToGrid(row, col);
+        }
+
+        private void PlacePagesToGrid(int row, int col)
+        {
+            var scale = new ScaleTransform(1.0/col, 1.0/row);
+            var pageIndex = 0;
+            for (int i = 0; i < row; i++)
+            {
+                for (int j = 0; j < col; j++)
+                {
+                    var page = _pages[pageIndex];
+                    Grid.SetRow(page, i);
+                    Grid.SetColumn(page, j);
+                    page.LayoutTransform = scale;
+                    pageIndex++;
+                }
+            }
+        }
+
+        private void CompleteGrid(int row, int col)
         {
             var rows = MainGrid.RowDefinitions;
             var curRow = rows.Count;
