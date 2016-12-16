@@ -9,5 +9,9 @@
         {
             InitializeComponent();
         }
+
+        //TODO: BoardControl.Dependency Property : DisplayMode
+
+        //TODO: BoardControl.Dependency Property : Pages
     }
 }
