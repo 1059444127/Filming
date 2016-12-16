@@ -34,7 +34,7 @@ namespace UIH.Mcsf.Filming.Interfaces
         }
 
 
-        // TODO: try 异步加载方式
+        // TODO-later: try 异步加载方式
 
         public ImageCell(string sopInstanceUid)
         {
