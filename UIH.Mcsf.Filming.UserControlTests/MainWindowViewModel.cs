@@ -13,6 +13,8 @@ namespace UIH.Mcsf.Filming.UserControlTests
 {
     public class MainWindowViewModel
     {
+        private Random _random = new Random();
+
         #region [--UserControlViewModel--]
 
         private object _userControlViewModel;
@@ -58,7 +60,7 @@ namespace UIH.Mcsf.Filming.UserControlTests
         private void _004CardControlTest()
         {
             var viewModel = _userControlViewModel as CardControlViewModel;
-            viewModel.DisplayMode = 6;
+            viewModel.DisplayMode = _random.Next(1,9);
         }
 
         private object _002CreatePageControlViewModel()

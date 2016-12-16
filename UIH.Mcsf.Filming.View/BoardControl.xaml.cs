@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using System.Windows.Controls;
 
 namespace UIH.Mcsf.Filming.View
 {
@@ -23,9 +24,9 @@ namespace UIH.Mcsf.Filming.View
 
         // Using a DependencyProperty as the backing store for DisplayMode.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty DisplayModeProperty =
-            DependencyProperty.Register("DisplayMode", typeof(int), typeof(BoardControl), new PropertyMetadata(1));
+            DependencyProperty.Register("DisplayMode", typeof(int), typeof(BoardControl));
 
-        
+        private int _diplayMode;
 
 
         //TODO: BoardControl.Dependency Property : Pages
@@ -44,7 +45,39 @@ namespace UIH.Mcsf.Filming.View
 
         private void SetDisplayMode(int displayMode)
         {
-            
+            if (_diplayMode == displayMode) return;
+            _diplayMode = displayMode;
+
+            SetGrid();
+        }
+
+        private void SetGrid()
+        {
+            int row = _diplayMode%2==0 ? 2 : 1;
+            int col = _diplayMode/row;
+            SetGrid(row, col);
+        }
+
+        private void SetGrid(int row, int col)
+        {
+            var rows = MainGrid.RowDefinitions;
+            var curRow = rows.Count;
+            var cols = MainGrid.ColumnDefinitions;
+            var curCol = cols.Count;
+
+            var rowDelta = row - curRow;
+            var colDelta = col - curCol;
+
+            for (var i = 0; i < rowDelta; i++)
+            {
+                rows.Add(new RowDefinition());
+            }
+            for (var i = 0; i < colDelta; i++)
+            {
+                cols.Add(new ColumnDefinition());
+            }
+            if (rowDelta < 0) rows.RemoveRange(row, -rowDelta);
+            if (colDelta < 0) cols.RemoveRange(col, -colDelta);
         }
     }
 }
