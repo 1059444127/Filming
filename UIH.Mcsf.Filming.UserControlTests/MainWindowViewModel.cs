@@ -71,6 +71,8 @@ namespace UIH.Mcsf.Filming.UserControlTests
 
             viewModel.TitleBarVisibility = Visibility.Visible;
             viewModel.TitleBarPosition = Dock.Bottom;
+
+            viewModel.PageNO = 1;
         }
 
         private object _001CreateViewerControlAdapterViewModel()

@@ -45,6 +45,24 @@ namespace UIH.Mcsf.Filming.ViewModel
 
         #endregion [--ImageCells--]
 
+        #region [--PageNO--]
+
+        private int _pageNO;
+
+        public int PageNO
+        {
+            get { return _pageNO; }
+            set
+            {
+                if (_pageNO == value) return;
+                _pageNO = value;
+                RaisePropertyChanged(() => PageNO);
+            }
+        }
+
+        #endregion [--PageNO--]
+
+
         #region [--TitleBarVisibility--]
 
         private Visibility _titleBarVisibility = Visibility.Visible;
