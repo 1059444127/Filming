@@ -5,6 +5,8 @@ namespace UIH.Mcsf.Filming.View
         public TitlerBar()
         {
             InitializeComponent();
+
+            // TODO: TitleBar.Binding  PageNO & PageCount
         }
     }
 }
