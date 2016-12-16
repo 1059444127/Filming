@@ -1,4 +1,12 @@
 <UserControl x:Class="UIH.Mcsf.Filming.View.TitlerBar"
 	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
 	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <TextBlock HorizontalAlignment="Right">
+        <TextBlock.Text>
+            <MultiBinding Converter="{StaticResource lbec}">
+                <Binding Path="PageNO"></Binding>
+                <Binding Path="PageCount"></Binding>
+            </MultiBinding>
+        </TextBlock.Text>
+        </TextBlock>
 </UserControl>
