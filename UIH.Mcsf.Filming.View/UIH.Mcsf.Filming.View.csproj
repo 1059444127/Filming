@@ -72,6 +72,10 @@
       <Project>{24E00A4C-AC9E-4DB0-90A1-3B68F0C7AC22}</Project>
       <Name>UIH.Mcsf.Filming.Adapters</Name>
     </ProjectReference>
+    <ProjectReference Include="..\UIH.Mcsf.Filming.Converters\UIH.Mcsf.Filming.Converters.csproj">
+      <Project>{ED1963FE-3448-4B89-A2A0-0EE1BB84DB96}</Project>
+      <Name>UIH.Mcsf.Filming.Converters</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
