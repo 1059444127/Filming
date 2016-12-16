@@ -42,12 +42,23 @@ namespace UIH.Mcsf.Filming.UserControlTests
 
         private object CreateUserControlViewModel()
         {
-            return _002CreatePageControlViewModel();
+            return _004CreateCardControlViewModel();
         }
 
         private void StartTest()
         {
-            _002PageControlTest();
+            _004CardControlTest();
+        }
+
+        private object _004CreateCardControlViewModel()
+        {
+            return new CardControlViewModel();
+        }
+
+        private void _004CardControlTest()
+        {
+            var viewModel = _userControlViewModel as CardControlViewModel;
+            viewModel.DisplayMode = 6;
         }
 
         private object _002CreatePageControlViewModel()

@@ -10,4 +10,8 @@
     <DataTemplate DataType="{x:Type viewModel:PageControlViewModel}">
         <view:PageControl />
     </DataTemplate>
+
+    <DataTemplate DataType="{x:Type viewModel:CardControlViewModel}">
+        <view:CardControl />
+    </DataTemplate>
 </ResourceDictionary>
