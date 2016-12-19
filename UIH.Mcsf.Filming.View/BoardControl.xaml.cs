@@ -3,6 +3,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using UIH.Mcsf.Filming.Interfaces;
+using UIH.Mcsf.Filming.ViewModel;
 
 namespace UIH.Mcsf.Filming.View
 {
@@ -36,7 +37,6 @@ namespace UIH.Mcsf.Filming.View
         public static readonly DependencyProperty DisplayModeProperty =
             DependencyProperty.Register("DisplayMode", typeof(int), typeof(BoardControl));
 
-        private int _diplayMode;
 
 
         //TODO: BoardControl.Dependency Property : Pages
@@ -72,24 +72,39 @@ namespace UIH.Mcsf.Filming.View
 
         #endregion
 
-        // TODO: BoardControl.FillPages
+        // TODO-working-on: BoardControl.FillPages
         private void FillPages()
         {
-            throw new System.NotImplementedException();
+            int i = 0;
+            while (i<PageModels.Count && i<DisplayMode)
+            {
+                var pageControl = _pages[i];
+                pageControl.Visibility = Visibility.Visible;
+                var pageModel = PageModels[i];
+                //TODO-later: 出于性能方面的考虑，View（BoardControl）依赖了ViewModel（PageViewModel）
+                //TODO: Create Constructor PageControlViewModel(PageModel)
+                pageControl.DataContext = new PageControlViewModel(pageModel);
+                i++;
+            }
+            while (i<GlobalDefinitions.MaxDisplayMode)
+            {
+                var pageControl = _pages[i];
+                pageControl.Visibility = Visibility.Hidden;
+                i++;
+            }
         }
 
         private void SetDisplayMode(int displayMode)
         {
-            if (_diplayMode == displayMode) return;
-            _diplayMode = displayMode;
+            if (DisplayMode == displayMode) return;
 
             SetGrid();
         }
 
         private void SetGrid()
         {
-            int row = _diplayMode%2==0 ? 2 : 1;
-            int col = _diplayMode/row;
+            int row = DisplayMode%2==0 ? 2 : 1;
+            int col = DisplayMode/row;
             SetGrid(row, col);
         }
 
