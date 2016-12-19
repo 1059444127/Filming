@@ -9,6 +9,13 @@ namespace UIH.Mcsf.Filming.ViewModel
 {
     public class PageControlViewModel : ViewModelBase
     {
+        public PageControlViewModel(PageModel pageModel)
+        {
+            //TODO: PageModel
+            Layout = pageModel.Layout;
+            ImageCells = pageModel.ImageCells;
+        }
+
         #region [--Layout--]
 
         private Layout _layout;
@@ -18,6 +25,7 @@ namespace UIH.Mcsf.Filming.ViewModel
             get { return _layout; }
             set
             {
+                //TODO-later: Layout.Equal
                 if (_layout == value) return;
                 _layout = value;
                 RaisePropertyChanged(() => Layout);
@@ -227,6 +235,7 @@ namespace UIH.Mcsf.Filming.ViewModel
 
         #endregion [--Study Info--]
 
+        //TODO: PageControlViewModel.RefreshTitle()
         private void RefreshTitle()
         {
             var sampleCell = ImageCells.FirstOrDefault();

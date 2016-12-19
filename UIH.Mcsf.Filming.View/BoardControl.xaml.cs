@@ -82,7 +82,7 @@ namespace UIH.Mcsf.Filming.View
                 pageControl.Visibility = Visibility.Visible;
                 var pageModel = PageModels[i];
                 //TODO-later: 出于性能方面的考虑，View（BoardControl）依赖了ViewModel（PageViewModel）
-                //TODO: Create Constructor PageControlViewModel(PageModel)
+                //TODO-working-on: Create Constructor PageControlViewModel(PageModel)
                 pageControl.DataContext = new PageControlViewModel(pageModel);
                 i++;
             }
