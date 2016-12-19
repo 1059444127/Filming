@@ -4,8 +4,17 @@ namespace UIH.Mcsf.Filming.Interfaces
 {
     public class PageModel
     {
-        //TODO: PageModel.Constructor
-        public Layout Layout { get; set; }
-        public IList<ImageCell> ImageCells { get; set; }
+        //TODO: Test PageModel in CardControlViewModel
+        //TODO-working-on: PageModel.Constructor
+        public PageModel(Layout layout, IList<ImageCell> imageCells)
+        {
+            Layout = layout;
+            ImageCells = imageCells;
+        }
+
+        //TODO: PageModel:ISelect
+
+        public Layout Layout { get; private set; }
+        public IList<ImageCell> ImageCells { get; private set; }
     }
 }
