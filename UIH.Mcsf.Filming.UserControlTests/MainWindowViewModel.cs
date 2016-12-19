@@ -61,24 +61,28 @@ namespace UIH.Mcsf.Filming.UserControlTests
         {
             var viewModel = _userControlViewModel as CardControlViewModel;
             viewModel.DisplayMode = _random.Next(1,9);
+
+            var pageCount = _random.Next(GlobalDefinitions.MaxDisplayMode*2);
+            var pages = new List<PageModel>();
+            for (int i = 0; i < pageCount; i++)
+            {
+                var page = CreatePageModel();
+                pages.Add(page);
+            }
+
+            viewModel.Pages = pages;
         }
 
         private object _002CreatePageControlViewModel()
         {
-            return new PageControlViewModel();
+            return new PageControlViewModel(CreatePageModel());
         }
 
         private void _002PageControlTest()
         {
             var viewModel = _userControlViewModel as PageControlViewModel;
             viewModel.Layout = Layout.CreateDefaultLayout();
-            var sopInstanceUid = @"1.2.156.112605.161340985965.20140523064111.4.15276.1";
-
-            var cells = new SelectableList<ImageCell>();
-            for (int i = 0; i < 16; i++)
-            {
-                cells.Add(new ImageCell(sopInstanceUid));
-            }
+            var cells = CreateCells();
 
             viewModel.ImageCells = cells;
 
@@ -101,5 +105,22 @@ namespace UIH.Mcsf.Filming.UserControlTests
         }
 
         #endregion [--UserControl Test--]
+
+        private static IList<ImageCell> CreateCells()
+        {
+            var sopInstanceUid = @"1.2.156.112605.161340985965.20140523064111.4.15276.1";
+
+            var cells = new SelectableList<ImageCell>();
+            for (int i = 0; i < 16; i++)
+            {
+                cells.Add(new ImageCell(sopInstanceUid));
+            }
+            return cells;
+        }
+
+        private static PageModel CreatePageModel()
+        {
+            return new PageModel(Layout.CreateDefaultLayout(), CreateCells());
+        }
     }
 }

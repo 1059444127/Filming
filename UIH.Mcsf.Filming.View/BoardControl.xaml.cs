@@ -18,10 +18,13 @@ namespace UIH.Mcsf.Filming.View
 
             for (int i = 0; i < GlobalDefinitions.MaxDisplayMode; i++)
             {
-                _pages.Add(new PageControl());
+                var pageControl = new PageControl();
+                _pages.Add(pageControl);
+                MainGrid.Children.Add(pageControl);
             }
         }
 
+        //TODO-later: Page Management in BoardControl
         private List<PageControl> _pages = new List<PageControl>(); 
 
         //TODO-working-on: BoardControl.Dependency Property : DisplayMode
@@ -53,7 +56,7 @@ namespace UIH.Mcsf.Filming.View
         public static readonly DependencyProperty PageModelsProperty =
             DependencyProperty.Register("PageModels", typeof(IList<PageModel>), typeof(BoardControl));
 
-        
+        private int _displayMode;
 
         #region Overrides of FrameworkElement
 
@@ -61,7 +64,7 @@ namespace UIH.Mcsf.Filming.View
         {
             if (e.Property == DisplayModeProperty)
             {
-                SetDisplayMode(DisplayMode);
+                SetDisplayMode();
                 return;
             }
             if (e.Property == PageModelsProperty)
@@ -76,7 +79,7 @@ namespace UIH.Mcsf.Filming.View
         private void FillPages()
         {
             int i = 0;
-            while (i<PageModels.Count && i<DisplayMode)
+            while (i<PageModels.Count && i<_displayMode)
             {
                 var pageControl = _pages[i];
                 pageControl.Visibility = Visibility.Visible;
@@ -94,17 +97,17 @@ namespace UIH.Mcsf.Filming.View
             }
         }
 
-        private void SetDisplayMode(int displayMode)
+        private void SetDisplayMode()
         {
-            if (DisplayMode == displayMode) return;
-
+            if (_displayMode == DisplayMode) return;
+            _displayMode = DisplayMode;
             SetGrid();
         }
 
         private void SetGrid()
         {
-            int row = DisplayMode%2==0 ? 2 : 1;
-            int col = DisplayMode/row;
+            int row = _displayMode%2==0 ? 2 : 1;
+            int col = _displayMode/row;
             SetGrid(row, col);
         }
 
