@@ -15,7 +15,7 @@ namespace UIH.Mcsf.Filming.View
     {
         private int _displayMode;
         //TODO-later: Page Management in BoardControl
-        private readonly List<PageControl> _pages = new List<PageControl>();
+        private readonly List<FrameworkElement> _pages = new List<FrameworkElement>();
 
         public BoardControl()
         {
@@ -23,7 +23,7 @@ namespace UIH.Mcsf.Filming.View
 
             for (var i = 0; i < GlobalDefinitions.MaxDisplayMode; i++)
             {
-                var pageControl = new PageControl();
+                var pageControl = new PageControl {Margin = new Thickness(5)};
                 _pages.Add(pageControl);
                 MainGrid.Children.Add(pageControl);
             }

@@ -60,7 +60,7 @@ namespace UIH.Mcsf.Filming.UserControlTests
         private void _004CardControlTest()
         {
             var viewModel = _userControlViewModel as CardControlViewModel;
-            viewModel.DisplayMode = _random.Next(1,9);
+            viewModel.DisplayMode = 3;
 
             var pageCount = _random.Next(GlobalDefinitions.MaxDisplayMode*2);
             var pages = new List<PageModel>();
