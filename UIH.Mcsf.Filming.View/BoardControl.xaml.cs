@@ -29,7 +29,6 @@ namespace UIH.Mcsf.Filming.View
             }
         }
 
-        // TODO-working-on: BoardControl.FillPages
         private void FillPages()
         {
             var i = 0;
@@ -39,7 +38,6 @@ namespace UIH.Mcsf.Filming.View
                 pageControl.Visibility = Visibility.Visible;
                 var pageModel = PageModels[i];
                 //TODO-later: 出于性能方面的考虑，View（BoardControl）依赖了ViewModel（PageViewModel）
-                //TODO-working-on: Create Constructor PageControlViewModel(PageModel)
                 pageControl.DataContext = new PageControlViewModel(pageModel);
                 i++;
             }
@@ -112,7 +110,6 @@ namespace UIH.Mcsf.Filming.View
             if (colDelta < 0) cols.RemoveRange(col, -colDelta);
         }
 
-        //TODO-working-on: BoardControl.Dependency Property : DisplayMode
 
         #region [--DisplayModeProperty--]
 
@@ -140,7 +137,6 @@ namespace UIH.Mcsf.Filming.View
 
         #endregion [--DisplayModeProperty--]
 
-        //TODO: BoardControl.Dependency Property : Pages
 
         #region [--PageModelsProperty--]
 

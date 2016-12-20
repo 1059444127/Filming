@@ -4,8 +4,6 @@ namespace UIH.Mcsf.Filming.Interfaces
 {
     public class PageModel
     {
-        //TODO-working-on: Test PageModel in CardControlViewModel
-        //TODO-working-on: PageModel.Constructor
         public PageModel(Layout layout, IList<ImageCell> imageCells)
         {
             Layout = layout;

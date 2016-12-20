@@ -5,7 +5,6 @@ using UIH.Mcsf.Viewer;
 
 namespace UIH.Mcsf.Filming.Interfaces
 {
-    // TODO: Make ImageCell as an Interface?
     public class ImageCell : ISelect
     {
         private bool _isSelected;

@@ -11,7 +11,6 @@ namespace UIH.Mcsf.Filming.ViewModel
     {
         public PageControlViewModel(PageModel pageModel)
         {
-            //TODO-working-on: PageModel
             Layout = pageModel.Layout;
             ImageCells = pageModel.ImageCells;
         }
