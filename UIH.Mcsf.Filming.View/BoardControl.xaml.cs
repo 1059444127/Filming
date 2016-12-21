@@ -162,5 +162,35 @@ namespace UIH.Mcsf.Filming.View
         }
 
         #endregion  [--PageModelsProperty--]
+
+
+
+        public BoardModel BoardModel
+        {
+            get { return (BoardModel)GetValue(BoardModelProperty); }
+            set { SetValue(BoardModelProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for BoardModel.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty BoardModelProperty =
+            DependencyProperty.Register("BoardModel", typeof(BoardModel), typeof(BoardControl), new PropertyMetadata(OnBoardModelPropertyChanged));
+
+        private static void OnBoardModelPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var boardControl = d as BoardControl;
+            Debug.Assert(boardControl != null);
+
+            boardControl.RegisterBoardEvent();
+        }
+
+        private void RegisterBoardEvent()
+        {
+            BoardModel.DisplayModeChanged -= OnBoardDisplayModeChanged;
+        }
+
+        private void OnBoardDisplayModeChanged(object sender, IntEventArgs e)
+        {
+
+        }
     }
 }
