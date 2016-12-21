@@ -30,32 +30,32 @@ namespace UIH.Mcsf.Filming.View
         }
 
         //TODO: Make BoardControl.FillPages Oneway
-        private void FillPages()
-        {
-            var i = 0;
-            while (i < PageModels.Count && i < _displayMode)
-            {
-                var pageControl = _pages[i];
-                pageControl.Visibility = Visibility.Visible;   //TODO: PageControl.Visibility Binding to PageModel
-                var pageModel = PageModels[i];
-                //TODO-later: 出于性能方面的考虑，View（BoardControl）依赖了ViewModel（PageViewModel）
-                pageControl.DataContext = new PageControlViewModel(pageModel);
-                i++;
-            }
-            while (i < GlobalDefinitions.MaxDisplayMode)
-            {
-                var pageControl = _pages[i];
-                pageControl.Visibility = Visibility.Hidden;
-                i++;
-            }
-        }
+        //private void FillPages()
+        //{
+        //    var i = 0;
+        //    while (i < PageModels.Count && i < _displayMode)
+        //    {
+        //        var pageControl = _pages[i];
+        //        pageControl.Visibility = Visibility.Visible;   //TODO: PageControl.Visibility Binding to PageModel
+        //        var pageModel = PageModels[i];
+        //        //TODO-later: 出于性能方面的考虑，View（BoardControl）依赖了ViewModel（PageViewModel）
+        //        pageControl.DataContext = new PageControlViewModel(pageModel);
+        //        i++;
+        //    }
+        //    while (i < GlobalDefinitions.MaxDisplayMode)
+        //    {
+        //        var pageControl = _pages[i];
+        //        pageControl.Visibility = Visibility.Hidden;
+        //        i++;
+        //    }
+        //}
 
-        private void SetDisplayMode()
-        {
-            if (_displayMode == DisplayMode) return;
-            _displayMode = DisplayMode;
-            SetGrid();
-        }
+        //private void SetDisplayMode()
+        //{
+        //    if (_displayMode == DisplayMode) return;
+        //    _displayMode = DisplayMode;
+        //    SetGrid();
+        //}
 
         private void SetGrid()
         {
@@ -113,55 +113,55 @@ namespace UIH.Mcsf.Filming.View
         }
 
 
-        #region [--DisplayModeProperty--]
+        //#region [--DisplayModeProperty--]
 
-        public int DisplayMode
-        {
-            get { return (int) GetValue(DisplayModeProperty); }
-            set { SetValue(DisplayModeProperty, value); }
-        }
+        //public int DisplayMode
+        //{
+        //    get { return (int) GetValue(DisplayModeProperty); }
+        //    set { SetValue(DisplayModeProperty, value); }
+        //}
 
-        // Using a DependencyProperty as the backing store for DisplayMode.  This enables animation, styling, binding, etc...
-        public static readonly DependencyProperty DisplayModeProperty =
-            DependencyProperty.Register("DisplayMode", typeof (int), typeof (BoardControl),
-                new PropertyMetadata(OnDisplayModePropertyChanged));
+        //// Using a DependencyProperty as the backing store for DisplayMode.  This enables animation, styling, binding, etc...
+        //public static readonly DependencyProperty DisplayModeProperty =
+        //    DependencyProperty.Register("DisplayMode", typeof (int), typeof (BoardControl),
+        //        new PropertyMetadata(OnDisplayModePropertyChanged));
 
-        private static void OnDisplayModePropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            var boardControl = d as BoardControl;
-            Debug.Assert(boardControl != null);
+        //private static void OnDisplayModePropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        //{
+        //    var boardControl = d as BoardControl;
+        //    Debug.Assert(boardControl != null);
 
-            var displayMode = (int) e.NewValue;
-            Debug.Assert(displayMode >= 0 && displayMode < GlobalDefinitions.MaxDisplayMode);
+        //    var displayMode = (int) e.NewValue;
+        //    Debug.Assert(displayMode >= 0 && displayMode < GlobalDefinitions.MaxDisplayMode);
 
-            boardControl.SetDisplayMode();
-        }
+        //    boardControl.SetDisplayMode();
+        //}
 
-        #endregion [--DisplayModeProperty--]
+        //#endregion [--DisplayModeProperty--]
 
         // TODO-Working-on : Modify BoardControl.DP to BoardModelProperty
-        #region [--PageModelsProperty--]
+        //#region [--PageModelsProperty--]
 
-        public IList<PageModel> PageModels
-        {
-            get { return (IList<PageModel>) GetValue(PageModelsProperty); }
-            set { SetValue(PageModelsProperty, value); }
-        }
+        //public IList<PageModel> PageModels
+        //{
+        //    get { return (IList<PageModel>) GetValue(PageModelsProperty); }
+        //    set { SetValue(PageModelsProperty, value); }
+        //}
 
-        // Using a DependencyProperty as the backing store for PageModels.  This enables animation, styling, binding, etc...
-        public static readonly DependencyProperty PageModelsProperty =
-            DependencyProperty.Register("PageModels", typeof (IList<PageModel>), typeof (BoardControl),
-                new PropertyMetadata(OnPageModelsPropertyChanged));
+        //// Using a DependencyProperty as the backing store for PageModels.  This enables animation, styling, binding, etc...
+        //public static readonly DependencyProperty PageModelsProperty =
+        //    DependencyProperty.Register("PageModels", typeof (IList<PageModel>), typeof (BoardControl),
+        //        new PropertyMetadata(OnPageModelsPropertyChanged));
 
-        private static void OnPageModelsPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            var boardControl = d as BoardControl;
-            Debug.Assert(boardControl != null);
+        //private static void OnPageModelsPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        //{
+        //    var boardControl = d as BoardControl;
+        //    Debug.Assert(boardControl != null);
 
-            boardControl.FillPages();
-        }
+        //    boardControl.FillPages();
+        //}
 
-        #endregion  [--PageModelsProperty--]
+        //#endregion  [--PageModelsProperty--]
 
 
 
@@ -169,6 +169,16 @@ namespace UIH.Mcsf.Filming.View
         {
             get { return (BoardModel)GetValue(BoardModelProperty); }
             set { SetValue(BoardModelProperty, value); }
+        }
+
+        private int DisplayMode
+        {
+            set
+            {
+                if (_displayMode == value) return;
+                _displayMode = value;
+                SetGrid();
+            }
         }
 
         // Using a DependencyProperty as the backing store for BoardModel.  This enables animation, styling, binding, etc...
@@ -186,11 +196,12 @@ namespace UIH.Mcsf.Filming.View
         private void RegisterBoardEvent()
         {
             BoardModel.DisplayModeChanged -= OnBoardDisplayModeChanged;
+            BoardModel.DisplayModeChanged += OnBoardDisplayModeChanged;
         }
 
         private void OnBoardDisplayModeChanged(object sender, IntEventArgs e)
         {
-
+            DisplayMode = e.Int;
         }
     }
 }
