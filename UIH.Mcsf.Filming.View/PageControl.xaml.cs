@@ -13,7 +13,6 @@
 
             //TODO-new-feature: TitleBar Display PatientName
 
-            //TODO-new-feature: TitleBar Display PageCount
         }
     }
 }

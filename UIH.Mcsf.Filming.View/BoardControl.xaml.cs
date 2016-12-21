@@ -15,7 +15,7 @@ namespace UIH.Mcsf.Filming.View
     {
         private int _displayMode;
         //TODO-later: Page Management in BoardControl
-        private readonly List<FrameworkElement> _pages = new List<FrameworkElement>();
+        private readonly List<PageControl> _pages = new List<PageControl>();
 
         public BoardControl()
         {
@@ -29,13 +29,14 @@ namespace UIH.Mcsf.Filming.View
             }
         }
 
+        //TODO: Make BoardControl.FillPages Oneway
         private void FillPages()
         {
             var i = 0;
             while (i < PageModels.Count && i < _displayMode)
             {
                 var pageControl = _pages[i];
-                pageControl.Visibility = Visibility.Visible;
+                pageControl.Visibility = Visibility.Visible;   //TODO: PageControl.Visibility Binding to PageModel
                 var pageModel = PageModels[i];
                 //TODO-later: 出于性能方面的考虑，View（BoardControl）依赖了ViewModel（PageViewModel）
                 pageControl.DataContext = new PageControlViewModel(pageModel);
@@ -70,6 +71,7 @@ namespace UIH.Mcsf.Filming.View
             PlacePagesToGrid(row, col);
         }
 
+        //TODO-later: PageControl Position Management
         private void PlacePagesToGrid(int row, int col)
         {
             //TODO-later: Page Size Control
@@ -137,7 +139,7 @@ namespace UIH.Mcsf.Filming.View
 
         #endregion [--DisplayModeProperty--]
 
-
+        // TODO-Working-on : Modify BoardControl.DP to BoardModelProperty
         #region [--PageModelsProperty--]
 
         public IList<PageModel> PageModels

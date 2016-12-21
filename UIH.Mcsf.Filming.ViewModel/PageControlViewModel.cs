@@ -9,6 +9,7 @@ namespace UIH.Mcsf.Filming.ViewModel
 {
     public class PageControlViewModel : ViewModelBase
     {
+        //TODO: PageControlViewModel.RegisterEvent From PageModel
         public PageControlViewModel(PageModel pageModel)
         {
             Layout = pageModel.Layout;
