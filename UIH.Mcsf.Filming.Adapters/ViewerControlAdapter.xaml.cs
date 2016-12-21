@@ -105,7 +105,8 @@ namespace UIH.Mcsf.Filming.Adapters
 
 
         // TODO-New-Feature: ControlCell.Clone
-
+        
+        // TODO: MedViewerControlCellImpl与依赖属性
 
         // TODO-User-intent-later: Focus Status Stored in UI Layer
 

@@ -69,6 +69,23 @@ namespace UIH.Mcsf.Filming.ViewModel
 
         #endregion [--PageNO--]
 
+        #region [--PageCount--]
+
+        private int _pageCount;
+
+        public int PageCount
+        {
+            get { return _pageCount; }
+            set
+            {
+                if (_pageCount == value) return;
+                _pageCount = value;
+                RaisePropertyChanged(() => PageCount);
+            }
+        }
+
+        #endregion [--PageCount--]
+
 
         #region [--TitleBarVisibility--]
 
