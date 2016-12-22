@@ -69,7 +69,7 @@ namespace UIH.Mcsf.Filming.UserControlTests
         private void _004CardControlTest()
         {
             var viewModel = _userControlViewModel as CardControlViewModel;
-            viewModel.DisplayMode = 3;
+            //viewModel.DisplayMode = 3;
 
             var pageCount = _random.Next(GlobalDefinitions.MaxDisplayMode*2);
             var pages = new List<PageModel>();
@@ -79,7 +79,7 @@ namespace UIH.Mcsf.Filming.UserControlTests
                 pages.Add(page);
             }
 
-            viewModel.Pages = pages;
+            //viewModel.Pages = pages;
         }
 
         private object _002CreatePageControlViewModel()

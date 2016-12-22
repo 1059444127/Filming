@@ -114,7 +114,7 @@ namespace UIH.Mcsf.Filming.View
             {
                 if (_displayMode.Equals(value) ) return;
                 _displayMode = value;
-                SetGrid(_displayMode.Col, _displayMode.Col);
+                SetGrid(_displayMode.Row, _displayMode.Col);
             }
         }
 
@@ -126,56 +126,6 @@ namespace UIH.Mcsf.Filming.View
             set { SetValue(BoardModelProperty, value); }
         }
 
-
-        //#region [--DisplayModeProperty--]
-
-        //public int DisplayMode
-        //{
-        //    get { return (int) GetValue(DisplayModeProperty); }
-        //    set { SetValue(DisplayModeProperty, value); }
-        //}
-
-        //// Using a DependencyProperty as the backing store for DisplayMode.  This enables animation, styling, binding, etc...
-        //public static readonly DependencyProperty DisplayModeProperty =
-        //    DependencyProperty.Register("DisplayMode", typeof (int), typeof (BoardControl),
-        //        new PropertyMetadata(OnDisplayModePropertyChanged));
-
-        //private static void OnDisplayModePropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        //{
-        //    var boardControl = d as BoardControl;
-        //    Debug.Assert(boardControl != null);
-
-        //    var displayMode = (int) e.NewValue;
-        //    Debug.Assert(displayMode >= 0 && displayMode < GlobalDefinitions.MaxDisplayMode);
-
-        //    boardControl.SetDisplayMode();
-        //}
-
-        //#endregion [--DisplayModeProperty--]
-
-        // TODO-Working-on : Modify BoardControl.DP to BoardModelProperty
-        //#region [--PageModelsProperty--]
-
-        //public IList<PageModel> PageModels
-        //{
-        //    get { return (IList<PageModel>) GetValue(PageModelsProperty); }
-        //    set { SetValue(PageModelsProperty, value); }
-        //}
-
-        //// Using a DependencyProperty as the backing store for PageModels.  This enables animation, styling, binding, etc...
-        //public static readonly DependencyProperty PageModelsProperty =
-        //    DependencyProperty.Register("PageModels", typeof (IList<PageModel>), typeof (BoardControl),
-        //        new PropertyMetadata(OnPageModelsPropertyChanged));
-
-        //private static void OnPageModelsPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        //{
-        //    var boardControl = d as BoardControl;
-        //    Debug.Assert(boardControl != null);
-
-        //    boardControl.FillPages();
-        //}
-
-        //#endregion  [--PageModelsProperty--]
 
 
         // Using a DependencyProperty as the backing store for BoardModel.  This enables animation, styling, binding, etc...
