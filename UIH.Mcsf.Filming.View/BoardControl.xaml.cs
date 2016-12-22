@@ -13,7 +13,7 @@ namespace UIH.Mcsf.Filming.View
     /// </summary>
     public partial class BoardControl
     {
-        private int _displayMode;
+        private DisplayMode _displayMode;
         //TODO-later: Page Management in BoardControl
         private readonly List<PageControl> _pages = new List<PageControl>();
 
@@ -57,13 +57,6 @@ namespace UIH.Mcsf.Filming.View
         //    SetGrid();
         //}
 
-        private void SetGrid()
-        {
-            // TODO: BoardControl Extract class DisplayMode
-            var row = _displayMode%2 == 0 ? 2 : 1;
-            var col = _displayMode/row;
-            SetGrid(row, col);
-        }
 
         private void SetGrid(int row, int col)
         {
@@ -115,13 +108,13 @@ namespace UIH.Mcsf.Filming.View
             if (colDelta < 0) cols.RemoveRange(col, -colDelta);
         }
 
-        private int DisplayMode
+        private DisplayMode DisplayMode
         {
             set
             {
-                if (_displayMode == value) return;
+                if (_displayMode.Equals(value) ) return;
                 _displayMode = value;
-                SetGrid();
+                SetGrid(_displayMode.Col, _displayMode.Col);
             }
         }
 
@@ -219,7 +212,7 @@ namespace UIH.Mcsf.Filming.View
 
         private void OnBoardDisplayModeChanged(object sender, IntEventArgs e)
         {
-            DisplayMode = e.Int;
+            DisplayMode = new DisplayMode(e.Int);
         }
     }
 }
