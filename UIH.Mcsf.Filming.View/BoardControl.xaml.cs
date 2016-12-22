@@ -59,6 +59,7 @@ namespace UIH.Mcsf.Filming.View
 
         private void SetGrid()
         {
+            // TODO: BoardControl Extract class DisplayMode
             var row = _displayMode%2 == 0 ? 2 : 1;
             var col = _displayMode/row;
             SetGrid(row, col);
@@ -72,6 +73,8 @@ namespace UIH.Mcsf.Filming.View
         }
 
         //TODO-later: PageControl Position Management
+        //TODO: BoardControl. When DisplayMode changed, Re-place Grid content
+        //TODO: BoardControl. When Index of First PageModel changed, Re-place Grid content
         private void PlacePagesToGrid(int row, int col)
         {
             //TODO-later: Page Size Control
@@ -110,6 +113,24 @@ namespace UIH.Mcsf.Filming.View
             }
             if (rowDelta < 0) rows.RemoveRange(row, -rowDelta);
             if (colDelta < 0) cols.RemoveRange(col, -colDelta);
+        }
+
+        private int DisplayMode
+        {
+            set
+            {
+                if (_displayMode == value) return;
+                _displayMode = value;
+                SetGrid();
+            }
+        }
+
+        #region [--BoardModelProperty--]
+
+        public BoardModel BoardModel
+        {
+            get { return (BoardModel)GetValue(BoardModelProperty); }
+            set { SetValue(BoardModelProperty, value); }
         }
 
 
@@ -164,23 +185,6 @@ namespace UIH.Mcsf.Filming.View
         //#endregion  [--PageModelsProperty--]
 
 
-
-        public BoardModel BoardModel
-        {
-            get { return (BoardModel)GetValue(BoardModelProperty); }
-            set { SetValue(BoardModelProperty, value); }
-        }
-
-        private int DisplayMode
-        {
-            set
-            {
-                if (_displayMode == value) return;
-                _displayMode = value;
-                SetGrid();
-            }
-        }
-
         // Using a DependencyProperty as the backing store for BoardModel.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty BoardModelProperty =
             DependencyProperty.Register("BoardModel", typeof(BoardModel), typeof(BoardControl), new PropertyMetadata(OnBoardModelPropertyChanged));
@@ -191,6 +195,20 @@ namespace UIH.Mcsf.Filming.View
             Debug.Assert(boardControl != null);
 
             boardControl.RegisterBoardEvent();
+            boardControl.SetPageDataContext();
+        }
+
+        #endregion [--BoardModelProperty--]
+
+        private void SetPageDataContext()
+        {
+            var pageModels = BoardModel.PageModels;
+            Debug.Assert(pageModels.Count == GlobalDefinitions.MaxDisplayMode);
+
+            for (int i = 0; i < GlobalDefinitions.MaxDisplayMode; i++)
+            {
+                _pages[i].DataContext = new PageControlViewModel(pageModels[i]);
+            }
         }
 
         private void RegisterBoardEvent()

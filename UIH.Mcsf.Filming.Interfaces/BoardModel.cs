@@ -18,7 +18,21 @@ namespace UIH.Mcsf.Filming.Interfaces
             }
         }
 
+        public BoardModel()
+        {
+            for (int i = 0; i < GlobalDefinitions.MaxDisplayMode; i++)
+            {
+                _pageModels.Add(new PageModel());
+            }
+        }
+
+        public IList<PageModel> PageModels { get { return _pageModels; } }
+
+        // TODO: BoardModel.PageModels
+
         private IList<PageModel> _pageModels = new List<PageModel>();
         private int _displayMode;
+
+        // TODO: BoardModel 持有 CardModel
     }
 }

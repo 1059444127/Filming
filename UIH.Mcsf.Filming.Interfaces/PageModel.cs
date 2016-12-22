@@ -10,7 +10,10 @@ namespace UIH.Mcsf.Filming.Interfaces
             ImageCells = imageCells;
         }
 
-        //TODO: PageModel:ISelect
+        public PageModel()
+        {
+            
+        }
 
         public Layout Layout { get; private set; }
         public IList<ImageCell> ImageCells { get; private set; }
