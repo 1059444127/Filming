@@ -62,8 +62,10 @@ namespace UIH.Mcsf.Filming.UserControlTests
         private void _006CardControlTestDisplayMode()
         {
             var viewModel = _userControlViewModel as CardControlViewModel;
+            var boardModel = new BoardModel();
+            viewModel.BoardModel = boardModel;
+
             viewModel.DisplayMode = 3;
-            // TODO: store displayMode in Model
         }
 
         private void _005CardControlTestBoardModel()
