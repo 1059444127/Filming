@@ -51,7 +51,7 @@ namespace UIH.Mcsf.Filming.UserControlTests
 
         private void StartTest()
         {
-            _005CardControlTest();
+            _006CardControlTestDisplayMode();
         }
 
         private object _004CreateCardControlViewModel()
@@ -59,7 +59,14 @@ namespace UIH.Mcsf.Filming.UserControlTests
             return new CardControlViewModel();
         }
 
-        private void _005CardControlTest()
+        private void _006CardControlTestDisplayMode()
+        {
+            var viewModel = _userControlViewModel as CardControlViewModel;
+            viewModel.DisplayMode = 3;
+            // TODO: store displayMode in Model
+        }
+
+        private void _005CardControlTestBoardModel()
         {
             var viewModel = _userControlViewModel as CardControlViewModel;
             var boardModel = new BoardModel();
