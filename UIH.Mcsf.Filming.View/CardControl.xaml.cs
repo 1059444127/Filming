@@ -10,7 +10,7 @@
             InitializeComponent();
 
             // TODO-Working-on: CardControl.UI
-            // TODO-New-Feature: CardControl.DisplayMode UI
+            // TODO-New-Feature-working-on: CardControl.DisplayMode UI
             // TODO-New-Feature: CardControl.NewPage UI
             // TODO-New-Feature: CardControl.ViewportLayout UI ？？
             // TODO-New-Feature: CardControl.CellLayout UI ？？
