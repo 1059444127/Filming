@@ -37,5 +37,9 @@ namespace UIH.Mcsf.Filming.Interfaces
         private int _displayMode;
 
         // TODO: BoardModel 持有 CardModel
+        public void NewPage()
+        {
+            
+        }
     }
 }

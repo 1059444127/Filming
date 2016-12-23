@@ -64,6 +64,7 @@ namespace UIH.Mcsf.Filming.ViewModel
         private void NewPage()
         {
             // TODO: NewPage in Model
+            BoardModel.NewPage();
         }
 
         #endregion [--NewPageCommand--]    
