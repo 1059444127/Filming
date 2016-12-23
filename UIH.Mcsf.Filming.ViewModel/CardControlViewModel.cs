@@ -1,12 +1,21 @@
-﻿using GalaSoft.MvvmLight;
+﻿using System.Windows.Controls;
+using GalaSoft.MvvmLight;
 using UIH.Mcsf.Filming.Interfaces;
 
 namespace UIH.Mcsf.Filming.ViewModel
 {
     public class CardControlViewModel : ViewModelBase
     {
-        #region [--BoardModel--]
+        public CardControlViewModel()
+        {
+            // TODO-Later: CardControlViewModel.ControlPanelDock Read from configure
+            ControlPanelDock = Dock.Right;
+        }
 
+        public Dock ControlPanelDock { get; private set; }
+        
+        #region [--BoardModel--]
+        
         private BoardModel _boardModel;
 
         public BoardModel BoardModel
