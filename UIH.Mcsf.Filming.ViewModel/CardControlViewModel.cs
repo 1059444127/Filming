@@ -1,5 +1,8 @@
-﻿using System.Windows.Controls;
+﻿using System;
+using System.Windows.Controls;
+using System.Windows.Input;
 using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.Command;
 using UIH.Mcsf.Filming.Interfaces;
 
 namespace UIH.Mcsf.Filming.ViewModel
@@ -13,9 +16,9 @@ namespace UIH.Mcsf.Filming.ViewModel
         }
 
         public Dock ControlPanelDock { get; private set; }
-        
+
         #region [--BoardModel--]
-        
+
         private BoardModel _boardModel;
 
         public BoardModel BoardModel
@@ -30,7 +33,6 @@ namespace UIH.Mcsf.Filming.ViewModel
         }
 
         #endregion [--BoardModel--]
-
 
         #region [--DisplayMode--]
 
@@ -50,5 +52,20 @@ namespace UIH.Mcsf.Filming.ViewModel
 
         #endregion [--DisplayMode--]
 
+        #region [--NewPageCommand--]
+
+        private ICommand _newPageCommand;
+
+        public ICommand NewPageCommand
+        {
+            get { return _newPageCommand = _newPageCommand ?? new RelayCommand(NewPage); }
+        }
+
+        private void NewPage()
+        {
+            // TODO: NewPage in Model
+        }
+
+        #endregion [--NewPageCommand--]    
     }
 }
