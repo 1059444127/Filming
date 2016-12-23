@@ -26,9 +26,12 @@ namespace UIH.Mcsf.Filming.Interfaces
             }
         }
 
-        public IList<PageModel> PageModels { get { return _pageModels; } }
+        public IList<PageModel> PageModels
+        {
+            get { return _pageModels; }
+            set { _pageModels = value; }
+        }
 
-        // TODO: BoardModel.PageModels
 
         private IList<PageModel> _pageModels = new List<PageModel>();
         private int _displayMode;

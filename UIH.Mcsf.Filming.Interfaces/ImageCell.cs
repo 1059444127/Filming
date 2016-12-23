@@ -7,6 +7,7 @@ namespace UIH.Mcsf.Filming.Interfaces
 {
     public class ImageCell : ISelect
     {
+        // TODO: ImageCell.DisplayDataChanged
         private bool _isSelected;
         private bool _isFocused;
         private DisplayData _displayData;

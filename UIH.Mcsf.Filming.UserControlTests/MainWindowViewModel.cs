@@ -13,6 +13,8 @@ namespace UIH.Mcsf.Filming.UserControlTests
 {
     public class MainWindowViewModel
     {
+        // TODO-New-Feature: Command/Event From other application
+
         private Random _random = new Random();
 
         #region [--UserControlViewModel--]
@@ -61,9 +63,12 @@ namespace UIH.Mcsf.Filming.UserControlTests
         {
             var viewModel = _userControlViewModel as CardControlViewModel;
             var boardModel = new BoardModel();
+            boardModel.PageModels = CreatePages(GlobalDefinitions.MaxDisplayMode);
+
             viewModel.BoardModel = boardModel;
 
             boardModel.DisplayMode = 3;
+
         }
 
         private void _004CardControlTest()
@@ -72,12 +77,7 @@ namespace UIH.Mcsf.Filming.UserControlTests
             //viewModel.DisplayMode = 3;
 
             var pageCount = _random.Next(GlobalDefinitions.MaxDisplayMode*2);
-            var pages = new List<PageModel>();
-            for (int i = 0; i < pageCount; i++)
-            {
-                var page = CreatePageModel();
-                pages.Add(page);
-            }
+            var pages = CreatePages(pageCount);
 
             //viewModel.Pages = pages;
         }
@@ -130,6 +130,17 @@ namespace UIH.Mcsf.Filming.UserControlTests
         private static PageModel CreatePageModel()
         {
             return new PageModel(Layout.CreateDefaultLayout(), CreateCells());
+        }
+
+        private static List<PageModel> CreatePages(int pageCount)
+        {
+            var pages = new List<PageModel>();
+            for (int i = 0; i < pageCount; i++)
+            {
+                var page = CreatePageModel();
+                pages.Add(page);
+            }
+            return pages;
         }
     }
 }

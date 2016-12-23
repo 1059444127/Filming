@@ -116,6 +116,8 @@ namespace UIH.Mcsf.Filming.Adapters
 
         // TODO-Later: ViewerControl.ImageCells and Memory Leak
 
+        // TODO-Later: 图像逐个刷新，进度显示
+
         #region [--ImageCellsProperty--]
 
         public IList<ImageCell> ImageCells
