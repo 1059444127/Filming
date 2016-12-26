@@ -43,7 +43,9 @@ namespace UIH.Mcsf.Filming.Interfaces
         // TODO-New-Feature: New Page is Selected, and its first Cell is Focused and Select
         public void NewPage()
         {
-            _pageModels[0].IsVisible = true;
+            // TODO: Layout of New Page
+            // TODO: if _pages is not empty, last page change to a break page
+            _pages.Add(new Page());
         }
     }
 }
