@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace UIH.Mcsf.Filming.Interfaces
 {
@@ -30,14 +31,14 @@ namespace UIH.Mcsf.Filming.Interfaces
             _pageModels[0].IsVisible = true;
         }
 
-        public IList<PageModel> PageModels
+        public List<PageModel> PageModels
         {
             get { return _pageModels; }
             set { _pageModels = value; }
         }
 
 
-        private IList<PageModel> _pageModels = new List<PageModel>();
+        private List<PageModel> _pageModels = new List<PageModel>();
         private IList<Page> _pages = new List<Page>(); 
         private int _displayMode;
         
@@ -46,6 +47,9 @@ namespace UIH.Mcsf.Filming.Interfaces
         {
             // TODO: Layout of New Page
             // TODO: if _pages is not empty, last page change to a break page
+            var index =_pageModels.FindLastIndex(p => p.IsVisible)+1;
+            _pageModels[index].IsVisible = true;
+
             _pages.Add(new Page());
         }
     }
