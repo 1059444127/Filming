@@ -18,7 +18,9 @@ namespace UIH.Mcsf.Filming.Interfaces
             }
         }
 
-        
+        // TODO: BoardIndex
+        // TODO: BoardCount
+
         public BoardModel()
         {
             for (int i = 0; i < GlobalDefinitions.MaxDisplayMode; i++)
