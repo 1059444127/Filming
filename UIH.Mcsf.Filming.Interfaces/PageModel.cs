@@ -17,5 +17,6 @@ namespace UIH.Mcsf.Filming.Interfaces
 
         public Layout Layout { get; private set; }
         public IList<ImageCell> ImageCells { get; private set; }
+        public bool IsVisible { get; set; }
     }
 }
