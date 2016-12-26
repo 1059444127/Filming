@@ -18,6 +18,7 @@ namespace UIH.Mcsf.Filming.Interfaces
             }
         }
 
+        
         public BoardModel()
         {
             for (int i = 0; i < GlobalDefinitions.MaxDisplayMode; i++)
@@ -34,8 +35,9 @@ namespace UIH.Mcsf.Filming.Interfaces
 
 
         private IList<PageModel> _pageModels = new List<PageModel>();
+        private IList<Page> _pages = new List<Page>(); 
         private int _displayMode;
-
+        
         // TODO-New-Feature: New Page is Selected, and its first Cell is Focused and Select
         public void NewPage()
         {
