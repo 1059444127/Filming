@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
@@ -14,7 +15,32 @@ namespace UIH.Mcsf.Filming.ViewModel
         {
             Layout = pageModel.Layout;
             ImageCells = pageModel.ImageCells;
+            _visibility = pageModel.IsVisible ? Visibility.Visible : Visibility.Collapsed;
+            pageModel.VisibleChanged += PageModelOnVisibleChanged;
         }
+
+        private void PageModelOnVisibleChanged(object sender, BoolEventArgs boolEventArgs)
+        {
+            Visibility = boolEventArgs.Bool ? Visibility.Visible : Visibility.Collapsed;
+        }
+
+        #region [--Visibility--]
+
+        private Visibility _visibility;
+
+        public Visibility Visibility
+        {
+            get { return _visibility; }
+            set
+            {
+                if (_visibility == value) return;
+                _visibility = value;
+                RaisePropertyChanged(() => Visibility);
+            }
+        }
+
+        #endregion [--Visibility--]
+
 
         #region [--Layout--]
 

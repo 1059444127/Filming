@@ -27,6 +27,7 @@ namespace UIH.Mcsf.Filming.Interfaces
             {
                 _pageModels.Add(new PageModel());
             }
+            _pageModels[0].IsVisible = true;
         }
 
         public IList<PageModel> PageModels
