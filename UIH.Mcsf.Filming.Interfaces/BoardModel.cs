@@ -39,7 +39,7 @@ namespace UIH.Mcsf.Filming.Interfaces
         // TODO: BoardModel 持有 CardModel
         public void NewPage()
         {
-            
+            _pageModels[0].IsVisible = true;
         }
     }
 }
