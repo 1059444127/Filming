@@ -36,7 +36,7 @@ namespace UIH.Mcsf.Filming.Interfaces
         private IList<PageModel> _pageModels = new List<PageModel>();
         private int _displayMode;
 
-        // TODO: BoardModel 持有 CardModel
+        // TODO-New-Feature: New Page is Selected, and its first Cell is Focused and Select
         public void NewPage()
         {
             _pageModels[0].IsVisible = true;
