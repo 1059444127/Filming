@@ -7,14 +7,14 @@ namespace UIH.Mcsf.Filming.UT
     public class DisplayModeTests
     {
         [TestMethod]
-        public void When_Element_Count_is_Even_Then_Row_is_2()
+        public void When_Element_Count_is_2_Then_Row_is_1()
         {
             // Act
-            var displayMode = new DisplayMode(8);
+            var displayMode = new DisplayMode(2);
 
             // Assert
-            Assert.AreEqual(2, displayMode.Row);
-            Assert.AreEqual(4, displayMode.Col);
+            Assert.AreEqual(1, displayMode.Row);
+            Assert.AreEqual(2, displayMode.Col);
         }
 
         [TestMethod]

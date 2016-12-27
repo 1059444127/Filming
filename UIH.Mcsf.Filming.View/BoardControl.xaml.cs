@@ -71,7 +71,7 @@ namespace UIH.Mcsf.Filming.View
         private void PlacePagesToGrid(int row, int col)
         {
             //TODO-later: Page Size Control
-            var scale = new ScaleTransform(1.0/col, 1.0/row);
+            var scale = new ScaleTransform(1,1);
             var pageIndex = 0;
             for (var i = 0; i < row; i++)
             {
