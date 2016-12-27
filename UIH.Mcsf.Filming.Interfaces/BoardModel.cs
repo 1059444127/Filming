@@ -49,6 +49,8 @@ namespace UIH.Mcsf.Filming.Interfaces
             // TODO: if _pages is not empty, last page change to a break page
             var index =_pageModels.FindLastIndex(p => p.IsVisible)+1;
             _pageModels[index].IsVisible = true;
+            if (index != 0)
+                _pageModels[index - 1].IsBreak = true;
 
             _pages.Add(new Page());
         }

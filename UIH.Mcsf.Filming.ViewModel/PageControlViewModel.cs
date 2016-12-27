@@ -15,14 +15,44 @@ namespace UIH.Mcsf.Filming.ViewModel
         {
             Layout = pageModel.Layout;
             ImageCells = pageModel.ImageCells;
-            _visibility = pageModel.IsVisible ? Visibility.Visible : Visibility.Collapsed;
+            _visibility = BoolToVisibility(pageModel.IsVisible);
+            _breakVisibility = BoolToVisibility(pageModel.IsBreak);
             pageModel.VisibleChanged += PageModelOnVisibleChanged;
+            pageModel.IsBreakChanged += PageModelOnIsBreakChanged;
+        }
+
+        private void PageModelOnIsBreakChanged(object sender, BoolEventArgs boolEventArgs)
+        {
+            BreakVisibility = BoolToVisibility(boolEventArgs.Bool);
+        }
+
+        private Visibility BoolToVisibility(bool b)
+        {
+            return b ? Visibility.Visible : Visibility.Collapsed;
         }
 
         private void PageModelOnVisibleChanged(object sender, BoolEventArgs boolEventArgs)
         {
-            Visibility = boolEventArgs.Bool ? Visibility.Visible : Visibility.Collapsed;
+            Visibility = BoolToVisibility(boolEventArgs.Bool);
         }
+
+        #region [--BreakVisibility--]
+
+        private Visibility _breakVisibility;
+
+        public Visibility BreakVisibility
+        {
+            get { return _breakVisibility; }
+            set
+            {
+                if (_breakVisibility == value) return;
+                _breakVisibility = value;
+                RaisePropertyChanged(() => BreakVisibility);
+            }
+        }
+
+        #endregion [--BreakVisibility--]
+
 
         #region [--Visibility--]
 

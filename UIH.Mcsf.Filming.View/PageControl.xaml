@@ -16,6 +16,6 @@
             <view:TitlerBar Visibility="{Binding TitleBarVisibility}" DockPanel.Dock="{Binding TitleBarPosition}" />
             <adapters:ViewerControlAdapter Layout="{Binding Layout}" ImageCells="{Binding ImageCells}"/>
         </DockPanel>
-        <Rectangle Grid.Row="1" Fill="#00e9e9" Height="3"></Rectangle>
+        <Rectangle Grid.Row="1" Fill="#00e9e9" Height="3" Visibility="{Binding BreakVisibility}"></Rectangle>
     </Grid>
 </UserControl>
