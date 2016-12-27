@@ -68,6 +68,7 @@ namespace UIH.Mcsf.Filming.View
         //TODO-later: PageControl Position Management
         //TODO: BoardControl. When DisplayMode changed, Re-place Grid content
         //TODO: BoardControl. When Index of First PageModel changed, Re-place Grid content
+        //TODO-bug: 最后一张胶片的PageBreak无法显示
         private void PlacePagesToGrid(int row, int col)
         {
             //TODO-later: Page Size Control

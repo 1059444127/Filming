@@ -16,6 +16,20 @@ namespace UIH.Mcsf.Filming.Interfaces
                 if(_displayMode == value) return;
                 _displayMode = value;
                 DisplayModeChanged(this, new IntEventArgs(value));
+
+                MakeBoardView();
+            }
+        }
+
+        private void MakeBoardView()
+        {
+            for (int i = 0; i < _displayMode; i++)
+            {
+                _pageModels[i].IsVisible = true;
+            }
+            for (int i = _displayMode; i < GlobalDefinitions.MaxDisplayMode; i++)
+            {
+                _pageModels[i].IsVisible = false;
             }
         }
 
