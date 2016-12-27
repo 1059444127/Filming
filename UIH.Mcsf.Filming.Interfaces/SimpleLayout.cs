@@ -20,6 +20,11 @@ namespace UIH.Mcsf.Filming.Interfaces
             layoutManager.SetLayout(_row, _col);
         }
 
+        public override int Capacity
+        {
+            get { return  _row * _col; }
+        }
+
         #endregion
     }
 }

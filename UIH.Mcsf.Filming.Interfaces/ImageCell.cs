@@ -106,5 +106,15 @@ namespace UIH.Mcsf.Filming.Interfaces
             PatientAge = GetTagByName(dicomHeader, ServiceTagName.PatientAge);
             PatientSex = GetTagByName(dicomHeader, ServiceTagName.PatientSex);
         }
+
+        public static IList<ImageCell> CreateCells(int cellCount)
+        {
+            var cells = new List<ImageCell>();
+            for (int i = 0; i < cellCount; i++)
+            {
+                cells.Add(new ImageCell());
+            }
+            return cells;
+        }
     }
 }

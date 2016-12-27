@@ -19,5 +19,7 @@ namespace UIH.Mcsf.Filming.Interfaces
         {
             return new SimpleLayout(row, col);
         }
+
+        public abstract int Capacity { get; }
     }
 }
