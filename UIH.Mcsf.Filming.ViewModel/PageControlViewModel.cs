@@ -13,8 +13,8 @@ namespace UIH.Mcsf.Filming.ViewModel
         //TODO: PageControlViewModel.RegisterEvent From PageModel
         public PageControlViewModel(PageModel pageModel)
         {
-            Layout = pageModel.Layout;
-            ImageCells = pageModel.ImageCells;
+            Layout = pageModel.Page.Layout;
+            ImageCells = pageModel.Page.ImageCells;
             _visibility = BoolToVisibility(pageModel.IsVisible);
             _breakVisibility = BoolToVisibility(pageModel.IsBreak);
             pageModel.VisibleChanged += PageModelOnVisibleChanged;

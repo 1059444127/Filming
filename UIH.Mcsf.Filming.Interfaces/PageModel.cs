@@ -7,22 +7,17 @@ namespace UIH.Mcsf.Filming.Interfaces
     {
         private bool _isBreak;
         private bool _isVisible;
+        private readonly Page _page;
 
         public PageModel(Layout layout, IList<ImageCell> imageCells)
         {
-            Layout = layout;
-            ImageCells = imageCells;
+            _page = new Page(layout, imageCells);
         }
 
         public PageModel()
         {
-            Layout = Layout.CreateDefaultLayout();
-
-            ImageCells = ImageCell.CreateCells(Layout.Capacity);
+            _page = new Page();
         }
-
-        public Layout Layout { get; private set; }
-        public IList<ImageCell> ImageCells { get; private set; }
 
         public bool IsVisible
         {
@@ -44,6 +39,11 @@ namespace UIH.Mcsf.Filming.Interfaces
                 _isBreak = value;
                 IsBreakChanged(this, new BoolEventArgs(value));
             }
+        }
+
+        public Page Page
+        {
+            get { return _page; }
         }
 
         public event EventHandler<BoolEventArgs> VisibleChanged = delegate { };

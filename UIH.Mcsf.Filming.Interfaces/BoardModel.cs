@@ -21,6 +21,8 @@ namespace UIH.Mcsf.Filming.Interfaces
             }
         }
 
+        // TODO: Rule For MakeBoardView  
+        // TODO: 区分 IsVisible & IsNull
         private void MakeBoardView()
         {
             for (int i = 0; i < _displayMode; i++)
