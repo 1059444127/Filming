@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace UIH.Mcsf.Filming.Interfaces
 {
@@ -6,6 +7,7 @@ namespace UIH.Mcsf.Filming.Interfaces
     {
         private Layout _layout;
         private IList<ImageCell> _imageCells;
+        private bool _isVisible;
 
         public FilmPageModel(Layout layout, IList<ImageCell> imageCells) 
         {
@@ -25,6 +27,18 @@ namespace UIH.Mcsf.Filming.Interfaces
             get { return _imageCells; }
             set { _imageCells = value; }
         }
+
+        public override bool IsVisible
+        {
+            get { return _isVisible; }
+            set
+            {
+                if (_isVisible == value) return;
+                _isVisible = value;
+                OnVisibleChanged();
+            }
+        }
+
 
         #endregion
     }

@@ -6,7 +6,6 @@ namespace UIH.Mcsf.Filming.Interfaces
     public abstract class PageModel
     {
         private bool _isBreak;
-        private bool _isVisible;
 
         public static PageModel CreatePageModel(Layout layout, IList<ImageCell> imageCells)
         {
@@ -32,18 +31,15 @@ namespace UIH.Mcsf.Filming.Interfaces
             }
         }
 
-        public bool IsVisible
-        {
-            get { return _isVisible; }
-            set
-            {
-                if (_isVisible == value) return;
-                _isVisible = value;
-                VisibleChanged(this, new BoolEventArgs(value));
-            }
-        }
+        public abstract bool IsVisible { get; set; }
+
 
         public event EventHandler<BoolEventArgs> IsBreakChanged = delegate { };
         public event EventHandler<BoolEventArgs> VisibleChanged = delegate { };
+
+        protected void OnVisibleChanged()
+        {
+            VisibleChanged(this, new BoolEventArgs(IsVisible));
+        }
     }
 }

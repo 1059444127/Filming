@@ -4,13 +4,6 @@ namespace UIH.Mcsf.Filming.Interfaces
 {
     internal class NullPageModel : PageModel
     {
-        private readonly IList<ImageCell> _imageCells;
-
-        public NullPageModel()
-        {
-            _imageCells = new List<ImageCell>();
-        }
-
         #region Overrides of PageModel
 
         public override Layout Layout
@@ -20,7 +13,13 @@ namespace UIH.Mcsf.Filming.Interfaces
 
         public override IList<ImageCell> ImageCells
         {
-            get { return _imageCells; }
+            get { return new List<ImageCell>(); }
+            set { }
+        }
+
+        public override bool IsVisible
+        {
+            get { return false; }
             set { }
         }
 
