@@ -2,21 +2,20 @@
 
 namespace UIH.Mcsf.Filming.Interfaces
 {
-    public class PageDisplayModel
+    public class BoardCell
     {
         private bool _isBreak;
         private bool _isVisible;
         private readonly PageData _pageData;
 
-        // TODO: Rename Page to PageData
-        public PageDisplayModel(PageData pageData)
+        // TODO-Later: Replace BoardCell(pageData pageData) with PageData.setter
+        public BoardCell(PageData pageData)
         {
             _pageData = pageData;
         }
 
-        public PageDisplayModel()
+        public BoardCell()
         {
-            // TODO: Create Class NullPageData To Replace new Page()
             // TODO: Create Class NullLayout
             _pageData = new PageData();
         }
