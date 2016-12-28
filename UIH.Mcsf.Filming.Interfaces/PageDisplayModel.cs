@@ -6,19 +6,19 @@ namespace UIH.Mcsf.Filming.Interfaces
     {
         private bool _isBreak;
         private bool _isVisible;
-        private readonly Page _page;
+        private readonly PageData _pageData;
 
         // TODO: Rename Page to PageData
-        public PageDisplayModel(Page page)
+        public PageDisplayModel(PageData pageData)
         {
-            _page = page;
+            _pageData = pageData;
         }
 
         public PageDisplayModel()
         {
             // TODO: Create Class NullPageData To Replace new Page()
             // TODO: Create Class NullLayout
-            _page = new Page();
+            _pageData = new PageData();
         }
 
         public bool IsVisible
@@ -43,9 +43,9 @@ namespace UIH.Mcsf.Filming.Interfaces
             }
         }
 
-        public Page Page
+        public PageData PageData
         {
-            get { return _page; }
+            get { return _pageData; }
         }
 
         public event EventHandler<BoolEventArgs> VisibleChanged = delegate { };

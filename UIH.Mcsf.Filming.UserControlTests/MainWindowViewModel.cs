@@ -8,7 +8,6 @@ using GalaSoft.MvvmLight.Command;
 using UIH.Mcsf.Filming.Interfaces;
 using UIH.Mcsf.Filming.Model;
 using UIH.Mcsf.Filming.ViewModel;
-using Page = UIH.Mcsf.Filming.Interfaces.Page;
 
 namespace UIH.Mcsf.Filming.UserControlTests
 {
@@ -139,7 +138,7 @@ namespace UIH.Mcsf.Filming.UserControlTests
 
         private static PageDisplayModel CreatePageModel()
         {
-            var page = new Page(Layout.CreateDefaultLayout(), CreateCells());
+            var page = new PageData(Layout.CreateDefaultLayout(), CreateCells());
             return new PageDisplayModel(page);
         }
 
