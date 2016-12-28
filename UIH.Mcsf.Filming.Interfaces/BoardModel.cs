@@ -66,7 +66,6 @@ namespace UIH.Mcsf.Filming.Interfaces
             //if (index != 0)
             //    _boardCells[index - 1].IsBreak = true;
 
-            _pages.Add(new PageModel());
         }
     }
 }

@@ -13,7 +13,7 @@
         public BoardCell()
         {
             // TODO: Create Class NullLayout
-            _pageModel = new PageModel();
+            _pageModel = PageModel.CreatePageModel();
         }
 
         public bool IsVisible

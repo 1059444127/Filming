@@ -8,13 +8,23 @@ namespace UIH.Mcsf.Filming.Interfaces
         private bool _isBreak;
         private bool _isVisible;
 
-        public PageModel(Layout layout, IList<ImageCell> imageCells)
+        public static PageModel CreatePageModel(Layout layout, IList<ImageCell> imageCells)
+        {
+            return new PageModel(layout, imageCells);
+        }
+
+        public static PageModel CreatePageModel()
+        {
+            return new PageModel();
+        }
+
+        private PageModel(Layout layout, IList<ImageCell> imageCells)
         {
             Layout = layout;
             ImageCells = imageCells;
         }
 
-        public PageModel()
+        private PageModel()
         {
             Layout = Layout.CreateLayout();
             ImageCells = new List<ImageCell>();

@@ -72,7 +72,7 @@ namespace UIH.Mcsf.Filming.Adapters
 
         public void OnClicked(IClickStatus clickStatus)
         {
-            Debug.Assert(_imageCell != null);
+            if (_imageCell == null) return; //TODO-Later-Log
             _imageCell.OnClicked(clickStatus);
         }
 

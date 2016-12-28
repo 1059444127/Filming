@@ -10,7 +10,7 @@ namespace UIH.Mcsf.Filming.ViewModel
 {
     public class PageControlViewModel : ViewModelBase
     {
-        private PageModel _pageModel = new PageModel();
+        private PageModel _pageModel = PageModel.CreatePageModel();
         //TODO: PageControlViewModel.RegisterEvent From BoardCell
         //TODO: Binding Page Changed
         //TODO: Binding Page.Layout Changed
@@ -338,8 +338,8 @@ namespace UIH.Mcsf.Filming.ViewModel
         //TODO: PageControlViewModel.RefreshTitle()
         private void RefreshTitle()
         {
-            var sampleCell = ImageCells.FirstOrDefault();
-            AccessionNumber = sampleCell.AccessionNumber;
+            //var sampleCell = ImageCells.FirstOrDefault();
+            //AccessionNumber = sampleCell.AccessionNumber;
         }
     }
 }
