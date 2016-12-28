@@ -2,7 +2,7 @@ using UIH.Mcsf.Viewer;
 
 namespace UIH.Mcsf.Filming.Interfaces
 {
-    public class NullLayout : Layout
+    class NullLayout : Layout
     {
         #region Overrides of Layout
 

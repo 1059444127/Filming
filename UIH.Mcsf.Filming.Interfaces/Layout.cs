@@ -26,7 +26,9 @@ namespace UIH.Mcsf.Filming.Interfaces
         // TODO-Later: NullLayout.Singleton
         public static Layout CreateLayout()
         {
-            return new NullLayout();
+            return NullLayout;
         }
+
+        public static readonly Layout NullLayout = new NullLayout();
     }
 }

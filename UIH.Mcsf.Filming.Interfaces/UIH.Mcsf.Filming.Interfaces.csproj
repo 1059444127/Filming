@@ -57,12 +57,14 @@
     <Compile Include="DisplayDataFactory.cs" />
     <Compile Include="DisplayMode.cs" />
     <Compile Include="EventArgs.cs" />
+    <Compile Include="FilmPageModel.cs" />
     <Compile Include="GlobalDefinitions.cs" />
     <Compile Include="IClickStatus.cs" />
     <Compile Include="ImageCell.cs" />
     <Compile Include="ISelect.cs" />
     <Compile Include="Layout.cs" />
     <Compile Include="NullLayout.cs" />
+    <Compile Include="NullPageModel.cs" />
     <Compile Include="PageModel.cs" />
     <Compile Include="BoardCell.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

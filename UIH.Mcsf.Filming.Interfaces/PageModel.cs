@@ -3,35 +3,23 @@ using System.Collections.Generic;
 
 namespace UIH.Mcsf.Filming.Interfaces
 {
-    public class PageModel
+    public abstract class PageModel
     {
         private bool _isBreak;
         private bool _isVisible;
 
         public static PageModel CreatePageModel(Layout layout, IList<ImageCell> imageCells)
         {
-            return new PageModel(layout, imageCells);
+            return new FilmPageModel(layout, imageCells);
         }
 
         public static PageModel CreatePageModel()
         {
-            return new PageModel();
+            return new NullPageModel();
         }
 
-        private PageModel(Layout layout, IList<ImageCell> imageCells)
-        {
-            Layout = layout;
-            ImageCells = imageCells;
-        }
-
-        private PageModel()
-        {
-            Layout = Layout.CreateLayout();
-            ImageCells = new List<ImageCell>();
-        }
-
-        public Layout Layout { get; private set; }
-        public IList<ImageCell> ImageCells { get; private set; }
+        public abstract Layout Layout { get; }
+        public abstract IList<ImageCell> ImageCells { get; set; }
 
         public bool IsBreak
         {

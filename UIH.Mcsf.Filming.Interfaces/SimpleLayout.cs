@@ -2,7 +2,7 @@
 
 namespace UIH.Mcsf.Filming.Interfaces
 {
-    public class SimpleLayout : Layout
+    class SimpleLayout : Layout
     {
         private readonly int _row;
         private readonly int _col;
