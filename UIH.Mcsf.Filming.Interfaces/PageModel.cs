@@ -9,6 +9,8 @@ namespace UIH.Mcsf.Filming.Interfaces
         private bool _isVisible;
         private readonly Page _page;
 
+        // TODO: Rename PageModel to PageDisplayModel
+        // TODO: Rename Page to PageData
         public PageModel(Page page)
         {
             _page = page;
@@ -16,6 +18,8 @@ namespace UIH.Mcsf.Filming.Interfaces
 
         public PageModel()
         {
+            // TODO: Create Class NullPageData To Replace new Page()
+            // TODO: Create Class NullLayout
             _page = new Page();
         }
 
