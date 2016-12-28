@@ -8,6 +8,7 @@ namespace UIH.Mcsf.Filming.Interfaces
         private Layout _layout;
         private IList<ImageCell> _imageCells;
         private bool _isVisible;
+        private bool _isBreak;
 
         public FilmPageModel(Layout layout, IList<ImageCell> imageCells) 
         {
@@ -26,6 +27,17 @@ namespace UIH.Mcsf.Filming.Interfaces
         {
             get { return _imageCells; }
             set { _imageCells = value; }
+        }
+
+        public override bool IsBreak
+        {
+            get { return _isBreak; }
+            set
+            {
+                if(_isBreak == value) return;
+                _isBreak = value;
+                OnBreakChanged();
+            }
         }
 
         public override bool IsVisible

@@ -17,6 +17,12 @@ namespace UIH.Mcsf.Filming.Interfaces
             set { }
         }
 
+        public override bool IsBreak
+        {
+            get { return false; }
+            set {  }
+        }
+
         public override bool IsVisible
         {
             get { return false; }
