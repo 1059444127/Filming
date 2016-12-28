@@ -2,15 +2,15 @@
 
 namespace UIH.Mcsf.Filming.Interfaces
 {
-    public class PageData
+    public class PageModel
     {
-        public PageData(Layout layout, IList<ImageCell> imageCells)
+        public PageModel(Layout layout, IList<ImageCell> imageCells)
         {
             Layout = layout;
             ImageCells = imageCells;
         }
 
-        public PageData()
+        public PageModel()
         {
             Layout = Layout.CreateDefaultLayout();
             ImageCells = ImageCell.CreateCells(Layout.Capacity);

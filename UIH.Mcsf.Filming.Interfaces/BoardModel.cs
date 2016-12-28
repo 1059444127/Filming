@@ -55,7 +55,7 @@ namespace UIH.Mcsf.Filming.Interfaces
 
 
         private List<BoardCell> _boardCells = new List<BoardCell>();
-        private IList<PageData> _pages = new List<PageData>(); 
+        private IList<PageModel> _pages = new List<PageModel>(); 
         private int _displayMode;
         
         // TODO-New-Feature: New Page is Selected, and its first Cell is Focused and Select
@@ -68,7 +68,7 @@ namespace UIH.Mcsf.Filming.Interfaces
             if (index != 0)
                 _boardCells[index - 1].IsBreak = true;
 
-            _pages.Add(new PageData());
+            _pages.Add(new PageModel());
         }
     }
 }

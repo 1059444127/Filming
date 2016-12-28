@@ -8,21 +8,21 @@ namespace UIH.Mcsf.Filming.Interfaces
         private bool _isVisible;
 
         // TODO: BoardCell.PageDataChanged Event
-        private readonly PageData _pageData;
+        private readonly PageModel _pageModel;
 
-        // TODO-Later: Replace BoardCell(pageData pageData) with PageData.setter
-        public BoardCell(PageData pageData)
+        // TODO-Later: Replace BoardCell(PageModel PageModel) with PageModel.setter
+        public BoardCell(PageModel pageModel)
         {
-            // TODO: Rename PageData To PageModel
-            _pageData = pageData;
+            // TODO: Rename PageModel To PageModel
+            _pageModel = pageModel;
         }
 
         public BoardCell()
         {
             // TODO: Create Class NullLayout
-            _pageData = new PageData();
+            _pageModel = new PageModel();
         }
-        // TODO: Keep BoardCell.IsVisible.Setter, Move to PageData
+        // TODO: Keep BoardCell.IsVisible.Setter, Move to PageModel
         public bool IsVisible
         {
             get { return _isVisible; }
@@ -34,7 +34,7 @@ namespace UIH.Mcsf.Filming.Interfaces
             }
         }
 
-        // TODO: Move BoardCell.IsBreak to PageData
+        // TODO: Move BoardCell.IsBreak to PageModel
         public bool IsBreak
         {
             get { return _isBreak; }
@@ -46,14 +46,14 @@ namespace UIH.Mcsf.Filming.Interfaces
             }
         }
 
-        public PageData PageData
+        public PageModel PageModel
         {
-            get { return _pageData; }
+            get { return _pageModel; }
         }
 
-        // TODO: Move BoardCell.VisibleChanged to PageData
+        // TODO: Move BoardCell.VisibleChanged to PageModel
         public event EventHandler<BoolEventArgs> VisibleChanged = delegate { };
-        // TODO: Move BoardCell.IsBreakChanged to PageData
+        // TODO: Move BoardCell.IsBreakChanged to PageModel
         public event EventHandler<BoolEventArgs> IsBreakChanged = delegate { };
     }
 }

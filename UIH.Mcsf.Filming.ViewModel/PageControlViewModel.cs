@@ -17,8 +17,8 @@ namespace UIH.Mcsf.Filming.ViewModel
         // TODO-Later: PageControlViewModel.Layout & ImageCells 合并
         public PageControlViewModel(BoardCell boardCell)
         {
-            Layout = boardCell.PageData.Layout;
-            ImageCells = boardCell.PageData.ImageCells;
+            Layout = boardCell.PageModel.Layout;
+            ImageCells = boardCell.PageModel.ImageCells;
             _visibility = BoolToVisibility(boardCell.IsVisible);
             _breakVisibility = BoolToVisibility(boardCell.IsBreak);
             boardCell.VisibleChanged += PageModelOnVisibleChanged;
