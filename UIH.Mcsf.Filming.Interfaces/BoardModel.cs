@@ -21,8 +21,6 @@ namespace UIH.Mcsf.Filming.Interfaces
             }
         }
 
-        // TODO: Rule For MakeBoardView  
-        // TODO: 区分 IsVisible & IsNull
         private void MakeBoardView()
         {
             for (int i = 0; i < _displayMode; i++)
@@ -63,10 +61,10 @@ namespace UIH.Mcsf.Filming.Interfaces
         {
             // TODO: Layout of New Page
             // TODO: if _pages is not empty, last page change to a break page
-            var index =_boardCells.FindLastIndex(p => p.IsVisible)+1;
-            _boardCells[index].IsVisible = true;
-            if (index != 0)
-                _boardCells[index - 1].IsBreak = true;
+            //var index =_boardCells.FindLastIndex(p => p.IsVisible)+1;
+            //_boardCells[index].IsVisible = true;
+            //if (index != 0)
+            //    _boardCells[index - 1].IsBreak = true;
 
             _pages.Add(new PageModel());
         }
