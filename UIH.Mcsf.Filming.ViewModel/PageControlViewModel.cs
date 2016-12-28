@@ -11,6 +11,7 @@ namespace UIH.Mcsf.Filming.ViewModel
     public class PageControlViewModel : ViewModelBase
     {
         //TODO: PageControlViewModel.RegisterEvent From PageModel
+        // TODO-Later: PageControlViewModel.Layout & ImageCells 合并
         public PageControlViewModel(PageModel pageModel)
         {
             Layout = pageModel.Page.Layout;

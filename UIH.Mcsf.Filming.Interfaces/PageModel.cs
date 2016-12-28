@@ -9,9 +9,9 @@ namespace UIH.Mcsf.Filming.Interfaces
         private bool _isVisible;
         private readonly Page _page;
 
-        public PageModel(Layout layout, IList<ImageCell> imageCells)
+        public PageModel(Page page)
         {
-            _page = new Page(layout, imageCells);
+            _page = page;
         }
 
         public PageModel()
