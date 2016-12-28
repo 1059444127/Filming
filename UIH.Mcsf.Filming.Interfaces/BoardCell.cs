@@ -34,7 +34,7 @@ namespace UIH.Mcsf.Filming.Interfaces
             }
         }
 
-        // TODO: Move BoardCell.IsBreak to PageModel
+        // TODO-working-on: Move BoardCell.IsBreak to PageModel
         public bool IsBreak
         {
             get { return _isBreak; }
@@ -53,7 +53,7 @@ namespace UIH.Mcsf.Filming.Interfaces
 
         // TODO: Move BoardCell.VisibleChanged to PageModel
         public event EventHandler<BoolEventArgs> VisibleChanged = delegate { };
-        // TODO: Move BoardCell.IsBreakChanged to PageModel
+        // TODO-working-on: Move BoardCell.IsBreakChanged to PageModel
         public event EventHandler<BoolEventArgs> IsBreakChanged = delegate { };
     }
 }
