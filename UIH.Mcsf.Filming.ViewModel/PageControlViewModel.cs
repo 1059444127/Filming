@@ -15,7 +15,6 @@ namespace UIH.Mcsf.Filming.ViewModel
         //TODO: Binding Page Changed
         //TODO: Binding Page.Layout Changed
         //TODO: Binding Page.ImageCells Changed
-        // TODO: PageControlViewModel.Layout & ImageCells 合并
         public PageControlViewModel(BoardCell boardCell)
         {
             var pageModel = boardCell.PageModel;

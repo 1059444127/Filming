@@ -99,7 +99,7 @@ namespace UIH.Mcsf.Filming.UserControlTests
         private void _002PageControlTest()
         {
             var viewModel = _userControlViewModel as PageControlViewModel;
-            viewModel.Layout = Layout.CreateDefaultLayout();
+            viewModel.Layout = Layout.CreateLayout(3, 3);
             var cells = CreateCells();
 
             viewModel.ImageCells = cells;
@@ -118,7 +118,7 @@ namespace UIH.Mcsf.Filming.UserControlTests
         private void _001ViewerControlAdapterTest()
         {
             var viewModel = _userControlViewModel as ViewerControlAdapterViewModel;
-            viewModel.Layout = Layout.CreateDefaultLayout();
+            viewModel.Layout = Layout.CreateLayout(3, 3);
             MessageBox.Show("Hello F5");
         }
 
@@ -138,7 +138,7 @@ namespace UIH.Mcsf.Filming.UserControlTests
 
         private static BoardCell CreatePageModel()
         {
-            var page = new PageModel(Layout.CreateDefaultLayout(), CreateCells());
+            var page = new PageModel(Layout.CreateLayout(3, 3), CreateCells());
             return new BoardCell(page);
         }
 

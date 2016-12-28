@@ -45,6 +45,7 @@ namespace UIH.Mcsf.Filming.Adapters
             var capacity = ViewerControl.LayoutManager.RootCell.DisplayCapacity;
             var currentCellCount = ViewerControl.CellCount;
             var deltaCellCount = capacity - currentCellCount;
+            if (deltaCellCount == 0) return;
 
             // cell count is less
             // TODO-later: New FilmingControlCell(), not smell good

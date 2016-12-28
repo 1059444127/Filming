@@ -62,6 +62,7 @@
     <Compile Include="ImageCell.cs" />
     <Compile Include="ISelect.cs" />
     <Compile Include="Layout.cs" />
+    <Compile Include="NullLayout.cs" />
     <Compile Include="PageModel.cs" />
     <Compile Include="BoardCell.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
