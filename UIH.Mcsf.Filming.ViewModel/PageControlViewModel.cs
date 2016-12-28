@@ -10,19 +10,44 @@ namespace UIH.Mcsf.Filming.ViewModel
 {
     public class PageControlViewModel : ViewModelBase
     {
+        private PageModel _pageModel = new PageModel();
         //TODO: PageControlViewModel.RegisterEvent From BoardCell
         //TODO: Binding Page Changed
         //TODO: Binding Page.Layout Changed
         //TODO: Binding Page.ImageCells Changed
-        // TODO-Later: PageControlViewModel.Layout & ImageCells 合并
+        // TODO: PageControlViewModel.Layout & ImageCells 合并
         public PageControlViewModel(BoardCell boardCell)
         {
-            Layout = boardCell.PageModel.Layout;
-            ImageCells = boardCell.PageModel.ImageCells;
-            _visibility = BoolToVisibility(boardCell.IsVisible);
-            _breakVisibility = BoolToVisibility(boardCell.IsBreak);
-            boardCell.VisibleChanged += PageModelOnVisibleChanged;
-            boardCell.IsBreakChanged += PageModelOnIsBreakChanged;
+            var pageModel = boardCell.PageModel;
+            if (_pageModel == pageModel) return;
+
+            UnRegisterPageModelEvent();
+            _pageModel = pageModel;
+            RegisterPageModelEvent();
+
+            RefreshPage();
+        }
+
+        private void RegisterPageModelEvent()
+        {
+            UnRegisterPageModelEvent();
+            _pageModel.VisibleChanged += PageModelOnVisibleChanged;
+            _pageModel.IsBreakChanged += PageModelOnIsBreakChanged;
+            
+        }
+
+        private void UnRegisterPageModelEvent()
+        {
+            _pageModel.IsBreakChanged -= PageModelOnIsBreakChanged;
+            _pageModel.VisibleChanged -= PageModelOnVisibleChanged;
+        }
+
+        private void RefreshPage()
+        {
+            Layout = _pageModel.Layout;
+            ImageCells = _pageModel.ImageCells;
+            _visibility = BoolToVisibility(_pageModel.IsVisible);
+            _breakVisibility = BoolToVisibility(_pageModel.IsBreak);
         }
 
         private void PageModelOnIsBreakChanged(object sender, BoolEventArgs boolEventArgs)
@@ -306,7 +331,6 @@ namespace UIH.Mcsf.Filming.ViewModel
                 RaisePropertyChanged(() => AccessionNumber);
             }
         }
-
         #endregion [--AccessionNumber--]
 
 
