@@ -10,16 +10,16 @@ namespace UIH.Mcsf.Filming.ViewModel
 {
     public class PageControlViewModel : ViewModelBase
     {
-        //TODO: PageControlViewModel.RegisterEvent From PageModel
+        //TODO: PageControlViewModel.RegisterEvent From PageDisplayModel
         // TODO-Later: PageControlViewModel.Layout & ImageCells 合并
-        public PageControlViewModel(PageModel pageModel)
+        public PageControlViewModel(PageDisplayModel pageDisplayModel)
         {
-            Layout = pageModel.Page.Layout;
-            ImageCells = pageModel.Page.ImageCells;
-            _visibility = BoolToVisibility(pageModel.IsVisible);
-            _breakVisibility = BoolToVisibility(pageModel.IsBreak);
-            pageModel.VisibleChanged += PageModelOnVisibleChanged;
-            pageModel.IsBreakChanged += PageModelOnIsBreakChanged;
+            Layout = pageDisplayModel.Page.Layout;
+            ImageCells = pageDisplayModel.Page.ImageCells;
+            _visibility = BoolToVisibility(pageDisplayModel.IsVisible);
+            _breakVisibility = BoolToVisibility(pageDisplayModel.IsBreak);
+            pageDisplayModel.VisibleChanged += PageModelOnVisibleChanged;
+            pageDisplayModel.IsBreakChanged += PageModelOnIsBreakChanged;
         }
 
         private void PageModelOnIsBreakChanged(object sender, BoolEventArgs boolEventArgs)

@@ -63,7 +63,7 @@
     <Compile Include="ISelect.cs" />
     <Compile Include="Layout.cs" />
     <Compile Include="Page.cs" />
-    <Compile Include="PageModel.cs" />
+    <Compile Include="PageDisplayModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SimpleLayout.cs" />
   </ItemGroup>

@@ -27,11 +27,11 @@ namespace UIH.Mcsf.Filming.Interfaces
         {
             for (int i = 0; i < _displayMode; i++)
             {
-                _pageModels[i].IsVisible = true;
+                _pageDisplayModels[i].IsVisible = true;
             }
             for (int i = _displayMode; i < GlobalDefinitions.MaxDisplayMode; i++)
             {
-                _pageModels[i].IsVisible = false;
+                _pageDisplayModels[i].IsVisible = false;
             }
         }
 
@@ -42,19 +42,19 @@ namespace UIH.Mcsf.Filming.Interfaces
         {
             for (int i = 0; i < GlobalDefinitions.MaxDisplayMode; i++)
             {
-                _pageModels.Add(new PageModel());
+                _pageDisplayModels.Add(new PageDisplayModel());
             }
-            _pageModels[0].IsVisible = true;
+            _pageDisplayModels[0].IsVisible = true;
         }
 
-        public List<PageModel> PageModels
+        public List<PageDisplayModel> PageDisplayModels
         {
-            get { return _pageModels; }
-            set { _pageModels = value; }
+            get { return _pageDisplayModels; }
+            set { _pageDisplayModels = value; }
         }
 
 
-        private List<PageModel> _pageModels = new List<PageModel>();
+        private List<PageDisplayModel> _pageDisplayModels = new List<PageDisplayModel>();
         private IList<Page> _pages = new List<Page>(); 
         private int _displayMode;
         
@@ -63,10 +63,10 @@ namespace UIH.Mcsf.Filming.Interfaces
         {
             // TODO: Layout of New Page
             // TODO: if _pages is not empty, last page change to a break page
-            var index =_pageModels.FindLastIndex(p => p.IsVisible)+1;
-            _pageModels[index].IsVisible = true;
+            var index =_pageDisplayModels.FindLastIndex(p => p.IsVisible)+1;
+            _pageDisplayModels[index].IsVisible = true;
             if (index != 0)
-                _pageModels[index - 1].IsBreak = true;
+                _pageDisplayModels[index - 1].IsBreak = true;
 
             _pages.Add(new Page());
         }

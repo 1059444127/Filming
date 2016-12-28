@@ -33,11 +33,11 @@ namespace UIH.Mcsf.Filming.View
         //private void FillPages()
         //{
         //    var i = 0;
-        //    while (i < PageModels.Count && i < _displayMode)
+        //    while (i < PageDisplayModels.Count && i < _displayMode)
         //    {
         //        var pageControl = _pages[i];
-        //        pageControl.Visibility = Visibility.Visible;   //TODO: PageControl.Visibility Binding to PageModel
-        //        var pageModel = PageModels[i];
+        //        pageControl.Visibility = Visibility.Visible;   //TODO: PageControl.Visibility Binding to PageDisplayModel
+        //        var pageModel = PageDisplayModels[i];
         //        //TODO-later: 出于性能方面的考虑，View（BoardControl）依赖了ViewModel（PageViewModel）
         //        pageControl.DataContext = new PageControlViewModel(pageModel);
         //        i++;
@@ -67,7 +67,7 @@ namespace UIH.Mcsf.Filming.View
 
         //TODO-later: PageControl Position Management
         //TODO: BoardControl. When DisplayMode changed, Re-place Grid content
-        //TODO: BoardControl. When Index of First PageModel changed, Re-place Grid content
+        //TODO: BoardControl. When Index of First PageDisplayModel changed, Re-place Grid content
         //TODO-bug: 最后一张胶片的PageBreak无法显示
         private void PlacePagesToGrid(int row, int col)
         {
@@ -146,7 +146,7 @@ namespace UIH.Mcsf.Filming.View
 
         private void SetPageDataContext()
         {
-            var pageModels = BoardModel.PageModels;
+            var pageModels = BoardModel.PageDisplayModels;
             Debug.Assert(pageModels.Count == GlobalDefinitions.MaxDisplayMode);
 
             for (int i = 0; i < GlobalDefinitions.MaxDisplayMode; i++)

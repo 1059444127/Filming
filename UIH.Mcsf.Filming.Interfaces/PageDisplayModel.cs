@@ -1,22 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace UIH.Mcsf.Filming.Interfaces
 {
-    public class PageModel
+    public class PageDisplayModel
     {
         private bool _isBreak;
         private bool _isVisible;
         private readonly Page _page;
 
-        // TODO: Rename PageModel to PageDisplayModel
         // TODO: Rename Page to PageData
-        public PageModel(Page page)
+        public PageDisplayModel(Page page)
         {
             _page = page;
         }
 
-        public PageModel()
+        public PageDisplayModel()
         {
             // TODO: Create Class NullPageData To Replace new Page()
             // TODO: Create Class NullLayout

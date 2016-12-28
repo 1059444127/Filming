@@ -19,7 +19,7 @@ namespace UIH.Mcsf.Filming.UT
             boardModel.NewPage();
 
             // Assert
-            var pageModel = boardModel.PageModels.FirstOrDefault();
+            var pageModel = boardModel.PageDisplayModels.FirstOrDefault();
             Assert.IsTrue(pageModel!= null && pageModel.IsVisible);
         }
     }

@@ -73,7 +73,7 @@ namespace UIH.Mcsf.Filming.UserControlTests
         {
             var viewModel = _userControlViewModel as CardControlViewModel;
             var boardModel = new BoardModel();
-            boardModel.PageModels = CreatePages(GlobalDefinitions.MaxDisplayMode);
+            boardModel.PageDisplayModels = CreatePages(GlobalDefinitions.MaxDisplayMode);
 
             viewModel.BoardModel = boardModel;
 
@@ -137,15 +137,15 @@ namespace UIH.Mcsf.Filming.UserControlTests
             return cells;
         }
 
-        private static PageModel CreatePageModel()
+        private static PageDisplayModel CreatePageModel()
         {
             var page = new Page(Layout.CreateDefaultLayout(), CreateCells());
-            return new PageModel(page);
+            return new PageDisplayModel(page);
         }
 
-        private static List<PageModel> CreatePages(int pageCount)
+        private static List<PageDisplayModel> CreatePages(int pageCount)
         {
-            var pages = new List<PageModel>();
+            var pages = new List<PageDisplayModel>();
             for (int i = 0; i < pageCount; i++)
             {
                 var page = CreatePageModel();
