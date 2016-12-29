@@ -31,4 +31,14 @@ namespace UIH.Mcsf.Filming.Interfaces
 
         public int Int { get; private set; }
     }
+
+    public class PageModelEventArgs : EventArgs
+    {
+        public PageModelEventArgs(PageModel pageModel)
+        {
+            PageModel = pageModel;
+        }
+
+        public PageModel PageModel { get; private set; }
+    }
 }

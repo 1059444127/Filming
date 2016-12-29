@@ -34,7 +34,9 @@ namespace UIH.Mcsf.Filming.Interfaces
         }
 
         // TODO: BoardIndex
+        private int _boardIndex = 0;
         // TODO: BoardCount
+
 
         public BoardModel()
         {
@@ -42,7 +44,6 @@ namespace UIH.Mcsf.Filming.Interfaces
             {
                 _boardCells.Add(new BoardCell());
             }
-            _boardCells[0].IsVisible = true;
         }
 
         public List<BoardCell> BoardCells
@@ -61,10 +62,7 @@ namespace UIH.Mcsf.Filming.Interfaces
         {
             // TODO: Layout of New Page
             // TODO: if _pages is not empty, last page change to a break page
-            //var index =_boardCells.FindLastIndex(p => p.IsVisible)+1;
-            //_boardCells[index].IsVisible = true;
-            //if (index != 0)
-            //    _boardCells[index - 1].IsBreak = true;
+            
 
         }
     }

@@ -1,9 +1,11 @@
-﻿namespace UIH.Mcsf.Filming.Interfaces
+﻿using System;
+
+namespace UIH.Mcsf.Filming.Interfaces
 {
     public class BoardCell
     {
         // TODO: BoardCell.PageDataChanged Event
-        private readonly PageModel _pageModel;
+        private PageModel _pageModel;
         // TODO-Later: Replace BoardCell(PageModel PageModel) with PageModel.setter
         public BoardCell(PageModel pageModel)
         {
@@ -24,6 +26,14 @@
         public PageModel PageModel
         {
             get { return _pageModel; }
+            set
+            {
+                if (_pageModel == value) return;
+                _pageModel = value;
+                PageModelChanged(this, new PageModelEventArgs(value));
+            }
         }
+
+        public event EventHandler<PageModelEventArgs> PageModelChanged = delegate { };
     }
 }

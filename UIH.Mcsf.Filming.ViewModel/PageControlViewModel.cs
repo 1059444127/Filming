@@ -17,14 +17,28 @@ namespace UIH.Mcsf.Filming.ViewModel
         //TODO: Binding Page.ImageCells Changed
         public PageControlViewModel(BoardCell boardCell)
         {
-            var pageModel = boardCell.PageModel;
-            if (_pageModel == pageModel) return;
+            boardCell.PageModelChanged += BoardCellOnPageModelChanged;
 
-            UnRegisterPageModelEvent();
-            _pageModel = pageModel;
-            RegisterPageModelEvent();
+            PageModel = boardCell.PageModel;
+        }
 
-            RefreshPage();
+        private PageModel PageModel
+        {
+            set
+            {
+                if (_pageModel == value) return;
+
+                UnRegisterPageModelEvent();
+                _pageModel = value;
+                RegisterPageModelEvent();
+
+                RefreshPage();
+            }
+        }
+
+        private void BoardCellOnPageModelChanged(object sender, PageModelEventArgs pageModelEventArgs)
+        {
+            PageModel = pageModelEventArgs.PageModel;
         }
 
         private void RegisterPageModelEvent()
