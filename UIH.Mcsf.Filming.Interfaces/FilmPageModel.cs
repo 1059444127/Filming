@@ -10,10 +10,10 @@ namespace UIH.Mcsf.Filming.Interfaces
         private bool _isVisible;
         private bool _isBreak;
 
-        public FilmPageModel(Layout layout, IList<ImageCell> imageCells) 
+        public FilmPageModel(Layout layout) 
         {
             _layout = layout;
-            _imageCells = imageCells;
+            _imageCells = ImageCell.CreateCells(layout.Capacity);
         }
 
         #region Overrides of PageModel

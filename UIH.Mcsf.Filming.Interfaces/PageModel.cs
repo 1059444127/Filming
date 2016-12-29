@@ -6,9 +6,9 @@ namespace UIH.Mcsf.Filming.Interfaces
     public abstract class PageModel
     {
 
-        public static PageModel CreatePageModel(Layout layout, IList<ImageCell> imageCells)
+        public static PageModel CreatePageModel(Layout layout)
         {
-            return new FilmPageModel(layout, imageCells);
+            return new FilmPageModel(layout);
         }
 
         public static PageModel CreatePageModel()

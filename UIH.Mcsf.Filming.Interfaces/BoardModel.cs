@@ -62,7 +62,9 @@ namespace UIH.Mcsf.Filming.Interfaces
         {
             // TODO: Layout of New Page
             // TODO: if _pages is not empty, last page change to a break page
-            
+            var boardCell = BoardCells[0];
+            boardCell.PageModel = PageModel.CreatePageModel(Layout.CreateDefaultLayout());
+            boardCell.IsVisible = true;
 
         }
     }

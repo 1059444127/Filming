@@ -138,7 +138,7 @@ namespace UIH.Mcsf.Filming.UserControlTests
 
         private static BoardCell CreatePageModel()
         {
-            var page = PageModel.CreatePageModel(Layout.CreateLayout(3, 3), CreateCells());
+            var page = PageModel.CreatePageModel(Layout.CreateLayout(3, 3));
             return new BoardCell(page);
         }
 
