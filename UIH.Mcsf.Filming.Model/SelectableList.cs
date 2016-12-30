@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 
@@ -7,6 +8,8 @@ namespace UIH.Mcsf.Filming.Model
     public class SelectableList<T> : IList<T> where T : class, ISelect
     {
         private readonly List<T> _elements = new List<T>();
+
+        public event EventHandler<IntEventArgs> CountChanged = delegate { };
 
         #region [--Event Handler--]
 
@@ -58,12 +61,14 @@ namespace UIH.Mcsf.Filming.Model
             RegisterElementEvent(item);
 
             _elements.Add(item);
+            CountChanged(this, new IntEventArgs(Count));
         }
 
         public void Clear()
         {
             _elements.ForEach(UnRegisterElementEvent);
             _elements.Clear();
+            CountChanged(this, new IntEventArgs(Count));
         }
 
         public bool Contains(T item)
@@ -79,7 +84,9 @@ namespace UIH.Mcsf.Filming.Model
         public bool Remove(T item)
         {
             UnRegisterElementEvent(item);
-            return _elements.Remove(item);
+            var remove = _elements.Remove(item);
+            CountChanged(this, new IntEventArgs(Count));
+            return remove;
         }
 
         public int Count
@@ -105,12 +112,14 @@ namespace UIH.Mcsf.Filming.Model
         {
             RegisterElementEvent(item);
             _elements.Insert(index, item);
+            CountChanged(this, new IntEventArgs(Count));
         }
 
         public void RemoveAt(int index)
         {
             UnRegisterElementEvent(this[index]);
             _elements.RemoveAt(index);
+            CountChanged(this, new IntEventArgs(Count));
         }
 
         public T this[int index]
