@@ -44,6 +44,12 @@ namespace UIH.Mcsf.Filming.Interfaces
                 _boardCells.Add(new BoardCell());
             }
             _dataModel.PageChanged += DataModelOnPageChanged;
+            _dataModel.FocusChanged += DataModelOnFocusChanged;
+        }
+
+        private void DataModelOnFocusChanged(object sender, IntEventArgs intEventArgs)
+        {
+            
         }
 
         private void DataModelOnPageChanged(object sender, IntEventArgs intEventArgs)
@@ -83,6 +89,7 @@ namespace UIH.Mcsf.Filming.Interfaces
 
         // TODO-New-Feature: New Page is Selected
         // TODO-New-Feature: First Cell of New Page is Focused and Selected
+        // TODO-New-Feature-working-on: New Page is Displayed
         public void NewPage()
         {
             _dataModel.AppendPage();
@@ -99,7 +106,10 @@ namespace UIH.Mcsf.Filming.Interfaces
 
             // TODO-Later: Layout of New Page is the same with LastPage
             _pages.Add(PageModel.CreatePageModel(Layout.CreateDefaultLayout()));
-            PageChanged(this, new IntEventArgs(_pages.Count-1));
+
+            var lastPageNO = _pages.Count-1;
+            PageChanged(this, new IntEventArgs(lastPageNO));
+            FocusChanged(this, new IntEventArgs(lastPageNO));
         }
 
         private void MakeLastPageBreak()
@@ -108,6 +118,7 @@ namespace UIH.Mcsf.Filming.Interfaces
         }
 
         public event EventHandler<IntEventArgs> PageChanged = delegate { };
+        public event EventHandler<IntEventArgs> FocusChanged = delegate { }; 
 
         public PageModel this[int pageNO]
         {
