@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using UIH.Mcsf.Filming.Interfaces;
+﻿using System.Collections.Generic;
 
 namespace UIH.Mcsf.Filming.Model
 {

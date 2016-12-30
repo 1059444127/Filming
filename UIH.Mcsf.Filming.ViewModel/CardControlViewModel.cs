@@ -1,9 +1,8 @@
-﻿using System;
-using System.Windows.Controls;
+﻿using System.Windows.Controls;
 using System.Windows.Input;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
-using UIH.Mcsf.Filming.Interfaces;
+using UIH.Mcsf.Filming.Model;
 
 namespace UIH.Mcsf.Filming.ViewModel
 {
@@ -28,7 +27,7 @@ namespace UIH.Mcsf.Filming.ViewModel
             {
                 if (_boardModel == value) return;
                 _boardModel = value;
-                _boardModel.BoardNOChanged += BoardModelOnBoardNOChanged;  // BoardModel 只有一个
+                _boardModel.BoardNOChanged += BoardModelOnBoardNOChanged; // BoardModel 只有一个
                 _boardModel.BoardCountChanged += BoardModelOnBoardCountChanged;
                 RaisePropertyChanged(() => BoardModel);
             }
@@ -37,7 +36,7 @@ namespace UIH.Mcsf.Filming.ViewModel
         private void BoardModelOnBoardCountChanged(object sender, IntEventArgs intEventArgs)
         {
             var boardCount = intEventArgs.Int;
-            BoardMaxNO = boardCount-1;
+            BoardMaxNO = boardCount - 1;
         }
 
         private void BoardModelOnBoardNOChanged(object sender, IntEventArgs intEventArgs)
@@ -98,8 +97,6 @@ namespace UIH.Mcsf.Filming.ViewModel
         }
 
         #endregion [--BoardMaxNO--]
-
-
 
         #region [--NewPageCommand--]
 

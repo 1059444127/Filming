@@ -91,6 +91,10 @@
       <Project>{ED1963FE-3448-4B89-A2A0-0EE1BB84DB96}</Project>
       <Name>UIH.Mcsf.Filming.Converters</Name>
     </ProjectReference>
+    <ProjectReference Include="..\UIH.Mcsf.Filming.Model\UIH.Mcsf.Filming.Model.csproj">
+      <Project>{CCC8D6AA-A1B5-422F-9789-B66FF2F1DBAB}</Project>
+      <Name>UIH.Mcsf.Filming.Model</Name>
+    </ProjectReference>
     <ProjectReference Include="..\UIH.Mcsf.Filming.ViewModel\UIH.Mcsf.Filming.ViewModel.csproj">
       <Project>{97E2660E-022C-4923-8BAE-42DF2024FC7F}</Project>
       <Name>UIH.Mcsf.Filming.ViewModel</Name>

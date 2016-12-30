@@ -1,10 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using UIH.Mcsf.Filming.Interfaces;
 
-namespace UIH.Mcsf.Filming.Interfaces
+namespace UIH.Mcsf.Filming.Model
 {
     public abstract class PageModel
     {
+        public abstract Layout Layout { get; }
+        public abstract IList<ImageCell> ImageCells { get; set; }
+        public abstract bool IsBreak { get; set; }
+        public abstract bool IsVisible { get; set; }
 
         public static PageModel CreatePageModel(Layout layout)
         {
@@ -15,14 +20,6 @@ namespace UIH.Mcsf.Filming.Interfaces
         {
             return new NullPageModel();
         }
-
-        public abstract Layout Layout { get; }
-        public abstract IList<ImageCell> ImageCells { get; set; }
-
-        public abstract bool IsBreak { get; set; }
-
-        public abstract bool IsVisible { get; set; }
-
 
         public event EventHandler<BoolEventArgs> IsBreakChanged = delegate { };
         public event EventHandler<BoolEventArgs> VisibleChanged = delegate { };

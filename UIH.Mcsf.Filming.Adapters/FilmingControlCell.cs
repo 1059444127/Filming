@@ -1,6 +1,5 @@
-﻿using System;
-using System.Diagnostics;
-using UIH.Mcsf.Filming.Interfaces;
+﻿using UIH.Mcsf.Filming.Interfaces;
+using UIH.Mcsf.Filming.Model;
 using UIH.Mcsf.Viewer;
 
 namespace UIH.Mcsf.Filming.Adapters

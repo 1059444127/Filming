@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
+using UIH.Mcsf.Filming.Interfaces;
 
-namespace UIH.Mcsf.Filming.Interfaces
+namespace UIH.Mcsf.Filming.Model
 {
     internal class NullPageModel : PageModel
     {
@@ -20,7 +21,7 @@ namespace UIH.Mcsf.Filming.Interfaces
         public override bool IsBreak
         {
             get { return false; }
-            set {  }
+            set { }
         }
 
         public override bool IsVisible

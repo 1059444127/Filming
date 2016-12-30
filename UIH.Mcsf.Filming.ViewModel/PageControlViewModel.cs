@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
 using GalaSoft.MvvmLight;
 using UIH.Mcsf.Filming.Interfaces;
+using UIH.Mcsf.Filming.Model;
 
 namespace UIH.Mcsf.Filming.ViewModel
 {
@@ -46,7 +45,6 @@ namespace UIH.Mcsf.Filming.ViewModel
             UnRegisterPageModelEvent();
             _pageModel.VisibleChanged += PageModelOnVisibleChanged;
             _pageModel.IsBreakChanged += PageModelOnIsBreakChanged;
-            
         }
 
         private void UnRegisterPageModelEvent()
@@ -78,6 +76,13 @@ namespace UIH.Mcsf.Filming.ViewModel
             Visibility = BoolToVisibility(boolEventArgs.Bool);
         }
 
+        //TODO: PageControlViewModel.RefreshTitle()
+        private void RefreshTitle()
+        {
+            //var sampleCell = ImageCells.FirstOrDefault();
+            //AccessionNumber = sampleCell.AccessionNumber;
+        }
+
         #region [--BreakVisibility--]
 
         private Visibility _breakVisibility;
@@ -95,7 +100,6 @@ namespace UIH.Mcsf.Filming.ViewModel
 
         #endregion [--BreakVisibility--]
 
-
         #region [--Visibility--]
 
         private Visibility _visibility;
@@ -112,7 +116,6 @@ namespace UIH.Mcsf.Filming.ViewModel
         }
 
         #endregion [--Visibility--]
-
 
         #region [--Layout--]
 
@@ -147,7 +150,6 @@ namespace UIH.Mcsf.Filming.ViewModel
                 RaisePropertyChanged(() => ImageCells);
             }
         }
-
 
         #endregion [--ImageCells--]
 
@@ -185,7 +187,6 @@ namespace UIH.Mcsf.Filming.ViewModel
 
         #endregion [--PageCount--]
 
-
         #region [--TitleBarVisibility--]
 
         private Visibility _titleBarVisibility = Visibility.Visible;
@@ -219,7 +220,6 @@ namespace UIH.Mcsf.Filming.ViewModel
         }
 
         #endregion [--TitleBarPosition--]
-
 
         #region [--Patient Info--]
 
@@ -291,7 +291,6 @@ namespace UIH.Mcsf.Filming.ViewModel
 
         #endregion [--PatientSex--]
 
-
         #endregion [--Patient Info--]
 
         #region [--Study Info--]
@@ -344,16 +343,9 @@ namespace UIH.Mcsf.Filming.ViewModel
                 RaisePropertyChanged(() => AccessionNumber);
             }
         }
+
         #endregion [--AccessionNumber--]
 
-
         #endregion [--Study Info--]
-
-        //TODO: PageControlViewModel.RefreshTitle()
-        private void RefreshTitle()
-        {
-            //var sampleCell = ImageCells.FirstOrDefault();
-            //AccessionNumber = sampleCell.AccessionNumber;
-        }
     }
 }

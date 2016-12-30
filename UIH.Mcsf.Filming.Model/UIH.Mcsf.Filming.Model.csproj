@@ -42,10 +42,19 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="UIH.Mcsf.Viewer.Interface, Version=1.0.6187.29972, Culture=neutral, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BoardCell.cs" />
+    <Compile Include="BoardModel.cs" />
     <Compile Include="Cell.cs" />
     <Compile Include="DummySelectOperator.cs" />
+    <Compile Include="EventArgs.cs" />
+    <Compile Include="FilmPageModel.cs" />
+    <Compile Include="ImageCell.cs" />
+    <Compile Include="ISelect.cs" />
+    <Compile Include="NullPageModel.cs" />
+    <Compile Include="PageModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SelectableList.cs" />
     <Compile Include="SelectOnlyOpertator.cs" />

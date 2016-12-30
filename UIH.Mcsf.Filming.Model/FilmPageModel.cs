@@ -1,16 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using UIH.Mcsf.Filming.Interfaces;
 
-namespace UIH.Mcsf.Filming.Interfaces
+namespace UIH.Mcsf.Filming.Model
 {
-    class FilmPageModel : PageModel
+    internal class FilmPageModel : PageModel
     {
-        private Layout _layout;
         private IList<ImageCell> _imageCells;
-        private bool _isVisible;
         private bool _isBreak;
+        private bool _isVisible;
+        private readonly Layout _layout;
 
-        public FilmPageModel(Layout layout) 
+        public FilmPageModel(Layout layout)
         {
             _layout = layout;
             _imageCells = ImageCell.CreateCells(layout.Capacity);
@@ -34,7 +34,7 @@ namespace UIH.Mcsf.Filming.Interfaces
             get { return _isBreak; }
             set
             {
-                if(_isBreak == value) return;
+                if (_isBreak == value) return;
                 _isBreak = value;
                 OnBreakChanged();
             }
@@ -50,7 +50,6 @@ namespace UIH.Mcsf.Filming.Interfaces
                 OnVisibleChanged();
             }
         }
-
 
         #endregion
     }
