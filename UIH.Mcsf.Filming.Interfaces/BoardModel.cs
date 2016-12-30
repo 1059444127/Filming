@@ -81,13 +81,10 @@ namespace UIH.Mcsf.Filming.Interfaces
         private DataModel _dataModel = new DataModel();
         private int _groupNO = 0; // number of MaxDisplayMode is a group
 
-        // TODO-New-Feature: New Page is Selected, and its first Cell is Focused and Select
+        // TODO-New-Feature: New Page is Selected
+        // TODO-New-Feature: First Cell of New Page is Focused and Selected
         public void NewPage()
         {
-            // TODO: Layout of New Page
-            //var boardCell = BoardCells[0];
-            //boardCell.PageModel = PageModel.CreatePageModel(Layout.CreateDefaultLayout());
-            //boardCell.IsVisible = true;
             _dataModel.AppendPage();
         }
     }
@@ -100,6 +97,7 @@ namespace UIH.Mcsf.Filming.Interfaces
         {
             MakeLastPageBreak();
 
+            // TODO-Later: Layout of New Page is the same with LastPage
             _pages.Add(PageModel.CreatePageModel(Layout.CreateDefaultLayout()));
             PageChanged(this, new IntEventArgs(_pages.Count-1));
         }
