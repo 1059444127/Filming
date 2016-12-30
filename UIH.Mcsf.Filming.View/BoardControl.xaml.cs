@@ -147,7 +147,7 @@ namespace UIH.Mcsf.Filming.View
         private void SetPageDataContext()
         {
             var boardCells = BoardModel.BoardCells;
-            Debug.Assert(boardCells.Count == GlobalDefinitions.MaxDisplayMode);
+            Debug.Assert(boardCells.Count >= GlobalDefinitions.MaxDisplayMode);
 
             for (int i = 0; i < GlobalDefinitions.MaxDisplayMode; i++)
             {

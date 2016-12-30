@@ -10,7 +10,6 @@ namespace UIH.Mcsf.Filming.Interfaces
 
         public int DisplayMode
         {
-            get { return _displayMode; }
             set
             {
                 if(_displayMode == value) return;
@@ -27,7 +26,7 @@ namespace UIH.Mcsf.Filming.Interfaces
             {
                 _boardCells[i].IsVisible = true;
             }
-            for (int i = _displayMode; i < GlobalDefinitions.MaxDisplayMode; i++)
+            for (int i = _displayMode; i <= GlobalDefinitions.MaxDisplayMode; i++)
             {
                 _boardCells[i].IsVisible = false;
             }
@@ -49,9 +48,25 @@ namespace UIH.Mcsf.Filming.Interfaces
 
         private void DataModelOnPageChanged(object sender, IntEventArgs intEventArgs)
         {
-            int pageNO = intEventArgs.Int;
-            int boardCellNO = BoardCellNOMapFrom(pageNO);
-            _boardCells[boardCellNO].PageModel = _dataModel[pageNO];
+            int boardCellNO = BoardCellNOMapFrom(intEventArgs.Int);
+            var boardCell = _boardCells[boardCellNO];
+
+            boardCell.PageModel = _dataModel[intEventArgs.Int];
+
+            boardCell.IsVisible = IsInBoard(boardCellNO);
+        }
+
+        private bool IsInBoard(int boardCellNO)
+        {
+            return boardCellNO < _displayMode;
+        }
+
+        private int BoardCellNOMapFrom(int pageNO)
+        {
+            var groupNO = pageNO/GlobalDefinitions.MaxDisplayMode;
+            if (groupNO != _groupNO) return GlobalDefinitions.MaxDisplayMode;
+
+            return pageNO%GlobalDefinitions.MaxDisplayMode;
         }
 
         public List<BoardCell> BoardCells
@@ -64,12 +79,12 @@ namespace UIH.Mcsf.Filming.Interfaces
         private List<BoardCell> _boardCells = new List<BoardCell>();
         private int _displayMode;
         private DataModel _dataModel = new DataModel();
-        
+        private int _groupNO = 0; // number of MaxDisplayMode is a group
+
         // TODO-New-Feature: New Page is Selected, and its first Cell is Focused and Select
         public void NewPage()
         {
             // TODO: Layout of New Page
-            // TODO: if _pages is not empty, last page change to a break page
             //var boardCell = BoardCells[0];
             //boardCell.PageModel = PageModel.CreatePageModel(Layout.CreateDefaultLayout());
             //boardCell.IsVisible = true;
@@ -83,15 +98,26 @@ namespace UIH.Mcsf.Filming.Interfaces
 
         public void AppendPage()
         {
+            MakeLastPageBreak();
+
             _pages.Add(PageModel.CreatePageModel(Layout.CreateDefaultLayout()));
             PageChanged(this, new IntEventArgs(_pages.Count-1));
+        }
+
+        private void MakeLastPageBreak()
+        {
+            this[_pages.Count - 1].IsBreak = true;
         }
 
         public event EventHandler<IntEventArgs> PageChanged = delegate { };
 
         public PageModel this[int pageNO]
         {
-            get { return _pages[pageNO]; }
+            get
+            {
+                if (pageNO < 0 || pageNO >= _pages.Count) return PageModel.CreatePageModel(); 
+                return _pages[pageNO];
+            }
         }
     }
 }
