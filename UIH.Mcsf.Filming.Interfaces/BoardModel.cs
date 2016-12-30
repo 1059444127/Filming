@@ -51,7 +51,7 @@ namespace UIH.Mcsf.Filming.Interfaces
         {
             int pageNO = intEventArgs.Int;
             int boardCellNO = BoardCellNOMapFrom(pageNO);
-            _boardCells[boardCellNO] = _dataModel[pageNO];
+            _boardCells[boardCellNO].PageModel = _dataModel[pageNO];
         }
 
         public List<BoardCell> BoardCells
@@ -88,5 +88,10 @@ namespace UIH.Mcsf.Filming.Interfaces
         }
 
         public event EventHandler<IntEventArgs> PageChanged = delegate { };
+
+        public PageModel this[int pageNO]
+        {
+            get { return _pages[pageNO]; }
+        }
     }
 }
