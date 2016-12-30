@@ -23,13 +23,26 @@ namespace UIH.Mcsf.Filming.ViewModel
 
         public BoardModel BoardModel
         {
-            get { return _boardModel; }
+            private get { return _boardModel; }
             set
             {
                 if (_boardModel == value) return;
                 _boardModel = value;
+                _boardModel.BoardNOChanged += BoardModelOnBoardNOChanged;  // BoardModel 只有一个
+                _boardModel.BoardCountChanged += BoardModelOnBoardCountChanged;
                 RaisePropertyChanged(() => BoardModel);
             }
+        }
+
+        private void BoardModelOnBoardCountChanged(object sender, IntEventArgs intEventArgs)
+        {
+            var boardCount = intEventArgs.Int;
+            BoardMaxNO = boardCount-1;
+        }
+
+        private void BoardModelOnBoardNOChanged(object sender, IntEventArgs intEventArgs)
+        {
+            BoardNO = intEventArgs.Int;
         }
 
         #endregion [--BoardModel--]
@@ -51,6 +64,42 @@ namespace UIH.Mcsf.Filming.ViewModel
         }
 
         #endregion [--DisplayMode--]
+
+        #region [--BoardNO--]
+
+        private int _boardNO;
+
+        public int BoardNO
+        {
+            get { return _boardNO; }
+            set
+            {
+                if (_boardNO == value) return;
+                _boardNO = value;
+                RaisePropertyChanged(() => BoardNO);
+            }
+        }
+
+        #endregion [--BoardNO--]
+
+        #region [--BoardMaxNO--]
+
+        private int _boardMaxNO = 10;
+
+        public int BoardMaxNO
+        {
+            get { return _boardMaxNO; }
+            set
+            {
+                if (_boardMaxNO == value) return;
+                _boardMaxNO = value;
+                RaisePropertyChanged(() => BoardMaxNO);
+            }
+        }
+
+        #endregion [--BoardMaxNO--]
+
+
 
         #region [--NewPageCommand--]
 

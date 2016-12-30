@@ -27,7 +27,7 @@
             <ContentControl Height="10" x:Name="PrintPanel"></ContentControl>
         </StackPanel>
         <DockPanel LastChildFill="True">
-            <ScrollBar DockPanel.Dock="Right"></ScrollBar>
+            <ScrollBar DockPanel.Dock="Right" Maximum="{Binding BoardMaxNO}" Minimum="0" Value="{Binding BoardNO}" ToolTip="{Binding BoardNO}"></ScrollBar>
             <view:BoardControl BoardModel="{Binding BoardModel}"/>
         </DockPanel>
     </DockPanel>

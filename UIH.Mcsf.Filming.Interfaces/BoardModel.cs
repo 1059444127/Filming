@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 
 namespace UIH.Mcsf.Filming.Interfaces
@@ -7,6 +8,8 @@ namespace UIH.Mcsf.Filming.Interfaces
     public class BoardModel
     {
         public event EventHandler<IntEventArgs> DisplayModeChanged = delegate { };
+        public event EventHandler<IntEventArgs> BoardNOChanged = delegate { };
+        public event EventHandler<IntEventArgs> BoardCountChanged = delegate { }; 
 
         public int DisplayMode
         {
@@ -32,9 +35,11 @@ namespace UIH.Mcsf.Filming.Interfaces
             }
         }
 
-        // TODO: BoardIndex
-        private int _boardIndex = 0;
+        // TODO: BoardNO
+        private int _boardNO = 0;
         // TODO: BoardCount
+        private int _boardCount = 10;
+        // TODO: PageCount Changed notification from Selectable<PageModel>
 
 
         public BoardModel()
@@ -49,15 +54,19 @@ namespace UIH.Mcsf.Filming.Interfaces
 
         private void DataModelOnFocusChanged(object sender, IntEventArgs intEventArgs)
         {
-            
+            var pageNO = intEventArgs.Int;
+            GroupNO = pageNO/GlobalDefinitions.MaxDisplayMode;
+            Debug.Assert(pageNO >= 0);
+            BoardNO = pageNO/_displayMode;
         }
 
         private void DataModelOnPageChanged(object sender, IntEventArgs intEventArgs)
         {
-            int boardCellNO = BoardCellNOMapFrom(intEventArgs.Int);
+            var pageNO = intEventArgs.Int;
+            int boardCellNO = BoardCellNOMapFrom(pageNO);
             var boardCell = _boardCells[boardCellNO];
 
-            boardCell.PageModel = _dataModel[intEventArgs.Int];
+            boardCell.PageModel = _dataModel[pageNO];
 
             boardCell.IsVisible = IsInBoard(boardCellNO);
         }
@@ -81,11 +90,57 @@ namespace UIH.Mcsf.Filming.Interfaces
             set { _boardCells = value; }
         }
 
+        private int GroupNO
+        {
+            set
+            {
+                if (_groupNO == value) return;
+                // TODO-Later: BoardModel.GroupNO Changed, PageModels Changed, make a progress Bar
+                _groupNO = value;
+
+                RefreshGroup();
+            }
+        }
+
+        private int BoardNO
+        {
+            set
+            {
+                if(_boardNO == value) return;
+                _boardNO = value;
+                Debug.Assert(_boardNO >=0 && _boardNO < _boardCount);
+                BoardNOChanged(this, new IntEventArgs(value));
+            }
+        }
+
+        private int BoardCount
+        {
+            set
+            {
+                if (_boardCount == value) return;
+                _boardCount = value;
+                Debug.Assert(_boardCount > _boardNO);
+                BoardCountChanged(this, new IntEventArgs(value));
+            }
+        }
+
+        private void RefreshGroup()
+        {
+            for (int boardCellNO = 0, pageNO = _groupNO*GlobalDefinitions.MaxDisplayMode;
+                boardCellNO < GlobalDefinitions.MaxDisplayMode;
+                boardCellNO++, pageNO++)
+            {
+                var boardCell = _boardCells[boardCellNO];
+                boardCell.PageModel = _dataModel[pageNO];
+                boardCell.IsVisible = IsInBoard(boardCellNO);
+            }
+        }
+
 
         private List<BoardCell> _boardCells = new List<BoardCell>();
         private int _displayMode;
         private DataModel _dataModel = new DataModel();
-        private int _groupNO = 0; // number of MaxDisplayMode is a group
+        private int _groupNO; // number of MaxDisplayMode is a group
 
         // TODO-New-Feature: New Page is Selected
         // TODO-New-Feature: First Cell of New Page is Focused and Selected
