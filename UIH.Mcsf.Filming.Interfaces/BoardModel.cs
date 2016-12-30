@@ -40,10 +40,18 @@ namespace UIH.Mcsf.Filming.Interfaces
 
         public BoardModel()
         {
-            for (int i = 0; i < GlobalDefinitions.MaxDisplayMode; i++)
+            for (int i = 0; i <= GlobalDefinitions.MaxDisplayMode; i++)
             {
                 _boardCells.Add(new BoardCell());
             }
+            _dataModel.PageChanged += DataModelOnPageChanged;
+        }
+
+        private void DataModelOnPageChanged(object sender, IntEventArgs intEventArgs)
+        {
+            int pageNO = intEventArgs.Int;
+            int boardCellNO = BoardCellNOMapFrom(pageNO);
+            _boardCells[boardCellNO] = _dataModel[pageNO];
         }
 
         public List<BoardCell> BoardCells
@@ -54,18 +62,31 @@ namespace UIH.Mcsf.Filming.Interfaces
 
 
         private List<BoardCell> _boardCells = new List<BoardCell>();
-        private IList<PageModel> _pages = new List<PageModel>(); 
         private int _displayMode;
+        private DataModel _dataModel = new DataModel();
         
         // TODO-New-Feature: New Page is Selected, and its first Cell is Focused and Select
         public void NewPage()
         {
             // TODO: Layout of New Page
             // TODO: if _pages is not empty, last page change to a break page
-            var boardCell = BoardCells[0];
-            boardCell.PageModel = PageModel.CreatePageModel(Layout.CreateDefaultLayout());
-            boardCell.IsVisible = true;
-
+            //var boardCell = BoardCells[0];
+            //boardCell.PageModel = PageModel.CreatePageModel(Layout.CreateDefaultLayout());
+            //boardCell.IsVisible = true;
+            _dataModel.AppendPage();
         }
+    }
+
+    class DataModel
+    {
+        private readonly IList<PageModel> _pages = new List<PageModel>();
+
+        public void AppendPage()
+        {
+            _pages.Add(PageModel.CreatePageModel(Layout.CreateDefaultLayout()));
+            PageChanged(this, new IntEventArgs(_pages.Count-1));
+        }
+
+        public event EventHandler<IntEventArgs> PageChanged = delegate { };
     }
 }
