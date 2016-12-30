@@ -4,19 +4,7 @@ namespace UIH.Mcsf.Filming.Interfaces
 {
     public class BoardCell
     {
-        // TODO: BoardCell.PageDataChanged Event
-        private PageModel _pageModel;
-        // TODO-Later: Replace BoardCell(PageModel PageModel) with PageModel.setter
-        public BoardCell(PageModel pageModel)
-        {
-            _pageModel = pageModel;
-        }
-
-        public BoardCell()
-        {
-            // TODO: Create Class NullLayout
-            _pageModel = PageModel.CreatePageModel();
-        }
+        private PageModel _pageModel = PageModel.CreatePageModel();
 
         public bool IsVisible
         {
