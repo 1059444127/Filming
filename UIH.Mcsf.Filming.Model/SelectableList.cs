@@ -115,7 +115,7 @@ namespace UIH.Mcsf.Filming.Model
             _elements.RemoveAt(index);
         }
 
-        public T this[int index]
+        public virtual T this[int index]
         {
             get { return _elements[index]; }
             set { _elements[index] = value; }

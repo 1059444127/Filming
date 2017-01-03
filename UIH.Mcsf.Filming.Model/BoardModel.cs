@@ -151,16 +151,14 @@ namespace UIH.Mcsf.Filming.Model
 
     internal class DataModel : SelectableList<PageModel>
     {
-        private readonly IList<PageModel> _pages = new List<PageModel>();
-        
+    
 
-        // TODO: DataModel[PageNO] override SelectableList[index]
-        public PageModel this[int pageNO]
+        public override PageModel this[int pageNO]
         {
             get
             {
-                if (pageNO < 0 || pageNO >= _pages.Count) return PageModel.CreatePageModel();
-                return _pages[pageNO];
+                if (pageNO < 0 || pageNO >= Count) return PageModel.CreatePageModel();
+                return base[pageNO];
             }
         }
 
@@ -169,57 +167,54 @@ namespace UIH.Mcsf.Filming.Model
             MakeLastPageBreak();
 
             // TODO-Later: Layout of New Page is the same with LastPage
-            // TODO: Use this(DataModel).Add(page)
-            _pages.Add(PageModel.CreatePageModel(Layout.CreateDefaultLayout()));
+            Add(PageModel.CreatePageModel(Layout.CreateDefaultLayout()));
 
-            var lastPageNO = _pages.Count - 1;
+            var lastPageNO = Count - 1;
             PageChanged(this, new IntEventArgs(lastPageNO));
             FocusChanged(this, new IntEventArgs(lastPageNO));
         }
 
         private void MakeLastPageBreak()
         {
-            this[_pages.Count - 1].IsBreak = true;
+            this[Count - 1].IsBreak = true;
         }
 
         public event EventHandler<IntEventArgs> PageChanged = delegate { };
         public event EventHandler<IntEventArgs> FocusChanged = delegate { };
         // TODO-working-on: pageCountChanged event
-        // TODO: Rename DataModel.CountChanged to DataModel.PageCountChanged
-        // TODO: Change Type of DataModel.CountChanged From EventHandler<IntEventArgs> to EventHandler
-        public event EventHandler CountChanged = delegate { };
+        public event EventHandler PageCountChanged = delegate { };
 
         #region Overrides of SelectableList<PageModel>
 
         public override void Add(PageModel item)
         {
             base.Add(item);
-            CountChanged(this, new EventArgs());
+            PageCountChanged(this, new EventArgs());
         }
 
         public override void Clear()
         {
             base.Clear();
-            CountChanged(this, new EventArgs());
+            PageCountChanged(this, new EventArgs());
         }
 
         public override bool Remove(PageModel item)
         {
             var remove = base.Remove(item);
-            CountChanged(this, new EventArgs());
+            PageCountChanged(this, new EventArgs());
             return remove;
         }
 
         public override void Insert(int index, PageModel item)
         {
             base.Insert(index, item);
-            CountChanged(this, new EventArgs());
+            PageCountChanged(this, new EventArgs());
         }
 
         public override void RemoveAt(int index)
         {
             base.RemoveAt(index);
-            CountChanged(this, new EventArgs());
+            PageCountChanged(this, new EventArgs());
         }
 
         #endregion
