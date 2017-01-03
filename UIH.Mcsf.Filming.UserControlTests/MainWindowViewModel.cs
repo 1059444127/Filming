@@ -76,7 +76,7 @@ namespace UIH.Mcsf.Filming.UserControlTests
 
             viewModel.BoardModel = boardModel;
 
-            boardModel.DisplayMode = 3;
+            boardModel.CellCount = 3;
 
         }
 

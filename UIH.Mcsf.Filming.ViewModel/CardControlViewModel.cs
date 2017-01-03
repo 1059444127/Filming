@@ -58,7 +58,7 @@ namespace UIH.Mcsf.Filming.ViewModel
                 if (_displayMode == value) return;
                 _displayMode = value;
                 RaisePropertyChanged(() => DisplayMode);
-                BoardModel.DisplayMode = value;
+                BoardModel.CellCount = value;
             }
         }
 

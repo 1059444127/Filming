@@ -165,7 +165,7 @@ namespace UIH.Mcsf.Filming.View
 
         private void OnBoardDisplayModeChanged(object sender, EventArgs e)
         {
-            DisplayMode = new DisplayMode(BoardModel.DisplayMode);
+            DisplayMode = new DisplayMode(BoardModel.CellCount);
         }
     }
 }

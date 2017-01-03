@@ -8,7 +8,7 @@ namespace UIH.Mcsf.Filming.Model
     // TODO-working-on: Extract IBoardModel From BoardModel
     public interface ICellCount
     {
-        int DisplayMode { get; set; }
+        int CellCount { get; set; }
         event EventHandler DisplayModeChanged;
     }
 
@@ -33,7 +33,7 @@ namespace UIH.Mcsf.Filming.Model
         private int _boardCount = 1;
         // TODO: BoardNO
         private int _boardNO;
-        private int _displayMode = 1;
+        private int _displayedBoardCellCount = 1;
         private int _groupNO; // number of MaxDisplayMode is a group
         private readonly DataModel _dataModel = new DataModel();
         // TODO: PageCount Changed notification from Selectable<PageModel>
@@ -50,13 +50,13 @@ namespace UIH.Mcsf.Filming.Model
 
         #region [--Implement From ICellCount--]
 
-        public int DisplayMode
+        public int CellCount
         {
             get { throw new NotImplementedException(); }
             set
             {
-                if (_displayMode == value) return;
-                _displayMode = value;
+                if (_displayedBoardCellCount == value) return;
+                _displayedBoardCellCount = value;
                 DisplayModeChanged(this, new EventArgs());
                 MakeBoardView();
             }
@@ -128,11 +128,11 @@ namespace UIH.Mcsf.Filming.Model
 
         private void MakeBoardView()
         {
-            for (var i = 0; i < _displayMode; i++)
+            for (var i = 0; i < _displayedBoardCellCount; i++)
             {
                 _boardCells[i].IsVisible = true;
             }
-            for (var i = _displayMode; i <= GlobalDefinitions.MaxDisplayMode; i++)
+            for (var i = _displayedBoardCellCount; i <= GlobalDefinitions.MaxDisplayMode; i++)
             {
                 _boardCells[i].IsVisible = false;
             }
@@ -149,7 +149,7 @@ namespace UIH.Mcsf.Filming.Model
         {
             var pageCount = _dataModel.Count;
             BoardCount = pageCount > 0 
-                ? (int)Math.Ceiling((0.0+pageCount)/_displayMode)
+                ? (int)Math.Ceiling((0.0+pageCount)/_displayedBoardCellCount)
                 : 1;
         }
 
@@ -158,7 +158,7 @@ namespace UIH.Mcsf.Filming.Model
             var pageNO = intEventArgs.Int;
             GroupNO = pageNO/GlobalDefinitions.MaxDisplayMode;
             Debug.Assert(pageNO >= 0);
-            BoardNO = pageNO/_displayMode;
+            BoardNO = pageNO/_displayedBoardCellCount;
         }
 
         private void DataModelOnPageChanged(object sender, IntEventArgs intEventArgs)
@@ -174,7 +174,7 @@ namespace UIH.Mcsf.Filming.Model
 
         private bool IsInBoard(int boardCellNO)
         {
-            return boardCellNO < _displayMode;
+            return boardCellNO < _displayedBoardCellCount;
         }
 
         private int BoardCellNOMapFrom(int pageNO)
