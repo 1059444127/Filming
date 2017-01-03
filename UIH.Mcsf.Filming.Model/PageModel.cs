@@ -4,7 +4,7 @@ using UIH.Mcsf.Filming.Interfaces;
 
 namespace UIH.Mcsf.Filming.Model
 {
-    public abstract class PageModel
+    public abstract class PageModel : ISelect
     {
         public abstract Layout Layout { get; }
         public abstract IList<ImageCell> ImageCells { get; set; }
@@ -33,5 +33,15 @@ namespace UIH.Mcsf.Filming.Model
         {
             VisibleChanged(this, new BoolEventArgs(IsVisible));
         }
+
+        #region Implementation of ISelect
+
+        public bool IsSelected { get; set; }
+
+        public bool IsFocused { get; set; }
+
+        public event EventHandler<ClickStatusEventArgs> Clicked;
+
+        #endregion
     }
 }

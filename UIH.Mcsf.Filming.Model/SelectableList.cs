@@ -5,6 +5,7 @@ using System.Diagnostics;
 
 namespace UIH.Mcsf.Filming.Model
 {
+    // TODO: Move CountChanged event to class DataModel
     public class SelectableList<T> : IList<T> where T : class, ISelect
     {
         private readonly List<T> _elements = new List<T>();
