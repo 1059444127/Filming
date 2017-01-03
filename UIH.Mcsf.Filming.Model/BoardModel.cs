@@ -5,7 +5,8 @@ using UIH.Mcsf.Filming.Interfaces;
 
 namespace UIH.Mcsf.Filming.Model
 {
-    public class BoardModel
+    // TODO-working-on: Extract IBoardModel From BoardModel
+    public class BoardModelt
     {
         private List<BoardCell> _boardCells = new List<BoardCell>();
         // TODO-working-on: BoardCount
