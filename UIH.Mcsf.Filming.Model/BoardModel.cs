@@ -24,8 +24,7 @@ namespace UIH.Mcsf.Filming.Model
             {
                 _boardCells.Add(new BoardCell());
             }
-            _dataModel.PageChanged += DataModelOnPageChanged;
-            _dataModel.FocusChanged += DataModelOnFocusChanged;
+            RegisterDataModelEvent();
         }
 
         public int DisplayMode
@@ -35,7 +34,6 @@ namespace UIH.Mcsf.Filming.Model
                 if (_displayMode == value) return;
                 _displayMode = value;
                 DisplayModeChanged(this, new IntEventArgs(value));
-
                 MakeBoardView();
             }
         }
@@ -75,6 +73,7 @@ namespace UIH.Mcsf.Filming.Model
             {
                 if (_boardCount == value) return;
                 _boardCount = value;
+                // TODO-Bug-in-BoardModel: When DisplayModel=4, PageCount=4, NewPage, Then BoardCount=1, BoardNO=1, BoardCount=BoardNO
                 Debug.Assert(_boardCount > _boardNO);
                 BoardCountChanged(this, new IntEventArgs(value));
             }
@@ -94,6 +93,18 @@ namespace UIH.Mcsf.Filming.Model
             {
                 _boardCells[i].IsVisible = false;
             }
+        }
+
+        private void RegisterDataModelEvent()
+        {
+            _dataModel.PageChanged += DataModelOnPageChanged;
+            _dataModel.FocusChanged += DataModelOnFocusChanged;
+            _dataModel.PageCountChanged += DataModelOnPageCountChanged;
+        }
+
+        private void DataModelOnPageCountChanged(object sender, EventArgs eventArgs)
+        {
+            BoardCount = _dataModel.Count/_displayMode;
         }
 
         private void DataModelOnFocusChanged(object sender, IntEventArgs intEventArgs)
@@ -151,8 +162,6 @@ namespace UIH.Mcsf.Filming.Model
 
     internal class DataModel : SelectableList<PageModel>
     {
-    
-
         public override PageModel this[int pageNO]
         {
             get
@@ -180,6 +189,7 @@ namespace UIH.Mcsf.Filming.Model
         }
 
         public event EventHandler<IntEventArgs> PageChanged = delegate { };
+        // TODO: PageControl.IsFocused(TitleBar.Border=Yellow & IsSelected(TitleBar.Fill=Aqua)
         public event EventHandler<IntEventArgs> FocusChanged = delegate { };
         // TODO-working-on: pageCountChanged event
         public event EventHandler PageCountChanged = delegate { };
