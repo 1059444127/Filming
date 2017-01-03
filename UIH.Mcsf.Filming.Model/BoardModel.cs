@@ -6,7 +6,27 @@ using UIH.Mcsf.Filming.Interfaces;
 namespace UIH.Mcsf.Filming.Model
 {
     // TODO-working-on: Extract IBoardModel From BoardModel
-    public class BoardModel
+    public interface ICellCount
+    {
+        int DisplayMode { get; set; }
+        event EventHandler DisplayModeChanged;
+    }
+
+    public interface IBoardComponet : ICellCount
+    {
+        List<BoardCell> BoardCells { get; }
+    }
+
+    public interface IBoardModel : ICellCount
+    {
+        int BoardNO { get; set; }
+        int BoardCount { get; }
+        event EventHandler BoardNOChanged;
+        event EventHandler BoardCountChanged;
+        void NewPage();
+    }
+
+    public class BoardModel : IBoardModel, IBoardComponet
     {
         private List<BoardCell> _boardCells = new List<BoardCell>();
         // TODO-working-on: BoardCount
@@ -28,6 +48,8 @@ namespace UIH.Mcsf.Filming.Model
             RegisterDataModelEvent();
         }
 
+        #region [--Implement From ICellCount--]
+
         public int DisplayMode
         {
             get { throw new NotImplementedException(); }
@@ -40,23 +62,21 @@ namespace UIH.Mcsf.Filming.Model
             }
         }
 
+        public event EventHandler DisplayModeChanged = delegate { };
+
+        #endregion
+
+        #region [--Implement From IBoardComponet--]
+
         public List<BoardCell> BoardCells
         {
             get { return _boardCells; }
             set { _boardCells = value; }
         }
 
-        private int GroupNO
-        {
-            set
-            {
-                if (_groupNO == value) return;
-                // TODO-Later: BoardModel.GroupNO Changed, PageModels Changed, make a progress Bar
-                _groupNO = value;
+        #endregion
 
-                RefreshGroup();
-            }
-        }
+        #region [--Implement From IBoardModel--]
 
         public int BoardNO
         {
@@ -73,7 +93,7 @@ namespace UIH.Mcsf.Filming.Model
         public int BoardCount
         {
             get { return _boardCount; }
-            set
+            private set
             {
                 if (_boardCount == value) return;
                 _boardCount = value;
@@ -84,9 +104,27 @@ namespace UIH.Mcsf.Filming.Model
         }
 
         // TODO-working-on: BoardModel.EventHandler<IntEventArgs> to EventHandler 
-        public event EventHandler DisplayModeChanged = delegate { };
         public event EventHandler BoardNOChanged = delegate { };
         public event EventHandler BoardCountChanged = delegate { };
+
+        public void NewPage()
+        {
+            _dataModel.AppendPage();
+        }
+
+        #endregion
+
+        private int GroupNO
+        {
+            set
+            {
+                if (_groupNO == value) return;
+                // TODO-Later: BoardModel.GroupNO Changed, PageModels Changed, make a progress Bar
+                _groupNO = value;
+
+                RefreshGroup();
+            }
+        }
 
         private void MakeBoardView()
         {
@@ -162,10 +200,6 @@ namespace UIH.Mcsf.Filming.Model
         // TODO-New-Feature: New Page is Selected
         // TODO-New-Feature: First Cell of New Page is Focused and Selected
         // TODO-New-Feature-working-on: New Page is Displayed
-        public void NewPage()
-        {
-            _dataModel.AppendPage();
-        }
     }
 
     internal class DataModel : SelectableList<PageModel>
