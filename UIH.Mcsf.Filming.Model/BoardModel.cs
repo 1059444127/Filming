@@ -6,7 +6,7 @@ using UIH.Mcsf.Filming.Interfaces;
 namespace UIH.Mcsf.Filming.Model
 {
     // TODO-working-on: Extract IBoardModel From BoardModel
-    public class BoardModelt
+    public class BoardModel
     {
         private List<BoardCell> _boardCells = new List<BoardCell>();
         // TODO-working-on: BoardCount
@@ -30,11 +30,12 @@ namespace UIH.Mcsf.Filming.Model
 
         public int DisplayMode
         {
+            get { throw new NotImplementedException(); }
             set
             {
                 if (_displayMode == value) return;
                 _displayMode = value;
-                DisplayModeChanged(this, new IntEventArgs(value));
+                DisplayModeChanged(this, new EventArgs());
                 MakeBoardView();
             }
         }
@@ -57,32 +58,35 @@ namespace UIH.Mcsf.Filming.Model
             }
         }
 
-        private int BoardNO
+        public int BoardNO
         {
+            get { return _boardNO; }
             set
             {
                 if (_boardNO == value) return;
                 _boardNO = value;
                 Debug.Assert(_boardNO >= 0 && _boardNO < _boardCount);
-                BoardNOChanged(this, new IntEventArgs(value));
+                BoardNOChanged(this, new EventArgs());
             }
         }
 
-        private int BoardCount
+        public int BoardCount
         {
+            get { return _boardCount; }
             set
             {
                 if (_boardCount == value) return;
                 _boardCount = value;
                 // TODO-Bug-in-BoardModel: When DisplayModel=4, PageCount=4, NewPage, Then BoardCount=1, BoardNO=1, BoardCount=BoardNO
                 Debug.Assert(_boardCount > _boardNO);
-                BoardCountChanged(this, new IntEventArgs(value));
+                BoardCountChanged(this, new EventArgs());
             }
         }
 
-        public event EventHandler<IntEventArgs> DisplayModeChanged = delegate { };
-        public event EventHandler<IntEventArgs> BoardNOChanged = delegate { };
-        public event EventHandler<IntEventArgs> BoardCountChanged = delegate { };
+        // TODO-working-on: BoardModel.EventHandler<IntEventArgs> to EventHandler 
+        public event EventHandler DisplayModeChanged = delegate { };
+        public event EventHandler BoardNOChanged = delegate { };
+        public event EventHandler BoardCountChanged = delegate { };
 
         private void MakeBoardView()
         {

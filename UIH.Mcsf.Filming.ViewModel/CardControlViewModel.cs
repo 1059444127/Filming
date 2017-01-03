@@ -1,4 +1,5 @@
-﻿using System.Windows.Controls;
+﻿using System;
+using System.Windows.Controls;
 using System.Windows.Input;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
@@ -33,15 +34,14 @@ namespace UIH.Mcsf.Filming.ViewModel
             }
         }
 
-        private void BoardModelOnBoardCountChanged(object sender, IntEventArgs intEventArgs)
+        private void BoardModelOnBoardCountChanged(object sender, EventArgs args)
         {
-            var boardCount = intEventArgs.Int;
-            BoardMaxNO = boardCount - 1;
+            BoardMaxNO = _boardModel.BoardCount - 1;
         }
 
-        private void BoardModelOnBoardNOChanged(object sender, IntEventArgs intEventArgs)
+        private void BoardModelOnBoardNOChanged(object sender, EventArgs args)
         {
-            BoardNO = intEventArgs.Int;
+            BoardNO = _boardModel.BoardNO;
         }
 
         #endregion [--BoardModel--]

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
@@ -162,9 +163,9 @@ namespace UIH.Mcsf.Filming.View
             BoardModel.DisplayModeChanged += OnBoardDisplayModeChanged;
         }
 
-        private void OnBoardDisplayModeChanged(object sender, IntEventArgs e)
+        private void OnBoardDisplayModeChanged(object sender, EventArgs e)
         {
-            DisplayMode = new DisplayMode(e.Int);
+            DisplayMode = new DisplayMode(BoardModel.DisplayMode);
         }
     }
 }
