@@ -26,7 +26,13 @@ namespace UIH.Mcsf.Filming.Model
         void NewPage();
     }
 
-    public class BoardModel : IBoardModel, IBoardComponet
+    public interface IBoard : IBoardComponet, IBoardModel
+    {
+        
+    }
+    
+    // TODO: Rename BoardModel to Board
+    public class BoardModel : IBoard
     {
         private List<BoardCell> _boardCells = new List<BoardCell>();
         // TODO-working-on: BoardCount

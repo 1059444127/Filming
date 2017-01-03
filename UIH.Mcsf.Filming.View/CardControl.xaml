@@ -28,7 +28,7 @@
         </StackPanel>
         <DockPanel LastChildFill="True">
             <ScrollBar DockPanel.Dock="Right" Maximum="{Binding BoardMaxNO}" Minimum="0" Value="{Binding BoardNO}" ToolTip="{Binding BoardNO}"></ScrollBar>
-            <view:BoardControl BoardModel="{Binding BoardModel}"/>
+            <view:BoardControl BoardComponent="{Binding BoardModel}"/>
         </DockPanel>
     </DockPanel>
 </UserControl>

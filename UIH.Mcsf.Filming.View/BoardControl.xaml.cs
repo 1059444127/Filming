@@ -121,19 +121,19 @@ namespace UIH.Mcsf.Filming.View
             }
         }
 
-        #region [--BoardModelProperty--]
+        #region [--BoardComponentProperty--]
 
-        public BoardModel BoardModel
+        public BoardModel BoardComponent
         {
-            get { return (BoardModel)GetValue(BoardModelProperty); }
-            set { SetValue(BoardModelProperty, value); }
+            get { return (BoardModel)GetValue(BoardComponentProperty); }
+            set { SetValue(BoardComponentProperty, value); }
         }
 
 
 
-        // Using a DependencyProperty as the backing store for BoardModel.  This enables animation, styling, binding, etc...
-        public static readonly DependencyProperty BoardModelProperty =
-            DependencyProperty.Register("BoardModel", typeof(BoardModel), typeof(BoardControl), new PropertyMetadata(OnBoardModelPropertyChanged));
+        // Using a DependencyProperty as the backing store for BoardComponent.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty BoardComponentProperty =
+            DependencyProperty.Register("BoardComponent", typeof(BoardModel), typeof(BoardControl), new PropertyMetadata(OnBoardModelPropertyChanged));
 
         private static void OnBoardModelPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
@@ -144,11 +144,11 @@ namespace UIH.Mcsf.Filming.View
             boardControl.SetPageDataContext();
         }
 
-        #endregion [--BoardModelProperty--]
+        #endregion [--BoardComponentProperty--]
 
         private void SetPageDataContext()
         {
-            var boardCells = BoardModel.BoardCells;
+            var boardCells = BoardComponent.BoardCells;
             Debug.Assert(boardCells.Count >= GlobalDefinitions.MaxDisplayMode);
 
             for (int i = 0; i < GlobalDefinitions.MaxDisplayMode; i++)
@@ -159,13 +159,13 @@ namespace UIH.Mcsf.Filming.View
 
         private void RegisterBoardEvent()
         {
-            BoardModel.DisplayModeChanged -= OnBoardDisplayModeChanged;
-            BoardModel.DisplayModeChanged += OnBoardDisplayModeChanged;
+            BoardComponent.DisplayModeChanged -= OnBoardDisplayModeChanged;
+            BoardComponent.DisplayModeChanged += OnBoardDisplayModeChanged;
         }
 
         private void OnBoardDisplayModeChanged(object sender, EventArgs e)
         {
-            DisplayMode = new DisplayMode(BoardModel.CellCount);
+            DisplayMode = new DisplayMode(BoardComponent.CellCount);
         }
     }
 }
