@@ -181,5 +181,6 @@ namespace UIH.Mcsf.Filming.Model
 
         public event EventHandler<IntEventArgs> PageChanged = delegate { };
         public event EventHandler<IntEventArgs> FocusChanged = delegate { };
+        // TODO-working-on: pageCountChanged event
     }
 }
