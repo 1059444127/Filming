@@ -1,16 +1,13 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 
 namespace UIH.Mcsf.Filming.Model
 {
-    // TODO: Move CountChanged event to class DataModel
     public class SelectableList<T> : IList<T> where T : class, ISelect
     {
         private readonly List<T> _elements = new List<T>();
 
-        public event EventHandler<IntEventArgs> CountChanged = delegate { };
 
         #region [--Event Handler--]
 
@@ -57,19 +54,17 @@ namespace UIH.Mcsf.Filming.Model
 
         #region Implementation of ICollection<T>
 
-        public void Add(T item)
+        public virtual void Add(T item)
         {
             RegisterElementEvent(item);
 
             _elements.Add(item);
-            CountChanged(this, new IntEventArgs(Count));
         }
 
-        public void Clear()
+        public virtual void Clear()
         {
             _elements.ForEach(UnRegisterElementEvent);
             _elements.Clear();
-            CountChanged(this, new IntEventArgs(Count));
         }
 
         public bool Contains(T item)
@@ -82,11 +77,10 @@ namespace UIH.Mcsf.Filming.Model
             _elements.CopyTo(array, arrayIndex);
         }
 
-        public bool Remove(T item)
+        public virtual bool Remove(T item)
         {
             UnRegisterElementEvent(item);
             var remove = _elements.Remove(item);
-            CountChanged(this, new IntEventArgs(Count));
             return remove;
         }
 
@@ -109,18 +103,16 @@ namespace UIH.Mcsf.Filming.Model
             return _elements.IndexOf(item);
         }
 
-        public void Insert(int index, T item)
+        public virtual void Insert(int index, T item)
         {
             RegisterElementEvent(item);
             _elements.Insert(index, item);
-            CountChanged(this, new IntEventArgs(Count));
         }
 
-        public void RemoveAt(int index)
+        public virtual void RemoveAt(int index)
         {
             UnRegisterElementEvent(this[index]);
             _elements.RemoveAt(index);
-            CountChanged(this, new IntEventArgs(Count));
         }
 
         public T this[int index]
