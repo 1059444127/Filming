@@ -149,7 +149,7 @@ namespace UIH.Mcsf.Filming.Model
         }
     }
 
-    internal class DataModel
+    internal class DataModel : SelectableList<PageModel>
     {
         private readonly IList<PageModel> _pages = new List<PageModel>();
 
