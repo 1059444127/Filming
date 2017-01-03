@@ -9,10 +9,10 @@ namespace UIH.Mcsf.Filming.Model
     {
         private List<BoardCell> _boardCells = new List<BoardCell>();
         // TODO-working-on: BoardCount
-        private int _boardCount = 10;
+        private int _boardCount = 1;
         // TODO: BoardNO
         private int _boardNO;
-        private int _displayMode;
+        private int _displayMode = 1;
         private int _groupNO; // number of MaxDisplayMode is a group
         private readonly DataModel _dataModel = new DataModel();
         // TODO: PageCount Changed notification from Selectable<PageModel>
@@ -104,7 +104,10 @@ namespace UIH.Mcsf.Filming.Model
 
         private void DataModelOnPageCountChanged(object sender, EventArgs eventArgs)
         {
-            BoardCount = _dataModel.Count/_displayMode;
+            var pageCount = _dataModel.Count;
+            BoardCount = pageCount > 0 
+                ? (int)Math.Ceiling((0.0+pageCount)/_displayMode)
+                : 1;
         }
 
         private void DataModelOnFocusChanged(object sender, IntEventArgs intEventArgs)
@@ -192,6 +195,7 @@ namespace UIH.Mcsf.Filming.Model
         // TODO: PageControl.IsFocused(TitleBar.Border=Yellow & IsSelected(TitleBar.Fill=Aqua)
         public event EventHandler<IntEventArgs> FocusChanged = delegate { };
         // TODO-working-on: pageCountChanged event
+        // TODO-UT: DataModel.PageCountChanged
         public event EventHandler PageCountChanged = delegate { };
 
         #region Overrides of SelectableList<PageModel>

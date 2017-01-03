@@ -83,7 +83,7 @@ namespace UIH.Mcsf.Filming.ViewModel
 
         #region [--BoardMaxNO--]
 
-        private int _boardMaxNO = 10;
+        private int _boardMaxNO = 0;
 
         public int BoardMaxNO
         {

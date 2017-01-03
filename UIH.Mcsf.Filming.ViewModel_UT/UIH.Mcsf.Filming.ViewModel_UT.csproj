@@ -23,7 +23,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>..\..\..\..\UIH\bin_debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -60,10 +60,6 @@
     <Compile Include="PageControlViewModelTests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\UIH.Mcsf.Filming.Interfaces\UIH.Mcsf.Filming.Interfaces.csproj">
-      <Project>{27718D47-A3D6-4EA7-8669-E61A94562912}</Project>
-      <Name>UIH.Mcsf.Filming.Interfaces</Name>
-    </ProjectReference>
     <ProjectReference Include="..\UIH.Mcsf.Filming.ViewModel\UIH.Mcsf.Filming.ViewModel.csproj">
       <Project>{97E2660E-022C-4923-8BAE-42DF2024FC7F}</Project>
       <Name>UIH.Mcsf.Filming.ViewModel</Name>
