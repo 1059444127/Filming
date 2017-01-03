@@ -19,9 +19,9 @@ namespace UIH.Mcsf.Filming.ViewModel
 
         #region [--BoardModel--]
 
-        private BoardModel _boardModel;
+        private IBoardModel _boardModel;
 
-        public BoardModel BoardModel
+        public IBoardModel BoardModel
         {
             private get { return _boardModel; }
             set

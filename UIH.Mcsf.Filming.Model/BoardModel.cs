@@ -17,7 +17,7 @@ namespace UIH.Mcsf.Filming.Model
         List<BoardCell> BoardCells { get; }
     }
 
-    public interface IBoardModel : ICellCount
+    public interface IBoardModel : IBoardComponet
     {
         int BoardNO { get; set; }
         int BoardCount { get; }
@@ -26,13 +26,8 @@ namespace UIH.Mcsf.Filming.Model
         void NewPage();
     }
 
-    public interface IBoard : IBoardComponet, IBoardModel
-    {
-        
-    }
     
-    // TODO: Rename BoardModel to Board
-    public class BoardModel : IBoard
+    public class BoardModel : IBoardModel
     {
         private List<BoardCell> _boardCells = new List<BoardCell>();
         // TODO-working-on: BoardCount
