@@ -159,11 +159,11 @@ namespace UIH.Mcsf.Filming.View
 
         private void RegisterBoardEvent()
         {
-            BoardComponent.DisplayModeChanged -= OnBoardDisplayModeChanged;
-            BoardComponent.DisplayModeChanged += OnBoardDisplayModeChanged;
+            BoardComponent.CellCountChanged -= OnBoardCellCountChanged;
+            BoardComponent.CellCountChanged += OnBoardCellCountChanged;
         }
 
-        private void OnBoardDisplayModeChanged(object sender, EventArgs e)
+        private void OnBoardCellCountChanged(object sender, EventArgs e)
         {
             DisplayMode = new DisplayMode(BoardComponent.CellCount);
         }

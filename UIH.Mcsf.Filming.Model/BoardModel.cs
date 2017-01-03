@@ -9,7 +9,7 @@ namespace UIH.Mcsf.Filming.Model
     public interface ICellCount
     {
         int CellCount { get; set; }
-        event EventHandler DisplayModeChanged;
+        event EventHandler CellCountChanged;
     }
 
     public interface IBoardComponet : ICellCount
@@ -58,12 +58,12 @@ namespace UIH.Mcsf.Filming.Model
             {
                 if (_displayedBoardCellCount == value) return;
                 _displayedBoardCellCount = value;
-                DisplayModeChanged(this, new EventArgs());
+                CellCountChanged(this, new EventArgs());
                 MakeBoardView();
             }
         }
 
-        public event EventHandler DisplayModeChanged = delegate { };
+        public event EventHandler CellCountChanged = delegate { };
 
         #endregion
 
