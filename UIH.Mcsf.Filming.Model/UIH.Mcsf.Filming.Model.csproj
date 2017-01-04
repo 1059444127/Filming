@@ -42,7 +42,6 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="UIH.Mcsf.Viewer.Interface, Version=1.0.6187.29972, Culture=neutral, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BoardCell.cs" />
@@ -62,6 +61,10 @@
     <Compile Include="TakeBackSelectOperator.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\UIH.Mcsf.Filming.Adapters\UIH.Mcsf.Filming.Adapters.csproj">
+      <Project>{24E00A4C-AC9E-4DB0-90A1-3B68F0C7AC22}</Project>
+      <Name>UIH.Mcsf.Filming.Adapters</Name>
+    </ProjectReference>
     <ProjectReference Include="..\UIH.Mcsf.Filming.Interfaces\UIH.Mcsf.Filming.Interfaces.csproj">
       <Project>{27718D47-A3D6-4EA7-8669-E61A94562912}</Project>
       <Name>UIH.Mcsf.Filming.Interfaces</Name>

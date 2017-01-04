@@ -5,6 +5,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using GalaSoft.MvvmLight.Command;
+using UIH.Mcsf.Filming.Adapters;
 using UIH.Mcsf.Filming.Interfaces;
 using UIH.Mcsf.Filming.Model;
 using UIH.Mcsf.Filming.ViewModel;

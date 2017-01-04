@@ -44,6 +44,11 @@
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
     <Reference Include="System.Xaml" />
+    <Reference Include="UIH.Mcsf.App.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="UIH.Mcsf.Database.Wrapper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="UIH.Mcsf.DataHeader, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64" />
+    <Reference Include="UIH.Mcsf.MedDataLoader, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="UIH.Mcsf.MedStudyTree, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
     <Reference Include="UIH.Mcsf.Viewer.Control, Version=1.0.6187.29981, Culture=neutral, processorArchitecture=MSIL" />
     <Reference Include="UIH.Mcsf.Viewer.Interface, Version=1.0.6187.29972, Culture=neutral, processorArchitecture=MSIL" />
     <Reference Include="WindowsBase" />
@@ -54,7 +59,11 @@
     </CodeAnalysisDependentAssemblyPaths>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DisplayDataFactory.cs" />
     <Compile Include="FilmingControlCell.cs" />
+    <Compile Include="FilmingImageCell.cs" />
+    <Compile Include="ImageCellFactory.cs" />
+    <Compile Include="NullImageCell.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewerControlAdapter.xaml.cs">
       <DependentUpon>ViewerControlAdapter.xaml</DependentUpon>

@@ -3,7 +3,7 @@ using UIH.Mcsf.App.Common;
 using UIH.Mcsf.MedDataManagement;
 using UIH.Mcsf.Viewer;
 
-namespace UIH.Mcsf.Filming.Interfaces
+namespace UIH.Mcsf.Filming.Adapters
 {
     public class DisplayDataFactory
     {
