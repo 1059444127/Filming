@@ -131,7 +131,7 @@ namespace UIH.Mcsf.Filming.UserControlTests
             var cells = new SelectableList<ImageCell>();
             for (int i = 0; i < 16; i++)
             {
-                cells.Add(new ImageCell(sopInstanceUid));
+                cells.Add(ImageCellFactory.CreateCell(sopInstanceUid));
             }
             return cells;
         }

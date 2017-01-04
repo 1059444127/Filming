@@ -13,7 +13,7 @@ namespace UIH.Mcsf.Filming.Model
         public FilmPageModel(Layout layout)
         {
             _layout = layout;
-            _imageCells = ImageCell.CreateCells(layout.Capacity);
+            _imageCells = ImageCellFactory.CreateCells(layout.Capacity);
         }
 
         #region Overrides of PageModel

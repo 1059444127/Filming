@@ -5,75 +5,17 @@ using UIH.Mcsf.Viewer;
 
 namespace UIH.Mcsf.Filming.Interfaces
 {
-    public class ImageCell : ISelect
+    public abstract class ImageCell : ISelect
     {
-        private DisplayData _displayData;
         private bool _isFocused;
-        // TODO: ImageCell.DisplayDataChanged
         private bool _isSelected;
-
-        public ImageCell()
-        {
-            DisplayData = DisplayDataFactory.Instance.CreateDisplayData();
-        }
-
-        // TODO-later: try 异步加载方式
-
-        public ImageCell(string sopInstanceUid)
-        {
-            DisplayData = DisplayDataFactory.Instance.CreateDisplayData(sopInstanceUid);
-        }
-
-        public DisplayData DisplayData
-        {
-            get { return _displayData; }
-            private set
-            {
-                if (_displayData == value) return;
-                _displayData = value;
-                FillImageInfo();
-            }
-        }
-
-        private string GetTagByName(Dictionary<uint, string> dicomHeader, uint tag)
-        {
-            return !dicomHeader.ContainsKey(tag) ? string.Empty : dicomHeader[tag];
-        }
-
+        public abstract DisplayData DisplayData { get; }
         public event EventHandler<BoolEventArgs> SelectStatusChanged = delegate { };
         public event EventHandler<BoolEventArgs> FocusStatusChanged = delegate { };
 
         public void OnClicked(IClickStatus clickStatus)
         {
             Clicked(this, new ClickStatusEventArgs(clickStatus));
-        }
-
-        private void FillImageInfo()
-        {
-            Debug.Assert(_displayData != null);
-            var imageHeader = _displayData.ImageHeader;
-            if (imageHeader == null) return;
-            var dicomHeader = imageHeader.DicomHeader;
-            if (dicomHeader == null) return;
-
-            StudyInstanceUID = GetTagByName(dicomHeader, ServiceTagName.StudyInstanceUID);
-            StudyDate = GetTagByName(dicomHeader, ServiceTagName.StudyDate);
-            AccessionNumber = GetTagByName(dicomHeader, ServiceTagName.AccessionNumber);
-
-            PatientName = GetTagByName(dicomHeader, ServiceTagName.PatientName);
-            PatientID = GetTagByName(dicomHeader, ServiceTagName.PatientID);
-            PatientAge = GetTagByName(dicomHeader, ServiceTagName.PatientAge);
-            PatientSex = GetTagByName(dicomHeader, ServiceTagName.PatientSex);
-        }
-
-        public static IList<ImageCell> CreateCells(int cellCount)
-        {
-            var cells = new List<ImageCell>();
-            for (var i = 0; i < cellCount; i++)
-            {
-                cells.Add(new ImageCell());
-            }
-            return cells;
         }
 
         #region Implementation of ISelect
@@ -103,17 +45,90 @@ namespace UIH.Mcsf.Filming.Interfaces
         public event EventHandler<ClickStatusEventArgs> Clicked = delegate { };
 
         #endregion
+    }
 
-        #region Implementation of IImage
+    public class NullImageCell : ImageCell
+    {
+        private readonly DisplayData _displayData;
 
-        public virtual string StudyInstanceUID { get; private set; }
-        public virtual string StudyDate { get; private set; }
-        public virtual string AccessionNumber { get; private set; }
-        public virtual string PatientName { get; private set; }
-        public virtual string PatientID { get; private set; }
-        public virtual string PatientAge { get; private set; }
-        public virtual string PatientSex { get; private set; }
+        public NullImageCell()
+        {
+            _displayData = DisplayDataFactory.Instance.CreateDisplayData();
+        }
+
+        #region Overrides of ImageCell
+
+        public override DisplayData DisplayData
+        {
+            get { return _displayData; }
+        }
 
         #endregion
+    }
+
+    public class FilmingImageCell : ImageCell
+    {
+        private readonly DisplayData _displayData;
+        // TODO-later: try 异步加载方式
+        public FilmingImageCell(string sopInstanceUid)
+        {
+            _displayData = DisplayDataFactory.Instance.CreateDisplayData(sopInstanceUid);
+            FillImageInfo();
+        }
+
+        #region Overrides of ImageCell
+
+        public override DisplayData DisplayData
+        {
+            get { return _displayData; }
+        }
+
+        #endregion
+
+        private string GetTagByName(Dictionary<uint, string> dicomHeader, uint tag)
+        {
+            return !dicomHeader.ContainsKey(tag) ? string.Empty : dicomHeader[tag];
+        }
+
+        private void FillImageInfo()
+        {
+            Debug.Assert(_displayData != null);
+            var imageHeader = _displayData.ImageHeader;
+            if (imageHeader == null) return;
+            var dicomHeader = imageHeader.DicomHeader;
+            if (dicomHeader == null) return;
+
+            GetTagByName(dicomHeader, ServiceTagName.StudyInstanceUID);
+            GetTagByName(dicomHeader, ServiceTagName.StudyDate);
+            GetTagByName(dicomHeader, ServiceTagName.AccessionNumber);
+
+            GetTagByName(dicomHeader, ServiceTagName.PatientName);
+            GetTagByName(dicomHeader, ServiceTagName.PatientID);
+            GetTagByName(dicomHeader, ServiceTagName.PatientAge);
+            GetTagByName(dicomHeader, ServiceTagName.PatientSex);
+        }
+    }
+
+    public class ImageCellFactory
+    {
+        public static IList<ImageCell> CreateCells(int cellCount)
+        {
+            var cells = new List<ImageCell>();
+            for (var i = 0; i < cellCount; i++)
+            {
+                cells.Add(new NullImageCell());
+            }
+            return cells;
+        }
+
+        public static ImageCell CreateCell()
+        {
+            return new NullImageCell();
+        }
+
+        public static ImageCell CreateCell(string sopInstanceUid)
+        {
+            return new FilmingImageCell(sopInstanceUid);
+        }
     }
 }
