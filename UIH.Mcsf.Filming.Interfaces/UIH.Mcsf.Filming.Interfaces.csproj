@@ -61,6 +61,7 @@
     <Compile Include="IBoardModel.cs" />
     <Compile Include="ICellCount.cs" />
     <Compile Include="IClickStatus.cs" />
+    <Compile Include="ISelect.cs" />
     <Compile Include="Layout.cs" />
     <Compile Include="NullLayout.cs" />
     <Compile Include="PageModel.cs" />
