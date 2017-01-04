@@ -96,29 +96,7 @@ namespace UIH.Mcsf.Filming.Model
 
         #endregion
 
-        private int GroupNO
-        {
-            set
-            {
-                if (_groupNO == value) return;
-                // TODO-Later: BoardModel.GroupNO Changed, PageModels Changed, make a progress Bar
-                _groupNO = value;
-
-                RefreshGroup();
-            }
-        }
-
-        private void MakeBoardView()
-        {
-            for (var i = 0; i < _displayedBoardCellCount; i++)
-            {
-                _boardCells[i].IsVisible = true;
-            }
-            for (var i = _displayedBoardCellCount; i <= GlobalDefinitions.MaxDisplayMode; i++)
-            {
-                _boardCells[i].IsVisible = false;
-            }
-        }
+        #region [--Event From DataModel--]
 
         private void RegisterDataModelEvent()
         {
@@ -152,6 +130,32 @@ namespace UIH.Mcsf.Filming.Model
             boardCell.PageModel = _dataModel[pageNO];
 
             boardCell.IsVisible = IsInBoard(boardCellNO);
+        }
+
+        #endregion
+
+        private int GroupNO
+        {
+            set
+            {
+                if (_groupNO == value) return;
+                // TODO-Later: BoardModel.GroupNO Changed, PageModels Changed, make a progress Bar
+                _groupNO = value;
+
+                RefreshGroup();
+            }
+        }
+
+        private void MakeBoardView()
+        {
+            for (var i = 0; i < _displayedBoardCellCount; i++)
+            {
+                _boardCells[i].IsVisible = true;
+            }
+            for (var i = _displayedBoardCellCount; i <= GlobalDefinitions.MaxDisplayMode; i++)
+            {
+                _boardCells[i].IsVisible = false;
+            }
         }
 
         private bool IsInBoard(int boardCellNO)
