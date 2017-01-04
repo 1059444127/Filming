@@ -5,7 +5,6 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using UIH.Mcsf.Filming.Interfaces;
-using UIH.Mcsf.Filming.Model;
 using UIH.Mcsf.Filming.ViewModel;
 
 namespace UIH.Mcsf.Filming.View
@@ -153,6 +152,7 @@ namespace UIH.Mcsf.Filming.View
 
             for (int i = 0; i < GlobalDefinitions.MaxDisplayMode; i++)
             {
+                // TODO-Later: 解除Project View 对 ViewModel的依赖
                 _pages[i].DataContext = new PageControlViewModel(boardCells[i]);
             }
         }
