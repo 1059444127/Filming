@@ -7,6 +7,8 @@ namespace UIH.Mcsf.Filming.Model
     {
         private PageModel _pageModel = PageModelFactory.CreatePageModel();
 
+        #region [--Implement From IBoardCell--]
+
         public PageModel PageModel
         {
             get { return _pageModel; }
@@ -24,5 +26,7 @@ namespace UIH.Mcsf.Filming.Model
         }
 
         public event EventHandler<PageModelEventArgs> PageModelChanged = delegate { };
+
+        #endregion
     }
 }
