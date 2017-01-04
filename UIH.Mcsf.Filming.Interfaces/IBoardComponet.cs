@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 
-namespace UIH.Mcsf.Filming.Model
+namespace UIH.Mcsf.Filming.Interfaces
 {
     public interface IBoardComponet : ICellCount
     {
-        List<BoardCell> BoardCells { get; }
+        List<IBoardCell> BoardCells { get; }
     }
 }

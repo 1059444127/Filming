@@ -1,6 +1,6 @@
 using System;
 
-namespace UIH.Mcsf.Filming.Model
+namespace UIH.Mcsf.Filming.Interfaces
 {
     public interface IBoardModel : IBoardComponet
     {

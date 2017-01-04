@@ -3,6 +3,7 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
+using UIH.Mcsf.Filming.Interfaces;
 using UIH.Mcsf.Filming.Model;
 
 namespace UIH.Mcsf.Filming.ViewModel
