@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using UIH.Mcsf.Filming.Interfaces;
 using UIH.Mcsf.Viewer;
 
-namespace UIH.Mcsf.Filming.Model
+namespace UIH.Mcsf.Filming.Interfaces
 {
     public class ImageCell : ISelect
     {

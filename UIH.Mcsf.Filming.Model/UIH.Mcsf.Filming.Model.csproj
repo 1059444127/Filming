@@ -50,7 +50,6 @@
     <Compile Include="Cell.cs" />
     <Compile Include="DummySelectOperator.cs" />
     <Compile Include="FilmPageModel.cs" />
-    <Compile Include="ImageCell.cs" />
     <Compile Include="NullPageModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SelectableList.cs" />
