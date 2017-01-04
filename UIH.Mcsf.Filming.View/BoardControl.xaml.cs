@@ -123,9 +123,9 @@ namespace UIH.Mcsf.Filming.View
 
         #region [--BoardComponentProperty--]
 
-        public BoardModel BoardComponent
+        public IBoardModel BoardComponent
         {
-            get { return (BoardModel)GetValue(BoardComponentProperty); }
+            get { return (IBoardModel)GetValue(BoardComponentProperty); }
             set { SetValue(BoardComponentProperty, value); }
         }
 
@@ -133,9 +133,9 @@ namespace UIH.Mcsf.Filming.View
 
         // Using a DependencyProperty as the backing store for BoardComponent.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty BoardComponentProperty =
-            DependencyProperty.Register("BoardComponent", typeof(BoardModel), typeof(BoardControl), new PropertyMetadata(OnBoardModelPropertyChanged));
+            DependencyProperty.Register("BoardComponent", typeof(IBoardModel), typeof(BoardControl), new PropertyMetadata(OnBoardComponentPropertyChanged));
 
-        private static void OnBoardModelPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        private static void OnBoardComponentPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var boardControl = d as BoardControl;
             Debug.Assert(boardControl != null);

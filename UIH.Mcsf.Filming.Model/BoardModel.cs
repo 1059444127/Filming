@@ -6,27 +6,8 @@ using UIH.Mcsf.Filming.Interfaces;
 namespace UIH.Mcsf.Filming.Model
 {
     // TODO-working-on: Extract IBoardModel From BoardModel
-    public interface ICellCount
-    {
-        int CellCount { get; set; }
-        event EventHandler CellCountChanged;
-    }
 
-    public interface IBoardComponet : ICellCount
-    {
-        List<BoardCell> BoardCells { get; }
-    }
 
-    public interface IBoardModel : IBoardComponet
-    {
-        int BoardNO { get; set; }
-        int BoardCount { get; }
-        event EventHandler BoardNOChanged;
-        event EventHandler BoardCountChanged;
-        void NewPage();
-    }
-
-    
     public class BoardModel : IBoardModel
     {
         private List<BoardCell> _boardCells = new List<BoardCell>();

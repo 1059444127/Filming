@@ -56,6 +56,9 @@
     <Compile Include="DisplayDataFactory.cs" />
     <Compile Include="DisplayMode.cs" />
     <Compile Include="GlobalDefinitions.cs" />
+    <Compile Include="IBoardComponet.cs" />
+    <Compile Include="IBoardModel.cs" />
+    <Compile Include="ICellCount.cs" />
     <Compile Include="IClickStatus.cs" />
     <Compile Include="Layout.cs" />
     <Compile Include="NullLayout.cs" />
