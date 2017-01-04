@@ -1,5 +1,4 @@
-﻿using System.Linq;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using UIH.Mcsf.Filming.Model;
 
 namespace UIH.Mcsf.Filming.Model_UT
@@ -13,13 +12,16 @@ namespace UIH.Mcsf.Filming.Model_UT
         {
             // Arrange
             var boardModel = new BoardModel();
+            boardModel.CellCount = 2;
 
             // Act
             boardModel.NewPage();
+            boardModel.NewPage();
+            boardModel.NewPage();
 
             // Assert
-            var pageModel = boardModel.BoardCells.FirstOrDefault();
-            //Assert.IsTrue(pageModel!= null && pageModel.IsVisible);
+            Assert.AreEqual(1, boardModel.BoardNO);
+            Assert.AreEqual(2, boardModel.BoardCount);
         }
     }
 }
