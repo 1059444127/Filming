@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using UIH.Mcsf.Filming.Adapters;
 using UIH.Mcsf.Filming.Model;
 
 namespace UIH.Mcsf.Filming.Model_UT
@@ -11,7 +12,7 @@ namespace UIH.Mcsf.Filming.Model_UT
         public void New_Page_Is_Always_Displayed_at_the_end()
         {
             // Arrange
-            var boardModel = new BoardModel();
+            var boardModel = new BoardModel(new DataModelStub());
             boardModel.CellCount = 2;
 
             // Act
@@ -23,5 +24,21 @@ namespace UIH.Mcsf.Filming.Model_UT
             Assert.AreEqual(1, boardModel.BoardNO);
             Assert.AreEqual(2, boardModel.BoardCount);
         }
+    }
+
+    class DataModelStub : DataModel
+    {
+        #region Overrides of DataModel
+
+        public override void AppendPage()
+        {
+            Add(PageModelFactory.CreatePageModel(LayoutFactory.CreateLayout(3, 3)));
+
+            var lastPageNO = Count - 1;
+            PageChange(lastPageNO);
+            FocusChange(lastPageNO);
+        }
+
+        #endregion
     }
 }

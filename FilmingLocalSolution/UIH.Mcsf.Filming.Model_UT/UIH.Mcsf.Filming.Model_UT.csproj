@@ -23,7 +23,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>..\..\..\..\UIH\bin_debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -58,6 +58,10 @@
     <Compile Include="SelectableListTest.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\UIH.Mcsf.Filming.Adapters\UIH.Mcsf.Filming.Adapters.csproj">
+      <Project>{24E00A4C-AC9E-4DB0-90A1-3B68F0C7AC22}</Project>
+      <Name>UIH.Mcsf.Filming.Adapters</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\UIH.Mcsf.Filming.Interfaces\UIH.Mcsf.Filming.Interfaces.csproj">
       <Project>{27718D47-A3D6-4EA7-8669-E61A94562912}</Project>
       <Name>UIH.Mcsf.Filming.Interfaces</Name>

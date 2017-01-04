@@ -63,7 +63,7 @@ namespace UIH.Mcsf.Filming.UserControlTests
         private void _006CardControlTestDisplayMode()
         {
             var viewModel = _userControlViewModel as CardControlViewModel;
-            var boardModel = new BoardModel();
+            var boardModel = new BoardModel(new DataModel());
             viewModel.BoardModel = boardModel;
 
             viewModel.DisplayMode = 3;
@@ -72,7 +72,7 @@ namespace UIH.Mcsf.Filming.UserControlTests
         private void _005CardControlTestBoardModel()
         {
             var viewModel = _userControlViewModel as CardControlViewModel;
-            var boardModel = new BoardModel();
+            var boardModel = new BoardModel(new DataModel());
             boardModel.BoardCells = CreatePages(GlobalDefinitions.MaxDisplayMode);
 
             viewModel.BoardModel = boardModel;

@@ -18,12 +18,14 @@ namespace UIH.Mcsf.Filming.Model
         private int _boardNO;
         private int _displayedBoardCellCount = 1;
         private int _groupNO; // number of MaxDisplayMode is a group
-        private readonly DataModel _dataModel = new DataModel();
+        private readonly DataModel _dataModel;
         // TODO: PageCount Changed notification from Selectable<PageModel>
 
 
-        public BoardModel()
+        public BoardModel(DataModel dataModel)
         {
+            _dataModel = dataModel;
+
             for (var i = 0; i <= GlobalDefinitions.MaxDisplayMode; i++)
             {
                 _boardCells.Add(new BoardCell()); 
@@ -189,7 +191,7 @@ namespace UIH.Mcsf.Filming.Model
         // TODO-New-Feature-working-on: New Page is Displayed
     }
 
-    internal class DataModel : SelectableList<PageModel>
+    public class DataModel : SelectableList<PageModel>
     {
         public override PageModel this[int pageNO]
         {
@@ -200,16 +202,17 @@ namespace UIH.Mcsf.Filming.Model
             }
         }
 
-        public void AppendPage()
+        public virtual void AppendPage()
         {
             MakeLastPageBreak();
 
             // TODO-Later: Layout of New Page is the same with LastPage
+            // TODO-Later： DataModel use LayoutFactory.CreateDefaultLayout(), Depends on File system, not good to UT 
             Add(PageModelFactory.CreatePageModel(LayoutFactory.CreateDefaultLayout()));
 
             var lastPageNO = Count - 1;
-            PageChanged(this, new IntEventArgs(lastPageNO));
-            FocusChanged(this, new IntEventArgs(lastPageNO));
+            PageChange(lastPageNO);
+            FocusChange(lastPageNO);
         }
 
         private void MakeLastPageBreak()
@@ -217,12 +220,30 @@ namespace UIH.Mcsf.Filming.Model
             this[Count - 1].IsBreak = true;
         }
 
+        #region [--For UT--]
+
+        protected void PageChange(int pageNO)
+        {
+            PageChanged(this, new IntEventArgs(pageNO));
+        }
+
+        protected void FocusChange(int pageNO)
+        {
+            FocusChanged(this, new IntEventArgs(pageNO));
+        }
+
+        #endregion
+
+        #region [--Events--]
+
         public event EventHandler<IntEventArgs> PageChanged = delegate { };
         // TODO: PageControl.IsFocused(TitleBar.Border=Yellow & IsSelected(TitleBar.Fill=Aqua)
         public event EventHandler<IntEventArgs> FocusChanged = delegate { };
         // TODO-working-on: pageCountChanged event
         // TODO-UT: DataModel.PageCountChanged
         public event EventHandler PageCountChanged = delegate { };
+
+        #endregion
 
         #region Overrides of SelectableList<PageModel>
 
