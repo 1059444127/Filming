@@ -13,16 +13,20 @@ namespace UIH.Mcsf.Filming.Model_UT
         {
             // Arrange
             var boardModel = new BoardModel(new DataModelStub());
-            boardModel.CellCount = 2;
+            boardModel.CellCount = 4;
 
             // Act
             boardModel.NewPage();
             boardModel.NewPage();
             boardModel.NewPage();
+            boardModel.NewPage();
+            boardModel.NewPage();
+            boardModel.CellCount = 6;
+            boardModel.NewPage();
 
             // Assert
-            Assert.AreEqual(1, boardModel.BoardNO);
-            Assert.AreEqual(2, boardModel.BoardCount);
+            Assert.AreEqual(0, boardModel.BoardNO);
+            Assert.AreEqual(1, boardModel.BoardCount);
         }
     }
 
