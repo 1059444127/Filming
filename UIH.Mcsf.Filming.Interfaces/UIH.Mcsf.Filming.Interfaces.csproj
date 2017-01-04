@@ -63,6 +63,7 @@
     <Compile Include="IClickStatus.cs" />
     <Compile Include="Layout.cs" />
     <Compile Include="NullLayout.cs" />
+    <Compile Include="PageModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SimpleLayout.cs" />
   </ItemGroup>

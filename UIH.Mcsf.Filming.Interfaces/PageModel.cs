@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using UIH.Mcsf.Filming.Interfaces;
 
-namespace UIH.Mcsf.Filming.Model
+namespace UIH.Mcsf.Filming.Interfaces
 {
     public abstract class PageModel : ISelect
     {
