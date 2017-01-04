@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using UIH.Mcsf.Filming.Adapters;
 using UIH.Mcsf.Filming.Interfaces;
 
 namespace UIH.Mcsf.Filming.Model
@@ -204,7 +205,7 @@ namespace UIH.Mcsf.Filming.Model
             MakeLastPageBreak();
 
             // TODO-Later: Layout of New Page is the same with LastPage
-            Add(PageModelFactory.CreatePageModel(Layout.CreateDefaultLayout()));
+            Add(PageModelFactory.CreatePageModel(LayoutFactory.CreateDefaultLayout()));
 
             var lastPageNO = Count - 1;
             PageChanged(this, new IntEventArgs(lastPageNO));

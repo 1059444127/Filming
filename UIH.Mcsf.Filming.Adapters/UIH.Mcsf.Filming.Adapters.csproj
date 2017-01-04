@@ -63,8 +63,11 @@
     <Compile Include="FilmingControlCell.cs" />
     <Compile Include="FilmingImageCell.cs" />
     <Compile Include="ImageCellFactory.cs" />
+    <Compile Include="LayoutFactory.cs" />
     <Compile Include="NullImageCell.cs" />
+    <Compile Include="NullLayout.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SimpleLayout.cs" />
     <Compile Include="ViewerControlAdapter.xaml.cs">
       <DependentUpon>ViewerControlAdapter.xaml</DependentUpon>
     </Compile>
@@ -76,9 +79,17 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\UIH.Mcsf.Filming.Configure\UIH.Mcsf.Filming.Configure.csproj">
+      <Project>{6E737007-9A79-49CA-A966-4E6DD5E40EB4}</Project>
+      <Name>UIH.Mcsf.Filming.Configure</Name>
+    </ProjectReference>
     <ProjectReference Include="..\UIH.Mcsf.Filming.Interfaces\UIH.Mcsf.Filming.Interfaces.csproj">
       <Project>{27718D47-A3D6-4EA7-8669-E61A94562912}</Project>
       <Name>UIH.Mcsf.Filming.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UIH.Mcsf.Filming.Interface\UIH.Mcsf.Filming.Interface.csproj">
+      <Project>{548EEFF3-EA2A-4ABA-BD93-224E6D00FF74}</Project>
+      <Name>UIH.Mcsf.Filming.Interface</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

@@ -1,6 +1,7 @@
-﻿using UIH.Mcsf.Viewer;
+﻿using UIH.Mcsf.Filming.Interfaces;
+using UIH.Mcsf.Viewer;
 
-namespace UIH.Mcsf.Filming.Interfaces
+namespace UIH.Mcsf.Filming.Adapters
 {
     class SimpleLayout : Layout
     {

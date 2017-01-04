@@ -59,20 +59,8 @@
     <Compile Include="ImageCell.cs" />
     <Compile Include="ISelect.cs" />
     <Compile Include="Layout.cs" />
-    <Compile Include="NullLayout.cs" />
     <Compile Include="PageModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SimpleLayout.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\UIH.Mcsf.Filming.Configure\UIH.Mcsf.Filming.Configure.csproj">
-      <Project>{6E737007-9A79-49CA-A966-4E6DD5E40EB4}</Project>
-      <Name>UIH.Mcsf.Filming.Configure</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\UIH.Mcsf.Filming.Interface\UIH.Mcsf.Filming.Interface.csproj">
-      <Project>{548EEFF3-EA2A-4ABA-BD93-224E6D00FF74}</Project>
-      <Name>UIH.Mcsf.Filming.Interface</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

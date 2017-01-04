@@ -1,5 +1,4 @@
-﻿using UIH.Mcsf.Filming.Configure;
-using UIH.Mcsf.Viewer;
+﻿using UIH.Mcsf.Viewer;
 
 namespace UIH.Mcsf.Filming.Interfaces
 {
@@ -9,26 +8,10 @@ namespace UIH.Mcsf.Filming.Interfaces
         // TODO-New-Feature: Layout.ViewPort Layout Dependency Property
         // TODO-New-Feature: Layout.regularLayout & irregularLayout
 
+        // TODO-Later: Layout.Setup(LayoutManager layoutManager) 使用桥接模式 解除对Viewer.Control.dll的依赖
         public abstract void Setup(LayoutManager layoutManager);
 
-        public static Layout CreateDefaultLayout()
-        {
-            var layout = Environment.Instance.GetDefaultLayoutConfigure().Layout;
-            return CreateLayout(layout.Rows, layout.Columns);
-        }
-
         // TODO-Later: Layout.Equals HashCode For Dependency Property ViewerControlAdapter.Layout
-        public static Layout CreateLayout(int row, int col)
-        {
-            return new SimpleLayout(row, col);
-        }
 
-        // TODO-Later: NullLayout.Singleton
-        public static Layout CreateLayout()
-        {
-            return NullLayout;
-        }
-
-        public static readonly Layout NullLayout = new NullLayout();
     }
 }

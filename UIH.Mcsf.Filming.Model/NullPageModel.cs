@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using UIH.Mcsf.Filming.Adapters;
 using UIH.Mcsf.Filming.Interfaces;
 
 namespace UIH.Mcsf.Filming.Model
@@ -9,7 +10,7 @@ namespace UIH.Mcsf.Filming.Model
 
         public override Layout Layout
         {
-            get { return Layout.CreateLayout(); }
+            get { return LayoutFactory.CreateLayout(); }
         }
 
         public override IList<ImageCell> ImageCells
