@@ -138,13 +138,13 @@ namespace UIH.Mcsf.Filming.UserControlTests
 
         private static BoardCell CreatePageModel()
         {
-            var page = PageModel.CreatePageModel(Layout.CreateLayout(3, 3));
+            var page = PageModelFactory.CreatePageModel(Layout.CreateLayout(3, 3));
             return new BoardCell {PageModel = page};
         }
 
-        private static List<BoardCell> CreatePages(int pageCount)
+        private static List<IBoardCell> CreatePages(int pageCount)
         {
-            var pages = new List<BoardCell>();
+            var pages = new List<IBoardCell>();
             for (int i = 0; i < pageCount; i++)
             {
                 var page = CreatePageModel();

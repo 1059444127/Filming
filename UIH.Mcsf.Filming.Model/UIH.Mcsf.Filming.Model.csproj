@@ -51,6 +51,7 @@
     <Compile Include="DummySelectOperator.cs" />
     <Compile Include="FilmPageModel.cs" />
     <Compile Include="NullPageModel.cs" />
+    <Compile Include="PageModelFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SelectableList.cs" />
     <Compile Include="SelectOnlyOpertator.cs" />

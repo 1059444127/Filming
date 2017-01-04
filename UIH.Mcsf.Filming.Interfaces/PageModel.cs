@@ -9,17 +9,6 @@ namespace UIH.Mcsf.Filming.Interfaces
         public abstract IList<ImageCell> ImageCells { get; set; }
         public abstract bool IsBreak { get; set; }
         public abstract bool IsVisible { get; set; }
-
-        public static PageModel CreatePageModel(Layout layout)
-        {
-            return new FilmPageModel(layout);
-        }
-
-        public static PageModel CreatePageModel()
-        {
-            return new NullPageModel();
-        }
-
         public event EventHandler<BoolEventArgs> IsBreakChanged = delegate { };
         public event EventHandler<BoolEventArgs> VisibleChanged = delegate { };
 

@@ -5,7 +5,7 @@ namespace UIH.Mcsf.Filming.Model
 {
     public class BoardCell : IBoardCell
     {
-        private PageModel _pageModel = PageModel.CreatePageModel();
+        private PageModel _pageModel = PageModelFactory.CreatePageModel();
 
         public PageModel PageModel
         {

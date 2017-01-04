@@ -10,7 +10,7 @@ namespace UIH.Mcsf.Filming.Model
 
     public class BoardModel : IBoardModel
     {
-        private List<BoardCell> _boardCells = new List<BoardCell>();
+        private List<IBoardCell> _boardCells = new List<IBoardCell>();
         // TODO-working-on: BoardCount
         private int _boardCount = 1;
         // TODO: BoardNO
@@ -25,7 +25,7 @@ namespace UIH.Mcsf.Filming.Model
         {
             for (var i = 0; i <= GlobalDefinitions.MaxDisplayMode; i++)
             {
-                _boardCells.Add(new BoardCell());
+                _boardCells.Add(new BoardCell()); 
             }
             RegisterDataModelEvent();
         }
@@ -34,7 +34,7 @@ namespace UIH.Mcsf.Filming.Model
 
         public int CellCount
         {
-            get { throw new NotImplementedException(); }
+            get {return _displayedBoardCellCount;}
             set
             {
                 if (_displayedBoardCellCount == value) return;
@@ -50,7 +50,7 @@ namespace UIH.Mcsf.Filming.Model
 
         #region [--Implement From IBoardComponet--]
 
-        public List<BoardCell> BoardCells
+        public List<IBoardCell> BoardCells
         {
             get { return _boardCells; }
             set { _boardCells = value; }
@@ -190,7 +190,7 @@ namespace UIH.Mcsf.Filming.Model
         {
             get
             {
-                if (pageNO < 0 || pageNO >= Count) return PageModel.CreatePageModel();
+                if (pageNO < 0 || pageNO >= Count) return PageModelFactory.CreatePageModel();
                 return base[pageNO];
             }
         }
@@ -200,7 +200,7 @@ namespace UIH.Mcsf.Filming.Model
             MakeLastPageBreak();
 
             // TODO-Later: Layout of New Page is the same with LastPage
-            Add(PageModel.CreatePageModel(Layout.CreateDefaultLayout()));
+            Add(PageModelFactory.CreatePageModel(Layout.CreateDefaultLayout()));
 
             var lastPageNO = Count - 1;
             PageChanged(this, new IntEventArgs(lastPageNO));
