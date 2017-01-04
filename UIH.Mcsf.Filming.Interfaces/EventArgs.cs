@@ -1,7 +1,6 @@
 ﻿using System;
-using UIH.Mcsf.Filming.Interfaces;
 
-namespace UIH.Mcsf.Filming.Model
+namespace UIH.Mcsf.Filming.Interfaces
 {
     public class ClickStatusEventArgs : EventArgs
     {

@@ -49,7 +49,6 @@
     <Compile Include="BoardModel.cs" />
     <Compile Include="Cell.cs" />
     <Compile Include="DummySelectOperator.cs" />
-    <Compile Include="EventArgs.cs" />
     <Compile Include="FilmPageModel.cs" />
     <Compile Include="ImageCell.cs" />
     <Compile Include="NullPageModel.cs" />
