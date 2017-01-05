@@ -4,10 +4,10 @@ using UIH.Mcsf.Filming.Interfaces;
 
 namespace UIH.Mcsf.Filming.Model
 {
-    public class DataModel : SelectableList<PageModel>
+    public class PageRepository : SelectableList<PageModel>
     {
         private int _focusIndex;
-        // TODO-working-on: DataModel focused pageIndex
+        // TODO-working-on: PageRepository focused pageIndex
         public int FocusIndex
         {
             get { return _focusIndex; }
@@ -33,7 +33,7 @@ namespace UIH.Mcsf.Filming.Model
             MakeLastPageBreak();
 
             // TODO-Later: Layout of New Page is the same with LastPage
-            // TODO-Later£º DataModel use LayoutFactory.CreateDefaultLayout(), Depends on File system, not good to UT
+            // TODO-Later£º PageRepository use LayoutFactory.CreateDefaultLayout(), Depends on File system, not good to UT
             // TODO-Later: Make Project Model not Dependent on Project Adapters 
             Add(PageModelFactory.CreatePageModel(LayoutFactory.CreateDefaultLayout()));
 
@@ -67,7 +67,7 @@ namespace UIH.Mcsf.Filming.Model
         // TODO: PageControl.IsFocused(TitleBar.Border=Yellow & IsSelected(TitleBar.Fill=Aqua)
         public event EventHandler FocusChanged = delegate { };
         // TODO-working-on: pageCountChanged event
-        // TODO-UT: DataModel.PageCountChanged
+        // TODO-UT: PageRepository.PageCountChanged
         public event EventHandler PageCountChanged = delegate { };
 
         #endregion

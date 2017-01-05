@@ -12,7 +12,7 @@ namespace UIH.Mcsf.Filming.Model_UT
         public void New_Page_Is_Always_Displayed_at_the_end()
         {
             // Arrange
-            var boardModel = new BoardModel(new DataModelStub());
+            var boardModel = new BoardModel(new PageRepositoryStub());
             boardModel.CellCount = 4;
 
             // Act
@@ -30,9 +30,9 @@ namespace UIH.Mcsf.Filming.Model_UT
         }
     }
 
-    class DataModelStub : DataModel
+    class PageRepositoryStub : PageRepository
     {
-        #region Overrides of DataModel
+        #region Overrides of PageRepository
 
         public override void AppendPage()
         {

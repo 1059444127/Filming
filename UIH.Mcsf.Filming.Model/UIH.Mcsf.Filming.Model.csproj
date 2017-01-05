@@ -47,7 +47,7 @@
     <Compile Include="BoardCell.cs" />
     <Compile Include="BoardModel.cs" />
     <Compile Include="Cell.cs" />
-    <Compile Include="DataModel.cs" />
+    <Compile Include="PageRepository.cs" />
     <Compile Include="DummySelectOperator.cs" />
     <Compile Include="FilmPageModel.cs" />
     <Compile Include="NullPageModel.cs" />

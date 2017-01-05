@@ -15,12 +15,12 @@ namespace UIH.Mcsf.Filming.Model
         private int _boardNO;
         private int _displayedBoardCellCount = 1;
         private int _groupNO; // number of MaxDisplayMode is a group
-        private readonly DataModel _dataModel;
+        private readonly PageRepository _pageRepository;
 
 
-        public BoardModel(DataModel dataModel)
+        public BoardModel(PageRepository pageRepository)
         {
-            _dataModel = dataModel;
+            _pageRepository = pageRepository;
 
             for (var i = 0; i <= GlobalDefinitions.MaxDisplayMode; i++)
             {
@@ -92,43 +92,43 @@ namespace UIH.Mcsf.Filming.Model
 
         public void NewPage()
         {
-            _dataModel.AppendPage();
+            _pageRepository.AppendPage();
         }
 
         #endregion
 
-        #region [--Event From DataModel--]
+        #region [--Event From PageRepository--]
 
         private void RegisterDataModelEvent()
         {
-            _dataModel.PageChanged += DataModelOnPageChanged;
-            _dataModel.FocusChanged += DataModelOnFocusChanged;
-            _dataModel.PageCountChanged += DataModelOnPageCountChanged;
+            _pageRepository.PageChanged += PageRepositoryOnPageChanged;
+            _pageRepository.FocusChanged += PageRepositoryOnFocusChanged;
+            _pageRepository.PageCountChanged += PageRepositoryOnPageCountChanged;
         }
 
-        private void DataModelOnPageCountChanged(object sender, EventArgs eventArgs)
+        private void PageRepositoryOnPageCountChanged(object sender, EventArgs eventArgs)
         {
-            var pageCount = _dataModel.Count;
+            var pageCount = _pageRepository.Count;
             BoardCount = pageCount > 0 
                 ? (int)Math.Ceiling((0.0+pageCount)/_displayedBoardCellCount)
                 : 1;
         }
 
-        private void DataModelOnFocusChanged(object sender, EventArgs args)
+        private void PageRepositoryOnFocusChanged(object sender, EventArgs args)
         {
-            var pageNO = _dataModel.FocusIndex;
+            var pageNO = _pageRepository.FocusIndex;
             GroupNO = pageNO/GlobalDefinitions.MaxDisplayMode;
             Debug.Assert(pageNO >= 0);
             BoardNO = pageNO/_displayedBoardCellCount;
         }
 
-        private void DataModelOnPageChanged(object sender, IntEventArgs intEventArgs)
+        private void PageRepositoryOnPageChanged(object sender, IntEventArgs intEventArgs)
         {
             var pageNO = intEventArgs.Int;
             var boardCellNO = BoardCellNOMapFrom(pageNO);
             var boardCell = _boardCells[boardCellNO];
 
-            boardCell.PageModel = _dataModel[pageNO];
+            boardCell.PageModel = _pageRepository[pageNO];
 
             boardCell.IsVisible = IsInBoard(boardCellNO);
         }
@@ -179,7 +179,7 @@ namespace UIH.Mcsf.Filming.Model
                 boardCellNO++, pageNO++)
             {
                 var boardCell = _boardCells[boardCellNO];
-                boardCell.PageModel = _dataModel[pageNO];
+                boardCell.PageModel = _pageRepository[pageNO];
                 boardCell.IsVisible = IsInBoard(boardCellNO);
             }
         }
