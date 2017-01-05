@@ -140,14 +140,24 @@ namespace UIH.Mcsf.Filming.Model
 
         private void RefreshBoardView()
         {
-            for (var i = 0; i < _displayedBoardCellCount; i++)
+            var boardBeginPageIndex = _boardNO*_displayedBoardCellCount;
+            var boardEndPageIndex = boardBeginPageIndex + _displayedBoardCellCount;
+
+            var boardCellBeginPageIndex = _groupNO*GlobalDefinitions.MaxDisplayMode;
+            for (int i = 0; i < GlobalDefinitions.MaxDisplayMode; i++)
             {
-                _boardCells[i].IsVisible = true;
+                var boardCellPageIndex = boardCellBeginPageIndex + i;
+                if (boardCellPageIndex >= boardBeginPageIndex && boardCellPageIndex < boardEndPageIndex)
+                {
+                    _boardCells[i].PageModel = _pageRepository[boardCellPageIndex];
+                    _boardCells[i].IsVisible = true;
+                }
+                else
+                {
+                    _boardCells[i].IsVisible = false;
+                }
             }
-            for (var i = _displayedBoardCellCount; i <= GlobalDefinitions.MaxDisplayMode; i++)
-            {
-                _boardCells[i].IsVisible = false;
-            }
+
         }
 
         private bool IsInBoard(int boardCellNO)

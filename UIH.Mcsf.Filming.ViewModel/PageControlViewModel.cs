@@ -102,6 +102,7 @@ namespace UIH.Mcsf.Filming.ViewModel
 
         #region [--Visibility--]
 
+        // TODO-working-on: PageControlViewModel.Visibility移动到BoardCell.Visibility
         private Visibility _visibility;
 
         public Visibility Visibility
