@@ -6,7 +6,14 @@ namespace UIH.Mcsf.Filming.Model
 {
     public class DataModel : SelectableList<PageModel>
     {
-        // TODO-working-on: DataModel focused page
+        private int _focusIndex;
+        // TODO-working-on: DataModel focused pageIndex
+        public int FocusIndex
+        {
+            get { return _focusIndex; }
+            private set { _focusIndex = value; }
+        }
+
         public override PageModel this[int pageNO]
         {
             get
