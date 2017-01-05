@@ -11,7 +11,12 @@ namespace UIH.Mcsf.Filming.Model
         public int FocusIndex
         {
             get { return _focusIndex; }
-            private set { _focusIndex = value; }
+            private set
+            {
+                if(_focusIndex == value) return;
+                _focusIndex = value;
+                FocusChanged(this, new EventArgs());
+            }
         }
 
         public override PageModel this[int pageNO]
@@ -33,8 +38,8 @@ namespace UIH.Mcsf.Filming.Model
             Add(PageModelFactory.CreatePageModel(LayoutFactory.CreateDefaultLayout()));
 
             var lastPageNO = Count - 1;
+            FocusIndex = lastPageNO;
             PageChange(lastPageNO);
-            FocusChange(lastPageNO);
         }
 
         private void MakeLastPageBreak()
@@ -51,7 +56,7 @@ namespace UIH.Mcsf.Filming.Model
 
         protected void FocusChange(int pageNO)
         {
-            FocusChanged(this, new IntEventArgs(pageNO));
+            FocusIndex = pageNO;
         }
 
         #endregion
@@ -60,7 +65,7 @@ namespace UIH.Mcsf.Filming.Model
 
         public event EventHandler<IntEventArgs> PageChanged = delegate { };
         // TODO: PageControl.IsFocused(TitleBar.Border=Yellow & IsSelected(TitleBar.Fill=Aqua)
-        public event EventHandler<IntEventArgs> FocusChanged = delegate { };
+        public event EventHandler FocusChanged = delegate { };
         // TODO-working-on: pageCountChanged event
         // TODO-UT: DataModel.PageCountChanged
         public event EventHandler PageCountChanged = delegate { };

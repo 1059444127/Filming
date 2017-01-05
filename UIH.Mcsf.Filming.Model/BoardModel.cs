@@ -114,9 +114,9 @@ namespace UIH.Mcsf.Filming.Model
                 : 1;
         }
 
-        private void DataModelOnFocusChanged(object sender, IntEventArgs intEventArgs)
+        private void DataModelOnFocusChanged(object sender, EventArgs args)
         {
-            var pageNO = intEventArgs.Int;
+            var pageNO = _dataModel.FocusIndex;
             GroupNO = pageNO/GlobalDefinitions.MaxDisplayMode;
             Debug.Assert(pageNO >= 0);
             BoardNO = pageNO/_displayedBoardCellCount;
