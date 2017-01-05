@@ -38,9 +38,13 @@ namespace UIH.Mcsf.Filming.Model
             {
                 if (_displayedBoardCellCount == value) return;
                 _displayedBoardCellCount = value;
+
                 CellCountChanged(this, new EventArgs());
+                
+                RefreshBoardNO();
+                RefreshBoardCount();
                 // TODO: when _displayBoardCellCount changed, Board should be changed to 
-                MakeBoardView();
+                RefreshBoardView();
             }
         }
 
@@ -67,9 +71,10 @@ namespace UIH.Mcsf.Filming.Model
             {
                 if (_boardNO == value) return;
                 _boardNO = value;
-                Debug.Assert(_boardNO >= 0 && _boardNO < _boardCount);
+                Debug.Assert(_boardNO >= 0);
                 BoardNOChanged(this, new EventArgs());
                 // TODO: when boardNO changed, BoardModel should be refreshed
+                RefreshBoardView();
             }
         }
 
@@ -108,18 +113,13 @@ namespace UIH.Mcsf.Filming.Model
 
         private void PageRepositoryOnPageCountChanged(object sender, EventArgs eventArgs)
         {
-            var pageCount = _pageRepository.Count;
-            BoardCount = pageCount > 0 
-                ? (int)Math.Ceiling((0.0+pageCount)/_displayedBoardCellCount)
-                : 1;
+            RefreshBoardCount();
         }
 
         private void PageRepositoryOnFocusChanged(object sender, EventArgs args)
         {
-            var pageNO = _pageRepository.FocusIndex;
-            GroupNO = pageNO/GlobalDefinitions.MaxDisplayMode;
-            Debug.Assert(pageNO >= 0);
-            BoardNO = pageNO/_displayedBoardCellCount;
+            _groupNO = _pageRepository.FocusIndex / GlobalDefinitions.MaxDisplayMode;
+            RefreshBoardNO();
         }
 
         private void PageRepositoryOnPageChanged(object sender, IntEventArgs intEventArgs)
@@ -128,26 +128,17 @@ namespace UIH.Mcsf.Filming.Model
             var boardCellNO = BoardCellNOMapFrom(pageNO);
             var boardCell = _boardCells[boardCellNO];
 
-            boardCell.PageModel = _pageRepository[pageNO];
+            var isInBoard = IsInBoard(boardCellNO);
 
-            boardCell.IsVisible = IsInBoard(boardCellNO);
+            if(isInBoard)
+                boardCell.PageModel = _pageRepository[pageNO];
+
+            boardCell.IsVisible = isInBoard;
         }
 
         #endregion
 
-        private int GroupNO
-        {
-            set
-            {
-                if (_groupNO == value) return;
-                // TODO-Later: BoardModel.GroupNO Changed, PageModels Changed, make a progress Bar
-                _groupNO = value;
-
-                RefreshGroup();
-            }
-        }
-
-        private void MakeBoardView()
+        private void RefreshBoardView()
         {
             for (var i = 0; i < _displayedBoardCellCount; i++)
             {
@@ -172,16 +163,17 @@ namespace UIH.Mcsf.Filming.Model
             return pageNO%GlobalDefinitions.MaxDisplayMode;
         }
 
-        private void RefreshGroup()
+        private void RefreshBoardNO()
         {
-            for (int boardCellNO = 0, pageNO = _groupNO*GlobalDefinitions.MaxDisplayMode;
-                boardCellNO < GlobalDefinitions.MaxDisplayMode;
-                boardCellNO++, pageNO++)
-            {
-                var boardCell = _boardCells[boardCellNO];
-                boardCell.PageModel = _pageRepository[pageNO];
-                boardCell.IsVisible = IsInBoard(boardCellNO);
-            }
+            BoardNO = _pageRepository.FocusIndex / _displayedBoardCellCount;            
+        }
+
+        private void RefreshBoardCount()
+        {
+            var pageCount = _pageRepository.Count;
+            BoardCount = pageCount > 0 
+                ? (int)Math.Ceiling((0.0+pageCount)/_displayedBoardCellCount)
+                : 1;
         }
 
         // TODO-New-Feature: New Page is Selected
