@@ -6,6 +6,7 @@ namespace UIH.Mcsf.Filming.Model
 {
     public class DataModel : SelectableList<PageModel>
     {
+        // TODO-working-on: DataModel focused page
         public override PageModel this[int pageNO]
         {
             get
@@ -20,7 +21,8 @@ namespace UIH.Mcsf.Filming.Model
             MakeLastPageBreak();
 
             // TODO-Later: Layout of New Page is the same with LastPage
-            // TODO-Later£º DataModel use LayoutFactory.CreateDefaultLayout(), Depends on File system, not good to UT 
+            // TODO-Later£º DataModel use LayoutFactory.CreateDefaultLayout(), Depends on File system, not good to UT
+            // TODO-Later: Make Project Model not Dependent on Project Adapters 
             Add(PageModelFactory.CreatePageModel(LayoutFactory.CreateDefaultLayout()));
 
             var lastPageNO = Count - 1;

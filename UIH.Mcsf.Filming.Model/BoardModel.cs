@@ -11,14 +11,11 @@ namespace UIH.Mcsf.Filming.Model
     public class BoardModel : IBoardModel
     {
         private List<IBoardCell> _boardCells = new List<IBoardCell>();
-        // TODO-working-on: BoardCount
         private int _boardCount = 1;
-        // TODO: BoardNO
         private int _boardNO;
         private int _displayedBoardCellCount = 1;
         private int _groupNO; // number of MaxDisplayMode is a group
         private readonly DataModel _dataModel;
-        // TODO: PageCount Changed notification from Selectable<PageModel>
 
 
         public BoardModel(DataModel dataModel)
