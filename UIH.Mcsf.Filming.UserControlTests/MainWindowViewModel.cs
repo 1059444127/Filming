@@ -47,12 +47,12 @@ namespace UIH.Mcsf.Filming.UserControlTests
 
         private object CreateUserControlViewModel()
         {
-            return _007CreateGridTestViewModel();
+            return _004CreateCardControlViewModel();
         }
 
         private void StartTest()
         {
-            _007GridTestSubUserControlPositionBinding();
+            _006CardControlTestDisplayMode();
         }
 
         private void _007GridTestSubUserControlPositionBinding()
@@ -78,7 +78,10 @@ namespace UIH.Mcsf.Filming.UserControlTests
             var boardModel = new BoardModel(new PageRepository());
             viewModel.BoardModel = boardModel;
 
-            viewModel.DisplayMode = 3;
+            viewModel.DisplayMode = 4;
+            
+            boardModel.NewPage();
+            boardModel.BoardCells[0].Row = 1;
         }
 
         private void _005CardControlTestBoardModel()

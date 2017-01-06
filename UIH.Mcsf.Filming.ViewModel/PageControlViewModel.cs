@@ -11,7 +11,7 @@ namespace UIH.Mcsf.Filming.ViewModel
     public class PageControlViewModel : ViewModelBase
     {
         private IBoardCell _boardCell;
-        private PageModel _pageModel;
+        private PageModel _pageModel = PageModelFactory.CreatePageModel();
         //TODO: PageControlViewModel.RegisterEvent From BoardCell
         //TODO: Binding Page Changed
         //TODO: Binding Page.Layout Changed
@@ -19,7 +19,6 @@ namespace UIH.Mcsf.Filming.ViewModel
         public PageControlViewModel(IBoardCell boardCell)
         {
             _boardCell = boardCell;
-            _pageModel = _boardCell.PageModel;
 
             RegisterBoardCellEvent();
 
