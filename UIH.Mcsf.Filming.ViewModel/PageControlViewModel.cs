@@ -11,7 +11,7 @@ namespace UIH.Mcsf.Filming.ViewModel
     public class PageControlViewModel : ViewModelBase
     {
         private IBoardCell _boardCell;
-        private PageModel _pageModel = PageModelFactory.CreatePageModel();
+        private PageModel _pageModel;
         //TODO: PageControlViewModel.RegisterEvent From BoardCell
         //TODO: Binding Page Changed
         //TODO: Binding Page.Layout Changed
@@ -19,10 +19,27 @@ namespace UIH.Mcsf.Filming.ViewModel
         public PageControlViewModel(IBoardCell boardCell)
         {
             _boardCell = boardCell;
+            _pageModel = _boardCell.PageModel;
 
+            RegisterBoardCellEvent();
+
+        }
+
+        private void RegisterBoardCellEvent()
+        {
             _boardCell.PageModelChanged += BoardCellOnPageModelChanged;
+            _boardCell.RowChanged += BoardCellOnRowChanged;
+            _boardCell.ColChanged += BoardCellOnColChanged;
+        }
 
-            PageModel = _boardCell.PageModel;
+        private void BoardCellOnColChanged(object sender, EventArgs eventArgs)
+        {
+            Row = _boardCell.Row;
+        }
+
+        private void BoardCellOnRowChanged(object sender, EventArgs eventArgs)
+        {
+            Col = _boardCell.Col;
         }
 
         private PageModel PageModel
@@ -86,6 +103,41 @@ namespace UIH.Mcsf.Filming.ViewModel
             //var sampleCell = ImageCells.FirstOrDefault();
             //AccessionNumber = sampleCell.AccessionNumber;
         }
+
+        #region [--Row--]
+
+        private int _row;
+
+        public int Row
+        {
+            get { return _row; }
+            set
+            {
+                if (_row == value) return;
+                _row = value;
+                RaisePropertyChanged(() => Row);
+            }
+        }
+
+        #endregion [--Row--]
+
+        #region [--Col--]
+
+        private int _col;
+
+        public int Col
+        {
+            get { return _col; }
+            set
+            {
+                if (_col == value) return;
+                _col = value;
+                RaisePropertyChanged(() => Col);
+            }
+        }
+
+        #endregion [--Col--]
+
 
         #region [--BreakVisibility--]
 
