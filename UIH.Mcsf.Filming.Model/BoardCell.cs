@@ -25,7 +25,7 @@ namespace UIH.Mcsf.Filming.Model
             set { _pageModel.IsVisible = value; }
         }
 
-        public event EventHandler<PageModelEventArgs> PageModelChanged = delegate { };
+        public event EventHandler PageModelChanged = delegate { };
 
         #endregion
     }

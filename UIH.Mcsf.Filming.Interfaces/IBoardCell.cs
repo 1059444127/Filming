@@ -8,7 +8,7 @@ namespace UIH.Mcsf.Filming.Interfaces
         
         PageModel PageModel { get; set; }
         // TODO: Change PageModelChanged Type From EventHandler<PageModelEventArgs> to EventHandler
-        event EventHandler<PageModelEventArgs> PageModelChanged;
+        event EventHandler PageModelChanged;
         
         // TODO: Add IBoardCell.Row
         // TODO: Add IBoardCell.Col

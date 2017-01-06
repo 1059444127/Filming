@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
 using GalaSoft.MvvmLight;
@@ -9,6 +10,7 @@ namespace UIH.Mcsf.Filming.ViewModel
 {
     public class PageControlViewModel : ViewModelBase
     {
+        private IBoardCell _boardCell;
         private PageModel _pageModel = PageModelFactory.CreatePageModel();
         //TODO: PageControlViewModel.RegisterEvent From BoardCell
         //TODO: Binding Page Changed
@@ -16,9 +18,11 @@ namespace UIH.Mcsf.Filming.ViewModel
         //TODO: Binding Page.ImageCells Changed
         public PageControlViewModel(IBoardCell boardCell)
         {
-            boardCell.PageModelChanged += BoardCellOnPageModelChanged;
+            _boardCell = boardCell;
 
-            PageModel = boardCell.PageModel;
+            _boardCell.PageModelChanged += BoardCellOnPageModelChanged;
+
+            PageModel = _boardCell.PageModel;
         }
 
         private PageModel PageModel
@@ -35,9 +39,9 @@ namespace UIH.Mcsf.Filming.ViewModel
             }
         }
 
-        private void BoardCellOnPageModelChanged(object sender, PageModelEventArgs pageModelEventArgs)
+        private void BoardCellOnPageModelChanged(object sender, EventArgs args)
         {
-            PageModel = pageModelEventArgs.PageModel;
+            PageModel = _boardCell.PageModel;
         }
 
         private void RegisterPageModelEvent()
