@@ -2,7 +2,8 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:adapters="clr-namespace:UIH.Mcsf.Filming.Adapters;assembly=UIH.Mcsf.Filming.Adapters"
                     xmlns:viewModel="clr-namespace:UIH.Mcsf.Filming.ViewModel;assembly=UIH.Mcsf.Filming.ViewModel"
-                    xmlns:view="clr-namespace:UIH.Mcsf.Filming.View;assembly=UIH.Mcsf.Filming.View">
+                    xmlns:view="clr-namespace:UIH.Mcsf.Filming.View;assembly=UIH.Mcsf.Filming.View"
+                    xmlns:userControlTests="clr-namespace:UIH.Mcsf.Filming.UserControlTests">
     <DataTemplate DataType="{x:Type viewModel:ViewerControlAdapterViewModel}">
         <adapters:ViewerControlAdapter></adapters:ViewerControlAdapter>
     </DataTemplate> 
@@ -14,4 +15,9 @@
     <DataTemplate DataType="{x:Type viewModel:CardControlViewModel}">
         <view:CardControl />
     </DataTemplate>
+
+    <DataTemplate DataType="{x:Type userControlTests:GridTestViewModel}">
+        <userControlTests:GridTestUserControl />
+    </DataTemplate>
+    
 </ResourceDictionary>

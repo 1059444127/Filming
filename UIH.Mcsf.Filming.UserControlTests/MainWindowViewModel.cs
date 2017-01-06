@@ -47,12 +47,24 @@ namespace UIH.Mcsf.Filming.UserControlTests
 
         private object CreateUserControlViewModel()
         {
-            return _004CreateCardControlViewModel();
+            return _007CreateGridTestViewModel();
         }
 
         private void StartTest()
         {
-            _006CardControlTestDisplayMode();
+            _007GridTestSubUserControlPositionBinding();
+        }
+
+        private void _007GridTestSubUserControlPositionBinding()
+        {
+            var viewModel = _userControlViewModel as GridTestViewModel;
+            viewModel.Row = 1;
+            viewModel.Col = 0;
+        }
+
+        private object _007CreateGridTestViewModel()
+        {
+            return new GridTestViewModel();
         }
 
         private object _004CreateCardControlViewModel()
