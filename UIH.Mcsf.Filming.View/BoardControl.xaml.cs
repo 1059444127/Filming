@@ -62,7 +62,7 @@ namespace UIH.Mcsf.Filming.View
         private void SetGrid(int row, int col)
         {
             CompleteGrid(row, col);
-
+            //TODO-later: Page Size Control
             PlacePagesToGrid(row, col);
         }
 
@@ -70,9 +70,9 @@ namespace UIH.Mcsf.Filming.View
         //TODO: BoardControl. When DisplayMode changed, Re-place Grid content
         //TODO: BoardControl. When Index of First BoardCell changed, Re-place Grid content
         //TODO-bug: 最后一张胶片的PageBreak无法显示
+        // TODO-working-on: Replace BoardControl.PlacePagesToGrid  by BoardCell.Row/Col
         private void PlacePagesToGrid(int row, int col)
         {
-            //TODO-later: Page Size Control
             var scale = new ScaleTransform(1,1);
             var pageIndex = 0;
             for (var i = 0; i < row; i++)
