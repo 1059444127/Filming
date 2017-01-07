@@ -77,9 +77,9 @@ namespace UIH.Mcsf.Filming.ViewModel
             _breakVisibility = BoolToVisibility(_pageModel.IsBreak);
         }
 
-        private void PageModelOnIsBreakChanged(object sender, BoolEventArgs boolEventArgs)
+        private void PageModelOnIsBreakChanged(object sender, EventArgs args)
         {
-            BreakVisibility = BoolToVisibility(boolEventArgs.Bool);
+            BreakVisibility = BoolToVisibility(_pageModel.IsBreak);
         }
 
         private Visibility BoolToVisibility(bool b)
@@ -87,9 +87,9 @@ namespace UIH.Mcsf.Filming.ViewModel
             return b ? Visibility.Visible : Visibility.Collapsed;
         }
 
-        private void PageModelOnVisibleChanged(object sender, BoolEventArgs boolEventArgs)
+        private void PageModelOnVisibleChanged(object sender, EventArgs args)
         {
-            Visibility = BoolToVisibility(boolEventArgs.Bool);
+            Visibility = BoolToVisibility(_pageModel.IsVisible);
         }
 
         //TODO-Later: PageControlViewModel.RefreshTitle()

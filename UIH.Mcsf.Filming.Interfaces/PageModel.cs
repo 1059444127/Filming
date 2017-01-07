@@ -9,17 +9,17 @@ namespace UIH.Mcsf.Filming.Interfaces
         public abstract IList<ImageCell> ImageCells { get; set; }
         public abstract bool IsBreak { get; set; }
         public abstract bool IsVisible { get; set; }
-        public event EventHandler<BoolEventArgs> IsBreakChanged = delegate { };
-        public event EventHandler<BoolEventArgs> VisibleChanged = delegate { };
+        public event EventHandler IsBreakChanged = delegate { };
+        public event EventHandler VisibleChanged = delegate { };
 
         protected void OnBreakChanged()
         {
-            IsBreakChanged(this, new BoolEventArgs(IsBreak));
+            IsBreakChanged(this, new EventArgs());
         }
 
         protected void OnVisibleChanged()
         {
-            VisibleChanged(this, new BoolEventArgs(IsVisible));
+            VisibleChanged(this, new EventArgs());
         }
 
         #region Implementation of ISelect
