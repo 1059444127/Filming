@@ -12,10 +12,6 @@ namespace UIH.Mcsf.Filming.ViewModel
     {
         private IBoardCell _boardCell;
         private PageModel _pageModel = PageModelFactory.CreatePageModel();
-        //TODO: PageControlViewModel.RegisterEvent From BoardCell
-        //TODO: Binding Page Changed
-        //TODO: Binding Page.Layout Changed
-        //TODO: Binding Page.ImageCells Changed
         public PageControlViewModel(IBoardCell boardCell)
         {
             _boardCell = boardCell;
@@ -96,7 +92,7 @@ namespace UIH.Mcsf.Filming.ViewModel
             Visibility = BoolToVisibility(boolEventArgs.Bool);
         }
 
-        //TODO: PageControlViewModel.RefreshTitle()
+        //TODO-Later: PageControlViewModel.RefreshTitle()
         private void RefreshTitle()
         {
             //var sampleCell = ImageCells.FirstOrDefault();
@@ -157,7 +153,6 @@ namespace UIH.Mcsf.Filming.ViewModel
 
         #region [--Visibility--]
 
-        // TODO-working-on: PageControlViewModel.Visibility移动到BoardCell.Visibility
         private Visibility _visibility;
 
         public Visibility Visibility

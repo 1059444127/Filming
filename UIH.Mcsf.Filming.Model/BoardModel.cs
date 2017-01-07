@@ -5,7 +5,6 @@ using UIH.Mcsf.Filming.Interfaces;
 
 namespace UIH.Mcsf.Filming.Model
 {
-    // TODO-working-on: Extract IBoardModel From BoardModel
 
 
     public class BoardModel : IBoardModel
@@ -91,7 +90,6 @@ namespace UIH.Mcsf.Filming.Model
             }
         }
 
-        // TODO-working-on: BoardModel.EventHandler<IntEventArgs> to EventHandler 
         public event EventHandler BoardNOChanged = delegate { };
         public event EventHandler BoardCountChanged = delegate { };
 

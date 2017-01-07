@@ -64,9 +64,8 @@ namespace UIH.Mcsf.Filming.Model
         #region [--Events--]
 
         public event EventHandler<IntEventArgs> PageChanged = delegate { };
-        // TODO: PageControl.IsFocused(TitleBar.Border=Yellow & IsSelected(TitleBar.Fill=Aqua)
+        // TODO-Later: PageControl.IsFocused(TitleBar.Border=Yellow & IsSelected(TitleBar.Fill=Aqua)
         public event EventHandler FocusChanged = delegate { };
-        // TODO-working-on: pageCountChanged event
         // TODO-UT: PageRepository.PageCountChanged
         public event EventHandler PageCountChanged = delegate { };
 

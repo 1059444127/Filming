@@ -30,35 +30,6 @@ namespace UIH.Mcsf.Filming.View
             }
         }
 
-        //TODO: Make BoardControl.FillPages Oneway
-        //private void FillPages()
-        //{
-        //    var i = 0;
-        //    while (i < BoardCells.Count && i < _displayMode)
-        //    {
-        //        var pageControl = _pages[i];
-        //        pageControl.Visibility = Visibility.Visible;   //TODO: PageControl.Visibility Binding to BoardCell
-        //        var pageModel = BoardCells[i];
-        //        //TODO-later: 出于性能方面的考虑，View（BoardControl）依赖了ViewModel（PageViewModel）
-        //        pageControl.DataContext = new PageControlViewModel(pageModel);
-        //        i++;
-        //    }
-        //    while (i < GlobalDefinitions.MaxDisplayMode)
-        //    {
-        //        var pageControl = _pages[i];
-        //        pageControl.Visibility = Visibility.Hidden;
-        //        i++;
-        //    }
-        //}
-
-        //private void SetDisplayMode()
-        //{
-        //    if (_displayMode == DisplayMode) return;
-        //    _displayMode = DisplayMode;
-        //    SetGrid();
-        //}
-
-
         private void SetGrid(int row, int col)
         {
             CompleteGrid(row, col);
@@ -70,7 +41,7 @@ namespace UIH.Mcsf.Filming.View
         //TODO: BoardControl. When DisplayMode changed, Re-place Grid content
         //TODO: BoardControl. When Index of First BoardCell changed, Re-place Grid content
         //TODO-bug: 最后一张胶片的PageBreak无法显示
-        // TODO-working-on: Replace BoardControl.PlacePagesToGrid  by BoardCell.Row/Col
+        // TODO-working-on: BoardControl. Replace BoardControl.PlacePagesToGrid  by BoardCell.Row/Col
         private void PlacePagesToGrid(int row, int col)
         {
             var scale = new ScaleTransform(1,1);
