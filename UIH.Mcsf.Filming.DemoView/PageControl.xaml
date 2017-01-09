@@ -4,11 +4,13 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:vc="clr-namespace:UIH.Mcsf.Viewer;assembly=UIH.Mcsf.Viewer.Control"
-             xmlns:view="clr-namespace:UIH.Mcsf.Filming.DemoView" mc:Ignorable="d"
+             xmlns:view="clr-namespace:UIH.Mcsf.Filming.DemoView"
+             xmlns:converters="clr-namespace:UIH.Mcsf.Filming.Converters;assembly=UIH.Mcsf.Filming.Converters"
+             mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="300">
     <UserControl.Resources>
         <ResourceDictionary>
-            <view:SelectedStatusToColorConverter x:Key="SelectedStatusToColorConverter" />
+            <converters:SelectedStatusToColorConverter x:Key="SelectedStatusToColorConverter" />
         </ResourceDictionary>
     </UserControl.Resources>
     <DockPanel>

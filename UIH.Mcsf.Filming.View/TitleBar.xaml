@@ -1,11 +1,12 @@
-<UserControl x:Class="UIH.Mcsf.Filming.View.TitlerBar"
+<UserControl x:Class="UIH.Mcsf.Filming.View.TitleBar"
 	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
 	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 	xmlns:converters="clr-namespace:UIH.Mcsf.Filming.Converters;assembly=UIH.Mcsf.Filming.Converters">
     <UserControl.Resources>
-        <converters:ElementIndexConverter x:Key="ElementIndexConverter"></converters:ElementIndexConverter>
+        <converters:ElementIndexConverter x:Key="ElementIndexConverter" />
+        <converters:SelectedStatusToColorConverter x:Key="SelectedStatusToColorConverter"/>
     </UserControl.Resources>
-    <Grid>
+    <Grid Background="{Binding IsSelected, Converter={StaticResource SelectedStatusToColorConverter}}">
         <TextBlock Text="{Binding PatientName}" HorizontalAlignment="Left"></TextBlock>
         <TextBlock HorizontalAlignment="Right">
             <TextBlock.Text>

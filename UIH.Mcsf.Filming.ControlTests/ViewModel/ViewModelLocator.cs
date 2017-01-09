@@ -42,11 +42,12 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
             ////}
 
             SimpleIoc.Default.Register<MainViewModel>();
+            SimpleIoc.Default.Register<TitleBarViewModel>();
         }
 
-        public MainViewModel Main
+        public object Main
         {
-            get { return ServiceLocator.Current.GetInstance<MainViewModel>(); }
+            get { return ServiceLocator.Current.GetInstance<TitleBarViewModel>(); }
         }
 
         public static void Cleanup()
