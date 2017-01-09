@@ -43,11 +43,18 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
 
             SimpleIoc.Default.Register<MainViewModel>();
             SimpleIoc.Default.Register<TitleBarViewModel>();
+            SimpleIoc.Default.Register<DynamicGridViewModel>();
+            SimpleIoc.Default.Register<CardControlViewModel>();
         }
 
         public object Main
         {
-            get { return ServiceLocator.Current.GetInstance<TitleBarViewModel>(); }
+            get { return CreateViewModel(); }
+        }
+
+        private static object CreateViewModel()
+        {
+            return ServiceLocator.Current.GetInstance<CardControlViewModel>();
         }
 
         public static void Cleanup()
