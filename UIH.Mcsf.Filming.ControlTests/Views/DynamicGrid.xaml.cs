@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
 using UIH.Mcsf.Filming.Interfaces;
+using UIH.Mcsf.Filming.Utilities;
 
 namespace UIH.Mcsf.Filming.ControlTests.Views
 {
@@ -26,7 +27,7 @@ namespace UIH.Mcsf.Filming.ControlTests.Views
 
         // Using a DependencyProperty as the backing store for CellCount.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty CellCountProperty =
-            DependencyProperty.Register("CellCount", typeof(int), typeof(DynamicGrid), new PropertyMetadata(1, OnCellCountChanged));
+            DependencyProperty.Register("CellCount", typeof(int), typeof(DynamicGrid), new PropertyMetadata(8, OnCellCountChanged));
 
         private static void OnCellCountChanged(DependencyObject dependencyObject, DependencyPropertyChangedEventArgs dependencyPropertyChangedEventArgs)
         {
@@ -47,18 +48,16 @@ namespace UIH.Mcsf.Filming.ControlTests.Views
             PlaceGridCell(row, col);
         }
         
-        // TODO: Move calculate logic From DynamicGrid.PlaceGridCell to Project Utilities
         private void PlaceGridCell(int rows, int cols)
         {
             var childrenCount = Grid.Children.Count;
+            var gridLayoutModel = new GridLayoutModel(rows, cols);
             for (int i = 0; i <childrenCount; i++)
             {
-                var pos = i%CellCount;
-                var col = pos/cols;
-                var row = pos%cols;
+                var gridPosition = gridLayoutModel.GetGridPositionBy(i);
                 var child = Grid.Children[i];
-                Grid.SetRow(child, row);
-                Grid.SetColumn(child, col);
+                Grid.SetRow(child, gridPosition.Row);
+                Grid.SetColumn(child, gridPosition.Col);
             }
         }
 

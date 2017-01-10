@@ -58,6 +58,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIH.Mcsf.Filming.ControlTes
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIH.Mcsf.Filming.Utilities", "..\UIH.Mcsf.Filming.Utilities\UIH.Mcsf.Filming.Utilities.csproj", "{D2FC10DB-2C0F-4511-82F6-A005AA54F0E7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIH.Mcsf.Filming.Utilities_UT", "UIH.Mcsf.Filming.Utilities_UT\UIH.Mcsf.Filming.Utilities_UT.csproj", "{DA8AC358-252E-4A02-A225-CDFFD9C5239C}"
+EndProject
 Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
 		SccNumberOfProjects = 21
@@ -272,6 +274,10 @@ Global
 		{D2FC10DB-2C0F-4511-82F6-A005AA54F0E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D2FC10DB-2C0F-4511-82F6-A005AA54F0E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D2FC10DB-2C0F-4511-82F6-A005AA54F0E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA8AC358-252E-4A02-A225-CDFFD9C5239C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA8AC358-252E-4A02-A225-CDFFD9C5239C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA8AC358-252E-4A02-A225-CDFFD9C5239C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA8AC358-252E-4A02-A225-CDFFD9C5239C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,33 +1,39 @@
-﻿using GalaSoft.MvvmLight;
+﻿using System;
+using System.Diagnostics;
+using System.Windows.Input;
+using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.Command;
 
 namespace UIH.Mcsf.Filming.ControlTests.ViewModel
 {
-    class CardControlViewModel : ViewModelBase
+    public class CardControlViewModel : ViewModelBase
     {
         public CardControlViewModel()
         {
             DynamicGridViewModel = new DynamicGridViewModel();
         }
 
-        #region [--CellCount--]
+        #region [--DisplayMode--]
 
-        private int _cellCount=1;
+        private int _displayMode=1;
 
-        public int CellCount
+        public int DisplayMode
         {
-            get { return _cellCount; }
+            get { return _displayMode; }
             set
             {
-                if (_cellCount == value) return;
-                _cellCount = value;
-                RaisePropertyChanged(() => CellCount);
+                if (_displayMode == value) return;
+                _displayMode = value;
+                RaisePropertyChanged(() => DisplayMode);
+                DynamicGridViewModel.CellCount = value;
             }
         }
 
-        #endregion [--CellCount--]
+        #endregion [--DisplayMode--]
 
 
-        public object DynamicGridViewModel { get; private set; }
+        public DynamicGridViewModel DynamicGridViewModel { get; private set; }
+
 
     }
 }

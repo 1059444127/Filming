@@ -6,5 +6,5 @@
              xmlns:views="clr-namespace:UIH.Mcsf.Filming.ControlTests.Views"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
-    <views:DynamicGrid Content="{Binding DynamicGridViewModel}" CellCount="{Binding CellCount}"/>
+    <views:DynamicGrid  CellCount="{Binding CellCount}" DataContext="{Binding DynamicGridViewModel}" />
 </UserControl>

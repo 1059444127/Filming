@@ -24,6 +24,24 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
 
 
         public IList<IGridCell> GridCellViewModels { get; private set; }
+
+        #region [--CellCount--]
+
+        private int _cellCount = 1;
+
+        public int CellCount
+        {
+            get { return _cellCount; }
+            set
+            {
+                if (_cellCount == value) return;
+                _cellCount = value;
+                RaisePropertyChanged(() => CellCount);
+            }
+        }
+
+        #endregion [--CellCount--]
+
     }
 
     public interface IGridCell

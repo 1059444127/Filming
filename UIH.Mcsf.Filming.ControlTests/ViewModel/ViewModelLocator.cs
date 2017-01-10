@@ -42,26 +42,11 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
             ////}
 
             SimpleIoc.Default.Register<MainViewModel>();
-            SimpleIoc.Default.Register<TitleBarViewModel>();
-            SimpleIoc.Default.Register<DynamicGridViewModel>();
-            SimpleIoc.Default.Register<CardControlViewModel>();
         }
 
-        public object Main
+        public MainViewModel Main
         {
-            get { return CreateViewModel(); }
-        }
-
-        private static object CreateViewModel()
-        {
-            return CreateCardControlViewModel();
-        }
-
-        private static object CreateCardControlViewModel()
-        {
-            var cardControlViewModel = ServiceLocator.Current.GetInstance<CardControlViewModel>();
-            cardControlViewModel.CellCount = 8;
-            return cardControlViewModel;
+            get { return ServiceLocator.Current.GetInstance<MainViewModel>(); }
         }
 
         public static void Cleanup()
