@@ -6,5 +6,29 @@
              xmlns:views="clr-namespace:UIH.Mcsf.Filming.ControlTests.Views"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
-    <views:DynamicGrid  CellCount="{Binding CellCount}" DataContext="{Binding DynamicGridViewModel}" />
+    <DockPanel LastChildFill="True">
+        <StackPanel x:Name="ControlPanel" DockPanel.Dock="{Binding ControlPanelDock}">
+            <ContentControl Height="100" x:Name="StudyList"></ContentControl>
+            <WrapPanel x:Name="PagesPanel">
+                <Button Content="新建胶片" Command="{Binding NewPageCommand}"></Button>
+                <ComboBox SelectedValuePath="Content" SelectedValue="{Binding DisplayMode}">
+                    <ComboBoxItem Content="1" />
+                    <ComboBoxItem Content="2" />
+                    <ComboBoxItem Content="3" />
+                    <ComboBoxItem Content="4" />
+                    <ComboBoxItem Content="6" />
+                    <ComboBoxItem Content="8" />
+                </ComboBox>
+            </WrapPanel>
+            <ContentControl Height="10" x:Name="ViewportLayoutPanel"></ContentControl>
+            <ContentControl Height="10" x:Name="CellLayoutPanel"></ContentControl>
+            <ContentControl Height="10" x:Name="ImageEditToolPanel"></ContentControl>
+            <ContentControl Height="10" x:Name="CommandViewerTools"></ContentControl>
+            <ContentControl Height="10" x:Name="PrintPanel"></ContentControl>
+        </StackPanel>
+        <DockPanel LastChildFill="True">
+            <ScrollBar DockPanel.Dock="Right" Maximum="{Binding BoardMaxNO}" Minimum="0" Value="{Binding BoardNO}" ToolTip="{Binding BoardNO}"></ScrollBar>
+            <views:DynamicGrid  CellCount="{Binding CellCount}" DataContext="{Binding DynamicGridViewModel}" />
+        </DockPanel>
+    </DockPanel>
 </UserControl>
