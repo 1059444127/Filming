@@ -54,7 +54,14 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
 
         private static object CreateViewModel()
         {
-            return ServiceLocator.Current.GetInstance<CardControlViewModel>();
+            return CreateCardControlViewModel();
+        }
+
+        private static object CreateCardControlViewModel()
+        {
+            var cardControlViewModel = ServiceLocator.Current.GetInstance<CardControlViewModel>();
+            cardControlViewModel.CellCount = 8;
+            return cardControlViewModel;
         }
 
         public static void Cleanup()

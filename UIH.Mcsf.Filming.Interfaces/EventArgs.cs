@@ -12,6 +12,7 @@ namespace UIH.Mcsf.Filming.Interfaces
         public IClickStatus ClickStatus { get; private set; }
     }
 
+    // TODO: Remove BoolEventArgs
     public class BoolEventArgs : EventArgs
     {
         public BoolEventArgs(bool b)
@@ -22,6 +23,7 @@ namespace UIH.Mcsf.Filming.Interfaces
         public bool Bool { get; private set; }
     }
 
+    // TODO: Move IntEventArgs From Project Interfaces to Project Utilities
     public class IntEventArgs : EventArgs
     {
         public IntEventArgs(int i)
@@ -31,7 +33,8 @@ namespace UIH.Mcsf.Filming.Interfaces
 
         public int Int { get; private set; }
     }
-
+    
+    // TODO: Remove PageModelEventArgs
     public class PageModelEventArgs : EventArgs
     {
         public PageModelEventArgs(PageModel pageModel)

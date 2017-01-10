@@ -1,5 +1,6 @@
 ﻿namespace UIH.Mcsf.Filming.Interfaces
 {
+    // TODO: Move DisplayMode From Project Interfaces to Project Utilities
     public struct DisplayMode
     {
         public DisplayMode(int itemCount) : this()

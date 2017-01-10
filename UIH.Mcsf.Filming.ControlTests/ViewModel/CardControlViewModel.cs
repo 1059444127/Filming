@@ -11,7 +11,7 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
 
         #region [--CellCount--]
 
-        private int _cellCount;
+        private int _cellCount=1;
 
         public int CellCount
         {

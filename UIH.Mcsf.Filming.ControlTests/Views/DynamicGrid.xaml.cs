@@ -43,7 +43,27 @@ namespace UIH.Mcsf.Filming.ControlTests.Views
 
         private void SetGrid(int row, int col)
         {
+            ComplementGrid(row, col);
+            PlaceGridCell(row, col);
+        }
         
+        // TODO: Move calculate logic From DynamicGrid.PlaceGridCell to Project Utilities
+        private void PlaceGridCell(int rows, int cols)
+        {
+            var childrenCount = Grid.Children.Count;
+            for (int i = 0; i <childrenCount; i++)
+            {
+                var pos = i%CellCount;
+                var col = pos/cols;
+                var row = pos%cols;
+                var child = Grid.Children[i];
+                Grid.SetRow(child, row);
+                Grid.SetColumn(child, col);
+            }
+        }
+
+        private void ComplementGrid(int row, int col)
+        {
             var rows = Grid.RowDefinitions;
             var curRow = rows.Count;
             var cols = Grid.ColumnDefinitions;
