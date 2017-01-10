@@ -18,7 +18,7 @@ namespace UIH.Mcsf.Filming.Model
             {
                 if (_pageModel == value) return;
                 _pageModel = value;
-                PageModelChanged(this, new PageModelEventArgs(value));
+                PageModelChanged(this, new EventArgs());
             }
         }
 
