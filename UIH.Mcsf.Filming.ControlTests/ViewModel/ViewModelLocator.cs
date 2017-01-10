@@ -51,7 +51,6 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
 
         public static void Cleanup()
         {
-            // TODO Clear the ViewModels
         }
     }
 }

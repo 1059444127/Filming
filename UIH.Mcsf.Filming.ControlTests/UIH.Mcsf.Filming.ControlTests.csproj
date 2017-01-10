@@ -95,6 +95,9 @@
     <Compile Include="Views\DynamicGrid.xaml.cs">
       <DependentUpon>DynamicGrid.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\TitleBar.xaml.cs">
+      <DependentUpon>TitleBar.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -118,6 +121,10 @@
     <Page Include="Views\DynamicGrid.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TitleBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>
@@ -147,17 +154,13 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <ProjectReference Include="..\UIH.Mcsf.Filming.Interfaces\UIH.Mcsf.Filming.Interfaces.csproj">
-      <Project>{27718D47-A3D6-4EA7-8669-E61A94562912}</Project>
-      <Name>UIH.Mcsf.Filming.Interfaces</Name>
+    <ProjectReference Include="..\UIH.Mcsf.Filming.Converters\UIH.Mcsf.Filming.Converters.csproj">
+      <Project>{ED1963FE-3448-4B89-A2A0-0EE1BB84DB96}</Project>
+      <Name>UIH.Mcsf.Filming.Converters</Name>
     </ProjectReference>
     <ProjectReference Include="..\UIH.Mcsf.Filming.Utilities\UIH.Mcsf.Filming.Utilities.csproj">
       <Project>{D2FC10DB-2C0F-4511-82F6-A005AA54F0E7}</Project>
       <Name>UIH.Mcsf.Filming.Utilities</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\UIH.Mcsf.Filming.View\UIH.Mcsf.Filming.View.csproj">
-      <Project>{C17AFDE4-568D-4B67-9526-E08E70BD0160}</Project>
-      <Name>UIH.Mcsf.Filming.View</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

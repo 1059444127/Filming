@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Windows;
 using GalaSoft.MvvmLight;
-using UIH.Mcsf.Filming.Interfaces;
 
 namespace UIH.Mcsf.Filming.ControlTests.ViewModel
 {
