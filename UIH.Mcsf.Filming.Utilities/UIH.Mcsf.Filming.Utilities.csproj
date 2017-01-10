@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DisplayMode.cs" />
     <Compile Include="GridLayoutModel.cs" />
     <Compile Include="GridPosition.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

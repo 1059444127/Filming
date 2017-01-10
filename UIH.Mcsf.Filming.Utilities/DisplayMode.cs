@@ -1,6 +1,5 @@
-﻿namespace UIH.Mcsf.Filming.Interfaces
+﻿namespace UIH.Mcsf.Filming.Utilities
 {
-    // TODO: Move DisplayMode From Project Interfaces to Project Utilities
     public struct DisplayMode
     {
         public DisplayMode(int itemCount) : this()
@@ -11,7 +10,7 @@
             Col = itemCount/Row;
         }
 
-        public int Count { get; private set; }
+        private int Count { get; set; }
         public int Row { get; private set; }
         public int Col { get; private set; }
 

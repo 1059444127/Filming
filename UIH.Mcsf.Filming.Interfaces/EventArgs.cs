@@ -13,7 +13,6 @@ namespace UIH.Mcsf.Filming.Interfaces
     }
 
 
-    // TODO: Move IntEventArgs From Project Interfaces to Project Utilities
     public class IntEventArgs : EventArgs
     {
         public IntEventArgs(int i)

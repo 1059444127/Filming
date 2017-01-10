@@ -5,6 +5,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using UIH.Mcsf.Filming.Interfaces;
+using UIH.Mcsf.Filming.Utilities;
 using UIH.Mcsf.Filming.ViewModel;
 
 namespace UIH.Mcsf.Filming.View
