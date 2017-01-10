@@ -1,8 +1,8 @@
 namespace UIH.Mcsf.Filming.View
 {
-    public partial class TitlerBar
+    public partial class TitleBar
     {
-        public TitlerBar()
+        public TitleBar()
         {
             InitializeComponent();
         }

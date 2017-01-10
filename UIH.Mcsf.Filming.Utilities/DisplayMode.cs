@@ -1,4 +1,4 @@
-﻿namespace UIH.Mcsf.Filming.Interfaces
+﻿namespace UIH.Mcsf.Filming.Utilities
 {
     public struct DisplayMode
     {
@@ -10,7 +10,7 @@
             Col = itemCount/Row;
         }
 
-        public int Count { get; private set; }
+        private int Count { get; set; }
         public int Row { get; private set; }
         public int Col { get; private set; }
 

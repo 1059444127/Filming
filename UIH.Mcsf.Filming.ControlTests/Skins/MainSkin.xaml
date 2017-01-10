@@ -1,0 +1,15 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:viewModel="clr-namespace:UIH.Mcsf.Filming.ControlTests.ViewModel"
+                    xmlns:view="clr-namespace:UIH.Mcsf.Filming.View;assembly=UIH.Mcsf.Filming.View"
+                    xmlns:localView="clr-namespace:UIH.Mcsf.Filming.ControlTests.Views">
+    <DataTemplate DataType="{x:Type viewModel:TitleBarViewModel}">
+        <view:TitleBar />
+    </DataTemplate> 
+    <DataTemplate DataType="{x:Type viewModel:DynamicGridViewModel}">
+        <localView:DynamicGrid />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type viewModel:CardControlViewModel}">
+        <localView:CardControl />
+    </DataTemplate>
+</ResourceDictionary>

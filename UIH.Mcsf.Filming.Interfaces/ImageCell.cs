@@ -8,8 +8,8 @@ namespace UIH.Mcsf.Filming.Interfaces
         private bool _isFocused;
         private bool _isSelected;
         public abstract DisplayData DisplayData { get; }
-        public event EventHandler<BoolEventArgs> SelectStatusChanged = delegate { };
-        public event EventHandler<BoolEventArgs> FocusStatusChanged = delegate { };
+        public event EventHandler SelectStatusChanged = delegate { };
+        public event EventHandler FocusStatusChanged = delegate { };
 
         public void OnClicked(IClickStatus clickStatus)
         {
@@ -25,7 +25,7 @@ namespace UIH.Mcsf.Filming.Interfaces
             {
                 if (_isSelected == value) return;
                 _isSelected = value;
-                SelectStatusChanged(this, new BoolEventArgs(value));
+                SelectStatusChanged(this, new EventArgs());
             }
         }
 
@@ -36,7 +36,7 @@ namespace UIH.Mcsf.Filming.Interfaces
             {
                 if (_isFocused == value) return;
                 _isFocused = value;
-                FocusStatusChanged(this, new BoolEventArgs(value));
+                FocusStatusChanged(this, new EventArgs());
             }
         }
 

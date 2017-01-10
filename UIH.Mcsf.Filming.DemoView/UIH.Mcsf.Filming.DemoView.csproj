@@ -123,6 +123,10 @@
       <Project>{6E737007-9A79-49CA-A966-4E6DD5E40EB4}</Project>
       <Name>UIH.Mcsf.Filming.Configure</Name>
     </ProjectReference>
+    <ProjectReference Include="..\UIH.Mcsf.Filming.Converters\UIH.Mcsf.Filming.Converters.csproj">
+      <Project>{ED1963FE-3448-4B89-A2A0-0EE1BB84DB96}</Project>
+      <Name>UIH.Mcsf.Filming.Converters</Name>
+    </ProjectReference>
     <ProjectReference Include="..\UIH.Mcsf.Filming.DataModel\UIH.Mcsf.Filming.DataModel.csproj">
       <Project>{DA1D05EA-2679-49E9-8DBA-0A1EE9E50405}</Project>
       <Name>UIH.Mcsf.Filming.DataModel</Name>
