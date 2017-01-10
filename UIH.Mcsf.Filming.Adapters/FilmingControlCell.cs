@@ -1,4 +1,5 @@
-﻿using UIH.Mcsf.Filming.Interfaces;
+﻿using System;
+using UIH.Mcsf.Filming.Interfaces;
 using UIH.Mcsf.Viewer;
 
 namespace UIH.Mcsf.Filming.Adapters
@@ -51,14 +52,14 @@ namespace UIH.Mcsf.Filming.Adapters
             _imageCell.FocusStatusChanged -= ImageCellOnFocusStatusChanged;
         }
 
-        private void ImageCellOnSelectStatusChanged(object sender, BoolEventArgs boolEventArgs)
+        private void ImageCellOnSelectStatusChanged(object sender, EventArgs args)
         {
-            IsSelected = boolEventArgs.Bool;
+            IsSelected = _imageCell.IsSelected;
         }
 
-        private void ImageCellOnFocusStatusChanged(object sender, BoolEventArgs boolEventArgs)
+        private void ImageCellOnFocusStatusChanged(object sender, EventArgs args)
         {
-            _isFocused = boolEventArgs.Bool;
+            _isFocused = _imageCell.IsFocused;
         }
 
         public void FillImage(ImageCell imageCell)

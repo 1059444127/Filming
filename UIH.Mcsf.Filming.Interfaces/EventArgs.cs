@@ -12,16 +12,6 @@ namespace UIH.Mcsf.Filming.Interfaces
         public IClickStatus ClickStatus { get; private set; }
     }
 
-    // TODO: Remove BoolEventArgs
-    public class BoolEventArgs : EventArgs
-    {
-        public BoolEventArgs(bool b)
-        {
-            Bool = b;
-        }
-
-        public bool Bool { get; private set; }
-    }
 
     // TODO: Move IntEventArgs From Project Interfaces to Project Utilities
     public class IntEventArgs : EventArgs
