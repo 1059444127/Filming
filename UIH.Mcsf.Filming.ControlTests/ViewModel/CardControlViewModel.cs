@@ -7,7 +7,7 @@ using GalaSoft.MvvmLight.Command;
 
 namespace UIH.Mcsf.Filming.ControlTests.ViewModel
 {
-    public class CardControlViewModel : ViewModelBase
+    class CardControlViewModel : TestViewModelBase
     {
         public CardControlViewModel()
         {
@@ -35,21 +35,13 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
 
         public DynamicGridViewModel DynamicGridViewModel { get; private set; }
 
-        #region [--UpdateViewModelCommand--]
+        #region Overrides of TestViewModelBase
 
-        private ICommand _updateViewModelCommand;
-
-        public ICommand UpdateViewModelCommand
+        protected override void UpdateViewModel()
         {
-            get { return _updateViewModelCommand = _updateViewModelCommand ?? new RelayCommand(UpdateViewModel); }
+            MessageBox.Show("Middle Button pressed at CardControl");
         }
 
-        private void UpdateViewModel()
-        {
-            MessageBox.Show("F6 pressed");
-        }
-
-        #endregion [--UpdateViewModelCommand--]    
-
+        #endregion
     }
 }

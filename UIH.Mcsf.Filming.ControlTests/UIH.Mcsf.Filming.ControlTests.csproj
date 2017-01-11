@@ -89,6 +89,7 @@
     <Compile Include="ViewModel\FooControlViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\PageControlViewModel.cs" />
+    <Compile Include="ViewModel\TestViewModelBase.cs" />
     <Compile Include="ViewModel\TitleBarViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Compile Include="Views\CardControl.xaml.cs">

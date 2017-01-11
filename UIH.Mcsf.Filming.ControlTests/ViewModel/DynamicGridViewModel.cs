@@ -4,7 +4,7 @@ using GalaSoft.MvvmLight;
 
 namespace UIH.Mcsf.Filming.ControlTests.ViewModel
 {
-    public class DynamicGridViewModel : ViewModelBase
+    class DynamicGridViewModel : TestViewModelBase
     {
         public DynamicGridViewModel()
         {
@@ -41,6 +41,21 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
 
         #endregion [--CellCount--]
 
+        #region Overrides of TestViewModelBase
+
+        protected override void UpdateViewModel()
+        {
+            MessageBox.Show("Middle Button Pressed at DynamicGrid");
+
+            MessageBox.Show("Make Page 6 Invisible");
+            GridCellViewModels[5].Visibility = Visibility.Collapsed;
+
+            MessageBox.Show("Move Page 3 to Position 6");
+            GridCellViewModels[2].Col = 1;
+            GridCellViewModels[2].Row = 1;
+        }
+
+        #endregion
     }
 
     public interface IGridCell

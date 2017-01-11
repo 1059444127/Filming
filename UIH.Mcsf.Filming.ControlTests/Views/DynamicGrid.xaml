@@ -6,6 +6,9 @@
              xmlns:views="clr-namespace:UIH.Mcsf.Filming.ControlTests.Views"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
+             <UserControl.InputBindings>
+                 <MouseBinding MouseAction="MiddleClick" Command="{Binding UpdateViewModelCommand}"></MouseBinding>
+             </UserControl.InputBindings>
     <Grid Name="Grid" ShowGridLines="True">
         <views:PageControl DataContext="{Binding GridCellViewModels[0]}"/>
         <views:PageControl DataContext="{Binding GridCellViewModels[1]}"/>
