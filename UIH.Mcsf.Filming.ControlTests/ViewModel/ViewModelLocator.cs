@@ -42,11 +42,12 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
             ////}
 
             SimpleIoc.Default.Register<MainViewModel>();
+            SimpleIoc.Default.Register<CardControlViewModel>();
         }
 
-        public MainViewModel Main
+        public object Main
         {
-            get { return ServiceLocator.Current.GetInstance<MainViewModel>(); }
+            get { return ServiceLocator.Current.GetInstance<CardControlViewModel>(); }
         }
 
         public static void Cleanup()

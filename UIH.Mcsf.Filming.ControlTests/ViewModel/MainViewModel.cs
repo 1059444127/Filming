@@ -1,5 +1,6 @@
 using System;
 using System.Diagnostics;
+using System.Windows;
 using System.Windows.Input;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
@@ -33,28 +34,6 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
             ////{
             ////    // Code runs "for real"
             ////}
-            CardControlViewModel = new CardControlViewModel();
         }
-
-        public CardControlViewModel CardControlViewModel { get; private set; }
-
-        #region [--UpdateViewModelCommand--]
-
-        private ICommand _updateViewModelCommand;
-
-        public ICommand UpdateViewModelCommand
-        {
-            get { return _updateViewModelCommand = _updateViewModelCommand ?? new RelayCommand(UpdateViewModel); }
-        }
-
-        private void UpdateViewModel()
-        {
-            CardControlViewModel.DisplayMode = 6;
-        }
-
-        #endregion [--UpdateViewModelCommand--]    
-
-   
-
     }
 }
