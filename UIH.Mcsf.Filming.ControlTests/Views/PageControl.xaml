@@ -12,7 +12,7 @@
             <RowDefinition Height="Auto"></RowDefinition>
         </Grid.RowDefinitions>
         <DockPanel LastChildFill="True">
-            <views:TitleBar Visibility="{Binding TitleBarVisibility}" DockPanel.Dock="{Binding TitleBarPosition}" />
+            <ContentControl Content="{Binding TitleBarViewModel}" Visibility="{Binding TitleBarVisibility}" DockPanel.Dock="{Binding TitleBarPosition}" />
             <ContentControl />
         </DockPanel>
         <Rectangle Grid.Row="1" Fill="#00e9e9" Height="3" Visibility="{Binding BreakVisibility}"></Rectangle>

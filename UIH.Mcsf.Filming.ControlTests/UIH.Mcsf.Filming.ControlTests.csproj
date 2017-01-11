@@ -87,6 +87,7 @@
     <Compile Include="ViewModel\CardControlViewModel.cs" />
     <Compile Include="ViewModel\DynamicGridViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="ViewModel\PageControlViewModel.cs" />
     <Compile Include="ViewModel\TitleBarViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Compile Include="Views\CardControl.xaml.cs">
