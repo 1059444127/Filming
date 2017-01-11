@@ -10,14 +10,14 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
         {
             GridCellViewModels = new List<IGridCell>
             {
-                new TitleBarViewModel {Row = 0, Col = 0, PageNO = 1, PageCount = 8},
-                new TitleBarViewModel {Row = 0, Col = 1, PageNO = 2, PageCount = 8},
-                new TitleBarViewModel {Row = 0, Col = 2, PageNO = 3, PageCount = 8},
-                new TitleBarViewModel {Row = 0, Col = 3, PageNO = 4, PageCount = 8},
-                new TitleBarViewModel {Row = 1, Col = 0, PageNO = 5, PageCount = 8},
-                new TitleBarViewModel {Row = 1, Col = 1, PageNO = 6, PageCount = 8},
-                new TitleBarViewModel {Row = 1, Col = 2, PageNO = 7, PageCount = 8},
-                new TitleBarViewModel {Row = 1, Col = 3, PageNO = 8, PageCount = 8}
+                new PageControlViewModel {Row = 0, Col = 0, TitleBarViewModel = new TitleBarViewModel {PageNO = 1, PageCount = 8}},
+                new PageControlViewModel {Row = 0, Col = 1, TitleBarViewModel = new TitleBarViewModel {PageNO = 2, PageCount = 8}},
+                new PageControlViewModel {Row = 0, Col = 2, TitleBarViewModel = new TitleBarViewModel {PageNO = 3, PageCount = 8}},
+                new PageControlViewModel {Row = 0, Col = 3, TitleBarViewModel = new TitleBarViewModel {PageNO = 4, PageCount = 8}},
+                new PageControlViewModel {Row = 1, Col = 0, TitleBarViewModel = new TitleBarViewModel {PageNO = 5, PageCount = 8}},
+                new PageControlViewModel {Row = 1, Col = 1, TitleBarViewModel = new TitleBarViewModel {PageNO = 6, PageCount = 8}},
+                new PageControlViewModel {Row = 1, Col = 2, TitleBarViewModel = new TitleBarViewModel {PageNO = 7, PageCount = 8}},
+                new PageControlViewModel {Row = 1, Col = 3, TitleBarViewModel = new TitleBarViewModel {PageNO = 8, PageCount = 8}}
             };
         }
 
