@@ -2,6 +2,9 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:viewModel="clr-namespace:UIH.Mcsf.Filming.ControlTests.ViewModel"
                     xmlns:localView="clr-namespace:UIH.Mcsf.Filming.ControlTests.Views">
+    <DataTemplate DataType="{x:Type viewModel:FooControlViewModel}">
+        <localView:FooControl />
+    </DataTemplate>
     <DataTemplate DataType="{x:Type viewModel:TitleBarViewModel}">
         <localView:TitleBar />
     </DataTemplate> 

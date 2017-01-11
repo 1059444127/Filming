@@ -9,6 +9,7 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
         public PageControlViewModel()
         {
             TitleBarViewModel = new TitleBarViewModel {PatientName = "NobodyInPage", PageNO = 1, PageCount = 1};
+            ViewerControlAdapterViewModel = new FooControlViewModel();
         }
 
         #region Implementation of IGridCell
@@ -68,6 +69,8 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
         #endregion
 
         public TitleBarViewModel TitleBarViewModel { get; set; }
+
+        public object ViewerControlAdapterViewModel { get; set; }
 
         #region [--TitleBarVisibility--]
 

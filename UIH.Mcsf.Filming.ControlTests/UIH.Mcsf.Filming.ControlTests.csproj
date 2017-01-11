@@ -86,6 +86,7 @@
     </ApplicationDefinition>
     <Compile Include="ViewModel\CardControlViewModel.cs" />
     <Compile Include="ViewModel\DynamicGridViewModel.cs" />
+    <Compile Include="ViewModel\FooControlViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\PageControlViewModel.cs" />
     <Compile Include="ViewModel\TitleBarViewModel.cs" />
@@ -95,6 +96,9 @@
     </Compile>
     <Compile Include="Views\DynamicGrid.xaml.cs">
       <DependentUpon>DynamicGrid.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FooControl.xaml.cs">
+      <DependentUpon>FooControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\PageControl.xaml.cs">
       <DependentUpon>PageControl.xaml</DependentUpon>
@@ -123,6 +127,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\DynamicGrid.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\FooControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
