@@ -17,4 +17,10 @@
     <DataTemplate DataType="{x:Type viewModel:CardControlViewModel}">
         <localView:CardControl />
     </DataTemplate>
+    
+    
+    <DataTemplate DataType="{x:Type viewModel:FooGridControlViewModel}">
+        <localView:FooGridControl />
+    </DataTemplate>
+    
 </ResourceDictionary>
