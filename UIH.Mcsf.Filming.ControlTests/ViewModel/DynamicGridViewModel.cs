@@ -10,14 +10,14 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
         {
             GridCellViewModels = new List<IGridCell>
             {
-                new PageControlViewModel {Row = 0, Col = 0, TitleBarViewModel = new TitleBarViewModel {PageNO = 1, PageCount = 8}},
-                new PageControlViewModel {Row = 0, Col = 1, TitleBarViewModel = new TitleBarViewModel {PageNO = 2, PageCount = 8}},
-                new PageControlViewModel {Row = 0, Col = 2, TitleBarViewModel = new TitleBarViewModel {PageNO = 3, PageCount = 8}},
-                new PageControlViewModel {Row = 0, Col = 3, TitleBarViewModel = new TitleBarViewModel {PageNO = 4, PageCount = 8}},
-                new PageControlViewModel {Row = 1, Col = 0, TitleBarViewModel = new TitleBarViewModel {PageNO = 5, PageCount = 8}},
-                new PageControlViewModel {Row = 1, Col = 1, TitleBarViewModel = new TitleBarViewModel {PageNO = 6, PageCount = 8}},
-                new PageControlViewModel {Row = 1, Col = 2, TitleBarViewModel = new TitleBarViewModel {PageNO = 7, PageCount = 8}},
-                new PageControlViewModel {Row = 1, Col = 3, TitleBarViewModel = new TitleBarViewModel {PageNO = 8, PageCount = 8}}
+                new PageControlViewModel {TitleBarViewModel = new TitleBarViewModel {PageNO = 1, PageCount = 8}},
+                new PageControlViewModel {TitleBarViewModel = new TitleBarViewModel {PageNO = 2, PageCount = 8}},
+                new PageControlViewModel {TitleBarViewModel = new TitleBarViewModel {PageNO = 3, PageCount = 8}},
+                new PageControlViewModel {TitleBarViewModel = new TitleBarViewModel {PageNO = 4, PageCount = 8}},
+                new PageControlViewModel {TitleBarViewModel = new TitleBarViewModel {PageNO = 5, PageCount = 8}},
+                new PageControlViewModel {TitleBarViewModel = new TitleBarViewModel {PageNO = 6, PageCount = 8}},
+                new PageControlViewModel {TitleBarViewModel = new TitleBarViewModel {PageNO = 7, PageCount = 8}},
+                new PageControlViewModel {TitleBarViewModel = new TitleBarViewModel {PageNO = 8, PageCount = 8}}
             };
         }
 
@@ -49,10 +49,6 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
 
             MessageBox.Show("Make Page 6 Invisible");
             GridCellViewModels[5].Visibility = Visibility.Collapsed;
-
-            MessageBox.Show("Move Page 3 to Position 6");
-            GridCellViewModels[2].Col = 1;
-            GridCellViewModels[2].Row = 1;
         }
 
         #endregion
@@ -61,7 +57,5 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
     public interface IGridCell
     {
         Visibility Visibility { get; set; }
-        int Row { get; set; }
-        int Col { get; set; }
     }
 }

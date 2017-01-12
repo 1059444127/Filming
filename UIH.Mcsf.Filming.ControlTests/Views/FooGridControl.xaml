@@ -17,7 +17,7 @@
           <Grid.ColumnDefinitions>
             <ColumnDefinition />
             <ColumnDefinition />
-          </Grid.ColumnDefinitions>  
-        <views:FooControl DataContext="{Binding FooControlViewModel}"/>
+          </Grid.ColumnDefinitions>
+        <views:FooControl DataContext="{Binding FooControlViewModel}" Grid.Row="{Binding Row}" Grid.Column="{Binding Col}"/>
     </Grid>
 </UserControl>
