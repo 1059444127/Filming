@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:views="clr-namespace:UIH.Mcsf.Filming.ControlTests.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300" Visibility="{Binding Visibility}" Grid.Row="{Binding Row}" Grid.Column="{Binding Col}">
+             d:DesignHeight="300" d:DesignWidth="300" Visibility="{Binding Visibility}">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"></RowDefinition>

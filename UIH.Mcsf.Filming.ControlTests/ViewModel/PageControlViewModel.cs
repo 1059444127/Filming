@@ -16,7 +16,7 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
 
         #region [--Visibility--]
 
-        private Visibility _visibility = Visibility.Visible;
+        private Visibility _visibility = Visibility.Collapsed;
 
         public Visibility Visibility
         {
