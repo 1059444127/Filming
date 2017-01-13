@@ -31,7 +31,7 @@
         </StackPanel>
         <DockPanel LastChildFill="True">
             <ScrollBar DockPanel.Dock="Right" Maximum="{Binding BoardMaxNO}" Minimum="0" Value="{Binding BoardNO}" ToolTip="{Binding BoardNO}"></ScrollBar>
-            <views:DynamicGrid  CellCount="{Binding CellCount}" DataContext="{Binding DynamicGridViewModel}" />
+            <views:BoardControl Board="{Binding Board}"/>
         </DockPanel>
     </DockPanel>
 </UserControl>

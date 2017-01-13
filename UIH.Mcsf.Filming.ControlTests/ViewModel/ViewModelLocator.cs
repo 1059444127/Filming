@@ -50,7 +50,7 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
 
         public object Main
         {
-            get { return ServiceLocator.Current.GetInstance<DynamicSubContentControlViewModel>(); }
+            get { return ServiceLocator.Current.GetInstance<CardControlViewModel>(); }
         }
 
         public static void Cleanup()

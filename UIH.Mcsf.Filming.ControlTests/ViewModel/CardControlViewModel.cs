@@ -4,15 +4,29 @@ using System.Windows;
 using System.Windows.Input;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
+using UIH.Mcsf.Filming.ControlTests.Interfaces;
 
 namespace UIH.Mcsf.Filming.ControlTests.ViewModel
 {
     class CardControlViewModel : TestViewModelBase
     {
-        public CardControlViewModel()
+        #region [--Board--]
+
+        private IBoard _board;
+
+        public IBoard Board
         {
-            DynamicGridViewModel = new DynamicGridViewModel();
+            get { return _board; }
+            set
+            {
+                if (_board == value) return;
+                _board = value;
+                RaisePropertyChanged(() => Board);
+            }
         }
+
+        #endregion [--Board--]
+
 
         #region [--DisplayMode--]
 
@@ -26,14 +40,12 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
                 if (_displayMode == value) return;
                 _displayMode = value;
                 RaisePropertyChanged(() => DisplayMode);
-                DynamicGridViewModel.CellCount = value;
             }
         }
 
         #endregion [--DisplayMode--]
 
 
-        public DynamicGridViewModel DynamicGridViewModel { get; private set; }
 
         #region Overrides of TestViewModelBase
 
