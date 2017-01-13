@@ -1,9 +1,4 @@
-﻿using System;
-using System.Diagnostics;
-using System.Windows;
-using System.Windows.Input;
-using GalaSoft.MvvmLight;
-using GalaSoft.MvvmLight.Command;
+﻿using System.Windows;
 using UIH.Mcsf.Filming.ControlTests.Interfaces;
 
 namespace UIH.Mcsf.Filming.ControlTests.ViewModel
@@ -48,6 +43,10 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
 
 
         #region Overrides of TestViewModelBase
+
+        // TODO-New-Feature: CardControlViewModel.NewPage
+        // TODO-New-Feature: CardControlViewModel.DeleteSelectedPage
+        // TODO-Later: undo/redo
 
         protected override void UpdateViewModel()
         {
