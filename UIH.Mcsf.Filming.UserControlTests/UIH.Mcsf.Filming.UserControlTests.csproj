@@ -161,6 +161,10 @@
       <Project>{CCC8D6AA-A1B5-422F-9789-B66FF2F1DBAB}</Project>
       <Name>UIH.Mcsf.Filming.Model</Name>
     </ProjectReference>
+    <ProjectReference Include="..\UIH.Mcsf.Filming.Utilities\UIH.Mcsf.Filming.Utilities.csproj">
+      <Project>{D2FC10DB-2C0F-4511-82F6-A005AA54F0E7}</Project>
+      <Name>UIH.Mcsf.Filming.Utilities</Name>
+    </ProjectReference>
     <ProjectReference Include="..\UIH.Mcsf.Filming.ViewModel\UIH.Mcsf.Filming.ViewModel.csproj">
       <Project>{97E2660E-022C-4923-8BAE-42DF2024FC7F}</Project>
       <Name>UIH.Mcsf.Filming.ViewModel</Name>

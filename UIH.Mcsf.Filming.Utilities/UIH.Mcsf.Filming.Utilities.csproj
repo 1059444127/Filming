@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DisplayMode.cs" />
+    <Compile Include="GlobalDefinitions.cs" />
     <Compile Include="GridLayoutModel.cs" />
     <Compile Include="GridPosition.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

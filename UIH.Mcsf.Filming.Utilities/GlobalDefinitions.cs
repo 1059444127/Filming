@@ -1,4 +1,4 @@
-﻿namespace UIH.Mcsf.Filming.Interfaces
+﻿namespace UIH.Mcsf.Filming.Utilities
 {
     public class GlobalDefinitions
     {

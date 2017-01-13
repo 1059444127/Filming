@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using UIH.Mcsf.Filming.Interfaces;
+using UIH.Mcsf.Filming.Utilities;
 
 namespace UIH.Mcsf.Filming.Model
 {
