@@ -1,10 +1,16 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using UIH.Mcsf.Filming.ControlTests.Interfaces;
 
 namespace UIH.Mcsf.Filming.ControlTests.ViewModel
 {
     class CardControlViewModel : TestViewModelBase
     {
+        public CardControlViewModel()
+        {
+            Board = new BoardStub();
+        }
+
         #region [--Board--]
 
         private IBoard _board;
@@ -35,6 +41,7 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
                 if (_displayMode == value) return;
                 _displayMode = value;
                 RaisePropertyChanged(() => DisplayMode);
+                Board.CellCount = value;
             }
         }
 
@@ -52,6 +59,28 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
         {
             MessageBox.Show("Middle Button pressed at CardControl");
         }
+
+        #endregion
+    }
+
+    class BoardStub : IBoard
+    {
+        private int _cellCount;
+
+        #region Implementation of IBoard
+
+        public int CellCount
+        {
+            get { return _cellCount; }
+            set
+            {
+                if(_cellCount == value) return;
+                _cellCount = value;
+                CellCountChanged(this, new EventArgs());
+            }
+        }
+
+        public event EventHandler CellCountChanged = delegate { };
 
         #endregion
     }
