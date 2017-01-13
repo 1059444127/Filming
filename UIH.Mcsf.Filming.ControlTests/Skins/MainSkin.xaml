@@ -22,5 +22,10 @@
     <DataTemplate DataType="{x:Type viewModel:FooGridControlViewModel}">
         <localView:FooGridControl />
     </DataTemplate>
-    
+    <DataTemplate DataType="{x:Type viewModel:FooControl2ViewModel}">
+        <localView:FooControl2 />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type viewModel:DynamicSubContentControlViewModel}">
+        <localView:DynamicSubContentControl />
+    </DataTemplate>
 </ResourceDictionary>
