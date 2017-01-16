@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows;
 using UIH.Mcsf.Filming.ControlTests.Interfaces;
 
@@ -81,6 +82,12 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
         }
 
         public event EventHandler CellCountChanged = delegate { };
+
+        public IList<BoardCell> BoardCells
+        {
+            get { throw new NotImplementedException(); }
+            set { throw new NotImplementedException(); }
+        }
 
         #endregion
     }

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
@@ -17,8 +16,6 @@ namespace UIH.Mcsf.Filming.ControlTests.Views
         {
             InitializeComponent();
         }
-
-        IList<ContentControl> BoardCells = new List<ContentControl>();
 
         public IBoard Board
         {

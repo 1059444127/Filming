@@ -1,6 +1,5 @@
 ﻿namespace UIH.Mcsf.Filming.ControlTests.Views
 {
-    // TODO: Replace ContentControl in DynamicGrid with PageControl
     /// <summary>
     ///     Interaction logic for PageControl.xaml
     /// </summary>
