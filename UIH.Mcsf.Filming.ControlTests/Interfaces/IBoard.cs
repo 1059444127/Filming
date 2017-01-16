@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Windows.Controls;
+using UIH.Mcsf.Filming.ControlTests.Models;
 
 namespace UIH.Mcsf.Filming.ControlTests.Interfaces
 {
@@ -11,9 +11,5 @@ namespace UIH.Mcsf.Filming.ControlTests.Interfaces
 
         IList<BoardCell> BoardCells { get; set; } 
         void NewPage();
-    }
-
-    public class BoardCell
-    {
     }
 }

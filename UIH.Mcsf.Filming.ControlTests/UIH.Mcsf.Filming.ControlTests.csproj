@@ -84,9 +84,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Interfaces\BoardCell.cs" />
     <Compile Include="Interfaces\IBoard.cs" />
     <Compile Include="Interfaces\IPageRepository.cs" />
     <Compile Include="Models\Board.cs" />
+    <Compile Include="Models\PageRepository.cs" />
     <Compile Include="ViewModel\CardControlViewModel.cs" />
     <Compile Include="ViewModel\DynamicGridViewModel.cs" />
     <Compile Include="ViewModel\DynamicSubContentControlViewModel.cs" />
