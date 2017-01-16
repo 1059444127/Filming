@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows;
+using System.Windows.Input;
+using GalaSoft.MvvmLight.Command;
 using UIH.Mcsf.Filming.ControlTests.Interfaces;
 
 namespace UIH.Mcsf.Filming.ControlTests.ViewModel
@@ -23,6 +25,7 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
             {
                 if (_board == value) return;
                 _board = value;
+                // TODO-Later: CardControlViewModel Register CellCountChanged Event From Board
                 RaisePropertyChanged(() => Board);
             }
         }
@@ -48,11 +51,26 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
 
         #endregion [--DisplayMode--]
 
+        #region [--NewPageCommand--]
+
+        private ICommand _newPageCommand;
+
+        public ICommand NewPageCommand
+        {
+            get { return _newPageCommand = _newPageCommand ?? new RelayCommand(NewPage); }
+        }
+
+        private void NewPage()
+        {
+            Board.NewPage();
+        }
+
+        #endregion [--NewPageCommand--]    
 
 
         #region Overrides of TestViewModelBase
 
-        // TODO-New-Feature: CardControlViewModel.NewPage
+        // TODO-New-Feature-working-on: CardControlViewModel.NewPage
         // TODO-New-Feature: CardControlViewModel.DeleteSelectedPage
         // TODO-Later: undo/redo
 
@@ -87,6 +105,11 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
         {
             get { throw new NotImplementedException(); }
             set { throw new NotImplementedException(); }
+        }
+
+        public void NewPage()
+        {
+            throw new NotImplementedException();
         }
 
         #endregion

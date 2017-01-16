@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Windows.Controls;
 
 namespace UIH.Mcsf.Filming.ControlTests.Interfaces
 {
@@ -9,6 +10,7 @@ namespace UIH.Mcsf.Filming.ControlTests.Interfaces
         event EventHandler CellCountChanged;
 
         IList<BoardCell> BoardCells { get; set; } 
+        void NewPage();
     }
 
     public class BoardCell
