@@ -43,7 +43,7 @@ namespace UIH.Mcsf.Filming.Model
                 
                 RefreshBoardNO();
                 RefreshBoardCount();
-                // TODO: when _displayBoardCellCount changed, Board should be changed to 
+                // TODO-later: when _displayBoardCellCount changed, Board should be changed to 
                 RefreshBoardView();
             }
         }
@@ -73,7 +73,7 @@ namespace UIH.Mcsf.Filming.Model
                 _boardNO = value;
                 Debug.Assert(_boardNO >= 0);
                 BoardNOChanged(this, new EventArgs());
-                // TODO: when boardNO changed, BoardModel should be refreshed
+                // TODO-later: when boardNO changed, BoardModel should be refreshed
                 RefreshBoardView();
             }
         }

@@ -7,7 +7,6 @@ namespace UIH.Mcsf.Filming.Model
     public class PageRepository : SelectableList<PageModel>
     {
         private int _focusIndex;
-        // TODO-working-on: PageRepository focused pageIndex
         public int FocusIndex
         {
             get { return _focusIndex; }

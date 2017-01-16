@@ -39,10 +39,10 @@ namespace UIH.Mcsf.Filming.View
         }
 
         //TODO-later: PageControl Position Management
-        //TODO: BoardControl. When DisplayMode changed, Re-place Grid content
-        //TODO: BoardControl. When Index of First BoardCell changed, Re-place Grid content
+        //TODO-later: BoardControl. When DisplayMode changed, Re-place Grid content
+        //TODO-later: BoardControl. When Index of First BoardCell changed, Re-place Grid content
         //TODO-bug: 最后一张胶片的PageBreak无法显示
-        // TODO-working-on: BoardControl. Replace BoardControl.PlacePagesToGrid  by BoardCell.Row/Col
+        // TODO-Later: BoardControl. Replace BoardControl.PlacePagesToGrid  by BoardCell.Row/Col
         private void PlacePagesToGrid(int row, int col)
         {
             var scale = new ScaleTransform(1,1);

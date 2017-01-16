@@ -9,7 +9,7 @@
         {
             InitializeComponent();
 
-            // TODO-Working-on: CardControl.UI
+            // TODO-New-Featrure: CardControl.UI
             // New-Feature: CardControl.DisplayMode UI
             // TODO-New-Feature-working-on: CardControl.NewPage UI
             // TODO-New-Feature: CardControl.ViewportLayout UI ？？

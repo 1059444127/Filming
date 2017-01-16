@@ -225,7 +225,6 @@ namespace UIH.Mcsf.Filming.ViewModel
 
         private int _pageCount;
         
-        // TODO-working-on: 更新PageControlViewModel.PageCount
         public int PageCount
         {
             get { return _pageCount; }
