@@ -6,6 +6,11 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
 {
     public class Board : IBoard
     {
+        public Board()
+        {
+            PageRepository = new PageRepositoryStub();
+        }
+
         #region Implementation of IBoard
 
         public int CellCount
@@ -23,6 +28,21 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
         }
 
         public void NewPage()
+        {
+            PageRepository.AppendPage();
+        }
+
+        #endregion
+
+
+        public IPageRepository PageRepository { get; set; }
+    }
+
+    class PageRepositoryStub : IPageRepository
+    {
+        #region Implementation of IPageRepository
+
+        public void AppendPage()
         {
             throw new NotImplementedException();
         }

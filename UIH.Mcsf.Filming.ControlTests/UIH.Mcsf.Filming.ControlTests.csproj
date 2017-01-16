@@ -85,6 +85,8 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Interfaces\IBoard.cs" />
+    <Compile Include="Interfaces\IPageRepository.cs" />
+    <Compile Include="Models\Board.cs" />
     <Compile Include="ViewModel\CardControlViewModel.cs" />
     <Compile Include="ViewModel\DynamicGridViewModel.cs" />
     <Compile Include="ViewModel\DynamicSubContentControlViewModel.cs" />
@@ -201,9 +203,7 @@
     </None>
     <AppDesigner Include="Properties\" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\UIH.Mcsf.Filming.Converters\UIH.Mcsf.Filming.Converters.csproj">
       <Project>{ED1963FE-3448-4B89-A2A0-0EE1BB84DB96}</Project>
