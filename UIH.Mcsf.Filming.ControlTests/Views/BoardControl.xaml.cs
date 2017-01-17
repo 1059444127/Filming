@@ -33,6 +33,19 @@ namespace UIH.Mcsf.Filming.ControlTests.Views
             Debug.Assert(boardControl != null);
 
             boardControl.RegisterBoardEvent();
+            boardControl.FillContent();
+        }
+
+        private void FillContent()
+        {
+            var boardCellControls = Grid.Children;
+            for (int i = 0; i < boardCellControls.Count; i++)
+            {
+                var boardCellControl = boardCellControls[i] as ContentControl;
+                Debug.Assert(boardCellControl != null);
+                // TODO: Add Interface IBoard[i];
+                boardCellControl.Content = Board[i];
+            }
         }
 
         private void RegisterBoardEvent()
