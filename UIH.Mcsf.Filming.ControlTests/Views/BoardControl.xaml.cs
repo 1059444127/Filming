@@ -63,6 +63,20 @@ namespace UIH.Mcsf.Filming.ControlTests.Views
         private void SetGrid(int rows, int cols)
         {
             ComplementGrid(rows, cols);
+            PlaceGridCell(rows, cols);
+        }
+        
+        private void PlaceGridCell(int rows, int cols)
+        {
+            var childrenCount = Grid.Children.Count;
+            var gridLayoutModel = new GridLayoutModel(rows, cols);
+            for (int i = 0; i <childrenCount; i++)
+            {
+                var gridPosition = gridLayoutModel.GetGridPositionBy(i);
+                var child = Grid.Children[i];
+                Grid.SetRow(child, gridPosition.Row);
+                Grid.SetColumn(child, gridPosition.Col);
+            }
         }
 
         private void ComplementGrid(int row, int col)

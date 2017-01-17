@@ -4,7 +4,6 @@ using System.Windows;
 using System.Windows.Input;
 using GalaSoft.MvvmLight.Command;
 using UIH.Mcsf.Filming.ControlTests.Interfaces;
-using UIH.Mcsf.Filming.ControlTests.Models;
 
 namespace UIH.Mcsf.Filming.ControlTests.ViewModel
 {
@@ -78,6 +77,7 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
         protected override void UpdateViewModel()
         {
             MessageBox.Show("Middle Button pressed at CardControl");
+            (Board[3] as PageControlViewModel).Visibility = Visibility.Visible;
         }
 
         #endregion
@@ -115,7 +115,14 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
 
         public object this[int i]
         {
-            get { throw new NotImplementedException(); }
+            get
+            {
+                return new PageControlViewModel
+                {
+                    TitleBarViewModel = new TitleBarViewModel {PatientName = "NoBody", PageNO = i + 1, PageCount = 8},
+                    Visibility = Visibility.Visible
+                };
+            }
         }
 
         #endregion
