@@ -4,6 +4,7 @@ using System.Windows;
 using System.Windows.Input;
 using GalaSoft.MvvmLight.Command;
 using UIH.Mcsf.Filming.ControlTests.Interfaces;
+using UIH.Mcsf.Filming.ControlTests.Models;
 
 namespace UIH.Mcsf.Filming.ControlTests.ViewModel
 {
@@ -11,7 +12,7 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
     {
         public CardControlViewModel()
         {
-            Board = new BoardStub();
+            Board = new Board();
         }
 
         #region [--Board--]
