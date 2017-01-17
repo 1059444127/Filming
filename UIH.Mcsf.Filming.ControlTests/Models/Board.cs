@@ -74,6 +74,18 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
             throw new NotImplementedException();
         }
 
+        public int Count()
+        {
+            throw new NotImplementedException();
+        }
+
+        public event EventHandler CountChanged;
+
+        public PageModel this[int i]
+        {
+            get { throw new NotImplementedException(); }
+        }
+
         #endregion
     }
 }

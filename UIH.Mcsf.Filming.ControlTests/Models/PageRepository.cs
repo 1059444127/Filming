@@ -1,4 +1,5 @@
-﻿using UIH.Mcsf.Filming.ControlTests.Interfaces;
+﻿using System;
+using UIH.Mcsf.Filming.ControlTests.Interfaces;
 
 namespace UIH.Mcsf.Filming.ControlTests.Models
 {
@@ -9,6 +10,18 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
         public void AppendPage()
         {
             throw new System.NotImplementedException();
+        }
+
+        public int Count()
+        {
+            throw new NotImplementedException();
+        }
+
+        public event EventHandler CountChanged;
+
+        public PageModel this[int i]
+        {
+            get { throw new NotImplementedException(); }
         }
 
         #endregion
