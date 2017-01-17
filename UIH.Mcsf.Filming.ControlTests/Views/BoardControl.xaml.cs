@@ -43,7 +43,6 @@ namespace UIH.Mcsf.Filming.ControlTests.Views
             {
                 var boardCellControl = boardCellControls[i] as ContentControl;
                 Debug.Assert(boardCellControl != null);
-                // TODO: Add Interface IBoard[i];
                 boardCellControl.Content = Board[i];
             }
         }

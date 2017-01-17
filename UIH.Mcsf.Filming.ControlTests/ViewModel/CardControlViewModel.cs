@@ -113,6 +113,11 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
             throw new NotImplementedException();
         }
 
+        public object this[int i]
+        {
+            get { throw new NotImplementedException(); }
+        }
+
         #endregion
     }
 }

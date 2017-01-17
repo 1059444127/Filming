@@ -31,6 +31,11 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
             PageRepository.AppendPage();
         }
 
+        public object this[int i]
+        {
+            get { throw new NotImplementedException(); }
+        }
+
         #endregion
 
         public IPageRepository PageRepository
