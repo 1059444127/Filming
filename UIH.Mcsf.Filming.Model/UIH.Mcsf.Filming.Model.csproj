@@ -48,18 +48,10 @@
     <Compile Include="BoardModel.cs" />
     <Compile Include="Cell.cs" />
     <Compile Include="PageRepository.cs" />
-    <Compile Include="DummySelectOperator.cs" />
     <Compile Include="FilmPageModel.cs" />
     <Compile Include="NullPageModel.cs" />
     <Compile Include="PageModelFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SelectableList.cs" />
-    <Compile Include="SelectOnlyOpertator.cs" />
-    <Compile Include="SelectOperator.cs" />
-    <Compile Include="SelectOperatorFactory.cs" />
-    <Compile Include="SelectRangeBaseOnFocusOperator.cs" />
-    <Compile Include="SelectRangeOperator.cs" />
-    <Compile Include="TakeBackSelectOperator.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\UIH.Mcsf.Filming.Abstracts\UIH.Mcsf.Filming.Abstracts.csproj">

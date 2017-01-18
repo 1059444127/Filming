@@ -4,7 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using UIH.Mcsf.Filming.Abstracts;
 
-namespace UIH.Mcsf.Filming.Model
+namespace UIH.Mcsf.Filming.Utilities
 {
     internal abstract class SelectOperator<T> where T : class, ISelect
     {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using UIH.Mcsf.Filming.Abstracts;
 
-namespace UIH.Mcsf.Filming.Model
+namespace UIH.Mcsf.Filming.Utilities
 {
     public class SelectableList<T> : IList<T> where T : class, ISelect
     {

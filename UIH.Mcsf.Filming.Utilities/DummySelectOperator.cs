@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UIH.Mcsf.Filming.Abstracts;
 
-namespace UIH.Mcsf.Filming.Model
+namespace UIH.Mcsf.Filming.Utilities
 {
     class DummySelectOperator<T> : SelectOperator<T> where T : class, ISelect
     {
