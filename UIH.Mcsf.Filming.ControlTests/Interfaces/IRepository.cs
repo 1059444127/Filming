@@ -2,10 +2,10 @@
 
 namespace UIH.Mcsf.Filming.ControlTests.Interfaces
 {
-    // IPageRepository Like IList
-    public interface IPageRepository
+    // IRepository Like IList
+    public interface IRepository
     {
-        void AppendPage();
+        void Append();
 
         int Count { get; }
         event EventHandler CountChanged;

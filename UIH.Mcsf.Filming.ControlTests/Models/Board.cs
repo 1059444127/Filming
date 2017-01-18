@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using UIH.Mcsf.Filming.ControlTests.Interfaces;
@@ -9,6 +10,7 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
 {
     public class Board : IBoard
     {
+        private IRepository _boardCellRepository;  
 
         public Board()
         {
@@ -30,8 +32,9 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
 
         public event EventHandler CellCountChanged = delegate { };
 
-        public void NewPage()
+        public void AppendBoardCell()
         {
+            _boardCellRepository.Add();
         }
 
         public object this[int i]
@@ -45,12 +48,13 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
 
         #endregion
 
-        private IList<PageControlViewModel> _boardCells = new List<PageControlViewModel>();
+        private IList _boardCells;
         private int _cellCount = 1;
 
 
         private void InitializeBoardCells()
         {
+            _boardCells = new ArrayList();
             for (int i = 0; i < GlobalDefinitions.MaxDisplayMode; i++)
             {
                 _boardCells.Add(new PageControlViewModel());

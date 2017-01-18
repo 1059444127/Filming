@@ -86,7 +86,7 @@
     </ApplicationDefinition>
     <Compile Include="Interfaces\BoardCell.cs" />
     <Compile Include="Interfaces\IBoard.cs" />
-    <Compile Include="Interfaces\IPageRepository.cs" />
+    <Compile Include="Interfaces\IRepository.cs" />
     <Compile Include="Interfaces\PageModel.cs" />
     <Compile Include="Models\Board.cs" />
     <Compile Include="Models\PageRepository.cs" />

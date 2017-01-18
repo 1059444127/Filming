@@ -7,7 +7,7 @@ namespace UIH.Mcsf.Filming.ControlTests.Interfaces
         int CellCount { get; set; }
         event EventHandler CellCountChanged;
 
-        void NewPage();
+        void AppendBoardCell();
         object this[int i] { get; }
     }
 }

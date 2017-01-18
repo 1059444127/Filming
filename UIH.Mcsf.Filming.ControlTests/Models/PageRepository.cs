@@ -4,11 +4,11 @@ using UIH.Mcsf.Filming.Utilities;
 
 namespace UIH.Mcsf.Filming.ControlTests.Models
 {
-    public class PageRepository : SelectableList<PageModel>, IPageRepository
+    public class PageRepository : SelectableList<PageModel>, IRepository
     {
-        #region Implementation of IPageRepository
+        #region Implementation of IRepository
 
-        public void AppendPage()
+        public void Append()
         {
             throw new System.NotImplementedException();
         }

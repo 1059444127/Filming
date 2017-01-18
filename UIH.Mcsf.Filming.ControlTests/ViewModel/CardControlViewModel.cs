@@ -63,7 +63,7 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
 
         private void NewPage()
         {
-            Board.NewPage();
+            Board.AppendBoardCell();
         }
 
         #endregion [--NewPageCommand--]    
@@ -104,7 +104,7 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
         public event EventHandler CellCountChanged = delegate { };
 
 
-        public void NewPage()
+        public void AppendBoardCell()
         {
             throw new NotImplementedException();
         }
