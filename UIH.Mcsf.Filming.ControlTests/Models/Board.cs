@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Windows;
 using UIH.Mcsf.Filming.ControlTests.Interfaces;
 using UIH.Mcsf.Filming.ControlTests.ViewModel;
 using UIH.Mcsf.Filming.Utilities;
@@ -10,8 +11,6 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
 {
     public class Board : IBoard
     {
-        private IRepository _boardCellRepository;  
-
         public Board()
         {
             InitializeBoardCells();
@@ -34,7 +33,7 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
 
         public void AppendBoardCell()
         {
-            _boardCellRepository.Add();
+            Focus++;
         }
 
         public object this[int i]
@@ -48,13 +47,25 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
 
         #endregion
 
-        private IList _boardCells;
+        private int _focus = -1;
+
+        private int Focus
+        {
+            get { return _focus; }
+            set
+            {
+                _focus = value;
+                _boardCells[value].Visibility = Visibility.Visible;
+            }
+        }
+
+        private IList<PageControlViewModel> _boardCells;
         private int _cellCount = 1;
 
 
         private void InitializeBoardCells()
         {
-            _boardCells = new ArrayList();
+            _boardCells = new List<PageControlViewModel>();
             for (int i = 0; i < GlobalDefinitions.MaxDisplayMode; i++)
             {
                 _boardCells.Add(new PageControlViewModel());
