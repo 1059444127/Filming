@@ -2,6 +2,7 @@
 
 namespace UIH.Mcsf.Filming.ControlTests.Interfaces
 {
+    // IPageRepository Like IList
     public interface IPageRepository
     {
         void AppendPage();

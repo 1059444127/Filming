@@ -103,11 +103,6 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
 
         public event EventHandler CellCountChanged = delegate { };
 
-        public IList<BoardCell> BoardCells
-        {
-            get { throw new NotImplementedException(); }
-            set { throw new NotImplementedException(); }
-        }
 
         public void NewPage()
         {
