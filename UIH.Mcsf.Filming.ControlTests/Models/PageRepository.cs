@@ -1,9 +1,10 @@
 ﻿using System;
 using UIH.Mcsf.Filming.ControlTests.Interfaces;
+using UIH.Mcsf.Filming.Utilities;
 
 namespace UIH.Mcsf.Filming.ControlTests.Models
 {
-    public class PageRepository : IPageRepository
+    public class PageRepository : SelectableList<PageModel>, IPageRepository
     {
         #region Implementation of IPageRepository
 
@@ -12,17 +13,10 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
             throw new System.NotImplementedException();
         }
 
-        public int Count()
-        {
-            throw new NotImplementedException();
-        }
 
         public event EventHandler CountChanged;
 
-        public PageModel this[int i]
-        {
-            get { throw new NotImplementedException(); }
-        }
+ 
 
         #endregion
     }

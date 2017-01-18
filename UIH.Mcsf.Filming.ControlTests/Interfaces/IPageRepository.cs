@@ -6,7 +6,7 @@ namespace UIH.Mcsf.Filming.ControlTests.Interfaces
     {
         void AppendPage();
 
-        int Count();
+        int Count { get; }
         event EventHandler CountChanged;
 
         PageModel this[int i] { get; }
