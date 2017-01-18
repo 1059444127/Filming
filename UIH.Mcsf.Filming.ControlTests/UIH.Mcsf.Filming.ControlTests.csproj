@@ -90,6 +90,7 @@
     <Compile Include="Interfaces\IClickStatus.cs" />
     <Compile Include="Interfaces\IPageRepository.cs" />
     <Compile Include="Interfaces\ISelect.cs" />
+    <Compile Include="Interfaces\PageModel.cs" />
     <Compile Include="Models\Board.cs" />
     <Compile Include="Models\PageRepository.cs" />
     <Compile Include="ViewModel\CardControlViewModel.cs" />

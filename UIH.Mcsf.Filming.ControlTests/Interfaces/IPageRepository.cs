@@ -12,7 +12,4 @@ namespace UIH.Mcsf.Filming.ControlTests.Interfaces
         PageModel this[int i] { get; }
     }
 
-    public class PageModel
-    {
-    }
 }
