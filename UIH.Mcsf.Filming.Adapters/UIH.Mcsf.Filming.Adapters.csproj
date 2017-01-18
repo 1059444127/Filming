@@ -79,6 +79,10 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\UIH.Mcsf.Filming.Abstracts\UIH.Mcsf.Filming.Abstracts.csproj">
+      <Project>{8C77DF52-F79F-4A2A-9C0B-4244CDAAF588}</Project>
+      <Name>UIH.Mcsf.Filming.Abstracts</Name>
+    </ProjectReference>
     <ProjectReference Include="..\UIH.Mcsf.Filming.Configure\UIH.Mcsf.Filming.Configure.csproj">
       <Project>{6E737007-9A79-49CA-A966-4E6DD5E40EB4}</Project>
       <Name>UIH.Mcsf.Filming.Configure</Name>
@@ -90,6 +94,10 @@
     <ProjectReference Include="..\UIH.Mcsf.Filming.Interface\UIH.Mcsf.Filming.Interface.csproj">
       <Project>{548EEFF3-EA2A-4ABA-BD93-224E6D00FF74}</Project>
       <Name>UIH.Mcsf.Filming.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UIH.Mcsf.Filming.Utilities\UIH.Mcsf.Filming.Utilities.csproj">
+      <Project>{D2FC10DB-2C0F-4511-82F6-A005AA54F0E7}</Project>
+      <Name>UIH.Mcsf.Filming.Utilities</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

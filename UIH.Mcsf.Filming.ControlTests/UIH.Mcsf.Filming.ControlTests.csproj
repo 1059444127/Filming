@@ -85,11 +85,8 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Interfaces\BoardCell.cs" />
-    <Compile Include="Interfaces\EventArgs.cs" />
     <Compile Include="Interfaces\IBoard.cs" />
-    <Compile Include="Interfaces\IClickStatus.cs" />
     <Compile Include="Interfaces\IPageRepository.cs" />
-    <Compile Include="Interfaces\ISelect.cs" />
     <Compile Include="Interfaces\PageModel.cs" />
     <Compile Include="Models\Board.cs" />
     <Compile Include="Models\PageRepository.cs" />
@@ -211,6 +208,10 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <ProjectReference Include="..\UIH.Mcsf.Filming.Abstracts\UIH.Mcsf.Filming.Abstracts.csproj">
+      <Project>{8C77DF52-F79F-4A2A-9C0B-4244CDAAF588}</Project>
+      <Name>UIH.Mcsf.Filming.Abstracts</Name>
+    </ProjectReference>
     <ProjectReference Include="..\UIH.Mcsf.Filming.Converters\UIH.Mcsf.Filming.Converters.csproj">
       <Project>{ED1963FE-3448-4B89-A2A0-0EE1BB84DB96}</Project>
       <Name>UIH.Mcsf.Filming.Converters</Name>

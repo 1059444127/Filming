@@ -1,6 +1,7 @@
 using System;
 using UIH.Mcsf.Filming.Adapters;
 using UIH.Mcsf.Filming.Interfaces;
+using UIH.Mcsf.Filming.Utilities;
 
 namespace UIH.Mcsf.Filming.Model
 {

@@ -1,4 +1,5 @@
 ﻿using System;
+using UIH.Mcsf.Filming.Abstracts;
 using UIH.Mcsf.Viewer;
 
 namespace UIH.Mcsf.Filming.Interfaces

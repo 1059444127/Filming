@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace UIH.Mcsf.Filming.ControlTests.Interfaces
+namespace UIH.Mcsf.Filming.Abstracts
 {
     public interface ISelect
     {

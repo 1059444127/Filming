@@ -31,6 +31,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PresentationCore" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -38,13 +39,22 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClickStatus.cs" />
     <Compile Include="DisplayMode.cs" />
     <Compile Include="GlobalDefinitions.cs" />
     <Compile Include="GridLayoutModel.cs" />
     <Compile Include="GridPosition.cs" />
+    <Compile Include="IntEventArgs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\UIH.Mcsf.Filming.Abstracts\UIH.Mcsf.Filming.Abstracts.csproj">
+      <Project>{8C77DF52-F79F-4A2A-9C0B-4244CDAAF588}</Project>
+      <Name>UIH.Mcsf.Filming.Abstracts</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

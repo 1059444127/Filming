@@ -5,6 +5,7 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Input;
 using UIH.Mcsf.Filming.Interfaces;
+using UIH.Mcsf.Filming.Utilities;
 using UIH.Mcsf.Viewer;
 
 namespace UIH.Mcsf.Filming.Adapters

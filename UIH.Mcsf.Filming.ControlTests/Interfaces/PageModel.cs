@@ -1,4 +1,5 @@
 ﻿using System;
+using UIH.Mcsf.Filming.Abstracts;
 
 namespace UIH.Mcsf.Filming.ControlTests.Interfaces
 {

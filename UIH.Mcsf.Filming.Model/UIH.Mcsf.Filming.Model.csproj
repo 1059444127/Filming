@@ -62,6 +62,10 @@
     <Compile Include="TakeBackSelectOperator.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\UIH.Mcsf.Filming.Abstracts\UIH.Mcsf.Filming.Abstracts.csproj">
+      <Project>{8C77DF52-F79F-4A2A-9C0B-4244CDAAF588}</Project>
+      <Name>UIH.Mcsf.Filming.Abstracts</Name>
+    </ProjectReference>
     <ProjectReference Include="..\UIH.Mcsf.Filming.Adapters\UIH.Mcsf.Filming.Adapters.csproj">
       <Project>{24E00A4C-AC9E-4DB0-90A1-3B68F0C7AC22}</Project>
       <Name>UIH.Mcsf.Filming.Adapters</Name>

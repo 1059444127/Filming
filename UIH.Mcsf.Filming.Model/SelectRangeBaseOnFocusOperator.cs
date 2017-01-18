@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using UIH.Mcsf.Filming.Interfaces;
+using UIH.Mcsf.Filming.Abstracts;
 
 namespace UIH.Mcsf.Filming.Model
 {

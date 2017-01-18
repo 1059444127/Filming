@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace UIH.Mcsf.Filming.Interfaces
+namespace UIH.Mcsf.Filming.Abstracts
 {
     public class ClickStatusEventArgs : EventArgs
     {
@@ -11,16 +11,4 @@ namespace UIH.Mcsf.Filming.Interfaces
 
         public IClickStatus ClickStatus { get; private set; }
     }
-
-
-    public class IntEventArgs : EventArgs
-    {
-        public IntEventArgs(int i)
-        {
-            Int = i;
-        }
-
-        public int Int { get; private set; }
-    }
-    
 }

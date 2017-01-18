@@ -1,16 +1,8 @@
-﻿using System;
-using System.Windows.Input;
+﻿using System.Windows.Input;
+using UIH.Mcsf.Filming.Abstracts;
 
-namespace UIH.Mcsf.Filming.Interfaces
+namespace UIH.Mcsf.Filming.Utilities
 {
-    public interface IClickStatus
-    {
-        bool IsLeftMouseButtonClicked { get; }
-        bool IsRightMouseButtonClicked { get; }
-        bool IsCtrlPressed { get; }
-        bool IsShiftPressed { get; }
-    }
-
     public class ClickStatus : IClickStatus
     {
         public ClickStatus(bool isLeftMouseButtonClicked, bool isRightMouseButtonClicked)
@@ -26,5 +18,4 @@ namespace UIH.Mcsf.Filming.Interfaces
         public bool IsCtrlPressed { get; private set; }
         public bool IsShiftPressed { get; private set; }
     }
-
 }
