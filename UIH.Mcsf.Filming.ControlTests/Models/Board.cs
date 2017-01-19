@@ -13,6 +13,7 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
         public Board()
         {
             InitializeBoardCells();
+            _repository = new RepositoryStub();
         }
 
         #region Implementation of IBoard
@@ -34,7 +35,7 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
         // TODO: When PageCount > 8, New Page, Then PageDown, and Focus on the NewPage
         public void AppendBoardCell()
         {
-            Focus++;
+            _repository.Append();
         }
 
         public object this[int i]
@@ -48,20 +49,9 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
 
         #endregion
 
-        private int _focus = -1;
-
-        private int Focus
-        {
-            get { return _focus; }
-            set
-            {
-                _focus = value;
-                _boardCells[value].Visibility = Visibility.Visible;
-            }
-        }
-
         private IList<PageControlViewModel> _boardCells;
         private int _cellCount = 1;
+        private IRepository _repository;
 
 
         private void InitializeBoardCells()
@@ -74,5 +64,20 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
         }
     }
 
-    
+
+    class RepositoryStub : IRepository
+    {
+        #region Implementation of IRepository
+
+        public void Append()
+        {
+            throw new NotImplementedException();
+        }
+
+        public int Focus { get; set; }
+
+        public event EventHandler FocusChanged = delegate { };
+
+        #endregion
+    }
 }
