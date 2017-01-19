@@ -7,10 +7,8 @@ namespace UIH.Mcsf.Filming.ControlTests.Interfaces
     {
         void Append();
 
-        int Count { get; }
-        event EventHandler CountChanged;
-
-        PageModel this[int i] { get; }
+        int Focus { get; set; }
+        event EventHandler FocusChanged;
     }
 
 }
