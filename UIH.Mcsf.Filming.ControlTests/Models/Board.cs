@@ -31,6 +31,8 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
 
         public event EventHandler CellCountChanged = delegate { };
 
+        // TODO: When NewPage, PageCount changed -- That means How Board Send Message to every PageControlViewModel
+        // TODO: When PageCount > 8, New Page, Then PageDown, and Focus on the NewPage
         public void AppendBoardCell()
         {
             Focus++;

@@ -1,6 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 using GalaSoft.MvvmLight;
+using UIH.Mcsf.Filming.ControlTests.Interfaces;
 
 namespace UIH.Mcsf.Filming.ControlTests.ViewModel
 {
@@ -75,6 +76,7 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
 
         private Visibility _breakVisibility = Visibility.Visible;
 
+
         public Visibility BreakVisibility
         {
             get { return _breakVisibility; }
@@ -88,5 +90,22 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
 
         #endregion [--BreakVisibility--]
 
+
+        #region [--PageModel--]
+
+        private PageModel _pageModel;
+
+        public PageModel PageModel
+        {
+            get { return _pageModel; }
+            set
+            {
+                if (_pageModel == value) return;
+                _pageModel = value;
+                RaisePropertyChanged(() => PageModel);
+            }
+        }
+
+        #endregion [--PageModel--]
     }
 }
