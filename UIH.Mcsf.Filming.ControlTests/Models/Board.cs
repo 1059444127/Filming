@@ -35,7 +35,7 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
         // TODO: When PageCount > 8, New Page, Then PageDown, and Focus on the NewPage
         public void AppendBoardCell()
         {
-            _repository.Append();
+            _boardContent.AppendContent();
         }
 
         public object this[int i]

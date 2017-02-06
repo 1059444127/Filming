@@ -12,6 +12,11 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
             get { throw new NotImplementedException(); }
         }
 
+        public void AppendContent()
+        {
+            throw new NotImplementedException();
+        }
+
         #endregion
     }
 }
