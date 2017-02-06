@@ -8,12 +8,10 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
     {
         private int _cellCount = 1;
         private readonly IBoardContent _boardContent;
-        private readonly IRepository _repository;
 
         public Board(IBoardContent boardContent)
         {
             _boardContent = boardContent;
-            _repository = new RepositoryStub();
         }
 
         #region Implementation of IBoard
@@ -42,23 +40,6 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
         {
             get { return new PageControlViewModel {Page = _boardContent[i]}; }
         }
-
-        #endregion
-    }
-
-
-    internal class RepositoryStub : IRepository
-    {
-        #region Implementation of IRepository
-
-        public void Append()
-        {
-            throw new NotImplementedException();
-        }
-
-        public int Focus { get; set; }
-
-        public event EventHandler FocusChanged = delegate { };
 
         #endregion
     }
