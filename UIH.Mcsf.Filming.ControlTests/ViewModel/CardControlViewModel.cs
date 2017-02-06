@@ -12,7 +12,7 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
     {
         public CardControlViewModel()
         {
-            Board = new Board();
+            Board = new Board(new BoardContentStub());
         }
 
         #region [--Board--]
@@ -82,6 +82,10 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
         }
 
         #endregion
+    }
+
+    internal class BoardContentStub : IBoardContent
+    {
     }
 
     class BoardStub : IBoard

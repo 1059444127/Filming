@@ -10,9 +10,10 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
 {
     public class Board : IBoard
     {
-        public Board()
+        public Board(IBoardContent boardContent)
         {
             InitializeBoardCells();
+            _boardContent = boardContent;
             _repository = new RepositoryStub();
         }
 
@@ -52,6 +53,7 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
         private IList<PageControlViewModel> _boardCells;
         private int _cellCount = 1;
         private IRepository _repository;
+        private IBoardContent _boardContent;
 
 
         private void InitializeBoardCells()
