@@ -9,13 +9,22 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
 
         public IPage this[int i]
         {
-            get { throw new NotImplementedException(); }
+            get { return new PageStub{IsVisible = true}; }
         }
 
         public void AppendContent()
         {
             throw new NotImplementedException();
         }
+
+        #endregion
+    }
+
+    internal class PageStub : IPage
+    {
+        #region Implementation of IPage
+
+        public bool IsVisible { get; set; }
 
         #endregion
     }
