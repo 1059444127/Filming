@@ -1,18 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Windows;
 using UIH.Mcsf.Filming.ControlTests.Interfaces;
 using UIH.Mcsf.Filming.ControlTests.ViewModel;
-using UIH.Mcsf.Filming.Utilities;
 
 namespace UIH.Mcsf.Filming.ControlTests.Models
 {
     public class Board : IBoard
     {
+        private int _cellCount = 1;
+        private readonly IBoardContent _boardContent;
+        private readonly IRepository _repository;
+
         public Board(IBoardContent boardContent)
         {
-            InitializeBoardCells();
             _boardContent = boardContent;
             _repository = new RepositoryStub();
         }
@@ -45,25 +44,10 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
         }
 
         #endregion
-
-        private IList<PageControlViewModel> _boardCells;
-        private int _cellCount = 1;
-        private IRepository _repository;
-        private IBoardContent _boardContent;
-
-
-        private void InitializeBoardCells()
-        {
-            _boardCells = new List<PageControlViewModel>();
-            for (int i = 0; i < GlobalDefinitions.MaxDisplayMode; i++)
-            {
-                _boardCells.Add(new PageControlViewModel());
-            }
-        }
     }
 
 
-    class RepositoryStub : IRepository
+    internal class RepositoryStub : IRepository
     {
         #region Implementation of IRepository
 
