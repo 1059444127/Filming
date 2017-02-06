@@ -88,7 +88,7 @@
     <Compile Include="Interfaces\IBoard.cs" />
     <Compile Include="Interfaces\IBoardCellBuffer.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
-    <Compile Include="Interfaces\PageModel.cs" />
+    <Compile Include="Interfaces\IPage.cs" />
     <Compile Include="Models\Board.cs" />
     <Compile Include="ViewModel\CardControlViewModel.cs" />
     <Compile Include="ViewModel\DynamicGridViewModel.cs" />

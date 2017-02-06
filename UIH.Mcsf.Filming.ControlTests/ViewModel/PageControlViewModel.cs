@@ -91,21 +91,21 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
         #endregion [--BreakVisibility--]
 
 
-        #region [--PageModel--]
+        #region [--IPage--]
 
-        private PageModel _pageModel;
+        private IPage _page;
 
-        public PageModel PageModel
+        public IPage Page
         {
-            get { return _pageModel; }
+            get { return _page; }
             set
             {
-                if (_pageModel == value) return;
-                _pageModel = value;
-                RaisePropertyChanged(() => PageModel);
+                if (_page == value) return;
+                _page = value;
+                RaisePropertyChanged(() => Page);
             }
         }
 
-        #endregion [--PageModel--]
+        #endregion [--IPage--]
     }
 }
