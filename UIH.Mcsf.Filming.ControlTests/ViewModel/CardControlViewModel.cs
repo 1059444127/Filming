@@ -86,6 +86,14 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
 
     internal class BoardContentStub : IBoardContent
     {
+        #region Implementation of IBoardContent
+
+        public IPage this[int i]
+        {
+            get { throw new NotImplementedException(); }
+        }
+
+        #endregion
     }
 
     class BoardStub : IBoard

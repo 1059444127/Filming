@@ -2,5 +2,6 @@
 {
     public interface IBoardContent
     {
+        IPage this[int i] { get; }
     }
 }
