@@ -41,11 +41,7 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
 
         public object this[int i]
         {
-            get
-            {
-                Debug.Assert(i>=0 && i<_boardCells.Count);
-                return _boardCells[i];              
-            }
+            get { return new PageControlViewModel {Page = _boardContent[i]}; }
         }
 
         #endregion
