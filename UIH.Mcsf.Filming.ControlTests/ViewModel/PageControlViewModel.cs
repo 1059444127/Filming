@@ -2,6 +2,7 @@
 using System.Windows.Controls;
 using GalaSoft.MvvmLight;
 using UIH.Mcsf.Filming.ControlTests.Interfaces;
+using UIH.Mcsf.Filming.Utilities;
 
 namespace UIH.Mcsf.Filming.ControlTests.ViewModel
 {
@@ -102,11 +103,16 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
             {
                 if (_page == value) return;
                 _page = value;
-                //TODO: change PageControlViewModel.Visibility to IsVisible
-                Visibility = _page.IsVisible;
+                Visibility = boolToVisibility(_page.IsVisible);
             }
         }
 
         #endregion [--IPage--]
+
+
+        private Visibility boolToVisibility(bool b)
+        {
+            return b ? Visibility.Visible : Visibility.Collapsed;
+        }
     }
 }
