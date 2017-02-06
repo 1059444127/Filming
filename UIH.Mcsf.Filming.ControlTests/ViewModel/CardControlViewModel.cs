@@ -12,7 +12,7 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
     {
         public CardControlViewModel()
         {
-            Board = new Board(new BoardContentStub());
+            Board = new Board(new BoardContent());
         }
 
         #region [--Board--]
@@ -79,18 +79,6 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
         {
             MessageBox.Show("Middle Button pressed at CardControl");
             (Board[3] as PageControlViewModel).Visibility = Visibility.Visible;
-        }
-
-        #endregion
-    }
-
-    internal class BoardContentStub : IBoardContent
-    {
-        #region Implementation of IBoardContent
-
-        public IPage this[int i]
-        {
-            get { throw new NotImplementedException(); }
         }
 
         #endregion
