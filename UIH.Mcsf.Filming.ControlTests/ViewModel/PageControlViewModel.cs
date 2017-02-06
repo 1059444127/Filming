@@ -102,7 +102,8 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
             {
                 if (_page == value) return;
                 _page = value;
-                RaisePropertyChanged(() => Page);
+                //TODO: change PageControlViewModel.Visibility to IsVisible
+                Visibility = _page.IsVisible;
             }
         }
 
