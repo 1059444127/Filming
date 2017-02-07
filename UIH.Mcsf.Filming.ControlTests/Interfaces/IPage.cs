@@ -6,5 +6,7 @@ namespace UIH.Mcsf.Filming.ControlTests.Interfaces
     {
         bool IsVisible { get; set; }
         event EventHandler VisibleChanged;
+        int PageNO { get; set; }
+        event EventHandler PageNOChanged;
     }
 }

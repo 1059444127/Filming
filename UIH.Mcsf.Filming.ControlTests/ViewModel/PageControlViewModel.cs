@@ -112,23 +112,35 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
 
         private void RefreshProperties()
         {
-            Visibility = BoolToVisibility(_page.IsVisible);            
+            Visibility = BoolToVisibility(_page.IsVisible);
+            TitleBarViewModel.PageNO = _page.PageNO;
         }
 
         private void RegisterPageEvent()
         {
             _page.VisibleChanged += PageOnVisibleChanged;
+            _page.PageNOChanged += PageOnPageNOChanged;
         }
 
         private void UnRegisterPageEvent()
         {
             _page.VisibleChanged -= PageOnVisibleChanged;
+            _page.PageNOChanged -= PageOnPageNOChanged;
+        }
+
+        #region [--Page Event Handler--]
+
+        private void PageOnPageNOChanged(object sender, EventArgs eventArgs)
+        {
+            TitleBarViewModel.PageNO = _page.PageNO;
         }
 
         private void PageOnVisibleChanged(object sender, EventArgs eventArgs)
         {
             Visibility = BoolToVisibility(_page.IsVisible);
         }
+
+        #endregion
 
         #endregion [--IPage--]
 

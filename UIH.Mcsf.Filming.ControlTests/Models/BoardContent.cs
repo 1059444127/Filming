@@ -39,6 +39,10 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
 
         public event EventHandler VisibleChanged = delegate { };
 
+        public int PageNO { get; set; }
+
+        public event EventHandler PageNOChanged = delegate { };
+
         #endregion
     }
 }
