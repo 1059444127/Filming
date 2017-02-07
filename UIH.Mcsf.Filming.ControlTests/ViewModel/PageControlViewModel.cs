@@ -112,7 +112,7 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
 
         private void RefreshProperties()
         {
-            Visibility = boolToVisibility(_page.IsVisible);            
+            Visibility = BoolToVisibility(_page.IsVisible);            
         }
 
         private void RegisterPageEvent()
@@ -127,13 +127,13 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
 
         private void PageOnVisibleChanged(object sender, EventArgs eventArgs)
         {
-            Visibility = boolToVisibility(_page.IsVisible);
+            Visibility = BoolToVisibility(_page.IsVisible);
         }
 
         #endregion [--IPage--]
 
 
-        private Visibility boolToVisibility(bool b)
+        private Visibility BoolToVisibility(bool b)
         {
             return b ? Visibility.Visible : Visibility.Collapsed;
         }
