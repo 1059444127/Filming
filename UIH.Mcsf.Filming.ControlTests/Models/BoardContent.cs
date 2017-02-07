@@ -9,7 +9,7 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
 
         public IPage this[int i]
         {
-            get { return new PageStub{IsVisible = true}; }
+            get { return new PageStub(); }
         }
 
         public void AppendContent()
@@ -22,9 +22,22 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
 
     internal class PageStub : IPage
     {
+        private bool _isVisible;
+
         #region Implementation of IPage
 
-        public bool IsVisible { get; set; }
+        public bool IsVisible
+        {
+            get { return _isVisible; }
+            set
+            {
+                if(_isVisible == value) return;
+                _isVisible = value;
+                VisibleChanged(this, new EventArgs());
+            }
+        }
+
+        public event EventHandler VisibleChanged = delegate { };
 
         #endregion
     }

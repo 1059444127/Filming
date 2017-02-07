@@ -1,5 +1,9 @@
-﻿using System.Windows;
+﻿using System;
+using System.ComponentModel;
+using System.Threading;
+using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media.Animation;
 using GalaSoft.MvvmLight;
 using UIH.Mcsf.Filming.ControlTests.Interfaces;
 using UIH.Mcsf.Filming.Utilities;
@@ -98,13 +102,34 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
 
         public IPage Page
         {
-            get { return _page; }
             set
             {
                 if (_page == value) return;
+                UnRegisterPageEvent();
                 _page = value;
-                Visibility = boolToVisibility(_page.IsVisible);
+                RefreshProperties();
+                RegisterPageEvent();
             }
+        }
+
+        private void RefreshProperties()
+        {
+            Visibility = boolToVisibility(_page.IsVisible);            
+        }
+
+        private void RegisterPageEvent()
+        {
+            _page.VisibleChanged += PageOnVisibleChanged;
+        }
+
+        private void UnRegisterPageEvent()
+        {
+            _page.VisibleChanged -= PageOnVisibleChanged;
+        }
+
+        private void PageOnVisibleChanged(object sender, EventArgs eventArgs)
+        {
+            Visibility = boolToVisibility(_page.IsVisible);
         }
 
         #endregion [--IPage--]
