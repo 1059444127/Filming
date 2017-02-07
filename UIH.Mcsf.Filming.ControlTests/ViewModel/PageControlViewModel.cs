@@ -1,12 +1,9 @@
 ﻿using System;
-using System.ComponentModel;
-using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Media.Animation;
 using GalaSoft.MvvmLight;
 using UIH.Mcsf.Filming.ControlTests.Interfaces;
-using UIH.Mcsf.Filming.Utilities;
+using UIH.Mcsf.Filming.ControlTests.Models;
 
 namespace UIH.Mcsf.Filming.ControlTests.ViewModel
 {
@@ -14,6 +11,7 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
     {
         public PageControlViewModel()
         {
+            _page = new NullPage();
             TitleBarViewModel = new TitleBarViewModel {PatientName = "NobodyInPage", PageNO = 1, PageCount = 1};
             ViewerControlAdapterViewModel = new FooControlViewModel();
         }
