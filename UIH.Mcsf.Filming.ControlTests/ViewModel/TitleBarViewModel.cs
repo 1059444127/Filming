@@ -3,7 +3,7 @@ using GalaSoft.MvvmLight;
 
 namespace UIH.Mcsf.Filming.ControlTests.ViewModel
 {
-    public class TitleBarViewModel : ViewModelBase, IGridCell
+    public class TitleBarViewModel : ViewModelBase
     {
         #region [--PageNO--]
 
@@ -90,8 +90,6 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
 
         #endregion [--IsFocused--]
 
-        #region Implementation of IGridCell
-
         #region [--Visibility--]
 
         private Visibility _visibility = Visibility.Visible;
@@ -109,41 +107,5 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
 
         #endregion [--Visibility--]
 
-        #region [--Row--]
-
-        private int _row;
-
-        public int Row
-        {
-            get { return _row; }
-            set
-            {
-                if (_row == value) return;
-                _row = value;
-                RaisePropertyChanged(() => Row);
-            }
-        }
-
-        #endregion [--Row--]
-
-        #region [--Col--]
-
-        private int _col;
-
-        public int Col
-        {
-            get { return _col; }
-            set
-            {
-                if (Col == value) return;
-                _col = value;
-                RaisePropertyChanged(() => Col);
-            }
-        }
-
-        #endregion [--Col--]
-
-
-        #endregion
     }
 }
