@@ -1,43 +1,10 @@
-﻿using System.Windows;
-using GalaSoft.MvvmLight;
+﻿using GalaSoft.MvvmLight;
+using UIH.Mcsf.Filming.ControlTests.Interfaces;
 
 namespace UIH.Mcsf.Filming.ControlTests.ViewModel
 {
-    public class TitleBarViewModel : ViewModelBase
+    public class TitleBarViewModel : ViewModelBase, ITitle
     {
-        #region [--PageNO--]
-
-        private int _pageNO = 1;
-
-        public int PageNO
-        {
-            get { return _pageNO; }
-            set
-            {
-                if (_pageNO == value) return;
-                _pageNO = value;
-                RaisePropertyChanged(() => PageNO);
-            }
-        }
-
-        #endregion [--PageNO--]
-
-        #region [--PageCount--]
-
-        private int _pageCount = 1;
-
-        public int PageCount
-        {
-            get { return _pageCount; }
-            set
-            {
-                if (_pageCount == value) return;
-                _pageCount = value;
-                RaisePropertyChanged(() => PageCount);
-            }
-        }
-
-        #endregion [--PageCount--]
 
         #region [--IsSelected--]
 
@@ -73,5 +40,42 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
 
         #endregion [--IsFocused--]
 
+        #region Implementation of ITitle
+
+        #region [--PageNO--]
+
+        private int _pageNO = 1;
+
+        public int PageNO
+        {
+            get { return _pageNO; }
+            set
+            {
+                if (_pageNO == value) return;
+                _pageNO = value;
+                RaisePropertyChanged(() => PageNO);
+            }
+        }
+
+        #endregion [--PageNO--]
+
+        #region [--PageCount--]
+
+        private int _pageCount = 1;
+
+        public int PageCount
+        {
+            get { return _pageCount; }
+            set
+            {
+                if (_pageCount == value) return;
+                _pageCount = value;
+                RaisePropertyChanged(() => PageCount);
+            }
+        }
+
+        #endregion [--PageCount--]
+
+        #endregion
     }
 }
