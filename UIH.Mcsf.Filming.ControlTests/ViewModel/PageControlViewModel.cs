@@ -7,7 +7,7 @@ using UIH.Mcsf.Filming.ControlTests.Models;
 
 namespace UIH.Mcsf.Filming.ControlTests.ViewModel
 {
-    internal class PageControlViewModel : ViewModelBase, IGridCell
+    public class PageControlViewModel : ViewModelBase, IGridCell
     {
         public PageControlViewModel()
         {

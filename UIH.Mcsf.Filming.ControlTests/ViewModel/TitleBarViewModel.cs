@@ -3,7 +3,7 @@ using GalaSoft.MvvmLight;
 
 namespace UIH.Mcsf.Filming.ControlTests.ViewModel
 {
-    class TitleBarViewModel : ViewModelBase, IGridCell
+    public class TitleBarViewModel : ViewModelBase, IGridCell
     {
         #region [--PageNO--]
 
