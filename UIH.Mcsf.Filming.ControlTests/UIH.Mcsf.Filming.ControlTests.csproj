@@ -115,6 +115,9 @@
     <Compile Include="Views\DynamicSubContentControl.xaml.cs">
       <DependentUpon>DynamicSubContentControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\FilmTitleBar.xaml.cs">
+      <DependentUpon>FilmTitleBar.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\FooControl.xaml.cs">
       <DependentUpon>FooControl.xaml</DependentUpon>
     </Compile>
@@ -159,6 +162,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\DynamicSubContentControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\FilmTitleBar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

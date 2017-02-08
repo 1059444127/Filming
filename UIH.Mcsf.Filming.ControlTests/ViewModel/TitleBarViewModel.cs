@@ -73,22 +73,5 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
 
         #endregion [--IsFocused--]
 
-        #region [--Visibility--]
-
-        private Visibility _visibility = Visibility.Visible;
-
-        public Visibility Visibility
-        {
-            get { return _visibility; }
-            set
-            {
-                if (_visibility == value) return;
-                _visibility = value;
-                RaisePropertyChanged(() => Visibility);
-            }
-        }
-
-        #endregion [--Visibility--]
-
     }
 }
