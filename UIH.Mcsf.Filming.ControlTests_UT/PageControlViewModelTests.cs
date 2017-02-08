@@ -49,39 +49,5 @@ namespace UIH.Mcsf.Filming.ControlTests_UT
             Assert.AreEqual(Visibility.Visible, _pageControlViewModel.Visibility);
         }
 
-        [TestMethod]
-        public void When_SetPage_Then_PageNO_of_PageControl_Is_Set()
-        {
-            // Arrange 
-            const int expectedPageNO = 3;
-            var title = new TitleBarViewModel();
-            _pageControlViewModel.TitleBarViewModel = title;
-            _pageMock.Setup(pm => pm.PageNO).Returns(expectedPageNO);
-
-            // Act
-            _pageControlViewModel.Page = _pageMock.Object;
-
-            // Assert
-            Assert.AreEqual(title.PageNO, expectedPageNO);
-        }
-
-        [TestMethod]
-        public void When_Set_PageNO_of_Page_Then_PageNO_of_PageControl_Is_Changed()
-        {
-            // Arrange
-            const int expectedPageNO = 3;
-            var title = new TitleBarViewModel();
-            _pageControlViewModel.TitleBarViewModel = title;
-            _pageMock.SetupProperty(pm => pm.PageNO);
-            var page = _pageMock.Object;
-            _pageControlViewModel.Page = page;
-
-            // Act
-            page.PageNO = expectedPageNO;
-            _pageMock.Raise(pm => pm.PageNOChanged += null, new EventArgs());
-
-            // Assert
-            Assert.AreEqual(title.PageNO, expectedPageNO);
-        }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
 using GalaSoft.MvvmLight;
 using UIH.Mcsf.Filming.ControlTests.Interfaces;
 using UIH.Mcsf.Filming.ControlTests.Models;
@@ -114,18 +115,21 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
         {
             Visibility = BoolToVisibility(_page.IsVisible);
             TitleBarViewModel.PageNO = _page.PageNO;
+            TitleBarViewModel.PageCount = _page.PageCount;
         }
 
         private void RegisterPageEvent()
         {
             _page.VisibleChanged += PageOnVisibleChanged;
             _page.PageNOChanged += PageOnPageNOChanged;
+            _page.PageCountChanged += PageOnPageCountChanged;
         }
 
         private void UnRegisterPageEvent()
         {
             _page.VisibleChanged -= PageOnVisibleChanged;
             _page.PageNOChanged -= PageOnPageNOChanged;
+            _page.PageCountChanged -= PageOnPageCountChanged;
         }
 
         #region [--Page Event Handler--]
@@ -138,6 +142,11 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
         private void PageOnVisibleChanged(object sender, EventArgs eventArgs)
         {
             Visibility = BoolToVisibility(_page.IsVisible);
+        }
+
+        private void PageOnPageCountChanged(object sender, EventArgs eventArgs)
+        {
+            TitleBarViewModel.PageCount = _page.PageCount;
         }
 
         #endregion

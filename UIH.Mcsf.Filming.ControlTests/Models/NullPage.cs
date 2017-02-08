@@ -19,6 +19,10 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
 
         public event EventHandler PageNOChanged;
 
+        public int PageCount { get; set; }
+
+        public event EventHandler PageCountChanged;
+
         #endregion
     }
 }

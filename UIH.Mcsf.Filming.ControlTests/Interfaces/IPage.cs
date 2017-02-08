@@ -8,5 +8,7 @@ namespace UIH.Mcsf.Filming.ControlTests.Interfaces
         event EventHandler VisibleChanged;
         int PageNO { get; set; }
         event EventHandler PageNOChanged;
+        int PageCount { get; set; }
+        event EventHandler PageCountChanged;
     }
 }
