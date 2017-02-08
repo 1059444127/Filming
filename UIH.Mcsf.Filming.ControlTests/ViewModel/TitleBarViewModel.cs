@@ -5,6 +5,26 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
 {
     public class TitleBarViewModel : ViewModelBase, ITitle
     {
+        public TitleBarViewModel()
+        {
+            _title = new NullTitleSubject();
+        }
+
+        #region [--ITitleSubject--]
+
+        private ITitleSubject _title;
+        public ITitleSubject Title
+        {
+            set
+            {
+                if(_title == value) return;
+                //UnRegisterTitleEvent();
+                _title = value;
+                //RefreshProperty
+            }
+        }
+
+        #endregion
 
         #region [--IsSelected--]
 

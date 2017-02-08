@@ -1,7 +1,6 @@
 ﻿using System;
-using UIH.Mcsf.Filming.ControlTests.Interfaces;
 
-namespace UIH.Mcsf.Filming.ControlTests.Models
+namespace UIH.Mcsf.Filming.ControlTests.Interfaces
 {
     public class NullTitleSubject : ITitleSubject
     {
