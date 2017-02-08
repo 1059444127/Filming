@@ -23,6 +23,8 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
 
         public event EventHandler PageCountChanged;
 
+        public ITitleSubject Title { get {return new NullTitleSubject();}}
+
         #endregion
     }
 }

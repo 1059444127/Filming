@@ -93,6 +93,7 @@
     <Compile Include="Models\Board.cs" />
     <Compile Include="Models\BoardContent.cs" />
     <Compile Include="Models\NullPage.cs" />
+    <Compile Include="Models\NullTitleSubject.cs" />
     <Compile Include="ViewModel\CardControlViewModel.cs" />
     <Compile Include="ViewModel\DynamicGridViewModel.cs" />
     <Compile Include="ViewModel\DynamicSubContentControlViewModel.cs" />
