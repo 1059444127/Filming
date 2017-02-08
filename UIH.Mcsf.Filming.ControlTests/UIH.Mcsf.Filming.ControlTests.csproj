@@ -96,6 +96,7 @@
     <Compile Include="ViewModel\CardControlViewModel.cs" />
     <Compile Include="ViewModel\DynamicGridViewModel.cs" />
     <Compile Include="ViewModel\DynamicSubContentControlViewModel.cs" />
+    <Compile Include="ViewModel\FilmControlViewModel.cs" />
     <Compile Include="ViewModel\FilmTitleBarViewModel.cs" />
     <Compile Include="ViewModel\FooControl2ViewModel.cs" />
     <Compile Include="ViewModel\FooControlViewModel.cs" />
@@ -116,6 +117,9 @@
     </Compile>
     <Compile Include="Views\DynamicSubContentControl.xaml.cs">
       <DependentUpon>DynamicSubContentControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FilmControl.xaml.cs">
+      <DependentUpon>FilmControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\FilmTitleBar.xaml.cs">
       <DependentUpon>FilmTitleBar.xaml</DependentUpon>
@@ -164,6 +168,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\DynamicSubContentControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\FilmControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

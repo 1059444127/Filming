@@ -5,15 +5,21 @@
     <DataTemplate DataType="{x:Type viewModel:FooControlViewModel}">
         <localView:FooControl />
     </DataTemplate>
+    
     <DataTemplate DataType="{x:Type viewModel:TitleBarViewModel}">
         <localView:TitleBar />
     </DataTemplate> 
     <DataTemplate DataType="{x:Type viewModel:FilmTitleBarViewModel}">
         <localView:FilmTitleBar />
     </DataTemplate> 
+    
     <DataTemplate DataType="{x:Type viewModel:PageControlViewModel}">
         <localView:PageControl />
     </DataTemplate>
+    <DataTemplate DataType="{x:Type viewModel:FilmControlViewModel}">
+        <localView:FilmControl />
+    </DataTemplate>    
+    
     <DataTemplate DataType="{x:Type viewModel:DynamicGridViewModel}">
         <localView:DynamicGrid />
     </DataTemplate>
