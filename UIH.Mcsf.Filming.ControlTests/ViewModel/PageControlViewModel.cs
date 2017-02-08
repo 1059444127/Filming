@@ -37,7 +37,7 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
 
         #endregion
 
-        public TitleBarViewModel TitleBarViewModel { get; set; }
+        public TitleBarViewModel TitleBarViewModel { private get; set; }
 
         public object ViewerControlAdapterViewModel { get; set; }
 
