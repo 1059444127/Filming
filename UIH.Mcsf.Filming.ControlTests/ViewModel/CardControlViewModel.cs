@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Input;
 using GalaSoft.MvvmLight.Command;
 using UIH.Mcsf.Filming.ControlTests.Interfaces;
@@ -84,43 +82,4 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
         #endregion
     }
 
-    class BoardStub : IBoard
-    {
-        private int _cellCount;
-
-        #region Implementation of IBoard
-
-        public int CellCount
-        {
-            get { return _cellCount; }
-            set
-            {
-                if(_cellCount == value) return;
-                _cellCount = value;
-                CellCountChanged(this, new EventArgs());
-            }
-        }
-
-        public event EventHandler CellCountChanged = delegate { };
-
-
-        public void AppendBoardCell()
-        {
-            throw new NotImplementedException();
-        }
-
-        public object this[int i]
-        {
-            get
-            {
-                return new PageControlViewModel
-                {
-                    TitleBarViewModel = new TitleBarViewModel {PatientName = "NoBody", PageNO = i + 1, PageCount = 8},
-                    Visibility = Visibility.Visible
-                };
-            }
-        }
-
-        #endregion
-    }
 }

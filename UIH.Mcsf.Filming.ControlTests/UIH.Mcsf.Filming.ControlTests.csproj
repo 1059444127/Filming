@@ -94,6 +94,7 @@
     <Compile Include="ViewModel\CardControlViewModel.cs" />
     <Compile Include="ViewModel\DynamicGridViewModel.cs" />
     <Compile Include="ViewModel\DynamicSubContentControlViewModel.cs" />
+    <Compile Include="ViewModel\FilmTitleBarViewModel.cs" />
     <Compile Include="ViewModel\FooControl2ViewModel.cs" />
     <Compile Include="ViewModel\FooControlViewModel.cs" />
     <Compile Include="ViewModel\FooGridControlViewModel.cs" />

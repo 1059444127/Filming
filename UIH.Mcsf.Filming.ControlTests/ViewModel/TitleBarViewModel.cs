@@ -39,23 +39,6 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
 
         #endregion [--PageCount--]
 
-        #region [--PatientName--]
-
-        private string _patientName = "Nobody";
-
-        public string PatientName
-        {
-            get { return _patientName; }
-            set
-            {
-                if (_patientName == value) return;
-                _patientName = value;
-                RaisePropertyChanged(() => PatientName);
-            }
-        }
-
-        #endregion [--PatientName--]
-
         #region [--IsSelected--]
 
         private bool _isSelected = true;
