@@ -1,4 +1,5 @@
-﻿using GalaSoft.MvvmLight;
+﻿using System;
+using GalaSoft.MvvmLight;
 using UIH.Mcsf.Filming.ControlTests.Interfaces;
 
 namespace UIH.Mcsf.Filming.ControlTests.ViewModel
@@ -18,10 +19,40 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
             set
             {
                 if(_title == value) return;
-                //UnRegisterTitleEvent();
+                UnRegisterTitleEvent();
                 _title = value;
-                //RefreshProperty
+                RefreshProperties();
+                RegisterTitleEvent();
+
             }
+        }
+
+        private void RefreshProperties()
+        {
+            PageNO = _title.PageNO;
+            PageCount = _title.PageCount;
+        }
+
+        private void RegisterTitleEvent()
+        {
+            _title.PageNOChanged += TitleOnPageNOChanged;
+            _title.PageCountChanged += TitleOnPageCountChanged;
+        }
+
+        private void UnRegisterTitleEvent()
+        {
+            _title.PageNOChanged -= TitleOnPageNOChanged;
+            _title.PageCountChanged -= TitleOnPageCountChanged;
+        }
+
+        private void TitleOnPageCountChanged(object sender, EventArgs eventArgs)
+        {
+            PageCount = _title.PageCount;
+        }
+
+        private void TitleOnPageNOChanged(object sender, EventArgs eventArgs)
+        {
+            PageNO = _title.PageNO;
         }
 
         #endregion
