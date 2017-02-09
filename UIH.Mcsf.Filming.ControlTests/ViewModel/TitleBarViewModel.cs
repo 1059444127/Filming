@@ -8,7 +8,6 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
     {
         public TitleBarViewModel()
         {
-            _title = new NullTitleSubject();
         }
 
         #region [--ITitleSubject--]

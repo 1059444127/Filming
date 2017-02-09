@@ -8,7 +8,6 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
 
         public FilmControlViewModel()
         {
-            Film = new NullFilm();
             FilmTitleBarViewModel = new FilmTitleBarViewModel();
         }
 
@@ -38,6 +37,7 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
 
         private void RefreshProperties()
         {
+            if(_film == null) return;
             _filmTitleBarViewModel.FilmTitle = _film.FilmTitle;
         }
 

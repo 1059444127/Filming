@@ -11,7 +11,6 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
     {
         public PageControlViewModel()
         {
-            _page = new NullPage();
             TitleBarViewModel = new FilmTitleBarViewModel {PatientName = "NobodyInPage", NO = 1, Count = 1};
             ViewerControlAdapterViewModel = new FooControlViewModel();
         }
@@ -108,17 +107,23 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
 
         private void RefreshProperties()
         {
+            if (_page == null) return;
+
             IsVisible = _page.IsVisible;
             TitleBarViewModel.Title = _page.Title;
         }
 
         private void RegisterPageEvent()
         {
+            if(_page == null) return;
+
             _page.VisibleChanged += PageOnVisibleChanged;
         }
 
         private void UnRegisterPageEvent()
         {
+            if(_page == null) return;
+
             _page.VisibleChanged -= PageOnVisibleChanged;
         }
 

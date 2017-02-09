@@ -28,13 +28,13 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
 
         #region [--FilmTitle--]
 
-        private IFilmTitleSubject _filmTitle = new NullFilmTitleSubject();
+        private IFilmTitleSubject _filmTitle;
 
         public IFilmTitleSubject FilmTitle
         {
             set
             {
-                if(_filmTitle == null) return;
+                if(_filmTitle == value) return;
                 UnRegisterFilmTitleEvent();
                 _filmTitle = value;
                 RefreshProperties();
@@ -44,17 +44,21 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
 
         private void RefreshProperties()
         {
+            if(_filmTitle == null) return;
+
             Title = _filmTitle;
             PatientName = _filmTitle.PatientName;
         }
 
         private void RegisterFilmTitleEvent()
         {
+            if(_filmTitle == null) return;
             _filmTitle.PatientNameChanged += FilmTitleOnPatientNameChanged;
         }
 
         private void UnRegisterFilmTitleEvent()
         {
+            if(_filmTitle == null) return;
             _filmTitle.PatientNameChanged -= FilmTitleOnPatientNameChanged;
         }
 
