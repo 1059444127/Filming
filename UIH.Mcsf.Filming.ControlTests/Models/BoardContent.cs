@@ -7,39 +7,15 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
     {
         #region Implementation of IBoardContent
 
-        public IPage this[int i]
+        public IFilm this[int i]
         {
-            get { return new PageStub(); }
+            get { return new NullFilm(); }
         }
 
         public void AppendContent()
         {
             throw new NotImplementedException();
         }
-
-        #endregion
-    }
-
-    internal class PageStub : IPage
-    {
-        private bool _isVisible;
-
-        #region Implementation of IPage
-
-        public bool IsVisible
-        {
-            get { return _isVisible; }
-            set
-            {
-                if (_isVisible == value) return;
-                _isVisible = value;
-                VisibleChanged(this, new EventArgs());
-            }
-        }
-
-        public event EventHandler VisibleChanged = delegate { };
-
-        public ITitleSubject Title { get; private set; }
 
         #endregion
     }

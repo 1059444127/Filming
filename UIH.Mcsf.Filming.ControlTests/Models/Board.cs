@@ -38,7 +38,7 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
 
         public object this[int i]
         {
-            get { return new FilmControlViewModel {Page = _boardContent[i]}; }
+            get { return new FilmControlViewModel {Film = _boardContent[i]}; }
         }
 
         #endregion
