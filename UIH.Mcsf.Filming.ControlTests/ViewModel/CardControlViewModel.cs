@@ -76,7 +76,6 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
         protected override void UpdateViewModel()
         {
             MessageBox.Show("Middle Button pressed at CardControl");
-            (Board[3] as PageControlViewModel).Visibility = Visibility.Visible;
         }
 
         #endregion

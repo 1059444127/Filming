@@ -1,4 +1,5 @@
-﻿using UIH.Mcsf.Filming.ControlTests.Interfaces;
+﻿using System;
+using UIH.Mcsf.Filming.ControlTests.Interfaces;
 
 namespace UIH.Mcsf.Filming.ControlTests.ViewModel
 {
@@ -22,6 +23,45 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
         }
 
         #endregion [--PatientName--]
+
+        #endregion
+
+        #region [--FilmTitle--]
+
+        private IFilmTitleSubject _filmTitle = new NullFilmTitleSubject();
+
+        public IFilmTitleSubject FilmTitle
+        {
+            set
+            {
+                if(_filmTitle == null) return;
+                UnRegisterFilmTitleEvent();
+                _filmTitle = value;
+                RefreshProperties();
+                RegisterFilmTitleEvent();
+            }
+        }
+
+        private void RefreshProperties()
+        {
+            Title = _filmTitle;
+            PatientName = _filmTitle.PatientName;
+        }
+
+        private void RegisterFilmTitleEvent()
+        {
+            _filmTitle.PatientNameChanged += FilmTitleOnPatientNameChanged;
+        }
+
+        private void UnRegisterFilmTitleEvent()
+        {
+            _filmTitle.PatientNameChanged -= FilmTitleOnPatientNameChanged;
+        }
+
+        private void FilmTitleOnPatientNameChanged(object sender, EventArgs eventArgs)
+        {
+            PatientName = _filmTitle.PatientName;
+        }
 
         #endregion
     }

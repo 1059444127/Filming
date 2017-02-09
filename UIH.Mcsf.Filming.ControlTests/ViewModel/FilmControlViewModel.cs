@@ -38,6 +38,7 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
 
         private void RefreshProperties()
         {
+            _filmTitleBarViewModel.FilmTitle = _film.FilmTitle;
         }
 
         #endregion [--Film--]

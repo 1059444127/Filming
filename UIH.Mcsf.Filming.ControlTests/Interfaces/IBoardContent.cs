@@ -2,7 +2,7 @@
 {
     public interface IBoardContent
     {
-        IPage this[int i] { get; }
+        IFilm this[int i] { get; }
         void AppendContent();
     }
 }
