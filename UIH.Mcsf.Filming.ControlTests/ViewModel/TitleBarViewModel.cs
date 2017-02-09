@@ -14,33 +14,39 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
         #region [--ITitleSubject--]
 
         private ITitleSubject _title;
+
         public ITitleSubject Title
         {
             set
             {
-                if(_title == value) return;
+                if (_title == value) return;
                 UnRegisterTitleEvent();
                 _title = value;
                 RefreshProperties();
                 RegisterTitleEvent();
-
             }
         }
 
         private void RefreshProperties()
         {
+            if (_title == null) return;
+
             PageNO = _title.PageNO;
             PageCount = _title.PageCount;
         }
 
         private void RegisterTitleEvent()
         {
+            if (_title == null) return;
+
             _title.PageNOChanged += TitleOnPageNOChanged;
             _title.PageCountChanged += TitleOnPageCountChanged;
         }
 
         private void UnRegisterTitleEvent()
         {
+            if (_title == null) return;
+
             _title.PageNOChanged -= TitleOnPageNOChanged;
             _title.PageCountChanged -= TitleOnPageCountChanged;
         }
