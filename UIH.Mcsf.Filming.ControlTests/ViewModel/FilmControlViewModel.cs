@@ -1,4 +1,6 @@
-﻿namespace UIH.Mcsf.Filming.ControlTests.ViewModel
+﻿using UIH.Mcsf.Filming.ControlTests.Interfaces;
+
+namespace UIH.Mcsf.Filming.ControlTests.ViewModel
 {
     public class FilmControlViewModel : PageControlViewModel
     {
@@ -6,7 +8,8 @@
 
         public FilmControlViewModel()
         {
-            _filmTitleBarViewModel = new FilmTitleBarViewModel();
+            Film = new NullFilm();
+            FilmTitleBarViewModel = new FilmTitleBarViewModel();
         }
 
         public FilmTitleBarViewModel FilmTitleBarViewModel
@@ -17,5 +20,27 @@
                 TitleBarViewModel = value;
             }
         }
+
+        #region [--Film--]
+
+        private IFilm _film;
+
+        public IFilm Film
+        {
+            set
+            {
+                if (_film == value) return;
+                _film = value;
+                RefreshProperties();
+
+            }
+        }
+
+        private void RefreshProperties()
+        {
+        }
+
+        #endregion [--Film--]
+
     }
 }

@@ -86,11 +86,13 @@
     </ApplicationDefinition>
     <Compile Include="Interfaces\IBoard.cs" />
     <Compile Include="Interfaces\IBoardContent.cs" />
+    <Compile Include="Interfaces\IFilm.cs" />
     <Compile Include="Interfaces\IFilmMetaData.cs" />
     <Compile Include="Interfaces\IFilmTitleSubject.cs" />
     <Compile Include="Interfaces\IPage.cs" />
     <Compile Include="Interfaces\ITitle.cs" />
     <Compile Include="Interfaces\ITitleSubject.cs" />
+    <Compile Include="Interfaces\NullFilm.cs" />
     <Compile Include="Models\Board.cs" />
     <Compile Include="Models\BoardContent.cs" />
     <Compile Include="Interfaces\NullPage.cs" />
