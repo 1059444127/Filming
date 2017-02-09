@@ -47,7 +47,6 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BoolToVisibilityConverter.cs" />
     <Compile Include="ElementIndexConverter.cs" />
     <Compile Include="FocusedStatusToColorConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

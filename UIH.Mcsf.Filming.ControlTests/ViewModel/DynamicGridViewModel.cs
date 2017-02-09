@@ -10,14 +10,7 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
         {
             GridCellViewModels = new List<IGridCell>
             {
-                new PageControlViewModel {TitleBarViewModel = new TitleBarViewModel {NO = 1, Count = 8}},
-                new PageControlViewModel {TitleBarViewModel = new TitleBarViewModel {NO = 2, Count = 8}},
-                new PageControlViewModel {TitleBarViewModel = new TitleBarViewModel {NO = 3, Count = 8}},
-                new PageControlViewModel {TitleBarViewModel = new TitleBarViewModel {NO = 4, Count = 8}},
-                new PageControlViewModel {TitleBarViewModel = new TitleBarViewModel {NO = 5, Count = 8}},
-                new PageControlViewModel {TitleBarViewModel = new TitleBarViewModel {NO = 6, Count = 8}},
-                new PageControlViewModel {TitleBarViewModel = new TitleBarViewModel {NO = 7, Count = 8}},
-                new PageControlViewModel {TitleBarViewModel = new TitleBarViewModel {NO = 8, Count = 8}}
+
             };
         }
 

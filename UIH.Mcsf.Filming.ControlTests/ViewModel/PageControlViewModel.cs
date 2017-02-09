@@ -7,7 +7,7 @@ using UIH.Mcsf.Filming.ControlTests.Models;
 
 namespace UIH.Mcsf.Filming.ControlTests.ViewModel
 {
-    public class PageControlViewModel : ViewModelBase, IGridCell
+    public class PageControlViewModel : ViewModelBase
     {
         public PageControlViewModel()
         {
@@ -16,26 +16,22 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
             ViewerControlAdapterViewModel = new FooControlViewModel();
         }
 
-        #region Implementation of IGridCell
+        #region [--IsVisible--]
 
-        #region [--Visibility--]
+        private bool _isVisible;
 
-        private Visibility _visibility = Visibility.Collapsed;
-
-        public Visibility Visibility
+        public bool IsVisible
         {
-            get { return _visibility; }
+            get { return _isVisible; }
             set
             {
-                if (_visibility == value) return;
-                _visibility = value;
-                RaisePropertyChanged(() => Visibility);
+                if (_isVisible == value) return;
+                _isVisible = value;
+                RaisePropertyChanged(() => IsVisible);
             }
         }
 
-        #endregion [--Visibility--]
-
-        #endregion
+        #endregion [--IsVisible--]
 
         public TitleBarViewModel TitleBarViewModel { private get; set; }
 
@@ -112,7 +108,7 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
 
         private void RefreshProperties()
         {
-            Visibility = BoolToVisibility(_page.IsVisible);
+            IsVisible = _page.IsVisible;
             TitleBarViewModel.Title = _page.Title;
         }
 
@@ -130,7 +126,7 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
 
         private void PageOnVisibleChanged(object sender, EventArgs eventArgs)
         {
-            Visibility = BoolToVisibility(_page.IsVisible);
+            IsVisible = _page.IsVisible;
         }
 
         #endregion
