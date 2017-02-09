@@ -31,21 +31,13 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
             get { return _isVisible; }
             set
             {
-                if(_isVisible == value) return;
+                if (_isVisible == value) return;
                 _isVisible = value;
                 VisibleChanged(this, new EventArgs());
             }
         }
 
         public event EventHandler VisibleChanged = delegate { };
-
-        public int PageNO { get; set; }
-
-        public event EventHandler PageNOChanged = delegate { };
-
-        public int PageCount { get; set; }
-
-        public event EventHandler PageCountChanged;
 
         public ITitleSubject Title { get; private set; }
 

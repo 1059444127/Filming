@@ -14,14 +14,6 @@ namespace UIH.Mcsf.Filming.ControlTests.Interfaces
 
         public event EventHandler VisibleChanged;
 
-        public int PageNO { get; set; }
-
-        public event EventHandler PageNOChanged;
-
-        public int PageCount { get; set; }
-
-        public event EventHandler PageCountChanged;
-
         public ITitleSubject Title { get {return new NullTitleSubject();}}
 
         #endregion
