@@ -6,16 +6,16 @@ namespace UIH.Mcsf.Filming.ControlTests.Interfaces
     {
         #region Implementation of ITitle
 
-        public int PageNO { get; set; }
+        public int NO { get; set; }
 
-        public int PageCount { get; set; }
+        public int Count { get; set; }
 
         #endregion
 
         #region Implementation of ITitleSubject
 
-        public event EventHandler PageNOChanged;
-        public event EventHandler PageCountChanged;
+        public event EventHandler NOChanged;
+        public event EventHandler CountChanged;
 
         #endregion
     }

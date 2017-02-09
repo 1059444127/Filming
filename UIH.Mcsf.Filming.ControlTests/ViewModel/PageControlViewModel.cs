@@ -12,7 +12,7 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
         public PageControlViewModel()
         {
             _page = new NullPage();
-            TitleBarViewModel = new FilmTitleBarViewModel {PatientName = "NobodyInPage", PageNO = 1, PageCount = 1};
+            TitleBarViewModel = new FilmTitleBarViewModel {PatientName = "NobodyInPage", NO = 1, Count = 1};
             ViewerControlAdapterViewModel = new FooControlViewModel();
         }
 
@@ -130,7 +130,7 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
 
         private void PageOnPageNOChanged(object sender, EventArgs eventArgs)
         {
-            TitleBarViewModel.PageNO = _page.PageNO;
+            TitleBarViewModel.NO = _page.PageNO;
         }
 
         private void PageOnVisibleChanged(object sender, EventArgs eventArgs)
@@ -140,7 +140,7 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
 
         private void PageOnPageCountChanged(object sender, EventArgs eventArgs)
         {
-            TitleBarViewModel.PageCount = _page.PageCount;
+            TitleBarViewModel.Count = _page.PageCount;
         }
 
         #endregion

@@ -31,34 +31,34 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
         {
             if (_title == null) return;
 
-            PageNO = _title.PageNO;
-            PageCount = _title.PageCount;
+            NO = _title.NO;
+            Count = _title.Count;
         }
 
         private void RegisterTitleEvent()
         {
             if (_title == null) return;
 
-            _title.PageNOChanged += TitleOnPageNOChanged;
-            _title.PageCountChanged += TitleOnPageCountChanged;
+            _title.NOChanged += TitleOnNOChanged;
+            _title.CountChanged += TitleOnCountChanged;
         }
 
         private void UnRegisterTitleEvent()
         {
             if (_title == null) return;
 
-            _title.PageNOChanged -= TitleOnPageNOChanged;
-            _title.PageCountChanged -= TitleOnPageCountChanged;
+            _title.NOChanged -= TitleOnNOChanged;
+            _title.CountChanged -= TitleOnCountChanged;
         }
 
-        private void TitleOnPageCountChanged(object sender, EventArgs eventArgs)
+        private void TitleOnCountChanged(object sender, EventArgs eventArgs)
         {
-            PageCount = _title.PageCount;
+            Count = _title.Count;
         }
 
-        private void TitleOnPageNOChanged(object sender, EventArgs eventArgs)
+        private void TitleOnNOChanged(object sender, EventArgs eventArgs)
         {
-            PageNO = _title.PageNO;
+            NO = _title.NO;
         }
 
         #endregion
@@ -99,39 +99,39 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
 
         #region Implementation of ITitle
 
-        #region [--PageNO--]
+        #region [--NO--]
 
-        private int _pageNO = 1;
+        private int _no = 1;
 
-        public int PageNO
+        public int NO
         {
-            get { return _pageNO; }
+            get { return _no; }
             set
             {
-                if (_pageNO == value) return;
-                _pageNO = value;
-                RaisePropertyChanged(() => PageNO);
+                if (_no == value) return;
+                _no = value;
+                RaisePropertyChanged(() => NO);
             }
         }
 
-        #endregion [--PageNO--]
+        #endregion [--NO--]
 
-        #region [--PageCount--]
+        #region [--Count--]
 
-        private int _pageCount = 1;
+        private int _count = 1;
 
-        public int PageCount
+        public int Count
         {
-            get { return _pageCount; }
+            get { return _count; }
             set
             {
-                if (_pageCount == value) return;
-                _pageCount = value;
-                RaisePropertyChanged(() => PageCount);
+                if (_count == value) return;
+                _count = value;
+                RaisePropertyChanged(() => Count);
             }
         }
 
-        #endregion [--PageCount--]
+        #endregion [--Count--]
 
         #endregion
     }

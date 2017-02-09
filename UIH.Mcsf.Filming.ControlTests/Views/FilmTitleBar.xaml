@@ -11,8 +11,8 @@
         <TextBlock HorizontalAlignment="Right">
             <TextBlock.Text>
                 <MultiBinding Converter="{StaticResource ElementIndexConverter}">
-                    <Binding Path="PageNO"></Binding>
-                    <Binding Path="PageCount"></Binding>
+                    <Binding Path="NO"></Binding>
+                    <Binding Path="Count"></Binding>
                 </MultiBinding>
             </TextBlock.Text>
         </TextBlock>

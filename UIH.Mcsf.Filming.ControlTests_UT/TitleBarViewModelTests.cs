@@ -25,13 +25,13 @@ namespace UIH.Mcsf.Filming.ControlTests_UT
         {
             // Arrange 
             const int expectedPageNO = ConstNumber;
-            _titleSubjectMock.Setup(pm => pm.PageNO).Returns(expectedPageNO);
+            _titleSubjectMock.Setup(pm => pm.NO).Returns(expectedPageNO);
 
             // Act
             _titleBarViewModel.Title = _titleSubjectMock.Object;
 
             // Assert
-            Assert.AreEqual(_titleBarViewModel.PageNO, expectedPageNO);
+            Assert.AreEqual(_titleBarViewModel.NO, expectedPageNO);
         }
 
         [TestMethod]
@@ -39,16 +39,16 @@ namespace UIH.Mcsf.Filming.ControlTests_UT
         {
             // Arrange
             const int expectedPageNO = ConstNumber;
-            _titleSubjectMock.SetupProperty(pm => pm.PageNO);
+            _titleSubjectMock.SetupProperty(pm => pm.NO);
             var titleSubject = _titleSubjectMock.Object;
             _titleBarViewModel.Title = titleSubject;
 
             // Act
-            titleSubject.PageNO = expectedPageNO;
-            _titleSubjectMock.Raise(pm => pm.PageNOChanged += null, new EventArgs());
+            titleSubject.NO = expectedPageNO;
+            _titleSubjectMock.Raise(pm => pm.NOChanged += null, new EventArgs());
 
             // Assert
-            Assert.AreEqual(_titleBarViewModel.PageNO, expectedPageNO);
+            Assert.AreEqual(_titleBarViewModel.NO, expectedPageNO);
         }
 
         [TestMethod]
@@ -56,13 +56,13 @@ namespace UIH.Mcsf.Filming.ControlTests_UT
         {
             // Arrange 
             const int expectedPageCount = ConstNumber;
-            _titleSubjectMock.Setup(pm => pm.PageCount).Returns(expectedPageCount);
+            _titleSubjectMock.Setup(pm => pm.Count).Returns(expectedPageCount);
 
             // Act
             _titleBarViewModel.Title = _titleSubjectMock.Object;
 
             // Assert
-            Assert.AreEqual(_titleBarViewModel.PageCount, expectedPageCount);
+            Assert.AreEqual(_titleBarViewModel.Count, expectedPageCount);
         }
 
         [TestMethod]
@@ -70,16 +70,16 @@ namespace UIH.Mcsf.Filming.ControlTests_UT
         {
             // Arrange
             const int expectedPageCount = ConstNumber;
-            _titleSubjectMock.SetupProperty(pm => pm.PageCount);
+            _titleSubjectMock.SetupProperty(pm => pm.Count);
             var titleSubject = _titleSubjectMock.Object;
             _titleBarViewModel.Title = titleSubject;
 
             // Act
-            titleSubject.PageCount = expectedPageCount;
-            _titleSubjectMock.Raise(pm => pm.PageCountChanged += null, new EventArgs());
+            titleSubject.Count = expectedPageCount;
+            _titleSubjectMock.Raise(pm => pm.CountChanged += null, new EventArgs());
 
             // Assert
-            Assert.AreEqual(_titleBarViewModel.PageCount, expectedPageCount);
+            Assert.AreEqual(_titleBarViewModel.Count, expectedPageCount);
         }
     }
 }

@@ -2,7 +2,7 @@
 {
     public interface ITitle
     {
-        int PageNO { get; set; } 
-        int PageCount { get; set; }
+        int NO { get; set; } 
+        int Count { get; set; }
     }
 }
