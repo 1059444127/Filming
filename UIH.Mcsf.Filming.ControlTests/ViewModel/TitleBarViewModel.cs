@@ -51,6 +51,8 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
             _title.CountChanged -= TitleOnCountChanged;
         }
 
+        #region [--Title Event Handler--]
+
         private void TitleOnCountChanged(object sender, EventArgs eventArgs)
         {
             Count = _title.Count;
@@ -60,6 +62,8 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
         {
             NO = _title.NO;
         }
+
+        #endregion
 
         #endregion
 

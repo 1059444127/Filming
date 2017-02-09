@@ -128,19 +128,9 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
 
         #region [--Page Event Handler--]
 
-        private void PageOnPageNOChanged(object sender, EventArgs eventArgs)
-        {
-            TitleBarViewModel.NO = _page.PageNO;
-        }
-
         private void PageOnVisibleChanged(object sender, EventArgs eventArgs)
         {
             Visibility = BoolToVisibility(_page.IsVisible);
-        }
-
-        private void PageOnPageCountChanged(object sender, EventArgs eventArgs)
-        {
-            TitleBarViewModel.Count = _page.PageCount;
         }
 
         #endregion
