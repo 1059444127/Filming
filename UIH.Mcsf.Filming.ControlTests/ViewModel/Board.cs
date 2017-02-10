@@ -1,8 +1,7 @@
 ﻿using System;
 using UIH.Mcsf.Filming.ControlTests.Interfaces;
-using UIH.Mcsf.Filming.ControlTests.ViewModel;
 
-namespace UIH.Mcsf.Filming.ControlTests.Models
+namespace UIH.Mcsf.Filming.ControlTests.ViewModel
 {
     public class Board : IBoard
     {

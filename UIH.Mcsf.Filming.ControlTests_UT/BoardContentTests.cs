@@ -6,7 +6,6 @@ namespace UIH.Mcsf.Filming.ControlTests_UT
     [TestClass]
     public class BoardContentTests
     {
-        // TODO: Move class Board From namespace Models to ViewModels
         private BoardContent _boardContent;
 
         [TestInitialize]

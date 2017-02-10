@@ -93,7 +93,7 @@
     <Compile Include="Interfaces\ITitle.cs" />
     <Compile Include="Interfaces\ITitleSubject.cs" />
     <Compile Include="Interfaces\NullFilm.cs" />
-    <Compile Include="Models\Board.cs" />
+    <Compile Include="ViewModel\Board.cs" />
     <Compile Include="Models\BoardContent.cs" />
     <Compile Include="ViewModel\CardControlViewModel.cs" />
     <Compile Include="ViewModel\DynamicGridViewModel.cs" />
