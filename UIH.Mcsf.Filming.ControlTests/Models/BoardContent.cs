@@ -9,7 +9,7 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
 
         public IFilm this[int i]
         {
-            get { return new NullFilm(); }
+            get { return new Film(){IsVisible = true}; }
         }
 
         public void AppendContent()
