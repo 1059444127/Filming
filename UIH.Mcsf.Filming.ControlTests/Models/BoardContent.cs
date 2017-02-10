@@ -3,7 +3,7 @@ using UIH.Mcsf.Filming.ControlTests.Interfaces;
 
 namespace UIH.Mcsf.Filming.ControlTests.Models
 {
-    internal class BoardContent : IBoardContent
+    public class BoardContent : IBoardContent
     {
         #region Implementation of IBoardContent
 

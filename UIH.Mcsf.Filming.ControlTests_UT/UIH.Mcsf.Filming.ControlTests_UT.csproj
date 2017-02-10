@@ -51,6 +51,7 @@
     </CodeAnalysisDependentAssemblyPaths>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BoardContentTests.cs" />
     <Compile Include="FilmTitleBarViewModelTests.cs" />
     <Compile Include="TitleBarViewModelTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
