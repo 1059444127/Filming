@@ -30,7 +30,7 @@ namespace UIH.Mcsf.Filming.ControlTests_UT
             _pageControlViewModel.Page = _pageMock.Object;
 
             // Assert
-            Assert.AreEqual(Visibility.Visible, _pageControlViewModel.Visibility);
+           Assert.IsTrue(_pageControlViewModel.IsVisible);
         }
 
         [TestMethod]
@@ -46,7 +46,7 @@ namespace UIH.Mcsf.Filming.ControlTests_UT
             _pageMock.Raise(mp => mp.VisibleChanged += null, new EventArgs());
 
             // Assert
-            Assert.AreEqual(Visibility.Visible, _pageControlViewModel.Visibility);
+            Assert.IsTrue(_pageControlViewModel.IsVisible);
         }
 
     }
