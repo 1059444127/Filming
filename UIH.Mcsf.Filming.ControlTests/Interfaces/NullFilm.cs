@@ -1,8 +1,9 @@
 ﻿using System;
+using UIH.Mcsf.Filming.Abstracts;
 
 namespace UIH.Mcsf.Filming.ControlTests.Interfaces
 {
-    public class NullFilm : IFilm
+    public class NullFilm : ISelectableFilm
     {
         #region Implementation of IFilm
 
@@ -24,6 +25,16 @@ namespace UIH.Mcsf.Filming.ControlTests.Interfaces
         {
             get { return FilmTitle; }
         }
+
+        #endregion
+
+        #region Implementation of ISelect
+
+        public bool IsSelected { get; set; }
+
+        public bool IsFocused { get; set; }
+
+        public event EventHandler<ClickStatusEventArgs> Clicked;
 
         #endregion
     }

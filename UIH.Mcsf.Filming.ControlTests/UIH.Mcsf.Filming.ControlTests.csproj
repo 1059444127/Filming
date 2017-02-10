@@ -88,12 +88,15 @@
     <Compile Include="Interfaces\IBoardContent.cs" />
     <Compile Include="Interfaces\IFilm.cs" />
     <Compile Include="Interfaces\IFilmMetaData.cs" />
+    <Compile Include="Interfaces\IFilmRepository.cs" />
     <Compile Include="Interfaces\IFilmTitleSubject.cs" />
+    <Compile Include="Interfaces\ISelectableFilm.cs" />
     <Compile Include="Interfaces\IPage.cs" />
     <Compile Include="Interfaces\ITitle.cs" />
     <Compile Include="Interfaces\ITitleSubject.cs" />
     <Compile Include="Interfaces\NullFilm.cs" />
     <Compile Include="Models\Film.cs" />
+    <Compile Include="Models\FilmRepository.cs" />
     <Compile Include="ViewModel\Board.cs" />
     <Compile Include="Models\BoardContent.cs" />
     <Compile Include="ViewModel\CardControlViewModel.cs" />

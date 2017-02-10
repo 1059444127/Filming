@@ -1,14 +1,16 @@
 ﻿using System;
+using UIH.Mcsf.Filming.Abstracts;
 using UIH.Mcsf.Filming.ControlTests.Interfaces;
 
 namespace UIH.Mcsf.Filming.ControlTests.Models
 {
-    class Film : IFilm
+    class Film : ISelectableFilm
     {
 
         #region Implementation of IPage
         
         private bool _isVisible;
+
         public bool IsVisible
         {
             get { return _isVisible; }
@@ -35,6 +37,16 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
         {
             get { throw new NotImplementedException(); }
         }
+
+        #endregion
+
+        #region Implementation of ISelect
+
+        public bool IsSelected { get; set; }
+
+        public bool IsFocused { get; set; }
+
+        public event EventHandler<ClickStatusEventArgs> Clicked = delegate {};
 
         #endregion
     }
