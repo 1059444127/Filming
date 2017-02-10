@@ -62,6 +62,10 @@
       <Project>{45E95AFF-ED02-42A5-891C-86CA36ED6CA1}</Project>
       <Name>UIH.Mcsf.Filming.ControlTests</Name>
     </ProjectReference>
+    <ProjectReference Include="..\UIH.Mcsf.Filming.Utilities\UIH.Mcsf.Filming.Utilities.csproj">
+      <Project>{D2FC10DB-2C0F-4511-82F6-A005AA54F0E7}</Project>
+      <Name>UIH.Mcsf.Filming.Utilities</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
