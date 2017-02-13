@@ -143,5 +143,10 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
         {
             return b ? Visibility.Visible : Visibility.Collapsed;
         }
+
+        ~PageControlViewModel()
+        {
+            UnRegisterPageEvent();
+        }
     }
 }

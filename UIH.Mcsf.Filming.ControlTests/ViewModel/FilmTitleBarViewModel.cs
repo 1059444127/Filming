@@ -68,5 +68,10 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
         }
 
         #endregion
+
+        ~FilmTitleBarViewModel()
+        {
+            UnRegisterFilmTitleEvent();
+        }
     }
 }

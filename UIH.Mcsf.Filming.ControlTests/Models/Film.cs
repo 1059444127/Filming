@@ -24,19 +24,13 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
 
         public event EventHandler VisibleChanged = delegate { };
 
-        public ITitleSubject Title
-        {
-            get { throw new NotImplementedException(); }
-        }
+        public ITitleSubject Title { get {return FilmTitle;} }
 
         #endregion
 
         #region Implementation of IFilm
 
-        public IFilmTitleSubject FilmTitle
-        {
-            get { throw new NotImplementedException(); }
-        }
+        public IFilmTitleSubject FilmTitle { get; private set; }
 
         #endregion
 

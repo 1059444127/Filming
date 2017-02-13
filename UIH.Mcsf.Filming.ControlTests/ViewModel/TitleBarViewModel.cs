@@ -137,5 +137,10 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
         #endregion [--Count--]
 
         #endregion
+
+        ~TitleBarViewModel()
+        {
+            UnRegisterTitleEvent();
+        }
     }
 }

@@ -1,5 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
 using UIH.Mcsf.Filming.ControlTests.Interfaces;
+using UIH.Mcsf.Filming.Utilities;
 
 namespace UIH.Mcsf.Filming.ControlTests.ViewModel
 {
@@ -7,10 +11,15 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
     {
         private int _cellCount = 1;
         private readonly IBoardContent _boardContent;
+        private readonly FilmControlViewModel[] _films = new FilmControlViewModel[GlobalDefinitions.MaxDisplayMode];
 
         public Board(IBoardContent boardContent)
         {
             _boardContent = boardContent;
+            for (int i = 0; i < _films.Length; i++)
+            {
+                _films[i] = new FilmControlViewModel{Film = boardContent[i]};
+            }
         }
 
         #region Implementation of IBoard
@@ -37,7 +46,11 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
 
         public object this[int i]
         {
-            get { return new FilmControlViewModel {Film = _boardContent[i]}; }
+            get
+            {
+                Debug.Assert(i<GlobalDefinitions.MaxDisplayMode);
+                return _films[i];
+            }
         }
 
         #endregion
