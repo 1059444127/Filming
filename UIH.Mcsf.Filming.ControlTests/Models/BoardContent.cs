@@ -10,10 +10,36 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
         public BoardContent(IFilmRepository filmRepository)
         {
             _films = filmRepository;
+            RegisterFilmRepositoryEvent();
+
             var film = new Film(){IsVisible = true};
             film.FilmTitle.PatientName = "Nobody1";
             _films.Add(film);
         }
+
+        ~BoardContent()
+        {
+            UnRegisterFilmRepositoryEvent();
+        }
+
+        #region [--Event Handler--]
+
+        private void UnRegisterFilmRepositoryEvent()
+        {
+            _films.FocusChanged -= FilmsOnFocusChanged;
+        }
+
+        private void RegisterFilmRepositoryEvent()
+        {
+            _films.FocusChanged += FilmsOnFocusChanged;
+        }
+
+        private void FilmsOnFocusChanged(object sender, EventArgs eventArgs)
+        {
+            throw new NotImplementedException();
+        }
+
+        #endregion
 
         #region Implementation of IBoardContent
 
@@ -24,7 +50,7 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
 
         public void AppendContent()
         {
-            throw new NotImplementedException();
+            _films.AppendFilm();            
         }
 
         #endregion

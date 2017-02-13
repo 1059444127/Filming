@@ -17,6 +17,31 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
             }
         }
 
+        public void AppendFilm()
+        {
+            Add(new Film());
+            Focus = Count - 1;
+        }
+
+        #region [--Focus--]
+
+        private int _focus;
+
+        public int Focus
+        {
+            get { return _focus; }
+            private set
+            {
+                if (_focus == value) return;
+                _focus = value;
+                FocusChanged(this, new EventArgs());
+            }
+        }
+
+        #endregion
+
+        public event EventHandler FocusChanged = delegate { };
+
         #endregion
     }
 }
