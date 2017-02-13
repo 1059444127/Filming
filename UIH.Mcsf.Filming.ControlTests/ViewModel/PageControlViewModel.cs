@@ -11,7 +11,6 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
     {
         public PageControlViewModel()
         {
-            TitleBarViewModel = new FilmTitleBarViewModel {PatientName = "NobodyInPage", NO = 1, Count = 1};
             ViewerControlAdapterViewModel = new FooControlViewModel();
         }
 
@@ -32,7 +31,7 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
 
         #endregion [--IsVisible--]
 
-        public TitleBarViewModel TitleBarViewModel { private get; set; }
+        public TitleBarViewModel TitleBarViewModel { get; set; }
 
         public object ViewerControlAdapterViewModel { get; set; }
 
