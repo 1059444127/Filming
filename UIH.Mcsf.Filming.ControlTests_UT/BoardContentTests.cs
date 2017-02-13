@@ -1,4 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Moq;
+using UIH.Mcsf.Filming.ControlTests.Interfaces;
 using UIH.Mcsf.Filming.ControlTests.Models;
 using UIH.Mcsf.Filming.Utilities;
 
@@ -8,11 +10,13 @@ namespace UIH.Mcsf.Filming.ControlTests_UT
     public class BoardContentTests
     {
         private BoardContent _boardContent;
+        private Mock<IFilmRepository> _filmRepositoryMock;
 
         [TestInitialize]
         public void SetUp()
         {
-            _boardContent = new BoardContent();
+            _filmRepositoryMock = new Mock<IFilmRepository>();
+            _boardContent = new BoardContent(_filmRepositoryMock.Object);
         }
 
         [TestMethod]
@@ -26,5 +30,16 @@ namespace UIH.Mcsf.Filming.ControlTests_UT
                 Assert.IsFalse(_boardContent[i].IsVisible, string.Format("Film {0} in Board is Visible", i));
             }
         }
+
+        //[TestMethod]
+        //TODO-User-Intent: public void New_Film_In_Board_Is_Visible()
+        //{
+        //    // Arrange
+        //    _boardContent.AppendContent();
+
+        //    // Assert
+        //    var filmRepository = _filmRepositoryMock.Object;
+        //    Assert.IsTrue(filmRepository.);
+        //}
     }
 }

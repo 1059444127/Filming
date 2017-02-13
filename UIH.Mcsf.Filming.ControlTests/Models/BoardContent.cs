@@ -7,9 +7,9 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
     {
         private IFilmRepository _films;
 
-        public BoardContent()
+        public BoardContent(IFilmRepository filmRepository)
         {
-            _films = new FilmRepository();
+            _films = filmRepository;
             _films.Add(new Film(){IsVisible = true});
         }
 

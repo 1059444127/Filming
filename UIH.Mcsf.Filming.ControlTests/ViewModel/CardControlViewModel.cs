@@ -10,7 +10,7 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
     {
         public CardControlViewModel()
         {
-            Board = new Board(new BoardContent());
+            Board = new Board(new BoardContent(new FilmRepository()));
         }
 
         #region [--Board--]
