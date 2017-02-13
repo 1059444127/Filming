@@ -10,7 +10,9 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
         public BoardContent(IFilmRepository filmRepository)
         {
             _films = filmRepository;
-            _films.Add(new Film(){IsVisible = true});
+            var film = new Film(){IsVisible = true};
+            film.FilmTitle.PatientName = "Nobody1";
+            _films.Add(film);
         }
 
         #region Implementation of IBoardContent

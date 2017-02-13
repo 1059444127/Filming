@@ -39,6 +39,7 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
         {
             if(_film == null) return;
             _filmTitleBarViewModel.FilmTitle = _film.FilmTitle;
+            IsVisible = _film.IsVisible;
         }
 
         #endregion [--Film--]

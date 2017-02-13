@@ -6,6 +6,10 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
 {
     class Film : ISelectableFilm
     {
+        public Film()
+        {
+            FilmTitle = new FilmTitle();
+        }
 
         #region Implementation of IPage
         
