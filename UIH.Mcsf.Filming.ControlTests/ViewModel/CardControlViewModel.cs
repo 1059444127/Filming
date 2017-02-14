@@ -31,6 +31,41 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
 
         #endregion [--Board--]
 
+        #region [--BoardNO--]
+
+        private int _boardNO;
+
+        public int BoardNO
+        {
+            get { return _boardNO; }
+            set
+            {
+                if (_boardNO == value) return;
+                _boardNO = value;
+                RaisePropertyChanged(() => BoardNO);
+            }
+        }
+
+        #endregion [--BoardNO--]
+
+        #region [--BoardMaxNO--]
+
+        private int _boardMaxNO;
+
+        public int BoardMaxNO
+        {
+            get { return _boardMaxNO; }
+            set
+            {
+                if (_boardMaxNO == value) return;
+                _boardMaxNO = value;
+                RaisePropertyChanged(() => BoardMaxNO);
+            }
+        }
+
+        #endregion [--BoardMaxNO--]
+
+
 
         #region [--DisplayMode--]
 
