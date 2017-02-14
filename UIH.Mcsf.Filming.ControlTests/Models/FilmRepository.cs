@@ -43,5 +43,51 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
         public event EventHandler FocusChanged = delegate { };
 
         #endregion
+
+        #region Overrides of SelectableList<ISelectableFilm>
+
+        public override void Add(ISelectableFilm item)
+        {
+            base.Add(item);
+            Changed();
+        }
+
+        public override void Clear()
+        {
+            base.Clear();
+            Changed();
+        }
+
+        public override bool Remove(ISelectableFilm item)
+        {
+            var removed = base.Remove(item);
+            Changed();
+            return removed;
+        }
+
+        public override void Insert(int index, ISelectableFilm item)
+        {
+            base.Insert(index, item);
+            Changed();
+        }
+
+        public override void RemoveAt(int index)
+        {
+            base.RemoveAt(index);
+            Changed();
+        }
+
+        #endregion
+
+        private void Changed()
+        {
+            for (int i = 0; i < Count; i++)
+            {
+                var film = this[i];
+                var title = film.FilmTitle;
+                title.NO = i;
+                title.Count = Count;
+            }
+        }
     }
 }

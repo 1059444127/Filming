@@ -36,8 +36,8 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
             get { return _no; }
             set
             {
-                if (_no == value) return;
-                _no = value;
+                if (_no == value+1) return;
+                _no = value+1;
                 NOChanged(this, new EventArgs());
             }
         }
