@@ -24,6 +24,29 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
 
         #region Implementation of IBoard
 
+
+        public object this[int i]
+        {
+            get
+            {
+                Debug.Assert(i<GlobalDefinitions.MaxDisplayMode);
+                return _films[i];
+            }
+        }
+
+        #endregion
+
+        #region Implementation of IAppend
+
+        public void Append()
+        {
+            _boardContent.Append();
+        }
+
+        #endregion
+
+        #region Implementation of ILattice
+
         public int Count
         {
             get { return _count; }
@@ -36,22 +59,6 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
         }
 
         public event EventHandler CountChanged = delegate { };
-
-        // TODO: When NewPage, PageCount changed -- That means How Board Send Message to every PageControlViewModel
-        // TODO: When PageCount > 8, New Page, Then PageDown, and Focus on the NewPage
-        public void Append()
-        {
-            _boardContent.Append();
-        }
-
-        public object this[int i]
-        {
-            get
-            {
-                Debug.Assert(i<GlobalDefinitions.MaxDisplayMode);
-                return _films[i];
-            }
-        }
 
         #endregion
     }

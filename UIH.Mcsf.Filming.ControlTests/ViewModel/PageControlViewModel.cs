@@ -11,6 +11,7 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
     {
         public PageControlViewModel()
         {
+            TitleBarViewModel = new TitleBarViewModel();
             ViewerControlAdapterViewModel = new FooControlViewModel();
         }
 
