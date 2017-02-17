@@ -4,8 +4,8 @@ namespace UIH.Mcsf.Filming.ControlTests.Interfaces
 {
     public interface IBoard
     {
-        int CellCount { get; set; }
-        event EventHandler CellCountChanged;
+        int Count { get; set; }
+        event EventHandler CountChanged;
 
         void Append();
         object this[int i] { get; }

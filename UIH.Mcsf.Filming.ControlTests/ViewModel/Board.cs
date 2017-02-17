@@ -9,7 +9,7 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
 {
     public class Board : IBoard
     {
-        private int _cellCount = 1;
+        private int _count = 1;
         private readonly IBoardContent _boardContent;
         private readonly FilmControlViewModel[] _films = new FilmControlViewModel[GlobalDefinitions.MaxDisplayMode];
 
@@ -24,18 +24,18 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
 
         #region Implementation of IBoard
 
-        public int CellCount
+        public int Count
         {
-            get { return _cellCount; }
+            get { return _count; }
             set
             {
-                if (_cellCount == value) return;
-                _cellCount = value;
-                CellCountChanged(this, new EventArgs());
+                if (_count == value) return;
+                _count = value;
+                CountChanged(this, new EventArgs());
             }
         }
 
-        public event EventHandler CellCountChanged = delegate { };
+        public event EventHandler CountChanged = delegate { };
 
         // TODO: When NewPage, PageCount changed -- That means How Board Send Message to every PageControlViewModel
         // TODO: When PageCount > 8, New Page, Then PageDown, and Focus on the NewPage

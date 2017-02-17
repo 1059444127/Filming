@@ -49,13 +49,13 @@ namespace UIH.Mcsf.Filming.ControlTests.Views
 
         private void RegisterBoardEvent()
         {
-            Board.CellCountChanged -= BoardOnCellCountChanged;
-            Board.CellCountChanged += BoardOnCellCountChanged;
+            Board.CountChanged -= BoardOnCountChanged;
+            Board.CountChanged += BoardOnCountChanged;
         }
 
-        private void BoardOnCellCountChanged(object sender, EventArgs eventArgs)
+        private void BoardOnCountChanged(object sender, EventArgs eventArgs)
         {
-            var displayMode = new DisplayMode(Board.CellCount);
+            var displayMode = new DisplayMode(Board.Count);
             
             SetGrid(displayMode.Row, displayMode.Col);
         }

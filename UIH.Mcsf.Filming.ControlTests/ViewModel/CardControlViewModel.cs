@@ -24,7 +24,7 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
             {
                 if (_board == value) return;
                 _board = value;
-                // TODO-Later: CardControlViewModel Register CellCountChanged Event From Board
+                // TODO-Later: CardControlViewModel Register CountChanged Event From Board
                 RaisePropertyChanged(() => Board);
             }
         }
@@ -79,7 +79,7 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
                 if (_displayMode == value) return;
                 _displayMode = value;
                 RaisePropertyChanged(() => DisplayMode);
-                Board.CellCount = value;
+                Board.Count = value;
             }
         }
 
