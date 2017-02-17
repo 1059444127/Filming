@@ -96,7 +96,7 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
 
         private void NewPage()
         {
-            Board.AppendBoardCell();
+            Board.Append();
         }
 
         #endregion [--NewPageCommand--]    

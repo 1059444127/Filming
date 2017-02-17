@@ -17,7 +17,7 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
             }
         }
 
-        public void AppendFilm()
+        public void Append()
         {
             Add(new Film());
             Focus = Count - 1;

@@ -39,9 +39,9 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
 
         // TODO: When NewPage, PageCount changed -- That means How Board Send Message to every PageControlViewModel
         // TODO: When PageCount > 8, New Page, Then PageDown, and Focus on the NewPage
-        public void AppendBoardCell()
+        public void Append()
         {
-            _boardContent.AppendContent();
+            _boardContent.Append();
         }
 
         public object this[int i]

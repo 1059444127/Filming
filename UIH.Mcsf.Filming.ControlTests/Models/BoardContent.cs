@@ -48,9 +48,9 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
             get { return _films[i]; }
         }
 
-        public void AppendContent()
+        public void Append()
         {
-            _films.AppendFilm();            
+            _films.Append();            
         }
 
         #endregion

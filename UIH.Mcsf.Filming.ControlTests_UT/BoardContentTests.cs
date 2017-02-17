@@ -35,7 +35,7 @@ namespace UIH.Mcsf.Filming.ControlTests_UT
         //TODO-User-Intent: public void New_Film_In_Board_Is_Visible()
         //{
         //    // Arrange
-        //    _boardContent.AppendContent();
+        //    _boardContent.Append();
 
         //    // Assert
         //    var filmRepository = _filmRepositoryMock.Object;

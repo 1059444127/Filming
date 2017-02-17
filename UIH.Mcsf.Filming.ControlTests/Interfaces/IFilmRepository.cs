@@ -6,7 +6,7 @@ namespace UIH.Mcsf.Filming.ControlTests.Interfaces
     {
         ISelectableFilm this[int i] { get; }
         void Add(ISelectableFilm film);
-        void AppendFilm();
+        void Append();
 
         int Focus { get; }
         event EventHandler FocusChanged;

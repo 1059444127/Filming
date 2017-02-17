@@ -3,6 +3,6 @@
     public interface IBoardContent
     {
         IFilm this[int i] { get; }
-        void AppendContent();
+        void Append();
     }
 }
