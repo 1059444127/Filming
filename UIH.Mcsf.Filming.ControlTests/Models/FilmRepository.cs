@@ -92,7 +92,7 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
             CountChanged(this, new EventArgs());
         }
 
-        #region Implementation of ILattice
+        #region Implementation of IVariableCollection
 
         public event EventHandler CountChanged = delegate { };
 

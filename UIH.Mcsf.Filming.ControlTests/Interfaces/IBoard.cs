@@ -1,6 +1,6 @@
 ﻿namespace UIH.Mcsf.Filming.ControlTests.Interfaces
 {
-    public interface IBoard : ILattice
+    public interface IBoard : IVariableCollection
     {
         object this[int i] { get; }
     }

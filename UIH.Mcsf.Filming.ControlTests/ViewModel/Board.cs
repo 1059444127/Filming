@@ -16,11 +16,36 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
         public Board(IBoardContent boardContent)
         {
             _boardContent = boardContent;
+            RegisterBoardContentEvent();
             for (int i = 0; i < _films.Length; i++)
             {
                 _films[i] = new FilmControlViewModel{Film = boardContent[i]};
             }
         }
+
+        ~Board()
+        {
+            UnRegisterBoardContentEvent();
+        }
+
+        #region [--BoardContent Event Handler--]
+
+        private void RegisterBoardContentEvent()
+        {
+            _boardContent.CountChanged += BoardContentOnCountChanged;
+        }
+
+        private void UnRegisterBoardContentEvent()
+        {
+            _boardContent.CountChanged -= BoardContentOnCountChanged;
+        }
+
+        private void BoardContentOnCountChanged(object sender, EventArgs eventArgs)
+        {
+            Count = _boardContent.Count;
+        }
+
+        #endregion
 
         #region Implementation of IBoard
 
@@ -45,7 +70,7 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
 
         #endregion
 
-        #region Implementation of ILattice
+        #region Implementation of IVariableCollection
 
         public int Count
         {
@@ -55,6 +80,7 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
                 if (_count == value) return;
                 _count = value;
                 CountChanged(this, new EventArgs());
+                _boardContent.Count = value;
             }
         }
 

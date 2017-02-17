@@ -6,6 +6,7 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
     public class BoardContent : IBoardContent
     {
         private IFilmRepository _films;
+        private int _visibleContentCount = 1;
 
         public BoardContent(IFilmRepository filmRepository)
         {
@@ -56,6 +57,23 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
         {
             _films.Append();
         }
+
+        #endregion
+
+        #region Implementation of IVariableCollection
+
+        public int Count
+        {
+            get { return _visibleContentCount; }
+            set
+            {
+                if(_visibleContentCount == value) return;
+                _visibleContentCount = value;
+                CountChanged(this, new EventArgs());
+            }
+        }
+
+        public event EventHandler CountChanged = delegate { };
 
         #endregion
     }
