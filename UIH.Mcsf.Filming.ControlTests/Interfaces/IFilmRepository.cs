@@ -2,11 +2,10 @@
 
 namespace UIH.Mcsf.Filming.ControlTests.Interfaces
 {
-    public interface IFilmRepository
+    public interface IFilmRepository : ILattice
     {
         ISelectableFilm this[int i] { get; }
         void Add(ISelectableFilm film);
-        void Append();
 
         int Focus { get; }
         event EventHandler FocusChanged;

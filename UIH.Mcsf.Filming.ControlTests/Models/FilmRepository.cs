@@ -88,6 +88,14 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
                 title.NO = i;
                 title.Count = Count;
             }
+
+            CountChanged(this, new EventArgs());
         }
+
+        #region Implementation of ILattice
+
+        public event EventHandler CountChanged = delegate { };
+
+        #endregion
     }
 }

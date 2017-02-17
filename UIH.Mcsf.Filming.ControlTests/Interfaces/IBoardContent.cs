@@ -1,8 +1,7 @@
 ﻿namespace UIH.Mcsf.Filming.ControlTests.Interfaces
 {
-    public interface IBoardContent
+    public interface IBoardContent : IAppend
     {
         IFilm this[int i] { get; }
-        void Append();
     }
 }

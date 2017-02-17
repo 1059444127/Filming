@@ -48,9 +48,13 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
             get { return _films[i]; }
         }
 
+        #endregion
+
+        #region Implementation of IAppend
+
         public void Append()
         {
-            _films.Append();            
+            _films.Append();
         }
 
         #endregion
