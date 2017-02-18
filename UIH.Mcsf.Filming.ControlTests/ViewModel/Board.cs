@@ -61,15 +61,6 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
 
         #endregion
 
-        #region Implementation of IAppend
-
-        public void Append()
-        {
-            _boardContent.Append();
-        }
-
-        #endregion
-
         #region Implementation of IVariableCollection
 
         public int Count

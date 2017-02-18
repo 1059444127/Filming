@@ -22,6 +22,7 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
 
         private IBoard _board;
 
+        //For CardControl Binding
         public IBoard Board
         {
             get { return _board; }
@@ -96,7 +97,7 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
 
         private void NewPage()
         {
-            Board.Append();
+            _filmRepository.Append();
         }
 
         #endregion [--NewPageCommand--]    

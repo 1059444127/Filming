@@ -2,7 +2,7 @@
 
 namespace UIH.Mcsf.Filming.ControlTests.Interfaces
 {
-    public interface IVariableCollection : IAppend
+    public interface IVariableCollection
     {
         int Count { get; set; }
         event EventHandler CountChanged;
