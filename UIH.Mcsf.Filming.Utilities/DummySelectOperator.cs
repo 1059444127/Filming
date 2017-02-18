@@ -3,7 +3,7 @@ using UIH.Mcsf.Filming.Abstracts;
 
 namespace UIH.Mcsf.Filming.Utilities
 {
-    class DummySelectOperator<T> : SelectOperator<T> where T : class, ISelect
+    class DummySelectOperator<T> : SelectOperator<T> where T : class, ISelectable
     {
         public DummySelectOperator(T item, List<T> items) : base(item, items)
         {

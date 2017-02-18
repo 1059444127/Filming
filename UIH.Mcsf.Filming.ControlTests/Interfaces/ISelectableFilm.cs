@@ -2,7 +2,7 @@
 
 namespace UIH.Mcsf.Filming.ControlTests.Interfaces
 {
-    public interface ISelectableFilm : IFilm, ISelect
+    public interface ISelectableFilm : IFilm, ISelectable
     {
          
     }

@@ -4,7 +4,7 @@ using UIH.Mcsf.Viewer;
 
 namespace UIH.Mcsf.Filming.Interfaces
 {
-    public abstract class ImageCell : ISelect
+    public abstract class ImageCell : ISelectable
     {
         private bool _isFocused;
         private bool _isSelected;
@@ -17,7 +17,7 @@ namespace UIH.Mcsf.Filming.Interfaces
             Clicked(this, new ClickStatusEventArgs(clickStatus));
         }
 
-        #region Implementation of ISelect
+        #region Implementation of ISelectable
 
         public bool IsSelected
         {

@@ -5,7 +5,7 @@ using UIH.Mcsf.Filming.Abstracts;
 
 namespace UIH.Mcsf.Filming.Utilities
 {
-    public class SelectableList<T> : IList<T> where T : class, ISelect
+    public class SelectableList<T> : IList<T> where T : class, ISelectable
     {
         private readonly List<T> _elements = new List<T>();
 

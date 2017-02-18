@@ -3,7 +3,7 @@ using UIH.Mcsf.Filming.Abstracts;
 
 namespace UIH.Mcsf.Filming.Utilities
 {
-    internal class SelectRangeOperator<T> : SelectOperator<T> where T : class, ISelect
+    internal class SelectRangeOperator<T> : SelectOperator<T> where T : class, ISelectable
     {
         public SelectRangeOperator(T item, List<T> items) : base(item, items)
         {

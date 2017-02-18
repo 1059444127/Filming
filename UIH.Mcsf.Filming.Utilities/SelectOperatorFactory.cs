@@ -3,7 +3,7 @@ using UIH.Mcsf.Filming.Abstracts;
 
 namespace UIH.Mcsf.Filming.Utilities
 {
-    internal class SelectOperatorFactory<T> where T : class, ISelect
+    internal class SelectOperatorFactory<T> where T : class, ISelectable
     {
         public static SelectOperator<T> CreateSelectOperator(T item, List<T> items, IClickStatus clickStatus)
         {

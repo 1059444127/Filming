@@ -2,7 +2,7 @@
 
 namespace UIH.Mcsf.Filming.Abstracts
 {
-    public interface ISelect
+    public interface ISelectable
     {
         bool IsSelected { get; set; }
         bool IsFocused { get; set; }

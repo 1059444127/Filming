@@ -28,7 +28,7 @@ namespace UIH.Mcsf.Filming.ControlTests.Interfaces
 
         #endregion
 
-        #region Implementation of ISelect
+        #region Implementation of ISelectable
 
         public bool IsSelected { get; set; }
 

@@ -6,7 +6,7 @@ using UIH.Mcsf.Filming.Abstracts;
 
 namespace UIH.Mcsf.Filming.Utilities
 {
-    internal abstract class SelectOperator<T> where T : class, ISelect
+    internal abstract class SelectOperator<T> where T : class, ISelectable
     {
         protected readonly T Element;
         protected readonly List<T> Elements;
