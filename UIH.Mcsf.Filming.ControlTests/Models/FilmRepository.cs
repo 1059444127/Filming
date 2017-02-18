@@ -27,10 +27,11 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
 
         private int _focus;
 
+        //TODO-Later: When Base(SelectableList) Focus Changed, FilmRepository Focus Changed
         public int Focus
         {
             get { return _focus; }
-            private set
+            set
             {
                 if (_focus == value) return;
                 _focus = value;

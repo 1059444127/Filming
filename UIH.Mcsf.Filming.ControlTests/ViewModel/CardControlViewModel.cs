@@ -24,10 +24,11 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
             {
                 if (_board == value) return;
                 _board = value;
-                // TODO-Later: CardControlViewModel Register CountChanged Event From Board
                 RaisePropertyChanged(() => Board);
             }
         }
+
+
 
         #endregion [--Board--]
 
