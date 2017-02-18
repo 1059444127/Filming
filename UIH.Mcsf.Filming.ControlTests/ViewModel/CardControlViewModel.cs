@@ -8,9 +8,14 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
 {
     class CardControlViewModel : TestViewModelBase
     {
+        private IFilmRepository _filmRepository;
+        private IBoardContent _boardContent;
+
         public CardControlViewModel()
         {
-            Board = new Board(new BoardContent(new FilmRepository()));
+            _filmRepository = new FilmRepository();
+            _boardContent = new BoardContent(_filmRepository);
+            _board = new Board(_boardContent);
         }
 
         #region [--Board--]
@@ -20,12 +25,6 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
         public IBoard Board
         {
             get { return _board; }
-            set
-            {
-                if (_board == value) return;
-                _board = value;
-                RaisePropertyChanged(() => Board);
-            }
         }
 
 
