@@ -52,12 +52,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BoardContentTests.cs" />
+    <Compile Include="FilmRepositoryTests.cs" />
     <Compile Include="FilmTitleBarViewModelTests.cs" />
     <Compile Include="TitleBarViewModelTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PageControlViewModelTests.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\UIH.Mcsf.Filming.Abstracts\UIH.Mcsf.Filming.Abstracts.csproj">
+      <Project>{8C77DF52-F79F-4A2A-9C0B-4244CDAAF588}</Project>
+      <Name>UIH.Mcsf.Filming.Abstracts</Name>
+    </ProjectReference>
     <ProjectReference Include="..\UIH.Mcsf.Filming.ControlTests\UIH.Mcsf.Filming.ControlTests.csproj">
       <Project>{45E95AFF-ED02-42A5-891C-86CA36ED6CA1}</Project>
       <Name>UIH.Mcsf.Filming.ControlTests</Name>

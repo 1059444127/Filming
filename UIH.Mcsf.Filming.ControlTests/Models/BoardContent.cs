@@ -12,10 +12,6 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
         {
             _films = filmRepository;
             RegisterFilmRepositoryEvent();
-
-            var film = new Film(){IsVisible = true};
-            film.FilmTitle.PatientName = "Nobody1";
-            _films.Add(film);
         }
 
         ~BoardContent()

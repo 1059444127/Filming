@@ -4,8 +4,13 @@ using UIH.Mcsf.Filming.Utilities;
 
 namespace UIH.Mcsf.Filming.ControlTests.Models
 {
-    public class FilmRepository : SelectableList<ISelectableFilm>, IFilmRepository
+    public sealed class FilmRepository : SelectableList<ISelectableFilm>, IFilmRepository
     {
+        public FilmRepository()
+        {
+            Add(new Film{IsVisible = true});
+        }
+
         #region Overrides of SelectableList<ISelectableFilm>
 
         public override ISelectableFilm this[int index]
