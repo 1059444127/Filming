@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using System.Windows.Input;
 using GalaSoft.MvvmLight.Command;
 using UIH.Mcsf.Filming.ControlTests.Interfaces;
@@ -16,7 +17,40 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
             _filmRepository = new FilmRepository();
             _boardContent = new BoardContent(_filmRepository);
             _board = new Board(_boardContent);
+
+            RegisterBoardContentEvent();
         }
+
+        ~CardControlViewModel()
+        {
+            UnRegisterBoardContentEvent();
+        }
+
+        #region [--Board Content Event Handler--]
+
+        private void RegisterBoardContentEvent()
+        {
+            _boardContent.MaxNOChanged += BoardContentOnMaxNOChanged;
+            _boardContent.NOChanged += BoardContentOnNOChanged;
+        }
+
+        private void UnRegisterBoardContentEvent()
+        {
+            _boardContent.MaxNOChanged -= BoardContentOnMaxNOChanged;
+            _boardContent.NOChanged -= BoardContentOnNOChanged;
+        }
+
+        private void BoardContentOnNOChanged(object sender, EventArgs eventArgs)
+        {
+            BoardNO = _boardContent.NO;
+        }
+
+        private void BoardContentOnMaxNOChanged(object sender, EventArgs eventArgs)
+        {
+            BoardMaxNO = _boardContent.MaxNO;
+        }
+
+        #endregion
 
         #region [--Board--]
 
@@ -44,6 +78,7 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
                 if (_boardNO == value) return;
                 _boardNO = value;
                 RaisePropertyChanged(() => BoardNO);
+                _boardContent.NO = value;
             }
         }
 
