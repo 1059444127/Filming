@@ -8,8 +8,8 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
 {
     class CardControlViewModel : TestViewModelBase
     {
-        private IFilmRepository _filmRepository;
-        private IBoardContent _boardContent;
+        private readonly IFilmRepository _filmRepository;
+        private readonly IBoardContent _boardContent;
 
         public CardControlViewModel()
         {
