@@ -1,5 +1,6 @@
 using System;
 using UIH.Mcsf.Filming.ControlTests.Interfaces;
+using UIH.Mcsf.Filming.Utilities;
 
 namespace UIH.Mcsf.Filming.ControlTests.Models
 {
@@ -57,6 +58,8 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
         {
             get { return _films[i]; }
         }
+
+        public event EventHandler<IntEventArgs> CellChanged = delegate { };
 
         #endregion
     }

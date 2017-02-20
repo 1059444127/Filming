@@ -33,11 +33,22 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
         private void RegisterBoardContentEvent()
         {
             _boardContent.CountChanged += BoardContentOnCountChanged;
+            _boardContent.CellChanged += BoardContentOnCellChanged;
         }
 
         private void UnRegisterBoardContentEvent()
         {
             _boardContent.CountChanged -= BoardContentOnCountChanged;
+            _boardContent.CellChanged -= BoardContentOnCellChanged;
+        }
+
+        private void BoardContentOnCellChanged(object sender, IntEventArgs intEventArgs)
+        {
+            var filmIndex = intEventArgs.Int;
+            Debug.Assert(filmIndex >=0);
+            Debug.Assert(filmIndex < GlobalDefinitions.MaxDisplayMode);
+
+            _films[filmIndex].Film = _boardContent[filmIndex];
         }
 
         private void BoardContentOnCountChanged(object sender, EventArgs eventArgs)
