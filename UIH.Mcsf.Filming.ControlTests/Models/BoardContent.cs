@@ -8,6 +8,8 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
     {
         private IFilmRepository _films;
         private int _visibleContentCount = 1;
+        private int _no;
+        private int _maxNO;
 
         public BoardContent(IFilmRepository filmRepository)
         {
@@ -34,7 +36,7 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
 
         private void FilmsOnFocusChanged(object sender, EventArgs eventArgs)
         {
-            throw new NotImplementedException();
+            NO = _films.Focus/_films.Count;
         }
 
         #endregion
@@ -60,6 +62,30 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
         }
 
         public event EventHandler<IntEventArgs> CellChanged = delegate { };
+
+        public int NO
+        {
+            get { return _no; }
+            set
+            {
+                _no = value;
+                NOChanged(this, new EventArgs());
+            }
+        }
+
+        public int MaxNO
+        {
+            get { return _maxNO; }
+            set
+            {
+                if (_maxNO == value) return;
+                _maxNO = value;
+                MaxNOChanged(this, new EventArgs());
+            }
+        }
+
+        public event EventHandler NOChanged = delegate { };
+        public event EventHandler MaxNOChanged = delegate { };
 
         #endregion
     }
