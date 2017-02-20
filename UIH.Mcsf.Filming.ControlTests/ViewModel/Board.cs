@@ -66,12 +66,11 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
         public int Count
         {
             get { return _count; }
-            set
+            private set
             {
                 if (_count == value) return;
                 _count = value;
                 CountChanged(this, new EventArgs());
-                _boardContent.Count = value;
             }
         }
 

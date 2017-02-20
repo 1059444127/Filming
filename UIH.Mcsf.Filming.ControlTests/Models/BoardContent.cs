@@ -40,15 +40,6 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
 
         #region Implementation of IBoardContent
 
-        public IFilm this[int i]
-        {
-            get { return _films[i]; }
-        }
-
-        #endregion
-
-        #region Implementation of IVariableCollection
-
         public int Count
         {
             get { return _visibleContentCount; }
@@ -61,6 +52,11 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
         }
 
         public event EventHandler CountChanged = delegate { };
+
+        public IFilm this[int i]
+        {
+            get { return _films[i]; }
+        }
 
         #endregion
     }

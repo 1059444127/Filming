@@ -80,7 +80,7 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
                 if (_displayMode == value) return;
                 _displayMode = value;
                 RaisePropertyChanged(() => DisplayMode);
-                Board.Count = value;
+                _boardContent.Count = value;
             }
         }
 

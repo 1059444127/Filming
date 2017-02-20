@@ -95,7 +95,6 @@
     <Compile Include="Interfaces\IPage.cs" />
     <Compile Include="Interfaces\ITitle.cs" />
     <Compile Include="Interfaces\ITitleSubject.cs" />
-    <Compile Include="Interfaces\IVariableCollection.cs" />
     <Compile Include="Interfaces\NullFilm.cs" />
     <Compile Include="Models\Film.cs" />
     <Compile Include="Models\FilmRepository.cs" />
