@@ -63,6 +63,7 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
         }
 
         public event EventHandler<IntEventArgs> CellChanged = delegate { };
+        public event EventHandler Changed = delegate { };
 
         public int NO
         {
