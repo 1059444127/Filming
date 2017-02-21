@@ -3,11 +3,10 @@ using UIH.Mcsf.Filming.Utilities;
 
 namespace UIH.Mcsf.Filming.ControlTests.Interfaces
 {
-    public interface IBoardContent 
+    public interface IBoardContent : ICountSubject
     {
-        // Common
-        int Count { get; set; }
-        event EventHandler CountChanged;
+        // ICountSubject
+        new int Count { get; set; }
         
         // Board need
         IFilm this[int i] { get; }

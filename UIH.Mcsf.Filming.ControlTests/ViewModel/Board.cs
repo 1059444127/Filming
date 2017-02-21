@@ -72,7 +72,7 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
 
         #endregion
 
-        #region Implementation of IVariableCollection
+        #region Implementation of ICountSubject
 
         public int Count
         {

@@ -38,7 +38,6 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
             get { return _focus; }
             set
             {
-                if (_focus == value) return;
                 _focus = value;
                 FocusChanged(this, new EventArgs());
             }
@@ -98,7 +97,7 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
             CountChanged(this, new EventArgs());
         }
 
-        #region Implementation of IVariableCollection
+        #region Implementation of ICountSubject
 
         public event EventHandler CountChanged = delegate { };
 
