@@ -60,6 +60,7 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
                 if(_visibleContentCount == value) return;
                 _visibleContentCount = value;
                 CountChanged(this, new EventArgs());
+                NO = _films.Focus/Count;
             }
         }
 
@@ -78,10 +79,16 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
             get { return _no; }
             set
             {
+                if (_no == value) return;
                 _no = value;
                 NOChanged(this, new EventArgs());
+                _films.Focus = NO*Count;
+
+                // Hide old cell, Show new Cell
             }
         }
+
+        public event EventHandler NOChanged = delegate { };
 
         public int MaxNO
         {
@@ -94,7 +101,6 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
             }
         }
 
-        public event EventHandler NOChanged = delegate { };
         public event EventHandler MaxNOChanged = delegate { };
 
         #endregion

@@ -38,6 +38,7 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
             get { return _focus; }
             set
             {
+                if (_focus == value) return;
                 _focus = value;
                 FocusChanged(this, new EventArgs());
             }
