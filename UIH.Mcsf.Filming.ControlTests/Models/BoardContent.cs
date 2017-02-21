@@ -45,7 +45,6 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
 
         private void FilmsOnFocusChanged(object sender, EventArgs eventArgs)
         {
-            // TODO: Add IFilmRepository.Count & CountChanged
             NO = _films.Focus/_films.Count;
         }
 
@@ -65,10 +64,10 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
         }
 
         public event EventHandler CountChanged = delegate { };
-
+        
         public IFilm this[int i]
         {
-            get { return _films[i]; }
+            get { return _films[NO*Count+i]; }
         }
 
         public event EventHandler<IntEventArgs> CellChanged = delegate { };
