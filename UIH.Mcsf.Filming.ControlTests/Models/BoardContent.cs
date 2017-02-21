@@ -27,11 +27,20 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
         private void UnRegisterFilmRepositoryEvent()
         {
             _films.FocusChanged -= FilmsOnFocusChanged;
+            _films.CountChanged -= FilmsOnCountChanged;
         }
 
         private void RegisterFilmRepositoryEvent()
         {
             _films.FocusChanged += FilmsOnFocusChanged;
+            _films.CountChanged += FilmsOnCountChanged;
+        }
+
+        private void FilmsOnCountChanged(object sender, EventArgs eventArgs)
+        {
+            var filmCount = _films.Count;
+            if (filmCount <= 0) MaxNO = 0;
+            else MaxNO = (int)Math.Ceiling((0.0+filmCount)/Count) - 1;
         }
 
         private void FilmsOnFocusChanged(object sender, EventArgs eventArgs)

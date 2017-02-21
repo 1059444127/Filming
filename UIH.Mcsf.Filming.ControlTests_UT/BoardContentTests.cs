@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using System;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using UIH.Mcsf.Filming.ControlTests.Interfaces;
 using UIH.Mcsf.Filming.ControlTests.Models;
@@ -20,9 +21,58 @@ namespace UIH.Mcsf.Filming.ControlTests_UT
         }
 
         [TestMethod]
-        public void Foo()
+        public void When_FilmRepository_Count_is_0_Then_BoardContent_MaxNO_is_0()
         {
-            Assert.IsTrue(true);
+            // Prepare
+
+            // Act
+            _filmRepositoryMock.Setup(frm => frm.Count).Returns(0);
+            _filmRepositoryMock.Raise(frm=>frm.CountChanged += null, new EventArgs());
+
+            // Assert
+            Assert.AreEqual(0, _boardContent.MaxNO);
+        }
+
+        [TestMethod]
+        public void When_FilmRepository_Count_is_4_Then_BoardContent_MaxNO_is_0_If_Board_Count_is_4()
+        {
+            // Prepare
+            _boardContent.Count = 4;
+
+            // Act
+            _filmRepositoryMock.Setup(frm => frm.Count).Returns(4);
+            _filmRepositoryMock.Raise(frm=>frm.CountChanged += null, new EventArgs());
+
+            // Assert
+            Assert.AreEqual(0, _boardContent.MaxNO);
+        }
+
+        [TestMethod]
+        public void When_FilmRepository_Count_is_5_Then_BoardContent_MaxNO_is_1_If_Board_Count_is_4()
+        {
+            // Prepare
+            _boardContent.Count = 4;
+
+            // Act
+            _filmRepositoryMock.Setup(frm => frm.Count).Returns(5);
+            _filmRepositoryMock.Raise(frm=>frm.CountChanged += null, new EventArgs());
+
+            // Assert
+            Assert.AreEqual(1, _boardContent.MaxNO);
+        }
+
+        [TestMethod]
+        public void When_FilmRepository_Count_is_8_Then_BoardContent_MaxNO_is_2_If_Board_Count_is_4()
+        {
+            // Prepare
+            _boardContent.Count = 4;
+
+            // Act
+            _filmRepositoryMock.Setup(frm => frm.Count).Returns(8);
+            _filmRepositoryMock.Raise(frm => frm.CountChanged += null, new EventArgs());
+
+            // Assert
+            Assert.AreEqual(1, _boardContent.MaxNO);
         }
 
         //[TestMethod]
