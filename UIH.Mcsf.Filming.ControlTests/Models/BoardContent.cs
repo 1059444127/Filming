@@ -103,6 +103,30 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
 
         public event EventHandler MaxNOChanged = delegate { };
 
+        public int NO
+        {
+            get { return _no; }
+            set
+            {
+                _no = value;
+                NOChanged(this, new EventArgs());
+            }
+        }
+
+        public int MaxNO
+        {
+            get { return _maxNO; }
+            set
+            {
+                if (_maxNO == value) return;
+                _maxNO = value;
+                MaxNOChanged(this, new EventArgs());
+            }
+        }
+
+        public event EventHandler NOChanged = delegate { };
+        public event EventHandler MaxNOChanged = delegate { };
+
         #endregion
     }
 }
