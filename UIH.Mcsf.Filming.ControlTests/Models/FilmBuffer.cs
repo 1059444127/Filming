@@ -1,4 +1,5 @@
-﻿using UIH.Mcsf.Filming.ControlTests.Interfaces;
+﻿using System;
+using UIH.Mcsf.Filming.ControlTests.Interfaces;
 using UIH.Mcsf.Filming.Utilities;
 
 namespace UIH.Mcsf.Filming.ControlTests.Models
@@ -12,7 +13,32 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
         public FilmBuffer(IFilmRepository filmRepository)
         {
             _films = filmRepository;
+            RegisterFilmRepositoryEvent();
         }
+
+        ~FilmBuffer()
+        {
+            UnRegisterFilmRepositoryEvent();
+        }
+
+        #region [--FilmRepository Event Handler--]
+
+        private void UnRegisterFilmRepositoryEvent()
+        {
+            _films.FocusChanged -= FilmsOnFocusChanged;
+        }
+
+        private void RegisterFilmRepositoryEvent()
+        {
+            _films.FocusChanged += FilmsOnFocusChanged;
+        }
+
+        private void FilmsOnFocusChanged(object sender, EventArgs eventArgs)
+        {
+            
+        }
+
+        #endregion
 
         public int VisibleSize { get; set; }
     }
