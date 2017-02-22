@@ -97,6 +97,7 @@
     <Compile Include="Interfaces\ITitleSubject.cs" />
     <Compile Include="Interfaces\NullFilm.cs" />
     <Compile Include="Models\Film.cs" />
+    <Compile Include="Models\FilmBuffer.cs" />
     <Compile Include="Models\FilmRepository.cs" />
     <Compile Include="Models\FilmTitle.cs" />
     <Compile Include="ViewModel\Board.cs" />
