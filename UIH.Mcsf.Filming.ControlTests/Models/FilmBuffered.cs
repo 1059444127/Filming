@@ -4,19 +4,19 @@ using UIH.Mcsf.Filming.Utilities;
 
 namespace UIH.Mcsf.Filming.ControlTests.Models
 {
-    public class FilmBuffer
+    public class FilmBuffered
     {
         private IFilmRepository _films;
         private const int Capacity = GlobalDefinitions.MaxDisplayMode;
         private int _cursor;
 
-        public FilmBuffer(IFilmRepository filmRepository)
+        public FilmBuffered(IFilmRepository filmRepository)
         {
             _films = filmRepository;
             RegisterFilmRepositoryEvent();
         }
 
-        ~FilmBuffer()
+        ~FilmBuffered()
         {
             UnRegisterFilmRepositoryEvent();
         }

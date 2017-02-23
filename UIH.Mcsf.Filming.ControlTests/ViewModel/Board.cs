@@ -34,22 +34,12 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
         {
             _boardContent.CountChanged += BoardContentOnCountChanged;
             _boardContent.CellChanged += BoardContentOnCellChanged;
-            _boardContent.Changed += BoardContentOnChanged;
         }
 
         private void UnRegisterBoardContentEvent()
         {
             _boardContent.CountChanged -= BoardContentOnCountChanged;
             _boardContent.CellChanged -= BoardContentOnCellChanged;
-            _boardContent.Changed -= BoardContentOnChanged;
-        }
-
-        private void BoardContentOnChanged(object sender, EventArgs eventArgs)
-        {
-            for (int i = 0; i < Count; i++)
-            {
-                _films[i].Film = _boardContent[i];
-            }
         }
 
         private void BoardContentOnCellChanged(object sender, IntEventArgs intEventArgs)

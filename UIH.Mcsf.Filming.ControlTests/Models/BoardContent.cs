@@ -7,7 +7,6 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
     public class BoardContent : IBoardContent
     {
         private IFilmRepository _films;
-        private FilmBuffer _filmBuffer;
         private int _visibleContentCount = 1;
         private int _no;
         private int _maxNO;
@@ -16,8 +15,6 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
         {
             _films = filmRepository;
             RegisterFilmRepositoryEvent();
-
-            _filmBuffer = new FilmBuffer(_films) {VisibleSize = Count};
         }
 
         ~BoardContent()
@@ -30,11 +27,18 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
         private void UnRegisterFilmRepositoryEvent()
         {
             _films.CountChanged -= FilmsOnCountChanged;
+            _films.FocusChanged -= FilmsOnFocusChanged;
         }
 
         private void RegisterFilmRepositoryEvent()
         {
             _films.CountChanged += FilmsOnCountChanged;
+            _films.FocusChanged += FilmsOnFocusChanged;
+        }
+
+        private void FilmsOnFocusChanged(object sender, EventArgs eventArgs)
+        {
+            
         }
 
         private void FilmsOnCountChanged(object sender, EventArgs eventArgs)
@@ -67,7 +71,6 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
         }
 
         public event EventHandler<IntEventArgs> CellChanged = delegate { };
-        public event EventHandler Changed = delegate { };
 
         public int NO
         {

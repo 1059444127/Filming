@@ -11,7 +11,6 @@ namespace UIH.Mcsf.Filming.ControlTests.Interfaces
         // Board need
         IFilm this[int i] { get; }
         event EventHandler<IntEventArgs> CellChanged;
-        event EventHandler Changed;
 
         // CardControlViewModel need
         int NO { get; set; }
