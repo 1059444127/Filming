@@ -6,59 +6,48 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
 {
     public class BoardContent : IBoardContent
     {
-        private IFilmRepository _films;
-        private int _visibleContentCount = 1;
-        private int _no;
-        private int _maxNO;
+        private readonly IFilmBuffer _films;
 
-        public BoardContent(IFilmRepository filmRepository)
+        public BoardContent(IFilmBuffer filmBuffer)
         {
-            _films = filmRepository;
-            RegisterFilmRepositoryEvent();
+            _films = filmBuffer;
+            RegisterFilmBufferEvent();
         }
 
         ~BoardContent()
         {
-            UnRegisterFilmRepositoryEvent();
+            UnRegisterFilmBufferEvent();
         }
 
         #region [--Event Handler--]
 
-        private void UnRegisterFilmRepositoryEvent()
+        private void UnRegisterFilmBufferEvent()
         {
-            _films.CountChanged -= FilmsOnCountChanged;
-            _films.FocusChanged -= FilmsOnFocusChanged;
+            _films.FilmChanged -= FilmsOnFilmChanged;
         }
 
-        private void RegisterFilmRepositoryEvent()
+        private void RegisterFilmBufferEvent()
         {
-            _films.CountChanged += FilmsOnCountChanged;
-            _films.FocusChanged += FilmsOnFocusChanged;
+            _films.FilmChanged += FilmsOnFilmChanged;
         }
 
-        private void FilmsOnFocusChanged(object sender, EventArgs eventArgs)
+        private void FilmsOnFilmChanged(object sender, IntEventArgs intEventArgs)
         {
-            
-        }
-
-        private void FilmsOnCountChanged(object sender, EventArgs eventArgs)
-        {
-            var filmCount = _films.Count;
-            if (filmCount <= 0) MaxNO = 0;
-            else MaxNO = (int)Math.Ceiling((0.0+filmCount)/Count) - 1;
+            CellChanged(this, intEventArgs);
         }
 
         #endregion
 
         #region Implementation of IBoardContent
 
+        private int _count = 1;
         public int Count
         {
-            get { return _visibleContentCount; }
+            get { return _count; }
             set
             {
-                if(_visibleContentCount == value) return;
-                _visibleContentCount = value;
+                if(_count == value) return;
+                _count = value;
                 CountChanged(this, new EventArgs());
             }
         }
@@ -67,39 +56,10 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
         
         public IFilm this[int i]
         {
-            get { return _films[NO*Count+i]; }
+            get { return _films[i]; }
         }
 
         public event EventHandler<IntEventArgs> CellChanged = delegate { };
-
-        public int NO
-        {
-            get { return _no; }
-            set
-            {
-                if (_no == value) return;
-                _no = value;
-                NOChanged(this, new EventArgs());
-                _films.Focus = NO*Count;
-
-                // Hide old cell, Show new Cell
-            }
-        }
-
-        public event EventHandler NOChanged = delegate { };
-
-        public int MaxNO
-        {
-            get { return _maxNO; }
-            private set
-            {
-                if (_maxNO == value) return;
-                _maxNO = value;
-                MaxNOChanged(this, new EventArgs());
-            }
-        }
-
-        public event EventHandler MaxNOChanged = delegate { };
 
         #endregion
     }

@@ -12,10 +12,5 @@ namespace UIH.Mcsf.Filming.ControlTests.Interfaces
         IFilm this[int i] { get; }
         event EventHandler<IntEventArgs> CellChanged;
 
-        // CardControlViewModel need
-        int NO { get; set; }
-        int MaxNO { get;}
-        event EventHandler NOChanged;
-        event EventHandler MaxNOChanged;
     }
 }

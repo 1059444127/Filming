@@ -11,43 +11,45 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
     {
         private readonly IFilmRepository _filmRepository;
         private readonly IBoardContent _boardContent;
+        private readonly FilmBuffer _filmBuffer;
 
         public CardControlViewModel()
         {
             _filmRepository = new FilmRepository();
-            _boardContent = new BoardContent(_filmRepository);
+            _filmBuffer = new FilmBuffer(_filmRepository);
+            _boardContent = new BoardContent(_filmBuffer);
             _board = new Board(_boardContent);
 
-            RegisterBoardContentEvent();
+            RegisterFilmBufferEvent();
         }
 
         ~CardControlViewModel()
         {
-            UnRegisterBoardContentEvent();
+            UnRegisterFilmBufferEvent();
         }
 
         #region [--Board Content Event Handler--]
 
-        private void RegisterBoardContentEvent()
+        private void RegisterFilmBufferEvent()
         {
-            _boardContent.MaxNOChanged += BoardContentOnMaxNOChanged;
-            _boardContent.NOChanged += BoardContentOnNOChanged;
+            _filmBuffer.MaxNOChanged += BoardContentOnMaxNOChanged;
+            _filmBuffer.NOChanged += BoardContentOnNOChanged;
         }
 
-        private void UnRegisterBoardContentEvent()
+        private void UnRegisterFilmBufferEvent()
         {
-            _boardContent.MaxNOChanged -= BoardContentOnMaxNOChanged;
-            _boardContent.NOChanged -= BoardContentOnNOChanged;
+            _filmBuffer.MaxNOChanged -= BoardContentOnMaxNOChanged;
+            _filmBuffer.NOChanged -= BoardContentOnNOChanged;
         }
 
         private void BoardContentOnNOChanged(object sender, EventArgs eventArgs)
         {
-            BoardNO = _boardContent.NO;
+            BoardNO = _filmBuffer.NO;
         }
 
         private void BoardContentOnMaxNOChanged(object sender, EventArgs eventArgs)
         {
-            BoardMaxNO = _boardContent.MaxNO;
+            BoardMaxNO = _filmBuffer.MaxNO;
         }
 
         #endregion
@@ -78,7 +80,7 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
                 if (_boardNO == value) return;
                 _boardNO = value;
                 RaisePropertyChanged(() => BoardNO);
-                _boardContent.NO = value;
+                _filmBuffer.NO = value;
             }
         }
 
