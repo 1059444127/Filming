@@ -6,12 +6,13 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
 {
     public class FilmBuffer : IFilmBuffer
     {
-        private IFilmRepository _films;
+        private readonly IFilmRepository _films;
         private const int Capacity = GlobalDefinitions.MaxDisplayMode;
         private int _cursor;
 
         public FilmBuffer(IFilmRepository filmRepository)
         {
+            VisibleSize = 1;
             _films = filmRepository;
             RegisterFilmRepositoryEvent();
         }
@@ -44,7 +45,7 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
 
         private void FilmsOnFocusChanged(object sender, EventArgs eventArgs)
         {
-            
+            NO = _films.Focus/VisibleSize;
         }
 
         #endregion
@@ -58,7 +59,7 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
             get { return _films[NO*VisibleSize+i]; }
         }
 
-        public int VisibleSize { get; set; }
+        public int VisibleSize { private get; set; }
 
         #endregion
 
@@ -73,7 +74,7 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
                 if (_no == value) return;
                 _no = value;
                 NOChanged(this, new EventArgs());
-                _films.Focus = NO * VisibleSize;
+                UpdateFilmRepositoryFocus();
 
                 // Hide old cell, Show new Cell
             }
@@ -97,7 +98,24 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
 
         #endregion [--CardControlViewModel use--]
 
-        
+        private bool ContainsFocusInFilmRepository()
+        {
+            return _films.Focus >= NO*VisibleSize && _films.Focus < (NO + 1)*VisibleSize;
+        }
 
+        private void UpdateFilmRepositoryFocus()
+        {
+            if (ContainsFocusInFilmRepository()) return;
+            _films.Focus = NO*VisibleSize;
+        }
+
+        private int Cursor
+        {
+            set
+            {
+                if (_cursor == value) return;
+                _cursor = value;
+            }
+        }
     }
 }
