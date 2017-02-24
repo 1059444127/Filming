@@ -51,7 +51,6 @@
     </CodeAnalysisDependentAssemblyPaths>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FilmBufferTests.cs" />
     <Compile Include="FilmRepositoryTests.cs" />
     <Compile Include="FilmTitleBarViewModelTests.cs" />
     <Compile Include="TitleBarViewModelTests.cs" />
