@@ -32,24 +32,24 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
 
         private void RegisterFilmBufferEvent()
         {
-            _filmBuffer.MaxNOChanged += BoardContentOnMaxNOChanged;
-            _filmBuffer.NOChanged += BoardContentOnNOChanged;
+            _filmRepository.MaxNOChanged += BoardContentOnMaxNOChanged;
+            _filmRepository.NOChanged += BoardContentOnNOChanged;
         }
 
         private void UnRegisterFilmBufferEvent()
         {
-            _filmBuffer.MaxNOChanged -= BoardContentOnMaxNOChanged;
-            _filmBuffer.NOChanged -= BoardContentOnNOChanged;
+            _filmRepository.MaxNOChanged -= BoardContentOnMaxNOChanged;
+            _filmRepository.NOChanged -= BoardContentOnNOChanged;
         }
 
         private void BoardContentOnNOChanged(object sender, EventArgs eventArgs)
         {
-            BoardNO = _filmBuffer.NO;
+            BoardNO = _filmRepository.NO;
         }
 
         private void BoardContentOnMaxNOChanged(object sender, EventArgs eventArgs)
         {
-            BoardMaxNO = _filmBuffer.MaxNO;
+            BoardMaxNO = _filmRepository.MaxNO;
         }
 
         #endregion
@@ -80,7 +80,7 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
                 if (_boardNO == value) return;
                 _boardNO = value;
                 RaisePropertyChanged(() => BoardNO);
-                _filmBuffer.NO = value;
+                _filmRepository.NO = value;
             }
         }
 

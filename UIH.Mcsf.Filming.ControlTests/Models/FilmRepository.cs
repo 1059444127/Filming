@@ -126,5 +126,38 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
 
 
         #endregion
+
+        #region [--Implemented from IDegree--]
+
+        private int _no;
+        public int NO
+        {
+            get { return _no; }
+            set
+            {
+                if (_no == value) return;
+                _no = value;
+                NOChanged(this, new EventArgs());
+            }
+        }
+
+        public event EventHandler NOChanged = delegate { };
+
+        private int _maxNO;
+        public int MaxNO
+        {
+            get { return _maxNO; }
+            private set
+            {
+                if (_maxNO == value) return;
+                _maxNO = value;
+                MaxNOChanged(this, new EventArgs());
+            }
+        }
+
+        public event EventHandler MaxNOChanged = delegate { };
+
+        #endregion [--Implemented from IDegree--]
+
     }
 }

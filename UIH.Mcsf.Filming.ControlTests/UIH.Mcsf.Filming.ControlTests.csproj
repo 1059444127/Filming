@@ -86,6 +86,7 @@
     </ApplicationDefinition>
     <Compile Include="Interfaces\IBoard.cs" />
     <Compile Include="Interfaces\IBoardContent.cs" />
+    <Compile Include="Interfaces\IDegree.cs" />
     <Compile Include="Interfaces\IVisibleCountSubject.cs" />
     <Compile Include="Interfaces\IFilm.cs" />
     <Compile Include="Interfaces\IFilmBuffer.cs" />
