@@ -98,9 +98,32 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
             CountChanged(this, new EventArgs());
         }
 
-        #region Implementation of ICountSubject
+        #region Implementation of IVisibleCountSubject
 
         public event EventHandler CountChanged = delegate { };
+
+        #endregion
+
+        #region [--Film Buffer Function--]
+
+        private int _visibleCount = 1;
+
+        public int VisibleCount
+        {
+            get
+            {
+                return _visibleCount;
+            }
+            set
+            {
+                if(_visibleCount == value) return;
+                _visibleCount = value;
+                VisibleCountChanged(this, new EventArgs());
+            }
+        }
+
+        public event EventHandler VisibleCountChanged = delegate { };
+
 
         #endregion
     }

@@ -3,9 +3,9 @@ using UIH.Mcsf.Filming.Utilities;
 
 namespace UIH.Mcsf.Filming.ControlTests.Interfaces
 {
-    public interface IBoardContent : ICountSubject
+    public interface IBoardContent : IVisibleCountSubject
     {
-        // ICountSubject
+        // IVisibleCountSubject
         new int Count { get; set; }
         
         // Board need

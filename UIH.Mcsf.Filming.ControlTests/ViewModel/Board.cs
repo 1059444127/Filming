@@ -9,7 +9,7 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
 {
     public class Board : IBoard
     {
-        private int _count = 1;
+        private int _visibleCount = 1;
         private readonly IBoardContent _boardContent;
         private readonly FilmControlViewModel[] _films = new FilmControlViewModel[GlobalDefinitions.MaxDisplayMode];
 
@@ -53,7 +53,7 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
 
         private void BoardContentOnCountChanged(object sender, EventArgs eventArgs)
         {
-            Count = _boardContent.Count;
+            VisibleCount = _boardContent.Count;
         }
 
         #endregion
@@ -72,15 +72,15 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
 
         #endregion
 
-        #region Implementation of ICountSubject
+        #region Implementation of IVisibleCountSubject
 
-        public int Count
+        public int VisibleCount
         {
-            get { return _count; }
+            get { return _visibleCount; }
             private set
             {
-                if (_count == value) return;
-                _count = value;
+                if (_visibleCount == value) return;
+                _visibleCount = value;
                 CountChanged(this, new EventArgs());
             }
         }

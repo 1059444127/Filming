@@ -2,7 +2,7 @@
 
 namespace UIH.Mcsf.Filming.ControlTests.Interfaces
 {
-    public interface IFilmRepository : ICountSubject
+    public interface IFilmRepository : IVisibleCountSubject
     {
         ISelectableFilm this[int i] { get; }
         void Add(ISelectableFilm film);

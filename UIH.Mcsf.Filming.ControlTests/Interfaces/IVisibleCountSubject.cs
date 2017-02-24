@@ -2,9 +2,9 @@
 
 namespace UIH.Mcsf.Filming.ControlTests.Interfaces
 {
-    public interface ICountSubject
+    public interface IVisibleCountSubject
     {
-        int Count { get; }
+        int VisibleCount { get; }
         event EventHandler CountChanged;
     }
 }

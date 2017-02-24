@@ -38,7 +38,7 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
 
         private void FilmsOnCountChanged(object sender, EventArgs eventArgs)
         {
-            var filmCount = _films.Count;
+            var filmCount = _films.VisibleCount;
             if (filmCount <= 0) MaxNO = 0;
             else MaxNO = (int)Math.Ceiling((0.0 + filmCount) / VisibleSize) - 1;
         }

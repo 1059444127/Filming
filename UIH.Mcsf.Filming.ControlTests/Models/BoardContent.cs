@@ -40,14 +40,14 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
 
         #region Implementation of IBoardContent
 
-        private int _count = 1;
-        public int Count
+        private int _visibleCount = 1;
+        public int VisibleCount
         {
-            get { return _count; }
+            get { return _visibleCount; }
             set
             {
-                if(_count == value) return;
-                _count = value;
+                if(_visibleCount == value) return;
+                _visibleCount = value;
                 CountChanged(this, new EventArgs());
             }
         }

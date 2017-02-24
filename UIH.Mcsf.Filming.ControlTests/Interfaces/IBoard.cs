@@ -2,7 +2,7 @@
 
 namespace UIH.Mcsf.Filming.ControlTests.Interfaces
 {
-    public interface IBoard : ICountSubject
+    public interface IBoard : IVisibleCountSubject
     {
         object this[int i] { get; }
     }

@@ -55,7 +55,7 @@ namespace UIH.Mcsf.Filming.ControlTests.Views
 
         private void BoardOnCountChanged(object sender, EventArgs eventArgs)
         {
-            var displayMode = new DisplayMode(Board.Count);
+            var displayMode = new DisplayMode(Board.VisibleCount);
             
             SetGrid(displayMode.Row, displayMode.Col);
         }
