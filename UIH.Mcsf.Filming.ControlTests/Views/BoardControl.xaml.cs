@@ -49,11 +49,11 @@ namespace UIH.Mcsf.Filming.ControlTests.Views
 
         private void RegisterBoardEvent()
         {
-            Board.CountChanged -= BoardOnCountChanged;
-            Board.CountChanged += BoardOnCountChanged;
+            Board.VisibleCountChanged -= BoardOnVisibleCountChanged;
+            Board.VisibleCountChanged += BoardOnVisibleCountChanged;
         }
 
-        private void BoardOnCountChanged(object sender, EventArgs eventArgs)
+        private void BoardOnVisibleCountChanged(object sender, EventArgs eventArgs)
         {
             var displayMode = new DisplayMode(Board.VisibleCount);
             

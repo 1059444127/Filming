@@ -87,6 +87,14 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
 
         private void Changed()
         {
+            UpdateFilmIndex();
+
+            MaxNO = Count==0?0
+                : (int)Math.Ceiling((0.0 + Count) / VisibleCount) - 1; 
+        }
+
+        private void UpdateFilmIndex()
+        {
             for (int i = 0; i < Count; i++)
             {
                 var film = this[i];
@@ -94,13 +102,11 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
                 title.NO = i;
                 title.Count = Count;
             }
-
-            CountChanged(this, new EventArgs());
         }
 
         #region Implementation of IVisibleCountSubject
 
-        public event EventHandler CountChanged = delegate { };
+        public event EventHandler VisibleCountChanged = delegate { };
 
         #endregion
 
@@ -122,7 +128,6 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
             }
         }
 
-        public event EventHandler VisibleCountChanged = delegate { };
 
 
         #endregion
@@ -159,5 +164,10 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
 
         #endregion [--Implemented from IDegree--]
 
+        #region [--Implemented from IFilmBuffer--]
+
+        public event EventHandler<IntEventArgs> FilmChanged = delegate { };
+
+        #endregion
     }
 }

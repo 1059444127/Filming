@@ -10,15 +10,11 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
     class CardControlViewModel : TestViewModelBase
     {
         private readonly IFilmRepository _filmRepository;
-        private readonly IBoardContent _boardContent;
-        private readonly FilmBuffer _filmBuffer;
 
         public CardControlViewModel()
         {
             _filmRepository = new FilmRepository();
-            _filmBuffer = new FilmBuffer(_filmRepository);
-            _boardContent = new BoardContent(_filmBuffer);
-            _board = new Board(_boardContent);
+            _board = new Board(_filmRepository);
 
             RegisterFilmBufferEvent();
         }
@@ -117,7 +113,7 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
                 if (_displayMode == value) return;
                 _displayMode = value;
                 RaisePropertyChanged(() => DisplayMode);
-                _boardContent.Count = value;
+                _filmRepository.VisibleCount = value;
             }
         }
 

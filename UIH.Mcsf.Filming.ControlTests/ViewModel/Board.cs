@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
 using UIH.Mcsf.Filming.ControlTests.Interfaces;
 using UIH.Mcsf.Filming.Utilities;
 
@@ -10,16 +8,16 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
     public class Board : IBoard
     {
         private int _visibleCount = 1;
-        private readonly IBoardContent _boardContent;
+        private readonly IFilmBuffer _filmBuffer;
         private readonly FilmControlViewModel[] _films = new FilmControlViewModel[GlobalDefinitions.MaxDisplayMode];
 
-        public Board(IBoardContent boardContent)
+        public Board(IFilmBuffer filmBuffer)
         {
-            _boardContent = boardContent;
+            _filmBuffer = filmBuffer;
             RegisterBoardContentEvent();
             for (int i = 0; i < _films.Length; i++)
             {
-                _films[i] = new FilmControlViewModel{Film = boardContent[i]};
+                _films[i] = new FilmControlViewModel{Film = filmBuffer[i]};
             }
         }
 
@@ -32,28 +30,28 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
 
         private void RegisterBoardContentEvent()
         {
-            _boardContent.CountChanged += BoardContentOnCountChanged;
-            _boardContent.CellChanged += BoardContentOnCellChanged;
+            _filmBuffer.VisibleCountChanged += FilmBufferOnVisibleCountChanged;
+            _filmBuffer.FilmChanged += FilmBufferOnFilmChanged;
         }
 
         private void UnRegisterBoardContentEvent()
         {
-            _boardContent.CountChanged -= BoardContentOnCountChanged;
-            _boardContent.CellChanged -= BoardContentOnCellChanged;
+            _filmBuffer.VisibleCountChanged -= FilmBufferOnVisibleCountChanged;
+            _filmBuffer.FilmChanged -= FilmBufferOnFilmChanged;
         }
 
-        private void BoardContentOnCellChanged(object sender, IntEventArgs intEventArgs)
+        private void FilmBufferOnFilmChanged(object sender, IntEventArgs intEventArgs)
         {
             var filmIndex = intEventArgs.Int;
             Debug.Assert(filmIndex >=0);
             Debug.Assert(filmIndex < GlobalDefinitions.MaxDisplayMode);
 
-            _films[filmIndex].Film = _boardContent[filmIndex];
+            _films[filmIndex].Film = _filmBuffer[filmIndex];
         }
 
-        private void BoardContentOnCountChanged(object sender, EventArgs eventArgs)
+        private void FilmBufferOnVisibleCountChanged(object sender, EventArgs eventArgs)
         {
-            VisibleCount = _boardContent.Count;
+            VisibleCount = _filmBuffer.VisibleCount;
         }
 
         #endregion
@@ -81,11 +79,11 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
             {
                 if (_visibleCount == value) return;
                 _visibleCount = value;
-                CountChanged(this, new EventArgs());
+                VisibleCountChanged(this, new EventArgs());
             }
         }
 
-        public event EventHandler CountChanged = delegate { };
+        public event EventHandler VisibleCountChanged = delegate { };
 
         #endregion
     }

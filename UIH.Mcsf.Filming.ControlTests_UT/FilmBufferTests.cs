@@ -27,7 +27,7 @@ namespace UIH.Mcsf.Filming.ControlTests_UT
 
             // Act
             _filmRepositoryMock.Setup(frm => frm.VisibleCount).Returns(0);
-            _filmRepositoryMock.Raise(frm=>frm.CountChanged += null, new EventArgs());
+            _filmRepositoryMock.Raise(frm=>frm.VisibleCountChanged += null, new EventArgs());
 
             // Assert
             Assert.AreEqual(0, _filmBuffer.MaxNO);
@@ -41,7 +41,7 @@ namespace UIH.Mcsf.Filming.ControlTests_UT
 
             // Act
             _filmRepositoryMock.Setup(frm => frm.VisibleCount).Returns(4);
-            _filmRepositoryMock.Raise(frm=>frm.CountChanged += null, new EventArgs());
+            _filmRepositoryMock.Raise(frm=>frm.VisibleCountChanged += null, new EventArgs());
 
             // Assert
             Assert.AreEqual(0, _filmBuffer.MaxNO);
@@ -55,7 +55,7 @@ namespace UIH.Mcsf.Filming.ControlTests_UT
 
             // Act
             _filmRepositoryMock.Setup(frm => frm.VisibleCount).Returns(5);
-            _filmRepositoryMock.Raise(frm=>frm.CountChanged += null, new EventArgs());
+            _filmRepositoryMock.Raise(frm=>frm.VisibleCountChanged += null, new EventArgs());
 
             // Assert
             Assert.AreEqual(1, _filmBuffer.MaxNO);
@@ -69,7 +69,7 @@ namespace UIH.Mcsf.Filming.ControlTests_UT
 
             // Act
             _filmRepositoryMock.Setup(frm => frm.VisibleCount).Returns(8);
-            _filmRepositoryMock.Raise(frm => frm.CountChanged += null, new EventArgs());
+            _filmRepositoryMock.Raise(frm => frm.VisibleCountChanged += null, new EventArgs());
 
             // Assert
             Assert.AreEqual(1, _filmBuffer.MaxNO);
