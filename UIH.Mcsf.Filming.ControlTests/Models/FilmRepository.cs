@@ -140,6 +140,7 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
             set
             {
                 if (_no == value) return;
+                _cursor = (_cursor + (value - _no)*VisibleCount)%GlobalDefinitions.MaxDisplayMode;
                 DropCurtain();
                 _no = value;
                 NOChanged(this, new EventArgs());
