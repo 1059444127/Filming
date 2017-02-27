@@ -38,8 +38,8 @@ namespace UIH.Mcsf.Filming.ControlTests.ViewModel
         private void RefreshProperties()
         {
             if(_film == null) return;
+            Page = _film;
             _filmTitleBarViewModel.FilmTitle = _film.FilmTitle;
-            IsVisible = _film.IsVisible;
         }
 
         #endregion [--Film--]
