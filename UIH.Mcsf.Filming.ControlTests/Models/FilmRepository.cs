@@ -140,8 +140,10 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
             set
             {
                 if (_no == value) return;
+                DropCurtain();
                 _no = value;
                 NOChanged(this, new EventArgs());
+                RaiseCurtain();
             }
         }
 
@@ -168,5 +170,26 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
         public event EventHandler<IntEventArgs> FilmChanged = delegate { };
 
         #endregion
+
+
+        private void DropCurtain()
+        {
+            ShowBoard(false);
+        }
+
+        private void RaiseCurtain()
+        {
+            ShowBoard(true);
+        }
+
+        private void ShowBoard(bool isVisible)
+        {
+            var beginFilmIndex = _no*VisibleCount;
+            for (int i = 0; i < VisibleCount; i++)
+            {
+                this[beginFilmIndex + i].IsVisible = isVisible;
+            }
+        }
+
     }
 }

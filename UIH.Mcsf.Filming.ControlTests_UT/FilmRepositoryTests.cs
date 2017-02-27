@@ -80,5 +80,16 @@ namespace UIH.Mcsf.Filming.ControlTests_UT
             // Assert
             Assert.AreEqual(1, _filmRepository.MaxNO);
         }
+
+        [TestMethod]
+        public void When_Append_A_Film_Then_Hide_Old_Film_And_Show_Last_Film()
+        {
+            // Prepare & Act
+            _filmRepository.Append();
+
+            // Assert
+            Assert.IsFalse(_filmRepository[_filmRepository.Count-2].IsVisible);
+            Assert.IsTrue(_filmRepository[_filmRepository.Count-1].IsVisible);
+        }
     }
 }
