@@ -22,29 +22,13 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
             }
         }
 
+        private int _focus;
         public void Append()
         {
             Add(new Film());
-            Focus = Count - 1;
+            _focus = Count - 1;
+            NO = _focus/VisibleCount;
         }
-
-        #region [--Focus--]
-
-        private int _focus;
-
-        //TODO-Later: When Base(SelectableList) Focus Changed, FilmRepository Focus Changed
-        private int Focus
-        {
-            set
-            {
-                if (_focus == value) return;
-                _focus = value;
-                NO = _focus/VisibleCount;
-            }
-        }
-
-        #endregion
-
 
         #endregion
 
