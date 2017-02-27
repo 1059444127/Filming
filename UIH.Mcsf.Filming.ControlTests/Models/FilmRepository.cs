@@ -179,7 +179,17 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
 
         private void RaiseCurtain()
         {
+            NotifyBoardChanged();
             ShowBoard(true);
+        }
+
+        private int _cursor;
+        private void NotifyBoardChanged()
+        {
+            for (int i = 0; i < VisibleCount; i++)
+            {
+                FilmChanged(this, new IntEventArgs(_cursor+i));
+            }
         }
 
         private void ShowBoard(bool isVisible)
