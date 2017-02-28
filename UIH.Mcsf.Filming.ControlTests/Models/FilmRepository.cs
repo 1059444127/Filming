@@ -23,10 +23,25 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
         }
 
         private int _focus;
+
+        private int Focus
+        {
+            set
+            {
+                if(_focus == value) return;
+                _focus = value;
+                UpdateNO();
+            }
+        }
+
         public void Append()
         {
             Add(new Film());
-            _focus = Count - 1;
+            Focus = Count - 1;
+        }
+
+        private void UpdateNO()
+        {
             NO = _focus/VisibleCount;
         }
 
@@ -71,8 +86,14 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
         {
             UpdateFilmIndex();
 
-            MaxNO = Count==0?0
-                : (int)Math.Ceiling((0.0 + Count) / VisibleCount) - 1; 
+            UpdateMaxNO();
+        }
+
+        private void UpdateMaxNO()
+        {
+            MaxNO = Count == 0
+                ? 0
+                : (int) Math.Ceiling((0.0 + Count)/VisibleCount) - 1;
         }
 
         private void UpdateFilmIndex()
@@ -107,6 +128,9 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
                 if(_visibleCount == value) return;
                 _visibleCount = value;
                 VisibleCountChanged(this, new EventArgs());
+
+                UpdateMaxNO();
+                UpdateNO();
             }
         }
 
@@ -122,8 +146,8 @@ namespace UIH.Mcsf.Filming.ControlTests.Models
             get { return _no; }
             set
             {
+                _cursor = (value*VisibleCount)%GlobalDefinitions.MaxDisplayMode;
                 if (_no == value) return;
-                _cursor = (_cursor + (value - _no)*VisibleCount)%GlobalDefinitions.MaxDisplayMode;
                 DropCurtain();
                 _no = value;
                 NOChanged(this, new EventArgs());
